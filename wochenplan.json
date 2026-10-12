@@ -1,5 +1,43 @@
 {
   "2025": {
+    "1": {
+      "0": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": ""
+    },
     "23": {
       "0": {
         "frueh": "**__#Betriebsfahrzeuge__**\nReinigung und Kontrolle\n\n123",
@@ -800,29 +838,29 @@
     },
     "44": {
       "0": {
-        "frueh": "ZKS:\n-Revision EM-HS \nKohlevorbereitung Trafo 8 1600kVA\nEM-HS (111778)\nKohlevorbereitung Trafo 6 1600kVA\nEM-HS (111776)\n\nGWW1/Motroenhalle:\n-Abrissarbeiten alte 5kV Anlage Fa. UTG\n(111963)",
+        "frueh": "ZKS:\n#Revision EM-HS \nKohlevorbereitung Trafo 8 1600kVA\nEM-HS (111778)\nKohlevorbereitung Trafo 6 1600kVA\nEM-HS (111776)\n\nGWW1/Motorenhalle:\n-Abrissarbeiten alte 5kV Anlage Fa. UTG (111963)",
         "mittag": "",
         "nacht": "SA2 Außerbetriebnahme ca. 3:00Uhr "
       },
       "1": {
-        "frueh": "SA2 Stillstand\n\n-Revision EM-HS\n Motor Gebläse A25\n-Revision EM-HS\n Anlasser A25/A26\n EM-HS Freischaltschein \n Möllerung\n\n-EM-HS\n Isolatoren Kontrolle, Reinigung\n E-Filter A25/A26\n EM-HS Freischaltschein\n Möllerung\n\n",
-        "mittag": "Restarbeiten siehe Frühschicht\n\nKontrolle Außenanlagen\n\n",
+        "frueh": "SA2 Stillstand\n\n-Revision EM-HS\n Motor Gebläse A25\n-Revision EM-HS\n Anlasser A25/A26\n EM-HS Freischaltschein \n Möllerung\n\nGWW1/Motorenhalle:\n-Abrissarbeiten alte 5kV Anlage\n Fa. UTG (112049)\n\n-EM-HS\n Isolatoren Kontrolle, Reinigung\n E-Filter A25/A26\n EM-HS Freischaltschein/BSeR\n Möllerung\n\n",
+        "mittag": "Restarbeiten siehe Frühschicht\n\nGWW2/Wasseraufbereitung:\n-EM-HS abklemmen\n Freischaltung Sinterwasserp.5\n EM-HS (112151)\n WW PIH (112147)\n\n",
         "nacht": ""
       },
       "2": {
-        "frueh": "SA2 Stillstand\n\n-Revision EM-HS\n Motor Gebläse A26\n EM-HS Freischaltschein\n Möllerung\n\n-Revision EM-HS\n Solepumpe Anlasser A25/A26\n EM-HS Freischaltschein\n Möllerung\n \n\n-EM-HS\n Isolatoren Kontrolle, Reinigung\n E-Filter A24\n EM-HS Freischaltschein\n Möllerung\n\n\n\n",
-        "mittag": "Restarbeiten siehe Frühschicht",
+        "frueh": "SA2 Stillstand\n\n-Revision EM-HS\n Motor Gebläse A26\n EM-HS Freischaltschein\n Möllerung\n\n-Revision EM-HS\n Solepumpe Anlasser A25/A26\n EM-HS Freischaltschein\n Möllerung\n \n\n-EM-HS\n Isolatoren Kontrolle, Reinigung\n E-Filter A24\n EM-HS Freischaltschein/BSeR\n Möllerung\n\n\nGWW1/Motorenhalle:\n-Abrissarbeiten alte 5kV Anlage\n Fa. UTG (112050)\n\n\n",
+        "mittag": "Restarbeiten siehe Frühschicht\n\nKontrolle Außenanlagen\n\n\n",
         "nacht": ""
       },
       "3": {
-        "frueh": "SA2 Stillstand\n\nRestarbeiten SA2\n\n\nStahlwerk:\n-Revision E-Filter 2 (110422)",
+        "frueh": "SA2 Stillstand\n\nggf. Restarbeiten SA2\n\nStahlwerk:\n-Revision E-Filter 2 (110422)\n\nEinrichten Rechner für DGUV3 Prüfungen\n(Seger/Reichert/Müllenbach)\n\nGWW1/Motorenhalle:\n-Abrissarbeiten alte 5kV Anlage\n Fa. UTG (112206)\n",
         "mittag": "SA2 Inbetriebnahme ca. 17:00Uhr",
-        "nacht": ""
+        "nacht": "Stillstand HO4 \nab ca. 3:00UHR"
       },
       "4": {
-        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
-        "mittag": "",
-        "nacht": ""
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n\nStillstand HO4\n\n\nZentrale 1/PIHHO:\nSchleifringkörper Verladebrücke zu PIH transportieren und zusammenbauen!\n\nMittelwerk:\nArbeitsvorbereitung Systemrevision KW45\n\nGWW1/Motorenhalle:\n-Abrissarbeiten alte 5kV Anlage\n Fa. UTG (112207)\n",
+        "mittag": "GWW1/Motorenhalle:\n-Rückbau Gleichstromsystem Kaskadenumformer\n(EM-HS, 112148)\nEntsorgung Restmaterial\n\n\nInbetriebnahme HO4\nab ca. 20:00UHR",
+        "nacht": "WAB/GWW2:\n-Einbau HH-Sicherungen Reserveschützwagen\n(liegen in der Z1)"
       },
       "5": {
         "frueh": "",
@@ -831,34 +869,186 @@
       },
       "6": {
         "frueh": "",
-        "mittag": "",
+        "mittag": "Zentrale 1:\n-Parkplatz unter Kohleband absperren (auf Mittag- oder Nachtschicht)\n-Beginn Bauarbeiten für Sanitärcontainer ab Frühschicht Montag 3.11",
         "nacht": ""
       },
       "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nSTW, Neuzustellung Konverter 2 vom 17.10. bis 03.11.25"
     },
     "45": {
       "0": {
-        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n!!!Revision System 2 (110812)\n\n!!!RK1 MIW-GKW (Noteinspeisung)\nKontrolle Trenner SS2 (110823)",
-        "mittag": "Mittelwerk:\n5kV Anlage MIW:\n!!!Revision Querkupplung SS1-SS2\n(110813)\n!!!Revision Querkupplung SS3-SS4",
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision System 2 (110812)\n\n#RK1 MIW-GKW (Noteinspeisung)\nKontrolle Trenner SS2 (110823)\n\n#Revision Querkupplung SS1-SS2\n(110813)",
+        "mittag": "Mittelwerk:\n5kV Anlage MIW:\n#Revision Querkupplung SS3-SS4\n(110815)",
         "nacht": ""
       },
       "1": {
-        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n!!!Revision System 1 (110819)\nOriginalzustand System 1 und System 2 herstellen.",
-        "mittag": "siehe Frühschicht\n\n",
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision System 1 (110819)\nOriginalzustand System 1 und System 2 herstellen.\n\nMittelwerk: \nBeginn Rodungsarbeiten Bereich 220kV/110kV Freiluftanlage/Werksarzt\n",
+        "mittag": "Kontrolle Außenanlagen\n\n",
         "nacht": ""
       },
       "2": {
-        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n!!!Revision System 4 (110917)",
-        "mittag": "siehe Frühschicht",
-        "nacht": ""
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision System 4 (110917)",
+        "mittag": "siehe Frühschicht\n\nGWW2/Wasseraufbereitung:\n-EM-HS anklemmen Sinterwasserp.5\n EM-HS (112616)\n WW PIH (112147)\n",
+        "nacht": "ggf. Restarbeiten Mittagschicht"
       },
       "3": {
-        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n!!!Revision System 3 (110918)\nOriginalzustand System 3 und System 4 herstellen.",
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision System 3 (110918)\nOriginalzustand System 3 und System 4 herstellen.",
         "mittag": "siehe Frühschicht",
         "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
       },
       "4": {
-        "frueh": "Mittelwerk:\n\nggf. Restarbeiten/Inbetriebnahme  Systemrevision SS4/SS3\n(DH-Safe !!)\n\nMittelwerk:\n5kV Anlage MIW:\n!!!Revision Längskupplung 1A-1B\n(110820)\n!!!Revision Längskupplung 2A-2B\n(110822)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n\n",
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision Längskupplung 1A-1B\n(110820)\n\nMittelwerk: 11:00Uhr ca. 45min\n-Besprechungsraum MIW\n Baustelleneinweisung EAF\n SIGEKO Hr. Dr. Dobelmann\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Mittelwerk:\n5kV Anlage MIW:\n#Revision Längskupplung 2A-2B\n(110822)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nSTW, Neuzustellung Konverter 2 vom 10.10. bis 03.11.25\nBeginn Bauarbeiten für Sanitärcontainer ab Frühschicht Montag 3.11\nRodungsarbeiten ab Mittwoch 05.11. im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!"
+    },
+    "46": {
+      "0": {
+        "frueh": "MIW/GWW2:\nAußerbetriebnahme \n#5kV RK1 MIW-GWW2\n\nZentrale 1 :\nKupplung 1+2 Zentrale 1\nKabelzug (Jakobs,Böhm) \n\nPHHO:\n Revision EM-HS\n #Reinwasser Pumpe 4\n EM-HS (112679)\n\nGWW1/Motorenhalle:\nFa. Natus 9:00Uhr-11:30Uhr\nVermessung 5kV-Anlage\n\n\nZentrale 1:\nSicherheitsviertelstunde D+F\n10:00-12:00 Uhr\n\nMIW Besprechungsraum:\nSchulung \"Hochspannung in der Stahlindustrie\" für die PIH Stahlwerk\n08:30 - 17:00 Uhr\n(Raß/Dörr)\n\n10kV Trafostation Fa. Backes\nÜbernahme durch EM-HS\nAustausch/Erneuerung Beschilderung und Beschriftung (Schäfer/Woll)\n",
+        "mittag": "Zentrale 1:\nSicherheitsviertelstunde C\n15:00-17:00 Uhr\n---abgesagt---",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "MIW Besprechungsraum:\nSchulung \"Hochspannung in der Stahlindustrie\" für die PIH Stahlwerk\n08:30 - 17:00 Uhr\n(Raß/Dörr)\n\nZentrale 1:\nRevision EM-HS, Signalisierung,\nMeldung der IS Begrenzer\n#Kupplung 1+2\nEM-HS (110886)",
+        "mittag": "Kontrolle Außenanlagen\n\nMittelwerk:\nParkplatz seitlich zur 35kV Anlage 2 absperren!!",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Zentrale 1 :\nSicherheitsviertelstunde E+F\n10:00-12:00 Uhr\n\nZentrale 2/HO5:\nAußerbetriebnahme PV02 und Inbetriebnahme PV05\nProbelauf EM/MD\n\nKMA:\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS (Freischaltschein)\n\nMittelwerk: 10:00Uhr ca. 1,5h\nAbstimmungstermin DH/Amprion/Hitachi\n(Seboui/Brandau/Raß)\n\nMittelwerk: 13:00Uhr ca. 45min\n-Besprechungsraum MIW\n Baustelleneinweisung EAF\n SIGEKO Hr. Dr. Dobelmann\n\nMittelwerk:\nReinigung/Reparatur der Hebeanlage\nAchtung: Toiletten in dem Zeitraum außer Betrieb! Aufsicht stellen!",
+        "mittag": "Mittelwerk:\n-Prüfen der Ortsveränderlichen Elektrogeräte in den Baustellencontainer ",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand SA3:\n\n\nZentrale 1 :\nSicherheitsviertelstunde A+F\n10:00-12:00 Uhr\n\nKMA:\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS (Freischaltschein)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nWAB:\n#Revision EM-HS\n Kreislaufwasserpumpe 5\n EM-HS (113160)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "GWW1/Motorenhalle:\n Kabelzwischenboden, alte  \n Gleichstromschienen mit  \n Schutzgitter komplett  \n entfernen.\n EM-HS (113265)\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "MB2/E.Haus Ost/Halde:\n#Halde Trafo 2 250kVA\n(Revsion EM-HS, 108069)\nUmlegearbeiten Freileitung zu Halde durch SIG Hr. Hoen\nGenerator oder Akkubeleuchtung mitnehmen!!\n",
+        "mittag": "GWW1/Motorenhalle:\n Kabelzwischenboden, alte  \n Gleichstromschienen mit  \n Schutzgitter komplett  \n entfernen.\n EM-HS(113266)",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nRodungsarbeiten ab Mittwoch 05.11. im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!"
+    },
+    "47": {
+      "0": {
+        "frueh": "Zentrale 1 :\nSicherheitsviertelstunde C\n10:00-12:00 Uhr\n\nZKS:\n#Revision EM-HS\n 35kV Messung SS1\n EM-HS (113111) \n 35kV Messung SS2\n EM-HS (113112) \n 5kV-Messung SS1\n EM-HS (113113)\n 5kV-Messung SS2\n EM-HS ( 113114)\n 5kV-Messung SS3\n EM-HS (113115)\n 5kV-Messung SS4\n EM-HS (113116)",
+        "mittag": "Zentrale 1 :\nSicherheitsviertelstunde B\n15:00-17:00 Uhr",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Trafo 15 1600kVA\n EM-HS (113112)\n#Revision EM-HS\n Trafo 16 1600kVA\n EM-HS (113213)\n\nGWW1/Motorenhalle:\nFa.UTG Boden aufstemmen,\nSchienen im Boden entfernen\n(113250)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "ZKS/FVS Zentralstation: 9:00Uhr\n#Revision EM-HS u.\n Rückbau IS-Begrenzer\n RK ZKS-Zentralstation\n EM-HS (113406)\n----verschoben Störung FVS-----\n\nZKS:\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS (113214)\n#Revision EM-HS\n Trafo 3 1600kVA\n EM-HS (113215)",
+        "mittag": "",
+        "nacht": "Außerbetriebnahme HO4 und SA3, \nca. 03:00Uhr"
+      },
+      "3": {
+        "frueh": "Stillstand HO4\nStillstand SA3:\n\nZentrale 1:\n-Entspgsturbine HO4\n Umbau Signalisierung IS-Begrenzer\n (F. Jakobs)\n\nSA3:\n#Revision EM-HS\n Trafo 3 IED-Anlage\n EM-HS (Freischaltschein)\n#Revision EM-HS\n Trafo 4 IED-Anlage\n EM-HS (Freischaltschein)\n\nZKS/Gasverdichter 3\nEM-HS Fehlersuche\nEM-HS (113628)\n\nKontrolle/Wechsel Prometos\nAbgasentstaubung SA3\n(Reserve beim Kopierer H32)\n\nKontrolle Typenschild Trafos Raumentstaubung SA3 (Zimmer)\n\n\n",
+        "mittag": "Inbetriebnahme HO4, ca. 16:00Uhr\nInbetriebnahme SA3, ca. 18:00Uhr\n\n",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": " ----Verschoben---\nZentrale 1/ UWT:\n-Entsorgung Leuchtstoffröhren, \n Kabel-,Elektroschrott  \n Kupferrohre etc.\n\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "ZKS:\n5kV Schalter Trafo 15 und 16 1600kVA\n(3 Stück)\nAusbau der Schalterarme ",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Mittelwerk:\n400V NSHV\nD0001.A Werksarzt\nD0001.B Kantine\nD0010.D Werksarzt\nZählerwechsel und Messungen\nca. 08:00 bis 11:00Uhr\nAnsprechpartner 400V\nHoen Christoph, KW:6183\n",
+        "mittag": "Kontrolle Außenanlagen\n\nZKS:\n5kV Schalter Trafo 15 und 16 1600kVA\n(3 Stück)\nAusbau der Schalterarme ",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Rückbauarbeiten Keller/Flur Mittelwerk",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nRodungsarbeiten ab Mittwoch 05.11. im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!"
+    },
+    "48": {
+      "0": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Trafo 4 1600kVA\n EM-HS (113216)\n#Revision EM-HS\n Trafo 5 1600kVA\n EM-HS (113217)",
+        "mittag": "",
+        "nacht": "Stahlwerk Stillstand \nca. 3:00Uhr  20Std.\nHO5 Stillstand\nca. 1:00Uhr\nSA2 Stillstand\nca. 3:00Uhr"
+      },
+      "1": {
+        "frueh": "Stillstand HO5:\nStillstand STW.\nStillsatnd SA2:\n\nHO5/E-Haus 5.2:\n#Revision EM-HS\n Trafo 6 1600kVA\n EM-HS (Freischaltschein)\n Abschaltung  geplant für  \n 8:00Uhr\n\nSA2:\n-Revision EM-HS\n Abgasentstaubung\n Aggr. Trafo 1\n Aggr. Trafo 2\n Aggr. Trafo 3\n Aggr. Trafo 4\n Anmeldung Möllerung/Freischaltschein\n \nSTW, E.H.09:\n#Kalkentstaubung Trafo 4 1600kVA\nArbeiten an der BMA NB/PIH \n(112635)\nReinigung Trafo EM-HS\n----abgesagt----\n\nSTW:\nE-Filter 2 Aggr. 3\nKontrolle Thyristorlüfter\nWechsel hilfsblock Schütz K1\n(113598)\nFiltermatten Aggr. 1-5 kontrollieren/wechseln\n\nSA2/Erzbrechanlage:\n#Erzbrecher Ba4/B4b\nReinigung/Kontrolle/Probelauf\n(113778)",
+        "mittag": "Kontrolle Außenanlagen\n\nStahlwerk Inbetriebnahme\nca. 19:00Uhr\nHO5 Inbetriebnahme\nca. 17:00Uhr\nSA2 Inbetriebnahme\nca. 15:00Uhr\n",
+        "nacht": "Mittelwerk:\nRevision/Messungen MIW NSUV1\nArbeitsvorbereitungen\n"
+      },
+      "2": {
+        "frueh": "ZKS: \n#Revision EM-HS\n Trafo 4 12,5MVA\n EM-HS (113465)\n Anmeldung Gerüstbau im  \n Container schriftlich\n\nGWW2/WAB:\n#Sinterwasserpumpe 5\n Kontrolle Kupplung\n durch SIG\n-Freischaltung EM-HS\n DH Safe (113990)\n\nZentrale 1:\nTreppe Bereich Magazin freiräumen",
+        "mittag": "Gebläsehaus HO:\n#13MW T3 \nKontrolle/Reinigung/Isolation Schleifringräume\nKohlen auflegen!! (113855)",
+        "nacht": "Mittelwerk:\nRevision/Messungen MIW NSUV1\nArbeitsvorbereitungen\n\nAußerbetriebnahme HO4:\n"
+      },
+      "3": {
+        "frueh": "Stillstand HO4:\n\nMittelwerk:\nJahresunterweisung Frühschicht\n07:00-14:00 Uhr\n\nMittelwerk:\n#Inbetriebnahme DH204 50MVA und\nAußerbetriebnahme Querkuplung 2\n(geplant)\n\nZentrale 1/Gebläsehaus HO:\n#Inbetriebnahme T3 nach Reparatur\n",
+        "mittag": "Inbetriebnahme HO4:\n\nSperrung Parkplatz Zentrale 1\nAnlieferung Toilettencontainer\n\nHO5/Zentrale 2:\nMeldungen Kompressor Z2 auf Leitsystem legen\n\n",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Zentrale 1: ca.8:30Uhr\nAnlieferung Toilettencontainer\ndurch FA. HSB\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "Motorenhalle/GWW1:\nHolzbohlen in ausgebauten Kellerzellen auslegen.",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Kontrolle/Reinigung GSV EM-HS:\nGSV1 HO4\nGSV1 MB2\nGSV 1+2 alter FFP (Sollac)\nGSV 1-7 neuer FFP ZKS",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle/Reinigung GSV EM-HS:\nGSV1 HO4\nGSV1 MB2\nGSV 1+2 alter FFP (Sollac)\nGSV 1-7 neuer FFP ZKS",
+        "mittag": "",
+        "nacht": "Außerbetriebnahme HO4, ca. 03:00Uhr\nAußerbetriebnahme STW:"
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nRodungs/Baggerarbeiten im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!\nSTW: Konverter 1 vom 24.11. bis 06.12. a.b. (Schlafen gelegt!)"
+    },
+    "49": {
+      "0": {
+        "frueh": "Stillstand STW, 11h:\nStillstand HO4, 11h:\n\nMittelwerk:\nRevision/Messungen MIW NSUV1\nUmlegearbeiten (113894)\nAmprion/VSE/Feuerwehr informiert!\n\nMittelwerk:\nReparatur/Tausch Hebeanlage\nToilette\n\nMischbett 2 / Räumer:\n#Einbau Heizung Schleifringraum\n ca. 9:00 Uhr (Schäfer/Zimmer)\n EM-HS (114048)\n\nSTW:\nGebläse 1+2 Konverterentstaubung für PIH freischalten (114206)\n",
+        "mittag": "Inbetriebnahme HO4, ca. 16:00Uhr\nInbetriebnahme STW:\n\nGWW2/WAB:\n#Sinterwasserpumpe 5\n 5kV-Motor abklemmen,\n Pumpe muss gewechselt werden\n EM-HS (114322)\n\nZentrale 1/Gebläsehaus HO:\nKontrolle Anfahrbereitschaft T3\n ",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Mittelwerk:\nRevision/Messungen MIW NSUV1\n(113894)\n\nZentrale 1/Gebläsehaus HO:\n#Probeläufe T3 (Energetic)\n\nZKS:\nMeldung Lüfter auf SAE auflegen (Schäfer/Woll)\n\n10kV Trafo Backes\n-Nacharbeiten (Schäfer/Woll)\n",
+        "mittag": "Kontrolle Außenanlagen\n\nGKW:\nAußerbetriebnahme ca. 15:00Uhr",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Trafo 1 12,5MVA\n EM-HS (113220)\n **Pausenzeiten SBA nutzen!**\n Anmeldung Gerüstbau im  \n Container schriftlich",
+        "mittag": "Mittelwerk:\nRevision/Messungen MIW NSUV1\nUmlegearbeiten (113894)\n\nGKW:\nInbetriebnahme ca. 15:00Uhr",
+        "nacht": "Außerbetriebnahme HO5, ca. 00:00Uhr\nAußerbetriebnahme STW:\nAußerbetriebnahme SA3, ca. 02:00Uhr\n\nSA3:\n#SR-Trafo 5 Mischtrommel 800kVA\nnach Rücksprache Betrieb/PIH\n(Freischaltschein Möllerung)\n"
+      },
+      "3": {
+        "frueh": "Stillstand SA3:\nStillstand SA2, ab ca. 10:00Uhr\nStillstand STW, 16h:\nStillstand HO5, 20h:\n\nSTW, E.H.09:\n#Entstaubung Roheisenkanal Trafo 1600kVA\nArbeiten an der BMA NB/PIH \n(112635)\nReinigung Trafo EM-HS (114570)\n\nSA3:\n#SR-Trafo 5 Mischtrommel 800kVA\n(Freischaltung für\nBegutachtung/Reparatur\nFa. Schneider)\nFreischaltschein Möllerung\n\nSTW:\nE-Filter 2 Aggr. 3\nWechsel Hauptschütz K1\n(114330)\n",
+        "mittag": "Inbetriebnahme SA3, ca. 18:00Uhr\nInbetriebnahme SA2, ca. 18:00Uhr\nInbetriebnahme HO5, ca. 18:00Uhr\nInbetriebnahme STW:",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nZKS: Teerfilteraum\nAufräumarbeiten\n\nGWW2/WAB:\n#Sinterwasserpumpe 5\n Anklemmen und Probelauf EM-HS\n DH Safe (114322)\n",
         "mittag": "",
         "nacht": ""
       },
@@ -872,26 +1062,408 @@
         "mittag": "",
         "nacht": ""
       },
-      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nSTW, Neuzustellung Konverter 2 vom 10.10. bis 03.11.25"
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nRodungs/Baggerarbeiten im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!\nSTW: Konverter 1 vom 24.11. bis 06.12. a.b. (Schlafen gelegt!)"
     },
-    "46": {
+    "50": {
       "0": {
-        "frueh": "Zentrale 1:\nSicherheitsviertelstunde D+F\n10:00-12:00 Uhr\n\nMIW Besprechungsraum:\nSchulung \"Hochspannung in der Stahlindustrie\" für die PIH Stahlwerk\n08:30 - 17:00 Uhr\n(Raß/Dörr)",
-        "mittag": "Zentrale 1:\nSicherheitsviertelstunde C\n15:00-17:00 Uhr",
+        "frueh": "HO5/Zentrale 2:\n#Revision EM-HS\n Mech. Werkstatt Trafo 1 800kVA\n EM-HS (113224)",
+        "mittag": "",
         "nacht": ""
       },
       "1": {
-        "frueh": "MIW Besprechungsraum:\nSchulung \"Hochspannung in der Stahlindustrie\" für die PIH Stahlwerk\n08:30 - 17:00 Uhr\n(Raß/Dörr)",
+        "frueh": "Stillstand SA3:\n-Kontrolle KBAV Saugzug\n\nZKS:\n#Revision EM-HS\n Trafo 3 12,5MVA\n EM-HS (113222)\n **Pausenzeiten SBA nutzen!**\n Anmeldung Gerüstbau im  \n Container schriftlich\n\nZKS: Teerfilterraum\nBeginn Montage Klimaanlage\nFa. Pfeiffer",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "2": {
-        "frueh": "Zentrale 1 :\nSicherheitsviertelstunde E+F\n10:00-12:00 Uhr",
+        "frueh": "ZKS/FVS Zentralstation: 9:00Uhr\n#Revision EM-HS u.\n Rückbau IS-Begrenzer\n RK ZKS-Zentralstation\n EM-HS (113406)\n---verschoben durch FVS---\n\nZKS:\n#Revision EM-HS\n Trafo 2 12,5MVA\n EM-HS (113221)\n **Pausenzeiten SBA nutzen!**\n Anmeldung Gerüstbau im  \n Container schriftlich",
         "mittag": "",
         "nacht": ""
       },
       "3": {
-        "frueh": "Zentrale 1 :\nSicherheitsviertelstunde A+F\n10:00-12:00 Uhr",
+        "frueh": "HO5/Zentrale 2:\n#Revision EM-HS\n Mech. Werkstatt Trafo 2 800kVA\n EM-HS (113226)\n\n-Beleuchtung/Spannungsversorgung\nToilettencontainer Z1",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n-Beleuchtung/Spannungsversorgung\nToilettencontainer Z1",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1/Zentrale 2:\nKontrolle Druckluftnetz",
+        "mittag": "Kontrolle Außenanlagen\n\n-Beleuchtung/Spannungsversorgung\nToilettencontainer Z1",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Zentrale 1/Zentrale 2:\nKontrolle Druckluftnetz",
+        "mittag": "-Beleuchtung/Spannungsversorgung\nToilettencontainer Z1",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nRodungs/Baggerarbeiten im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!"
+    },
+    "51": {
+      "0": {
+        "frueh": "GWW2:\n#Außerbetriebnahme\nTrafo III 12,5MVA\n\nVW Caddy DH-182\nAbholung, Öl-Service Inspektion\nBestellung E68/99008506\n\nMotorenhalle/GWW1:\n-Gerüstaufbau 5kV Anlage\n(Arbeiten Beleuchtung)\n\nZentrale 1:\n-Aufräumarbeiten, \n Instandsetzung Beleuchtung",
+        "mittag": "",
+        "nacht": "-Kabelzug Spannungsversorgung\nToilettencontainer Z1"
+      },
+      "1": {
+        "frueh": "GWW2:\n#Inbetriebnahme\nTrafo III 12,5MVA\n\nMB2/E. Haus Ost:\n#Räumer Übergabefeld B (112712)\nRevision EM-HS\n\nBetriebsversammlung \n12:00Uhr Lokschuppen\n\nCC6 Trafo 4:\nSchleifarbeiten Bodendecke \nunter den Türöffnungen\n(Aufsicht EM-HS)\n\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "-Kabelzug Spannungsversorgung\nToilettencontainer Z1\n\nZentrale 1:\nParkplatz unter Kohleband\nabsperren.\nReparatur Band C3"
+      },
+      "2": {
+        "frueh": "KMA1:\nMühlenventilator 2 wieder anschließen\n(Freischaltschein)\n\nGebläsehaus HO:\n#Probeläufe T3 EM-MD \nKohlen auflegen\n\nVW Caddy DH-182 \nzurück aus Inspektion\n08:00Uhr\n\nZKS:\n#Vormühle für PIH freischalten\n(115262)\nErmittlung Kabelquerschnitt Motoranschluss EM-HS\n",
+        "mittag": "Zentrale 1:\n\nWhiteboard Meisterbüro \nanbringen",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "SA2/3, PAN2:\n#HSR-Trafo 3 1600kVA (114911)\nRevision EM-HS\n\nFiltermatten Umrichter PAN2\nkontrollieren/wechseln\n\nPHHO:\n#Reinwasserpumpe 4\nArbeiten EM-MD (115352)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSpannungsversorgung\nToilettencontainer Z1 herstellen und Heizungen/Durchlauferhitzer\nin Betrieb nehmen!",
+        "mittag": "Spannungsversorgung\nToilettencontainer Z1 herstellen\n",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Prüfung mobiler Betriebsmittel Toilettencontainer Z1\nMontage Spiegel, Handtuchhalter....",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Beleuchtung GWW1 installieren\n(DH-Safe!)\n\nZKS:\nTeerfilter freischalten (115505)\nZusatzlüfter und Fixierbleche für PIH bereitstellen. Teerfilter 1 wird am Montag begangen.\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nRodungs/Baggerarbeiten im Bereich MB2 E.Haus Ost/West, bitte regelmäßig kontrollieren!!\nMittelwerk: Baggerarbeiten/Suchgräben im Bereich 5kV RK1 MIW-GWW2 und 35kV RK1 MIW-STW, bitte regelmäßig kontrollieren!!"
+    },
+    "52": {
+      "0": {
+        "frueh": "Beleuchtung GWW1 installieren\n(DH-Safe!)\n\nZKS:\nTeerfilter 1 Kontrolle durch PIH\n(115505)\nRevision EM-HS (115524)\n\nInbetriebnahme neuer \nToilettencontainer Z1 😊",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Raumentstaubung SA3:\nKontrolle Spannungsanzeige Aggr.2\n\nZKS:\nTeerfilter 1 Spannungsprobe\n(115505)\n\n",
+        "mittag": "Außerbetriebnahme HO5, ca. 18:00Uhr\n\nZKS:\nTeerfilter 1 Ausbau/Wechsel Isolator 2\nKontrolle Isolator 1, 3, 4\nEM-HS und PIH (115632)\n\n",
+        "nacht": "Stillstand HO5:\nStillstand SA3 geplant:"
+      },
+      "2": {
+        "frueh": "Stillstand HO5 bis 26.12. NS\nStillstand SA3 geplant bis 26.12.NS\n\nRaumentstaubung SA3:\nKontrolle Spannungsanzeige Aggr.2\n\nZKS:\nTeerfilter 1 Ausbau/Wechsel Isolator 2\nKontrolle Isolator 1, 3, 4\nEM-HS und PIH (115632)\n",
+        "mittag": "Stillstand STW bis 25.12. FS\nStillstand GWW2 bis 27.12. FS\n\nZKS:\nKontrolle Isolator 1, 3, 4\nEM-HS und PIH (115632)\n\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Inbetriebnahme STW:\nStillstand HO5:\nStillstand SA3:\nStillstand GWW2:\n\nZKS:\nKontrolle Isolator 1-4\nEM-HS und PIH (115632)\n\n\n",
+        "mittag": "Raumentstaubung SA3:\nKontrolle Spannungsanzeige Aggr.2",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Stillstand SA3:\nStillstand GWW2:\n\nInbetriebnahme HO5, ca. 13:00Uhr\n\nZKS:\nKontrolle/Wechsel Isolator 1-4\nEM-HS und PIH (115632)\n",
+        "mittag": "ZKS:\nKontrolle/Wechsel Isolator 1-4\nEM-HS und PIH (115632)",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Inbetriebnahme GWW2:\n\nZKS:\nKontrolle/Wechsel Isolator 1-4\nEM-HS und PIH (115632)\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "**Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!**"
+    }
+  },
+  "2026": {
+    "1": {
+      "0": {
+        "frueh": "MB2/E. Haus Ost:\n#Räumer Übergabefeld A (112711)\n\nGKW/E8:\n#E8 für EM-MD vorübergehend \n freischalten (115702)\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS, Teerfilter:\nReserveisolatoren von Filter 1 abtransportieren, Kraneinsatz\nca. 12:00Uhr\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand HO4 bis 01.01. MS\n\nStillstand SA3 bis 01.01.MS\n(Kontrolle Anlasser Saugzug)\n\nStillstand GWW2 bis 02.01. FS",
+        "mittag": "Stillstand STW bis 01.01.FS",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Inbetriebnahme STW:\n\nInbetriebnahme HO4:",
+        "mittag": "Stillstand HO5:\n\nInbetriebnahme SA3:",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Inbetriebnahme GWW2:\n\nStillstand SA2:\nKontrolle Filter Abgasentstaubung A26\nKlopfisolator Richtung STW\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "**Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!**"
+    },
+    "2": {
+      "0": {
+        "frueh": "Zentrale 2: ca. 8:00Uhr\n#Apparatebau Trafo 4 2000kVA\n(Freischaltschein,\nAnsprechpartner H. Naschke-Heck, \nH. Ouinten KW:6204)\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n(Material bereitstellen,steht im Keller 35kV Anlage 2 MIW)\n-Schalter Nr:\n31165925 (Reserve)\n31325704 (Reserve)\n30945910 (Reserve, defekt)\n30945911 (Rk Sch.HO-HO4)\n30945909 (HD1)\n30945905 (HD2)\n30945898 (Pumpe 2)\n30945908 (Pumpe 2)\n30945899 (Pumpe 3)\n31046042 (Pumpe 4)\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Zentrale 2: ca.8:00Uhr\n#Apparatebau Trafo 5 2000kVA\n(Freischaltschein,\nAnsprechpartner H. Naschke-Heck,\nH. Quinten KW:6204)\n-In der Trafobox eine Zusatzheizung aufstellen\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens \n Anmeldung mit Schaltermonteur \n neue Warte HO durchführen, 5kV  \n Anlage HO4 aufsperren.",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Stillstand HO5 \nab ca. 1:00Uhr\n\nStillstand SA3\nab ca. 1:00Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand HO5:\nStillstand STW:\nStillstand SA3:\nStillstand GWW2:\n\nSTW, 35m Bühne Notstrom:\n#Trafo 6 1600kVA \n(EM-HS 115376)\n#Trafo 9 1600kVA\n(EM-HS 115377)\n#Kran 5.0 Trafo 11 800kVA\n(EM-HS 115375)\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n ggf Schaltertausch \n(Trafo 1a/2b, RK1/RK2, LT SS1/SS2)",
+        "mittag": "Inbetriebnahme SA3\nca. 16:00Uhr",
+        "nacht": "Inbetriebnahme HO5\nca. 23:00Uhr"
+      },
+      "3": {
+        "frueh": "Zentrale 2:\n#Pressluftverdichter 02\nRevision Motor (AK) und Kohlenwechsel\n(115733)\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens ",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens ",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nSTW, Neuzustellung Konverter 1 vom 09.01.26 bis 20.01.26."
+    },
+    "3": {
+      "0": {
+        "frueh": "WAB: Sinterwasserp.5\n-EM-HS, freimachen 5kV-Motor\n SIG Ausbau 5kV-Motor u.  \n Transport nach ELW\n (116122  EM-HS , 116015 SIG)\n\n\nFahrzeugwerkstatt:\n-Fahrzeug DH 322 zur Reparatur,\n TÜV und UVV abgeben!\n\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n (Material kontrollieren ggf.\n Öl entsorgen, neues Öl  \n bereitstellen) \n\n ",
+        "mittag": "ZKS:\nE-Teerfilter 1\nAußerbetriebnahme Heizungen,\nHeizungen abklemmen,beschriften wenn nötig!\nIsolatorenkammern werden komplett erneuert",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Beleuchtung Trafo 11 16ookVA\n EM-HS (116102)\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens \n (Material kontrollieren ggf.\n Öl entsorgen, neues Öl  \n bereitstellen) ",
+        "mittag": "ZKS:\nE-Teerfilter 1\nAußerbetriebnahme Heizungen,\nHeizungen abklemmen,beschriften wenn nötig!\nIsolatorenkammern werden komplett erneuert\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "<span style='color:red'>Abgesagt: \nSchulung Schaltberechtigung B+F\n08:00-12:00Uhr Mittelwerk Theorie</span>\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n(Material kontrollieren ggf.\n Öl entsorgen, neues Öl  \n bereitstellen)  ",
+        "mittag": "ZKS:\nE-Teerfilter 1\nAußerbetriebnahme Heizungen,\nHeizungen abklemmen,beschriften wenn nötig!\nIsolatorenkammern werden komplett erneuert",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Schulung Schaltberechtigung B+F\n08:00-12:00Uhr Mittelwerk Praxis\nabgesagt!!! neuer Termin wird mitgeteilt!!!\n\nZentrale 2:\n-Revision EM-HS\n Druckluftkompressoren 1+2\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n(Material kontrollieren ggf.\n Öl entsorgen, neues Öl  \n bereitstellen)  ",
+        "mittag": "ZKS:\nE-Teerfilter 1\nAußerbetriebnahme Heizungen,\nHeizungen abklemmen,beschriften wenn nötig!\nIsolatorenkammern werden komplett erneuert",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Stillstand HO4:\nca. 8-12 Uhr\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nSchalthaus HO4:\n-Schalterrevision Fa. Siemens\n(Material kontrollieren ggf.\n Öl entsorgen, neues Öl  \n bereitstellen)  \n\nMIW 110kV/35kV:\nWechselweise Freischalten DH Nord & DH Süd für Schutzprüfungen durch VSE",
+        "mittag": "ZKS:\nE-Teerfilter 1 Isolatorenheizungen & Abzweigdosen von Stutzen demontieren",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nSTW, Neuzustellung Konverter 1 vom 09.01.26 bis 20.01.26.\nSTW, Stillstand CC5 vom 11.01. bis 16.01.26"
+    },
+    "4": {
+      "0": {
+        "frueh": "Stahlwerk\n-Revision E-Filter 1 \n Heizungen, Isolatoren und\n Durchführungen\n EM-HS (115756)\n\nAnarbeitung\n-Montage Träger 35kV-Anlage\nAnsprechpartner Hr. Zimmer  SSG (5329)\nDH-Safe: 116786\n1MA EM-HS zur Aufsicht",
+        "mittag": "Restarbeiten Frühschicht",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Beleuchtung Trafo 10 1600kVA\n EM-HS (116103)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Zentrale 2: ca.7:45Uhr\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS (116105)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Zentrale 2:\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS (116104)\n\nZKS:\n-Vor und Nachmühle\n Kabelzug Fa. Graber\n Nachmühle DH Safe (117045)\n Vormühle  DH Safe (117046)\n ",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nZentrale 1: \n-Entsorgung E-Schrott, Kabel  \n Leuchtstoffröhren, Spraydosen,    \n Kupferrohre etc. (FA. M&S)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nSTW, Neuzustellung Konverter 1 vom 09.01.26 bis 20.01.26."
+    },
+    "5": {
+      "0": {
+        "frueh": "Zentrale 2:\nPressluftverdichter 02\nFreischaltung für EM-MD\nDH Safe EM-MD (117132)\nDH Safe Inger Soll (117192)\n\nDSD/Uferstr.\n-Fa Graber/Kabelmontage\n Trafo 1 630kVA\n Anmeldung im MIW\n Freischaltschein \n \nGWW1/Motorenhalle:\n-Fa. Graber\n Kernlochbohrungen für neue\n 5kV Anlage\n DH Safe Fa. Graber (117210)\n\nEAF Containerst/Trafo 4\n-Fa- Wisag\n Kabelprüfung\n Wisag DH SAfe (117358)\n\nWasseraufbereitung:\n#Revision EM-HS\n Kreislaufwasserpumpe 1\n EM-HS DH Safe (117075)\n\nWasseraufbereitung:\n#Revision EM-HS\n Kreislaufwasserpumpe 2\n EM-HS DH Safe (117076)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Zentrale 2:\nPressluftverdichter 02\nArbeiten Inger Soll Rand\nEM-HS nach Absprache \nReinigung Motor, Erregermaschine DH Safe (117307)\n\nGWW1/Motorenhalle:\n-Fa. Graber\n Kernlochbohrungen für neue\n 5kV Anlage\n DH Safe Fa. Graber (Kopie \n von 117210)\n\nWasseraufbereitung:\n#Revision EM-HS\n Kreislaufwasserpumpe 3\n EM-HS DH Safe (117077)\n\nWasseraufbereitung:\n#Revision EM-HS\n Kreislaufwasserpumpe 4\n EM-HS DH Safe (117078)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Zentrale 2:\nPressluftverdichter 02\nArbeiten Inger Soll Rand\n\nSchicht E\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\nSA3:\n-Kontrolle EM-HS mit Betrieb\n E-Filter Raumentstaubung  \n schlechte Staubwerte,\n Isolatoren, Klopfung, Erdschluß\n\nZentrale: 1 verschoben !!!\n#Revision EM-HS\n Haustrafo 800kVA\n EM-HS DH Safe (117155)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Zentrale 2:\nPressluftverdichter 02\nArbeiten Inger Soll Rand\n\n\nZKS/Magazin:\n-Ersatzmotor Vor/Nachmühle\n Transport nach ELW\n\nZentrale: 1 \n#Revision EM-HS\n Haustrafo 800kVA\n EM-HS DH Safe (117155)\n\nSchicht E\nLehrgang elekr. Maschinen\n(Patrick Ehl)",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Zentrale 2:\nPressluftverdichter 02\nArbeiten Inger Soll Rand\n(Inbetriebnahme eventuell)\n\n\nDSD/Uferstr.\n-Fa. Graber/Kabelmontage\n Trafo 1 630kVA\n Anmeldung im MIW\n Freischaltschein \n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Unterstation 1:\n#Revision EM-HS\n Brammenschleifanlage\n Trafo 1000kVA\n EM-HS (116205)\n\n\nFa. Backes/Trafo-Station I:\n#Freischaltung Trafostation II\n Trafo 2 und 3 für Fa. AST\n Revision Schaltanlage \n bei Fa. Backes durch Fa. AST\n Anmeldung MIW Freischaltschein\n ca. 8:00 Uhr",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Stillstand SA3\n\nUnterstation 1:\n#Revision EM-HS\n Presswerk 2250t Presse\n Trafo 1600kVA\n EM-HS (97317)",
+        "mittag": "SA3\n-Anlasser Saugzuggebläse\n IBC Behälter von ZKS nach SA3\n bringen\n\n\nAußerbetriebnahme HO5\nca.22:00 Uhr\nAußerbetriebnahme SA3\nca.22:00 Uhr\n",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "6": {
+      "0": {
+        "frueh": "Stillstand HO5:\nStillstand SA3:\n\nHO5/MIW:\n#Revision EM-HS\n RK1 MIW-HO5 \n EM-HS DH Safe (117231)\n\nHO5:\n#Revision EM-HS\n E-Filter Gießhallenentstaubung\n Aggregate + Trafos\n EM-HS DH Safe (117391)\n BSeR-Schein\n\n\nSA3:\n-Saugzuggebläse 5kV-Motor\n Motorrevision,\n nach Wartungsplan (15056756)\n Kurzschlußschütz Kontrolle\n der Kontakte\n Freischaltschein Möllerung\n\n-Saugzuggebläse/Anlasser\n Revision EM-HS\n Anlasser leer pumpen\n Austausch der Elektroden\n Freischaltschein Möllerung\n\n",
+        "mittag": "Restarbeiten Frühschicht",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Stillstand HO5:\nStillstand STW:\nStillstand SA3:\n\nHO5/MIW:\n#Revision EM-HS\n RK2 MIW-HO5\n EM-HS DH Safe (117232)\n\nHO5 E.H.5.2:\n#Revision EM-HS\n Trafo 10 1600kVA\n EM-HS DH-Safe\n (Freischaltschein)\n\nHO5:\n#Revision EM-HS\n E-Filter Gießhallenentstaubung\n Aggregate + Trafos\n EM-HS DH Safe (117391)\n BSeR-Schein\n\nSA3:\n-Saugzuggebläse 5kV-Motor\n Motorrevision \n nach Wartungsplan (15056756)\n Freischaltschein Möllerung\n\n-Saugzuggebläse/Anlasser\n Revision EM-HS\n Austausch der Elektroden\n Freischaltschein Möllerung\n\n Elektroden zum Sandstrahlen\n bringen (Halle A49)\n Saarstahlbau H. Haas\n 8356 oder auf der 0163/5406071 \n\n\n\n\n",
+        "mittag": "Restarbeiten Frühschicht\n\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand HO5:\nStillstand SA3:\n\n\nSA3:\n#Revision EM-HS\n Trafo 4 1600kVA\n Freischaltschein PIH-HO\n\n\nSA3\n-Revision EM-HS\n E-Filter Abgasentstaubung\n Isolatoren-Kontrolle/Reinigung\n Freischaltschein Möllerung\n + BSeR-Schein\n\nSA3:\n-Saugzuggebläse 5kV-Motor\n Motorrevision \n nach Wartungsplan (15056756)\n Freischaltschein Möllerung\n\n-Saugzuggebläse/Anlasser\n Revision EM-HS\n Austausch der Elektroden\n Freischaltschein Möllerung\n\n Elektroden zum Sandstrahlen\n bringen/abholen/einbauen\n \n \n\n\n\n ",
+        "mittag": "Restarbeiten Frühschicht\n\n\n\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand HO5:\nStillstand SA3:\n\n\nSA3:\n-Revision EM-HS\n E-Filter Raumentstaubung\n Aggregat 1+2\n Freischaltschein Möllerung\n + BSeR-Schein\n\nRestarbeiten SA3\n \n\nHO5:\n#Revision EM-HS\n Entspannungsturbine HO5,\n Wartungsplan (14956377)\n EM-HS DH Safe (117461)\n\n\n\n",
+        "mittag": "Restarbeiten Frühschicht\n\nSA3:\n-EM-HS Sichtkontrolle nach \n Arbeitskarte\n Kühlgebläse 1+2",
+        "nacht": "SA3:\n-Revision EM-HS\n Raumentstaubung \n Aggregat 1+2\n Freischaltschein Möllerung"
+      },
+      "4": {
+        "frueh": "Stillstand HO5:\nStillstand SA3:\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n\nSA3: Restarbeiten\n E-Filter\n Saugzuggebläse/Anlasser\n\nHO5: Restarbeiten\n#Revision EM-HS\n Entspannungsturbine HO5\n Wartungsplan (14956377)\n EM-HS DH Safe (117461)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Stillstand SA3\n\nInbetriebnahme HO5\nca.6:45 Uhr",
+        "mittag": "Inbetriebnahme SA3\nca.17:00 Uhr\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nStillstand HO5 von 02.02.25 bis 05.02.25"
+    },
+    "7": {
+      "0": {
+        "frueh": "Schicht A\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\nStahlwerk\n-Revision E-Filter 2\n Heizungen, Isolatoren und\n Durchführungen\n EM-HS (117855)\n\nGWW2/WAB:\n-ca. 8:30Uhr Kernbohrungen\n 1MA zur Einweisung (& Aufsicht falls notwendig)\n\nSchulung Schaltberechtigung E+F\n08:00-12:00Uhr Mittelwerk Theorie",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Schicht A\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\n\nSHHO:\n-Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein ",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "<span style='color:red'>Abgesagt:</span>\nSchulung Schaltberechtigung A+F\n08:00-12:00Uhr Mittelwerk Theorie\n\nSHHO:\n-Revision EM-HS\n Trafo 4 1600kVA\n EM-HS Freischaltschein ",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "SA2/Erzbrechanl.:\n-Revision EM-HS\n Erzbrecher B4a u. B4b\n EM-HS DH Safe (118542)\n\nGWW1/Motorenhalle:\n-EM-HS\n Kabelzug Potentialausgleich\n EM-HS DH Safe (118512)\n\nZKS:\n-Messungen Kontrolle \n der 24V/110V Batterien\n\nDSD/Uferstrasse:\n-Erstinbetriebnahme Trafo 1 \n nach Neuverlegung 400V Kabel",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "8": {
+      "0": {
+        "frueh": "Zentrale 1:\n-Revision EM-HS\n Druckluftkompressor Z1\n EM-HS \n\n-Revision EM-HS\n Entwässerungspumpe \n Z1 Kabelkeller\n\n-Revision EM-HS\n Entwässerungspumpe\n Z1 Kabelkanal",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Schulung Schaltberechtigung D+F\n08:00-12:00Uhr Mittelwerk Theorie\n\nZentrale 1/ Gebläsehaus:\n-Revision EM-HS  verschoben!!!\n Gebläse E7 nach Arbeitskarten\n EM-HS DH Safe (118729)\n\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Zentrale 1/ Gebläsehaus:\n-Revision EM-HS\n Gebläse E7 nach Arbeitskarten\n EM-HS DH Safe (118729)",
+        "mittag": "",
+        "nacht": "ZKS:\n-Inbetriebnahme E-Gassauger\n durch Betrieb,\n Reparatur am T-Sauger"
+      },
+      "3": {
+        "frueh": "Stillstand HO4\nStillstand SA\n\nZKS:\n-Reparatur an T-Sauger\n dadurch E-Sauger in Betrieb\n\nZKS:\n-EM-HS Freischaltung,Erdung\n Vor und Nachmühle für\n Fa. Graber\n DH Safe Vormühle  (118832)\n DH Safe Nachmühle (118834)\n\nSA2:\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein\n \n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS Freischaltschein\n\n\n-Revision EM-HS\n E-Filter Abgas A25/A26\n Isolatoren-Kontrolle,  \n Aggregate 1-4,Reinigung\n Freischaltschein Möllerung\n\n",
         "mittag": "",
         "nacht": ""
       },
@@ -906,7 +1478,1451 @@
         "nacht": ""
       },
       "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "9": {
+      "0": {
+        "frueh": "ZKS:\n-E-Filter 1, geplante Arbeiten  \n Fa. Leffer (Austausch, \n Isolatoren-Einhausung)\n EM-HS Abhängen System,  \n Demontage der Isolatoren\n\n\nZKS:\n-Fa. Graber/ Vormühle\n Neues Kabel, Montage der \n Endverschlüsse (118910)\n-Fa. Graber/ Nachmühle\n Neues Kabel, Montage der \n Endverschlüsse (118911)\n\n-ZKS: 9:00Uhr\n-EM-HS Vormühle\n Neuen Motor (Gew.4,65t)\n aus ZKS-Magazin entnehmen \n und vor Ort bringen.\n (Kohlevorbereitung unten in der\n Halle abstellen)\n\nZentrale 1:\nBüro Reuter, Demontage der Deckenbeleuchtung, RS Schütz",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS:\n-EM-HS/ Vormühle\n Motor abklemmen und \n freimachen\n EM-HS DH Safe (118978)\n Fa.Graber\n Erneuerung Endverschlüsse Motor  \n und Anschluß Übergabekasten\n Fa. Graber DH Safe (118977)\n\nPHHO:\n-Reinwasserp.4\n Messung von Diagnostik\n Diagnostik DH Safe (119143)\n Anmeldung Dispatching/MIW",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Betriebsversammlung 12:00 Uhr\nLokschuppen Dillingen\n\nHO5:\n#PLV07 nach Anforderung für EM-MD freischalten (119212)\n\nFFM:\n#Revision EM-HS\n FFM SR Trafo 3\n EM-HS DH Safe (119158)\n\nPSA 400V Anlagen bereitstellen\nFrühschicht, RS Zimmer",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "FFM:\n#Revision EM-HS\n FFM Trafo 1\n EM-HS DH Safe (119160)\n#Revision EM-HS\n FFM Trafo 2\n EM-HS DH Safe (119161)\n\nELW\n-EM-HS\n LEWA Antrieb mit Ölverlust\n von KBAV Saugzug nach ELW\n transportieren.                    \n (nach Absprache)",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "ZKS: verschoben!!!\n-EM-HS/ Nachmühle\n Motor abklemmen und \n freimachen\n EM-HS DH Safe (119224)\n Fa.Graber\n Erneuerung Endverschlüsse Motor  \n und Anschluß Übergabekasten\n Fa. Graber DH Safe (119223)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Trafostation Backes\nAbschaltung durch VSE\nGrund:\nSchalterrevision bei VSE",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "10": {
+      "0": {
+        "frueh": "ZKS:\n-E-Filter 1, geplante Arbeiten  \n Fa. Leffer (Fertigstellung, \n Isolatoren-Einhausung)\n EM-HS Montage der Isolatoren,\n Ausrichtung System\nKran bestellt für 7:00-11:00Uhr für Transport Material auf Filterdach\nDH-Safe: 119089\n(Isolatorheizungen: 116810)\n\nZentrale 1:\n-Entwässerungspumpe Kabelkanal\n und ausstehende VDE Prüfungen \n durchführen.\n\n\n\n",
+        "mittag": "ZKS:\n-E-Filter 1, geplante Arbeiten  \n Fa. Leffer (Fertigstellung, \n Isolatoren-Einhausung)\n EM-HS Montage der Isolatoren,\n Ausrichtung System",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "ZKS:\n-E-Filter 1, geplante Arbeiten  \n Fa. Leffer (Fertigstellung, \n Isolatoren-Einhausung)\n EM-HS Montage der Isolatoren,\n Ausrichtung System\n\nGebläsehaus /Zentrale 1:\n-Außerbetriebnahme T3\n EM-HS Kohlenkontrolle + Wechsel\n EM-HS DH Safe (119620)\n Fa. für EM-MD Auswuchtarbeiten\n",
+        "mittag": "ZKS:\n-E-Filter 1, geplante Arbeiten  \n Fa. Leffer (Fertigstellung, \n Isolatoren-Einhausung)\n EM-HS Montage der Isolatoren,\n Ausrichtung System\n\nGebläsehaus /Zentrale 1:\n-T3 Restarbeiten\n EM-HS Kohlenkontrolle + Wechsel\n Fa. für EM-MD Auswuchtarbeiten",
+        "nacht": "Außerbetriebnahme HO4 ca.03:0Uhr\nAußerbetriebnahme SA3, ca.02:00Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand HO4\nStillstand SA3\nStillstand STW\n\nSTW/35m:\n#Revision EM-HS\n Trafo 7 1600kVA\n EM-HS DH Safe (119379)\n#Revision EM-HS\n Trafo 8 1600kVA\n EM-HS DH Safe (119375)\n\nHO4:\nSchaltertausch:\n#Längstrennung SS1\n#Trafo 1a 1600kVA\n#Trafo 2b 1600kVA\n#Granulation Trafo 4 1600kVA\n\nSchaltertausch und Revision:\n#Entstaubung Trafo 6 1600kVA (Freischaltschein)\n\nSA3 Raumentstaubung:\n-EM-HS\n Aggregat 2 Ölprobe ziehen\n\nGWW1:\n-Fa. Arend\n Erneuerung Front Motorenhalle\n 5kV Anlage/Ausbau der\n Glasscheiben mit Rahmen zur \n Halle\n DH Safe (119622/119623)",
+        "mittag": "Inbetriebnahme HO4 ca.16:0Uhr\nInbetriebnahme SA3, ca.17:00Uhr",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "GWW1:\n-Fa. Arend verschoben!!!\n Erneuerung Front Motorenhalle\n 5kV Anlage/Ausbau der\n Glasscheiben mit Rahmen zur \n Halle\n Fa. Arend DH Safe \n (119622/119623)\n\n\nGWW1/Motorenhalle:\n-Revision EM-HS\n Druckluftkompressor 1+2\n EM-HS DH Safe (119625)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
         "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "ZKS E-Filter 1: Nach Abschluss der Montage- & Installationsarbeiten zusammen mit ZKS Spannungsprobe (mit Schutzgittern) durchführen, bevor Isolierarbeiten beginnen"
+    },
+    "11": {
+      "0": {
+        "frueh": "Prüfungen Leiter und Tritte\nPrüfungen ortsveränderl. elektr. Geräte nach DGUV\n\n\nGWW1:\n-Fa. Arend \n Erneuerung Front Motorenhalle\n 5kV Anlage/Ausbau der\n Glasscheiben mit Rahmen zur \n Halle\n Anlieferung Material ",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "U1/Holzhof:\n#Revision EM-HS\n Holzhof Trafo 3 1600kVA\n EM-HS DH Safe (119440)\n\nVergüterei:\n-Einbringen von Bodenabdecken Bereich  neue 5kV Anlage\n-Umräumarbeiten in der Halle (120098)\n\n\nPrüfungen Leiter und Tritte\nPrüfungen ortsveränderl. elektr. Geräte nach DGUV",
+        "mittag": "",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand SA2\n\nSIA2:\n#Revision EM-HS\n A23 Heißluftventilator\n EM-HS (Freischaltschein-\n Möllerung)\n\nSIA2/Raumentstaubung:\n#Revision EM-HS\n Aggregat 1-3\n Isolatorenkontrolle und\n Reinigung (BSeR-Schein)\n EM-HS (Freischaltschein-\n Möllerung)\n\n\nGWW1/Motorenhalle:\n-Fa. Käfer\n Aufbau Schwerlastgerüst zum\n einbringen der neuen 5kV-\n Anlage\n Fa Käfer DH Safe 120153",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand SA2\n\nSchicht B\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\nZentrale 1:\n-Entwässerungspumpe Kabelkanal\n noch ausstehende VDE Prüfungen \n durchführen.\n\nMessungen nach DIN/VDE\nBereich Schicht E\n\nHO5/E-Haus 5.2/Zentrale 2:\n#Revision EM-HS\n RK3 Zentrale 2 -HO5\n EM-HS DH Safe (119400)\n\nGWW1:\n-Fa. Arend \n Erneuerung Front Motorenhalle\n 5kV Anlage/Ausbau der\n Glasscheiben mit Rahmen zur \n Halle\n Fa. Arend DH Safe  \n (119622/119623)\n\n\n\n\n\n",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Schicht B\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nGWW1/Motorenhalle:\n-Fa. Carlo Seger\n 5kV -Anlage Boden ausgleichen,\n verspachteln, betonieren.\n C. Seger DH Safe (120238)",
+        "mittag": "GWW1/Motorenhalle:\nKabelzugarbeiten 230V\n(120329)",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "GWW1/Motorenhalle:\nKabelzugarbeiten 110V\n(120384)",
+        "mittag": "GWW1/Motorenhalle:\nKabelzugarbeiten 230V\n(120xxx)",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\nZKS:\n#Gasverdichter 1 für Reparatur Betrieb freischalten (120437)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nAmprion, Warte 220kV Anlage, Arbeiten Fa. Kalthoff ab 12.03. "
+    },
+    "12": {
+      "0": {
+        "frueh": "HO5/E-Haus 5.2/Zentrale 2:\n#Revision EM-HS\n RK2 Zentrale 2 -HO5\n EM-HS DH Safe (119402)\n RK1 Zentrale 2 -HO5\n EM-HS DH Safe (119404)\n\nZKS, Teerfilter 1:\nggf. Abdichten der Isolatorenhauben,\nHilfeleistung EM-HS\n\nGWW1/Motorenhalle:\n-Fa. Arend \n 5kV Anlage/Ausbau der\n Glasscheiben mit Rahmen zur \n Halle\n Fa. Arend DH Safe  \n (120414/120416)\n\nGWW1/Motorenhalle:\n-Fa. Carlo Seger\n 5kV -Anlage Boden ausgleichen,\n verspachteln, betonieren.\n C. Seger DH Safe (120412)\n\nBaustelle EAF Trafo 4 1600kVA\nVorbereitungen Inbetriebnahme\nRS Zimmer\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "U1:\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS DH Safe (119441)\n Trafo 2 1600kVA\n EM-HS DH Safe (119442)\n\n-Erzbrechanlage:\n Erneuerung Eingangstür SIG\n (AVO: 8839391)\n\n\nGWW1/Motorenhalle:\n-Fa. Carlo Seger\n 5kV -Anlage Boden ausgleichen,\n verspachteln, betonieren.\n C. Seger DH Safe (120558)\n\nZKS:\nVormühle (120519) und Nachmühle (120520)\nnach Anforderung freischalten\n\nBaustelle EAF Trafo 4 1600kVA\nVorbereitungen Inbetriebnahme\n(Schäfer /Woll)\n",
+        "mittag": "Kontrolle Außenanlagen\n\nVergüterei:\nAufräumarbeiten 5kV Anlage",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand SA3:\nStillstand GWW2, 16h:\n \nSA3:\n-Revision EM-HS\n 5kV-Motor Raumentstaubung\n EM-HS (Freischaltschein \n Möllerung)\n\n\n-Erzbrechanlage:\n Erneuerung Eingangstür SIG\n (AVO: 8839391)\n----Verschoben SIG------\n\n-WAB/GWW2\n Kabelzugarbeiten Keller\n\nSA2:\nÜberprüfung Gasleckage\nFeld 19 Trafo 2 1600kVA, Fa. ABB\n(Schütz/Dörr)\n\n-Mittwoch, 18.03.2026\nAnkündigung im Rahmen der  \nKommunikationsübung, \nKaskadenabschaltung\n\nBaustelle EAF Trafo 4 1600kVA\nVorbereitungen Inbetriebnahme\n(Schäfer/Woll)\n\n",
+        "mittag": "SA3:\n-Revision EM-HS\n Motor Reingasgebläse PAN 2\n EM-HS (Freischaltschein \n Möllerung)",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand SA3:\n\n\nSA3:\n-Revision EM-HS\n Motor Reingasgebläse PAN 2\n EM-HS (Freischaltschein \n Möllerung)\n \nZentrale 1/Mittelwerk:\nUnterweisungen Dragusha, Özcan, Weingardt, Azubis\n\nBaustelle EAF Trafo 4 1600kVA\nVorbereitungen Inbetriebnahme\n(Woll)",
+        "mittag": "WAB/GWW2:\nSchließzylinder Eingangstür einbauen",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nMittelwerk:\nSchaltberechtigung in MS Anlagen Praxis\nSchicht D+F, 08:00-12:00 Uhr\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "13": {
+      "0": {
+        "frueh": "Mittelwerk/220kV Anlage:\nAußerbetriebnahme Alpha 1 durchgehend bis 27.03, ca.17:00 Uhr, Wartung Amprion\n\n#Baustelle EAF Trafo 4 1600kVA\n-geplante Inbetriebnahme\n\nMittelwerk:\nSchaltberechtigung in MS Anlagen Theorie\nSchicht A+F, 08:30-12:00 Uhr\n\nGWW1/Motorenhalle: ca. 8:00Uhr\n-Fa. Graber\n Abholung 5kV Trafo\n EM-HS 1x Kranfahrer\n\n-Erzbrechanlage:\n Erneuerung Eingangstür SIG\n (AVO: 8839391)\n\nBeauftragung Kranführer Schicht F+G\n09:00-11:30/Zimmer (verschoben)\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Mittelwerk/220kV Anlage:\nAußerbetriebnahme Alpha 1 durchgehend bis 27.03, ca.17:00 Uhr, Wartung Amprion\n\nMittelwerk:\nSchaltberechtigung in MS Anlagen Praxis\nSchicht A+F, 08:00-11:00 Uhr\n\nVergüterei/GWW1:\n-Reinigungsarbeiten",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Mittelwerk/220kV Anlage:\nAußerbetriebnahme Alpha 1 durchgehend bis 27.03, ca.17:00 Uhr, Wartung Amprion\n\n-Mittwoch, 25.03.2026 \n Durchführung der  \n Kommunikationsübung ohne reale\n Schalthandlung. Kaskadenübung\n\nSA2, Raumentstaubung:\nca. 08:00Uhr Begutachtung/Reparatur Trafo Aggr. 3 durch Fa. Hintz\n\nZKS:\n#Nachmühle für Betrieb nach Anforderung freischalten (120997/120998)\n\nHO5/Granulation:\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS Freischaltschein",
+        "mittag": "Mittelwerk:\n-Trafo 1 10MVA\ndefekten Trafolüfter überbrücken",
+        "nacht": "HO5 Ausserbetriebnahme \nca. 2:00Uhr\n\nHO5:\n-E-Filter Gießhallenentst.\n Freischalten E-Filter für\n Betrieb, Luken unten alle \n öffnen auch die Luken auf 0m.\n (Freischaltschein Warte)"
+      },
+      "3": {
+        "frueh": "Mittelwerk/220kV Anlage:\nAußerbetriebnahme Alpha 1 durchgehend bis 27.03, ca.17:00 Uhr, Wartung Amprion\n\nStillstand HO5, 10h:\nStillstand GWW2, 12h:\n\nHO5/E-Haus 5.2:\n#Revision EM-HS\n HD Brennluftgebläse 1\n EM-HS (Freischaltschein  \n Warte)\n#Revision EM-HS\n HD Brennluftgebläse 2\n EM-HS (Freischaltschein \n Warte)\n\n",
+        "mittag": "HO5 Inbetriebnahme ca. 16:00Uhr",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Mittelwerk/220kV Anlage:\nAußerbetriebnahme Alpha 1 durchgehend bis 27.03, ca.17:00 Uhr, Wartung Amprion\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nSHHO/Zelle 9\nKreislaufpumpe 2 HO3\nFehlersuche, lässt sich nicht \neinschalten\n\n\nMischbett 2, Stapler 2:\n-Ausrichten u. Begutachtung\n Kabeltrommel\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Stillstand CC6\n\nKontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nMittwoch, 25.03.2026 Durchführung der Kommunikationsübung OHNE reale Schalthandlung."
+    },
+    "14": {
+      "0": {
+        "frueh": "Stillstand CC6\n\nSTW/CC6:\n#Revision EM-HS\n Trafo 4 2500kVA\n EM-HS DH Safe 120102\n#Revision EM-HS\n Trafo 10 2500kVA\n EM-HS DH Safe 120101\n#Revision EM-HS\n Trafo 14 2500kVA \n EM-HS DH Safe 120103\n\nHO4:\nKreislaufwasserpumpe 3 Ofen\nKontrolle des Lagerschaden \ndurch Diagnostik",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Stillstand CC6\n\nSTW/CC6:\n#Revision EM-HS\n Trafo 5 2500kVA\n EM-HS DH Safe 120105\n#Revision EM-HS\n Trafo 6 2500kVA\n EM-HS DH Safe 120108\n\nSA2/Raumentstaubung:\n-Anlieferung Ersatztrafo\n für Aggregat 3.\n Demontage Altgerät und \n einbringen neuer Trafo durch\n Fa. Graber (Anmeld.Möllerung)\n LKW ist bestellt für 9:30Uhr\n Transport alter Trafo in\n Motorenhalle",
+        "mittag": "Kontrolle Außenanlagen\n",
+        "nacht": "Stillstand HO5 ab ca.23:00 Uhr\nStillstand SA3 ab ca. 2:00 Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand CC6\nStillstand HO5\nStillstand STW\nStillstand SA3\n\nSTW/CC6:\n#Revision EM-HS verschoben !!!\n Trafo 8 2500kVA\n EM-HS DH Safe 120096\n#Revision EM-HS verschoben !!!\n Trafo 9 2500kVA\n EM-HS DH Safe 120097\n\n#Revision EM-HS\n GM SR-Trafo 1 1600kVA\n EM-HS DH Safe 120112\n\nSTW/E-Haus 0.9:\n-Gebläse 1+2 freischalten für\n Betrieb\n PIH-STW DH Safe 121458\n\nGebläsehaus/T3 \n-EM-HS Kohlenwechsel, Kontrolle\n Reinigung\n EM-HS DH Safe 121486\n\nGKW/E8:\n-EM-HS Freischaltung für\n EM-MD, Kontrolle \n Ansaugfilter E8\n EM-MD DHSafe 121542\n\n\nBaustellencontainer Trafo 4:\n-ca. 9:30 Arbeiten von \n Fa. OMEXOM 400V-Seite \n Container aufsperren, kurze \n Unterweisung das Anlage unter\n Spannung steht.\n Keine Außerbetriebnahme Trafo\n notwendig!",
+        "mittag": "Inbetriebnahme SA3 ca.17:00 Uhr\nInbetriebnahme HO5 ca.18:00 Uhr",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand CC6\n\nSTW/CC6:\n#Revision EM-HS\n SR Trafo 13 1600kVA\n EM-HS DH Safe 120110\n#Revision EM-HS\n GM SR-Trafo 2 1600kVA\n EM-HS DH Safe 120111\n\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Außerbetriebnahme GWW2 bis 07.04.Frühschicht\n\nStillstand CC6",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Stillstand GWW2\nStillstand CC6\n\nZentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen\n\nInbetriebnahme STW:",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Stillstand GWW2\nStillstand CC6\n\nKontrolle Filtermatten und\nKohlen T3",
+        "mittag": "Stillstand HO4 ab ca. 20:00Uhr ",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "15": {
+      "0": {
+        "frueh": "Stillstand HO4:\nStillstand GWW2:\n\nStillstand CC6",
+        "mittag": "Inbetriebnahme HO4 ab \nca. 21:00Uhr",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Stillstand CC6\nInbetriebnahme GWW2:\n\nSTW/CC6:\n#Revision EM-HS\n Trafo 11 2500kVA\n EM-HS DH Safe 120099\n#Revision EM-HS\n Trafo 8 2500kVA\n EM-HS DH Safe 120096\n\nGWW1/Motorenhalle: ca. 7:30 Uhr\n-EM-HS Kranfahrer für Wisag\n Transport von 5 Kabeltrommeln\n und 2 Verteiler.\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand CC6\n\nSTW/CC6:\n#Revision EM-HS\n Trafo 12 2500kVA\n EM-HS DH Safe 120100\n#Revision EM-HS\n Trafo 9 2500kVA\n EM-HS DH Safe 120097\n\nGWW1/Motorenhalle:\n-Fa. Natus\n Einbringen des Grundrahmen\n Fa. Natus DH Safe (121929)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "ZKS:\n#Revision EM-HS\n Brückenkratzer \n EM-HS DH Safe (121948)\n verschoben durch Betrieb \n auf den 22.04.2026!!!\n\nZentrale 1/UWT:\n-Entsorgung Elektroschrott,\n Kabel, Elektronikteile,  \n Leuchtstofflampen, Spraydosen\n\nGWW1/Motorenhalle:\n-Fa. Natus\n Einbringen des Grundrahmen\n Fa. Natus DH Safe (122015)\n ",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nVergüterei: Anlieferung und Montage des Grundrahmen neue 5kV Anlage (Natus)\nStahlwerk, Neuzustellung Konverter 1 von 11.04. bis 27.04."
+    },
+    "16": {
+      "0": {
+        "frueh": "SHHO/KMA:\n#Revision EM-HS\n Trafo 8 1600kVA\n EM-HS (Freischaltschein)\n#Revision EM-HS\n Trafo 9 1600kVA\n EM-HS (Freischaltschein)\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Vorbereitung Aufbau 5kV Anlage\n Fa. Natus DH Safe (122110)\n Anmeldung MIW telefonisch",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Schicht C\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\nKMA:\n#Revision EM-HS\n Pressluftverdichter 08\n EM-HS DH Safe (121945)\n\n-Sichtkontrolle PV09 (AK)\n\nSHHO:\n-Sichtkontrolle HD Gebläse HO3 (AK)\n\nGWW1/Motorenhalle: \n ca. 8:00Uhr Ankunft 5kV Anlage,\n Torhaus 4 über LKW informieren\n Tel.:2554 Spedition Greif\n Kennzeichen:TR-GR-620\n LKW abholen u. nach GWW1  \n begleiten!\n-Fa. Natus\n Einbringen der neuen 5kV Anlage\n Fa. Natus DH Safe (122302)\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "GWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122303)\n Anmeldung MIW telefonisch\n\nKontrolle Ölsammelbehälter\n\nZentrale 1/ZKS:\nReserveisolatoren Teerfilter nach ZKS transportieren\n",
+        "mittag": "",
+        "nacht": "Außerbetriebnahme HO5, ca.04:00Uhr\nAußerbetriebnahme SA3, ca.01:00Uhr"
+      },
+      "3": {
+        "frueh": "Stillstand HO5:\nStillstand SA3:\n\nHO5:\n-E-Filter Gießhallenentstaubung\n EM-HS wechseln von Trenner\n Aggregat 2 , Kontrolle der \n Anschlußkabel am Trenner\n Anmeldung Warte\nDH Safe (122244)\n\nSA2/3 Abgasnachbeh.:\n#Revision EM-HS\n PAN 2 Trafo 3 1600kVA\n EM-HS Freischaltschein\n\nGWW1/Motorenhalle: erneute \n Anlieferung\n ca. 8:00Uhr Ankunft 5kV Anlage,\n Torhaus 4 über LKW informieren\n Tel.:2554 Spedition Greif\n Kennzeichen:TR-GR-620\n LKW abholen u. nach GWW1  \n begleiten!\n-Fa. Natus\n Einbringen der neuen 5kV Anlage\n Fa. Natus DH Safe (122425)\n",
+        "mittag": "Inbetriebnahme HO5, ca. 16:00Uhr\nInbetriebnahme SA3, ca. 17:00Uhr",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122496)\n Anmeldung MIW telefonisch\n\nGWW1/Motorenhalle: \nGerüstbau 2671 Außenfassade Druckentlastungskanal \n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": "Außerbetriebnahme ET-HO5 bis 23.04.26\n(Rissprüfungen)"
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nVergüterei, Fa. Natus, Einbringen der neuen 5kV Anlage ab 14.04.\nStahlwerk, Neuzustellung Konverter 1 von 11.04. bis 27.04."
+    },
+    "17": {
+      "0": {
+        "frueh": "Mittelwerk:\nSchaltberechtigung in MS Anlagen Theorie\nSchicht E+F, 08:00-12:00 Uhr\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122597)\n Anmeldung MIW telefonisch",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Mittelwerk:\nSchaltberechtigung in MS Anlagen Praxis\nSchicht E+F, 08:00-11:00 Uhr\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nZKS:\n#Vor- und Nachmühle nach Anforderung für ZKS freischalten (122525)\n\n110kV Anlage Mittelwerk:\nSondierungsbohrung für den Trafotausch durch VSE (Dörr/Raß)\n\n#Trafo DH Nord 30MVA \nvon 08:00-12:00 Uhr a.B.\n\n#Trafo DH Süd 30MVA \nvon 12:00 bis 16:00 Uhr a. B.\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122745)\n Anmeldung MIW telefonisch",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand GWW2, 16h:\nSA2 Stillstand\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nZKS:\n#Revision EM-HS\n Brückenkratzer \n EM-HS DH Safe (121948)\n---verschoben EM-HS----\n\nMittelwerk:\n-400V NSUV, Außerbetriebnahme Flügel VSE1 Phase L1 fehlt\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122780)\n Anmeldung MIW telefonisch",
+        "mittag": "Mittelwerk:\n-400V NSUV, Außerbetriebnahme Flügel VSE1 Phase L1 fehlt\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stahlwerk:\n-Revision E-Filter 1 \n Kontrolle Heizungen u. \n Isolatoren\n EM-HS DH Safe (122281)\n Revision Aggregat 1+2 und\n Steuerschrank 1+2\n EM-HS DH Safe (122807)\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nMittelwerk:\n-400V NSUV, Instandsetzung Flügel VSE1 und Inbetriebnahme\n\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122921)\n Anmeldung MIW telefonisch",
+        "mittag": "Inbetriebnahme ET HO5\n\nSchalthaus HO2:\n#Kreislaufpumpe 2 HO3\nWechsel FLG Siemens und Probelauf Motor ",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nMittelwerk:\n07:30Uhr, Umschaltung 400V Sollac\n\nMIW:\nFreiluftanlage, \nBeseitigung Wildwuchs\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (122952)\n Anmeldung MIW telefonisch",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\nMittelwerk:\nUmverlegung/Inbetriebnahme von 400V Abgang Werksarzt und Kantine",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nStahlwerk, Neuzustellung Konverter 1 von 12.04. bis 27.04.26\nGWW2: Wechsel Trafo III 12,5MVA, vom 20.04. bis 24.04.26---verschoben---\nHO5: Außerbetriebnahme ET-HO5 bis 23.04.26 (Rissprüfungen)"
+    },
+    "18": {
+      "0": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nZKS:\n#EM-HS/ Vormühle\n Motor abklemmen und \n freimachen\n EM-HS DH Safe (122828)\n Erneuerung Endverschlüsse Motor  \n und Anschluß Übergabekasten\n Fa. Graber DH Safe (122825)\n Ausrichtung durch SIG\n SIG DH Safe (122829)\n\nSA3/MB2, ca. 10:00Uhr\n-Außerbetriebnahme \n RK SA3-Mischbett 2 E-H. Ost und\n Inbetriebnahme RK SHHO-SFG-MB2 \n Feldleitgerät tauschen SA3\n (Zimmer/Schütz)\n\nZKS:\n#Revision EM-HS\n Kühlwasserpumpe 2\n EM-HS DH Safe (122821)\n\n110kV Anlage Mittelwerk:\n#Trafo DH Nord 30MVA\nvon 08:00-15.00Uhr\nAufbau provisorischer Kabeltisch Trafo 11 und 12 durch VSE\n(Dörr/Raß)\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (123012)\n Anmeldung MIW telefonisch",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nDSD Uferstraße:\n#Revision EM-HS\n Trafo 1 6300kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Trafo 2 6300kVA\n EM-HS Freischaltschein\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (123071)\n Anmeldung MIW telefonisch",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Außerbetriebnahme HO5, ca. 03:00Uhr\nAußerbetriebnahme STW, ca. 04:00uhr"
+      },
+      "2": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n----verschoben----\n\nStillstand HO5:\nStillstand STW:\nStillstand SA2 und SA3, bis Donnerstag, 30.04. Mittagschicht\n\nStahlwerk: \n#Revision EM-HS\n Gaswaschwasser Trafo 12 1600kVA\n EM-HS DH Safe (122836)\n\n#Revision EM-HS\n Gaswaschwasser Trafo 13 1600kVA\n EM-HS DH Safe (122838)\n\n#Revision EM-HS\n Strangguß 5 Trafo 5 1600kVA\n EM-HS DH Safe (123063)\n\nStahlwerk E-Haus 0.9:\n-Für Betrieb Seko-Gebläse 2\n freischalten.(Trenner auf Erde)\n DH Safe (123332)\n\nGWW1/Motorenhalle: \n-Fa. Natus\n Aufbau 5kV Anlage\n Fa. Natus DH Safe (123073)\n Anmeldung MIW telefonisch\n ",
+        "mittag": "SA2/PAN1:\n#SR-Trafo 1 3150kVA\n Kontrolle nach Thermographie\n Revision EM-HS\n\nInbetriebnahme STW, ca. 16:00Uhr\nInbetriebnahme HO5, ca. 16:00Uhr\n\nAußerbetriebnahme HO4, ca. 21:00Uhr",
+        "nacht": "SA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nKontrolle Kohlen PV02"
+      },
+      "3": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n----verschoben-----\n\nStillstand SA2 und SA3:\n\nSA3:\nAuswuchten von Saugzuggebläse\nAnwesenheit EM-HS\n\nZentrale 1:\nalte Pressluftleitungen GWW1\nzur Entsorgung Fa. Sipo im STW\nbringen (Kupfer)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nZKS:\n#Revision EM-HS\n Brückenkratzer \n EM-HS DH Safe (121948)",
+        "mittag": "Inbetriebnahme SA2 und SA3:",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Stillstand GWW2, 24h:\n\n\nGWW1/Vergüterei:\n5kV Anlage Natus\nVersorgung 230V~ (120329)\nKabel beidseitig anklemmen!!\nKeine Inbetriebnahme",
+        "mittag": "Inbetriebnahme HO4:",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\nGWW1/Vergüterei:\n5kV Anlage Natus\nKabelzug 110V= (123427)\nKabel beidseitig anklemmen!!\nKeine Inbetriebnahme",
+        "mittag": "Kontrolle Außenanlagen\n\n",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "geplante Inbetriebnahme GKW!\n\nKontrolle Filtermatten und\nKohlen T3\n\nGWW1/Vergüterei:\n5kV Anlage Natus\nKabelzug 110V= (xxxxxx)\nKabel beidseitig anklemmen!!\nKeine Inbetriebnahme",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nStillstand SA2 und SA3 vom 29.04. bis 30.04.26"
+    },
+    "19": {
+      "0": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\n**ZKS:**\n#Revision EM-HS\n SBA Maschine 3\n EM-HS DH Safe (123345)\n\n**SA3/PAN:**\nReinigung Raum Rückkühlanlage\n\n**Vergüterei/Motorenhalle:**\nFa. Natus Prüfungen/Messungen,\nInbetriebnahme Leittechnik neue 5kV Anlage, nur Anmeldung",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Zentrale 1:**\nAnlieferung Batterie 1 Zentrale 1\n(Fa. Triathlon), Scherer J.\nAVO:8843237\n\nThermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\n**ZKS: **\n#Revision EM-HS\n SBA Maschine 2\n EM-HS DH Safe (123344)\n\n**Vergüterei/Motorenhalle:**\nVerschließen Öffnung 5kV Anlage zur Motorenhalle Fa. Arend (123649)\n\n**Vergüterei/Motorenhalle:**\nFa. Natus Prüfungen/Messungen,\nInbetriebnahme Leittechnik neue 5kV Anlage, nur Anmeldung\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Zentrale 1:\nParkplatz Zentrale 1 (Tür Anlage 2 bis LKW Parkplatz) absperren."
+      },
+      "2": {
+        "frueh": "**Zentrale 1:**\nAustausch Batterie 1 Zentrale 1\n(Fa. Triathlon), Scherer J.\nAVO:8843237\n\n**Vergüterei/Motorenhalle:**\nFa. Natus Prüfungen/Messungen,\nInbetriebnahme Leittechnik neue 5kV Anlage, nur Anmeldung\n\nThermographie EM-HS Anlagen \n(Woll, AVO:8853398)\n\nStillstand GWW2, 12h:\n\n**ZKS:**\n#Revision EM-HS\n Querkupplung SS1/SS2\n EM-HS DH Safe (123618)\n#Revision EM-HS \n Querkupplung SS3/SS4\n EM-HS DH Safe (123619)\n\n\n**SA3/Mischbett II:**\n#Revision EM-HS\n RK SA3-MB2 EHO\n EM-HS DH Safe (123315)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Zentrale 1:**\nAustausch Batterie 1 Zentrale 1\n(Fa. Triathlon), Scherer J.\nAVO:8843237\n\n**ZKS:**\n#Revision EM-HS\n E-Gassauger\n EM-HS DH Safe (123683)\n\n\n**Vergüterei/Motorenhalle:**\nFa. Natus Prüfungen/Messungen,\nInbetriebnahme Leittechnik neue 5kV Anlage, nur Anmeldung\n\nSicherheitsviertelstunde/unterweisung\nSchicht F+G, ca. 07:30-10:00Uhr\n----verschoben----\n\n**Vergüterei:**\n13:00Uhr Einweisung neue 5kV Anlage durch Fa. Natus, ca. 45min",
+        "mittag": "**Vergüterei:**\n15:00Uhr Einweisung neue 5kV Anlage durch Fa. Natus, ca. 45min",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Thermographie EM-HS Anlagen \n(Schäfer, AVO:8853398)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**Vergüterei/Motorenhalle:**\nFa. Natus Prüfungen/Messungen,\nInbetriebnahme Leittechnik neue 5kV Anlage, nur Anmeldung",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!"
+    },
+    "20": {
+      "0": {
+        "frueh": "**ZKS:**\n#Revision EM-HS\n Stapler Kohlelager\n EM-HS DH Safe (123214)\n\n**Baufeld EAF:** ca. 8:00 Uhr\n-Baustelle EAF Trafo 4\n Restarbeiten Fa. Omexom\n (Trafo bleibt in Betrieb)\n\n**Vergüterei:**\n13:00Uhr Einweisung neue 5kV Anlage durch Fa. Natus, ca. 45min",
+        "mittag": "**Vergüterei:**\n15:00Uhr Einweisung neue 5kV Anlage durch Fa. Natus, ca. 45min",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**PHHO:**\n#Revision EM-HS\n Trafo 2 12,5MVA + Kühler \n ausblasen\n EM-HS DH Safe (123728)\n Gerüstbau DH Safe (123729)\n\n**Vergüterei:**\n13:00Uhr Einweisung neue 5kV Anlage durch Fa. Natus, ca. 45min",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**PHHO:**\n#Revision EM-HS\n Trafo 1 12,5MVA + Kühler \n ausblasen\n EM-HS DH Safe (123726)\n Gerüstbau DH Safe (123727)\n\nSA2 : ca. 8:00Uhr\n-Trafo 2 1600kVA\n SSG/M4  Bau eines Bocks zum \n herausnehmen des Trafos.\n Fa. Steil Kran/Transport ?\n\n\nStillstand GWW2, 4h:",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**Halde/E-Haus 1:**\n#Revision EM-HS\n Zul. Sek. Entstaubung-Halde\n EM-HS DH Safe (123824)\n#Revision EM-HS\n SR Trafo 1 1600kVA\n EM-HS/PIH Freischaltschein\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS/PIH Freischaltschein ",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nStahlwerk, Neuzustellung Konverter 2 von 15.05. bis 31.05.26\n"
+    },
+    "21": {
+      "0": {
+        "frueh": "**PHHO/Zentrale 1:**\n#Revision EM-HS\n RK1 PHHO-Zentrale 1\n EM-HS DH Safe (123773)\n#Revision EM-HS\n RK4 PHHO-Zentrale 1\n EM-HS DH Safe (123774)\n\n**WAB:**\n-EM-HS 5kV Motor anklemmen,  \n Drehrichtungskontrolle\n Sinterwasserpumpe 5\n EM-HS DH Safe (124448)\n\n**SA3/E-Haus Ost/West: 10:00Uhr**\n#EM-HS Außerbetriebnahme von\n RK SHHO-SFG_MB2 EH-West\n#EM-HS Inbetriebnahme  von\n RK SA3-MB2 EHO\n(Schütz/Zimmer)\n\n**SA2:**  nach Absprache\n-Kontrolle Trafo 2 1600kVA\n Inbetriebnahme 400V-Seite\n (Schütz /Zimmer)\n\n**MIW/GWW2:**\n-Neubau / Fa. Wisag Umverlegung  \n und schneiden von 5kV\n RK1 MIW-GWW2\n hinter 220kV Anlage\n\n Wisag DH Safe Schein (124217)\nMotorenhalle/GWW1:\nFremdfirmeneinsatz Office Torsysteme 9-10 Uhr\nUVV Prüfung Rolltor",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "Stillstand Mühle 2\n\n**KMA1: **\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein\n Instandsetzung nach Thermographie!\n\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS Freischaltschein\n\n**SA2:**\nAnschlussarbeiten Feld 21 \nIF-Entladestation Trafo 1\nFa. Graber (123719)\n\nVergüterei GWW1:\nAufräum- und Reinigungsarbeiten\n",
+        "mittag": "Kontrolle Außenanlagen\n\n",
+        "nacht": "Zentrale 1:\nParkplatz Zentrale 1 (Tür Anlage 2 bis LKW Parkplatz) absperren."
+      },
+      "2": {
+        "frueh": "Stillstand Mühle 2\n\n**KMA1: **\n#Revision EM-HS\n RK1 SHHO-KMA\n EM-HS DH Safe (123621)\n\n#Revision EM-HS\n RK2 SHHO-KMA\n EM-HS DH Safe (123622)\n\n**Zentrale 1:**\nAustausch Batterie 1\n(Fa. Triathlon), Scherer J.\nAVO:8843237\n\n**KMA1:**\n#PV08 nach Anforderung für EM-MD freischalten (124632)\n\n**SA2:**\nAnschlussarbeiten Feld 21 \nIF-Entladestation Trafo 1\nFa. Graber (123719)\n\nZentrale 1:\nTransport Schreibtische nach RS",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand Mühle 2\n\n**KMA1**: \n#Revision EM-HS\n Mühlenmotor 2\n EM-HS Freischaltschein Warte\n\n#Revision EM-HS\n Mühlenventilator 2\n EM-HS Freischaltschein Warte\n\n**HO4:**\n#HD-Brennluftgebläse 2 HO4\nMotor freischalten und elektr. abklemmen\nWechsel Läufer Gebläse, Freischaltschein Warte, Nebenaggregate abklemmen \n\n**Zentrale 1:**\nAustausch Batterie 1\n(Fa. Triathlon), Scherer J.\nAVO:8843237\n\n**MIW: ca. 11:00Uhr**\n-FA. Wisag + Neubau\n 5kV RK 1 MIW-GWW2 schneiden\n und umverlegen.\n",
+        "mittag": "**HO4:**\n#HD-Brennluftgebläse 2 HO4\n-Revision EM-HS, 5kV Zelle\nFreischaltschein Warte",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "**Mittelwerk:**\n#35kV Anlage 1 Kupplung 1+2\n-Ausbau Is-Begrenzer, Einbau Schienen\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "**Zentrale 1:**\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Stillstand GWW2, bis 26.05. FS\n\nKontrolle Filtermatten und\nKohlen T3",
+        "mittag": "Außerbetriebnahme HO5, ca. 20:00Uhr",
+        "nacht": "Außerbetriebnahme SA2, ca. 03:00Uhr"
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche, Witterungsbedingt auch öfters!!\nGWW2: Wechsel Trafo III 12,5MVA, vom 18.05. bis 22.05.26 geplant\nStahlwerk, Neuzustellung Konverter 2 von 15.05. bis 31.05.26"
+    },
+    "22": {
+      "0": {
+        "frueh": "Stillstand GWW2:\nStillstand HO5:\nStillstand SA2:\n\n**SA2:**\nInstandsetzung nach Thermographie,\nHilfsölpumpe A26\n\n**SA2:**\nReinigung/Kontrolle Systeme, Aggregate, Trafos Abgas- und Raumentstaubung SA2\n",
+        "mittag": "Kontrolle Kohlen T3, Wechsel am 27.05.!\n\nInbetriebnahme HO5, ca. 21:00Uhr\nInbetriebnahme SA2, ca. 15:00Uhr",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Nord:**\nBeginn Vorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\nSchicht D\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\n**PH Stahlwerk:**\n#Revision EM-HS\n Pressluftverdichter 04\n EM-HS DH Safe (124117)\n\n**Seku:**\n#Frequenzumrichter 1\nInstandsetzung durch Innomotics\n(124819)\n\n**Zentrale 1:**\n#Überprüfung Is-Begrenzer Kupplung 1+2\ndurch ABB, Aufsicht EM-HS, AVO:8847528\n (123716), AK buchen!\n\n**SA2:**\n-IF-Entladestation Trafo 1 1600kVA \nVorbereitungen zur Inbetriebnahme\n(124611)\n\n",
+        "mittag": "siehe Frühschicht\n\nKontrolle Außenanlagen",
+        "nacht": "Außerbetriebnahme HO4, ca. 00:00Uhr\nAußerbetriebnahme SA3, ca. 02:00Uhr\nAußerbetriebnahme STW:"
+      },
+      "2": {
+        "frueh": "Stillstand HO4:\nStillstand STW:\nStillstand GWW2, 12h:\n\n**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Zentrale 1/Gebläsehaus T3:**\n#Kontrolle, Reinigung, \n Kohlenwechsel T3\n-Kontrolle, Reinigung Kontakte\n Nebenschlußsteller\n Not-Aus Leuchte Zentrale 1\n kontrollieren.\n EM-HS DH Safe (124428)\n\n**Zentrale 1:**\n#Überprüfung Is-Begrenzer ET HO4\ndurch ABB, Aufsicht EM-HS, AVO:8847528\n (123715), AK buchen!\n\n**SA2:**\n-IF-Entladestation Trafo 1 1600kVA \nca. 10:00Uhr, geplante Erstinbetriebnahme (123719,124611)\n----verschoben----\n\nSchicht D\nLehrgang elekr. Maschinen\n(Patrick Ehl)\n\n**Zentrale 1: ca. 10:00Uhr**\nVW Caddy, DH 182 zur Kontrolle\nins Autohaus Scherer in Homburg",
+        "mittag": "Inbetriebnahme HO4, ca. 21:00Uhr\nInbetriebnahme SA3, ca. 17:00Uhr\nInbetriebnahme STW:",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**STW/Stranggußanlage 5:**\n#Revision EM-HS\n RK1 STW-Strangguß 5\n EM-HS DH Safe (123914)\n#Revision EM-HS\n RK2 STW-Strangguß 5\n EM-HS DH Safe (123915)\n----verschoben----\n\n**KMA1:**\n#Mühlenventilator 2 \nfür PIH abklemmen, Arbeiten Mühle\n(Freischaltschein Warte)\n\n**Stahlwerk:**\n-Revision E-Filter 2\n(124804)",
+        "mittag": "**Stahlwerk:**\n-Revision E-Filter 2\n(124804)\n\nggf. Restarbeiten",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Stillstand HO5, ca. 4h, \n08:00-12:00Uhr \n\n-Nachkontrolle Thermographie\n (Woll)\n\n**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n\n**Fahrzeug DH-322:**\n**8:00 Uhr** bei Fa. Peugeot Müller Dillingen\nRückrufaktion von Peugeot\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nBaustelle EAF Trafo 4 1600kVA\n13:00 Uhr Einweisung durch Fa.Wisag",
+        "mittag": "Baustelle EAF Trafo 4 1600kVA\n15:00 Uhr Einweisung durch Fa.Wisag",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Stillstand HO4, ca. 4h, \n08:00-12:00Uhr \n\nZentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nStahlwerk, Neuzustellung Konverter 2 von 15.05. bis 31.05.26\nGWW2: Wechsel Trafo III 12,5MVA, vom 18.05. bis 22.05.26 geplant\nMittelwerk: ab 26.05. tägliche Außerbetriebnahme Trafo DH Nord 30MVA, ca. 7 Wochen, freilegen der 35kV Kabel!"
+    },
+    "23": {
+      "0": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Mittelwerk:**\nAnlieferung Materialcontainer VSE\n(Info an Schütz/Zimmer)\n\n**Drehsiebanlage:**\n#Revision EM-HS\n Querkupplung SS1-SS2\n EM-HS DH Safe (118742)\n#Revision EM-HS\n SR Trafo 1 1600kVA\n EM-HS DH Safe (123885)\n\nKMA1:\n#Mühlenventilator 2 \nfür PIH anklemmen, Arbeiten Mühle\n(Freischaltschein Warte)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig (Raß/Dörr)\n---abgesagt---\n\n**Drehsiebanlage:**\n#Revision EM-HS\n SR Trafo 2 1600kVA\n EM-HS DH Safe (123886)\n\n**SHHO/E-Haus West:**\n#Revision EM-HS\n RK SHHO/SFG-MB2 EH West\n EM-HS DH Safe (125267)\n\n**HO4:**\n#HD-Brennluftgebläse 2 HO4\nMotor wieder anklemmen\nFreischaltschein Warte, \nNebenaggregate anklemmen, ca. 09:00Uhr\n\nMotorenhalle:\n#Umbau Motor Saugzuggebläse auf Harting Stecker (Schäfer/Woll)\n#Restpunkte Prüfungen Leittechnik neue 5kV Anlage\n(Fa. Natus + Sturm)\n\nBaustelle EAF Trafo 4 1600kVA\n13:00 Uhr Einweisung durch Fa.Wisag",
+        "mittag": "Kontrolle Außenanlagen\n\nUnterweisung Baustelle IF-Entladestation\n14:30Uhr, Bahnübergang Schranke\n\n**SA2:**\n#IF-Entladestation Trafo 1 1600kVA \nVorbereitungen zur Inbetriebnahme\n(124611)\n\nBaustelle EAF Trafo 4 1600kVA\n15:00 Uhr Einweisung durch Fa.Wisag",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig (Raß/Dörr)\n---abgesagt---\n\nUnterweisung Baustelle IF-Entladestation\n08:00Uhr, Bahnübergang Schranke\n\n**Drehsiebanlage: 8:00Uhr**\n#Revision EM-HS\n Trafo 4 1600kVA\n EM-HS DH Safe (123887)\n#Revision EM-HS\n Trafo 3 1600kVA\n EM-HS DH Safe (123888)\n\n**SA2:**\n#IF-Entladestation Trafo 1 1600kVA \nca. 10:00Uhr, geplante Erstinbetriebnahme (123719,124611)\nZimmer/Schütz\n\nBaustelle EAF Trafo 4 1600kVA\n13:00 Uhr Einweisung durch Fa.Wisag",
+        "mittag": "Unterweisung Baustelle IF-Entladestation\n14:30Uhr, Bahnübergang Schranke\n\nPumpenhaus STW:\n-Erdschlusssuche 110V= Verteilung\n-Wechsel Lüfter Absauganlage\n\nZentrale 1:\n-110V= Batterie 1, Spannungskontrolle unter Last durchführen\n\nGWW1/Motorenhalle:\nSteuerkabel Meldungen Batterieladegerät verlegen (125530)",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Zentrale 2:\n-Kontrolle Kohlen PV02",
+        "mittag": "Pumpenhaus STW:\n-Erdschlusssuche 110V= Verteilung\n-Wechsel Lüfter Absauganlage\n\nGWW1/Motorenhalle:\nSteuerkabel Meldungen Batterieladegerät verlegen (125530)",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Unterweisung Baustelle IF-Entladestation\n08:00Uhr, Bahnübergang Schranke\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "**HO4:**\n#HD-Brennluftgebläse 2 HO4\n Nebenaggregate anklemmen\n",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Zentrale 1:\nKompletten Parkplatz vor Zentrale 1 absperren."
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\nZentrale 1: Arbeiten auf dem Hochofenband durch PIH, Bereich Toilette bleibt gesperrt.",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nMittelwerk: ab 26.05. tägliche Außerbetriebnahme Trafo DH Nord 30MVA, ca. 7 Wochen, freilegen der 35kV Kabel!"
+    },
+    "24": {
+      "0": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\nUnterweisung Baustelle IF-Entladestation\n08:00Uhr, Bahnübergang Schranke\n\n**Hafen:**\n#Revision-EM-HS\n Verladebrücke\n EM-HS/PIH Freischaltschein\n\n**Hafen/ZKS:**\n-Trafo Hafen, 5kV Zul. ZKS-Hafen und \nZKS 5kV LK SS3-SS5\nnur Sichtkontrolle (AK)\nNeubau Anlage Hafen 2027\n\n**ZKS:**\nNach Anforderung PIH-ZKS\n#Außerbetriebnahme SBA-Maschine 2\nUmbau Steuerkabine (125458)\n\n**Motorenhalle:**\nUmbau Reservemotor Saugzug auf Hartingstecker (Woll/Schäfer)",
+        "mittag": "Baustelle EAF Trafo 4 1600kVA\n15:00 Uhr Einweisung durch Fa.Wisag\n\n**Hafen:**\n#Revision-EM-HS\n Verladebrücke\n EM-HS/PIH Freischaltschein\n",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**GWW2:**\n#Revision EM-HS \n Pressluftverdichter 03\n DH Safe EM-HS (125500)\n\n**ZKS:**\n-Kontrolle von EM-HS\n Stapler, Buchholzwarnung,  \n Auslösung\n Absprache mit Betrieb\n\n**ZKS:**\n#NH3-Verdichter nach Anforderung für PIH freischalten (125767)\n\n**MIW:**\nFreiluftanlage reinigen, Unkraut entfernen !!!\n\n**Motorenhalle:**\nUmbau Reservemotor Saugzug auf Hartingstecker (Woll/Schäfer)",
+        "mittag": "**Hafen:**\n#Revision-EM-HS\n Entlader\n EM-HS/PIH Freischaltschein\n\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\nStillstand HO5\nca. 6:00Uhr-16:00Uhr\n\n**Mittelwerk:**\n#Siebkreis E8\nBeseitigung Wildwuchs (125783)\n\n**ZKS:**\n#Revision EM-HS\n Gasverdichter 2\n EM-HS DH Safe (125736)\n\n**Motorenhalle:**\nUmbau Reservemotor Saugzug auf Hartingstecker (Woll/Schäfer)",
+        "mittag": "**ZKS:**\n#Revision EM-HS\n Gasverdichter 2\n EM-HS DH Safe (125736)",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n\n**Zentrale 1:**\nRestarbeiten Batterie 1 Fa. Triathlon\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**Motorenhalle:**\nUmbau Reservemotor Saugzug auf Hartingstecker (Woll/Schäfer)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Stahlaktionstag!**\nDemo in Völklingen\nMA nach RS freistellen!\n\n",
+        "mittag": "**PHHO, E. Haus 1:**\n-400V Verteilung Messungen nach VDE\n ca. 16:00Uhr",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**SA2:**\nKontrolle Erzbrecher B4a/B4b\nnur Sichtkontrolle/AK buchen",
+        "mittag": "Kontrolle Außenanlagen\n\nPumpenhaus STW:\n-Erdschlusssuche 110V= Verteilung",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\nFußweg Zur Toilette Bereich H32 reinigen",
+        "mittag": "Pumpenhaus STW:\n-Erdschlusssuche 110V= Verteilung",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nHafenstillstand 08.06.2026-17.06.2026\nMittelwerk: ab 26.05. tägliche Außerbetriebnahme Trafo DH Nord 30MVA, ca. 7 Wochen, freilegen der 35kV Kabel!"
+    },
+    "25": {
+      "0": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Mittelwerk:****  verschoben !!!**\nSchaltberechtigung in MS Anlagen Theorie\nSchicht C+F, 08:00-12:00 Uhr\n\n**MIW/Zentrale 1:**\nFreiluftanlage reinigen, Unkraut entfernen !!!\n\n**E-Haus Ost/Mischbett II:**\n#Revision EM-HS\n Stapler 3 S1040\n EM-HS DH Safe (125860)\n Feuerwehr vor Abschaltung \n informieren!\n\n**Motorenhalle:**\nUmbau Reservemotor Saugzug auf Hartingstecker (Woll/Schäfer)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n**Umverlegung der 35kV Kabel !!**\n(Raß/Dörr)\n\n**Mittelwerk:** \nAnlieferung Sammelschienen VSE\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n\n\n**Mittelwerk:** **verschoben !!!**\nSchaltberechtigung in MS Anlagen Praxis\nSchicht C+F, 08:00-11:00 Uhr\n\n\n**MIW/35kV Anl. 1**\n#Inbetriebnahme Trafo 1 10MVA\n#Außerbetriebnahme Trafo 2 12,5MVA\n\n**Mittelwerk/PH Stahlwerk:**\n#5kV RK MIW-STW\nRevision EM-HS (125879)\n\n**MIW:**\nFreiluftanlage reinigen, Unkraut entfernen !!!\n\nUnterweisung Baustelle IF-Entladestation\n14:30Uhr, Bahnübergang Schranke\n",
+        "mittag": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n**Umverlegung der 35kV Kabel !!**\n\nUnterweisung Baustelle IF-Entladestation\n14:30Uhr, Bahnübergang Schranke\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Mittelwerk:** \nAnlieferung Sammelschienen VSE\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n\n**PHHO:**\n#Revision EM-HS\n WW Trafo 1 1600kVA\n EM-HS DH Safe (125859)\n----verschoben-----\nPumpe 3 fördert nicht!!\n\n**MIW/35kV Anlage 1:**\n-Fa. OMEXOM\n Zelle +A08 Trafo 11 DH Nord\n Austausch Klemmen, \n Mängelbeseitigung\n----verschoben-----\n\n**Betriebsversammlung:\n12:00Uhr Lokschuppen**",
+        "mittag": "**STW/Seku:**\n#Motor Gebläse 1 Seku elektrisch freimachen\n(126314)\nWechsel Gebläse wegen Lagerschaden",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**MIW/Zentrale 1:**\nFreiluftanlage reinigen, Unkraut entfernen !!!\n\n**MIW/35kV Anl. 1**\n#Inbetriebnahme Trafo 2 12,5MVA\n#Außerbetriebnahme Trafo 1 10MVA\n\nPHHO/Zentrale 1:\n#Revision EM-HS\n RK2 PHHO-Zentrale 1\n EM-HS DH Safe (125869)\n#Revision EM-HS\n RK3 PHHO-Zentrale 1\n EM-HS DH Safe (125868)\n\n**Motorenhalle/GWW1**\nVerlegung LWL in der Halle, Fa. Graber\nnur Info\n\nZKS:\nInbetriebnahme Klimaanlage Teerfilterraum ZKS\n(126344)",
+        "mittag": "ZKS, Teerfilter 2:\n-Kontrolle Haube Isolator 3\n-Kontrolle Klimaanlage Teerfilterraum",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**Motorenhalle/GWW1:**\n-Anlieferung 4 Stck. Baustellenverteiler\nfür Neubau\n\nZKS:\nInbetriebnahme Klimaanlage Teerfilterraum ZKS\n(126426)\n",
+        "mittag": "Unterweisung Baustelle IF-Entladestation\n14:30Uhr, Bahnübergang Schranke",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "**CC5, Segmentwerkstatt:**\n#Baustelle EAF Trafo 1 1600kVA\nVersetzen Trafo, Umverlegung/Muffen MS und NS Kabel, Fa. Wisag (124991), ca. 06:30Uhr\n\nZentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "siehe Frühschicht\n\nKontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\n**CC5, Segmentwerkstatt:**\n#Baustelle EAF Trafo 1 1600kVA\nUmverlegung NS Kabel, Fa. Wisag \n\n\n**Gebläsehaus HO:**\n#Prüfschaltung E7 (AK Probelauf)\n\nSTW/Halde:\nKontrolle Erdschluß 110V=\n110V= Zuleitung Halde ablegen\nVeriegelungskabel zur Halde ablegen",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "26": {
+      "0": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Gebläsehaus HO:**\n#Revision EM-HS:\n Gebläse E5, Hilfsantriebe,  \n Prüfschaltung \n EM-HS DH Safe (125901)\n EM-MD und EM-WS informieren\n\n**ZKS:**\n-Kontrolle von EM-HS\n Stapler, Buchholzwarnung,  \n Auslösung\n Absprache mit Betrieb\n\n",
+        "mittag": "Stahlwerk/Seku:\n-Motor Gebläse 1 anklemmen (126314)\nRevision Motor (AK buchen)\n",
+        "nacht": "E-Häuser kontrollieren und ggf. durchlüften,\nz.B. 35/5kV PHHO"
+      },
+      "1": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Mittelwerk:**** verschoben!!!**\nSchaltberechtigung in MS Anlagen Theorie\nSchicht B+F, 08:00-12:00 Uhr\n\n**ZKS/KTM:**\nRevision EM-HS:\n#5kV Zuleitung KTM\n#KTM Trafo 12 1600kVA\n EM-HS DH Safe (125898)\n\nVergüterei/GWW1:\n-Halteeisen Decke entfernen\n(Schäfer/Woll,123633)\n\n",
+        "mittag": "Kontrolle Außenanlagen\n\nVergüterei/GWW1:\n-GFK Gerüst abbauen und auf dem LKW lassen\n\nReinwasserpatrone für Umrichter 2 STW vorbereiten\n\n**PHSTW:**\n-Kontrolle Fallklappe Trafo 2LB 800kVA \n",
+        "nacht": "Außerbetriebnahme HO4, ca. 02:00Uhr\nAußerbetriebnahme SA2, ca. 02:00Uhr\nAußerbetriebnahme STW, \n\nE-Häuser kontrollieren und ggf. durchlüften,\nz.B. 35/5kV PHHO"
+      },
+      "2": {
+        "frueh": "Stillstand HO4:\nStillstand STW:ca.4:00-16:00Uhr\nStillstand SA2:\n\n**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\nMittelwerk:  __verschoben !!!__\nSchaltberechtigung in MS Anlagen Praxis\nSchicht B+F, 08:00-11:00 Uhr\n\n**GKW/E8:**\n#Freischaltung E8 für EM-MD\n DH Safe (126690)\n DH Safe (126994)\n \n\n**HO4:**\n#Revision EM-HS \n Rückkühlanl. Trafo 7 1600kVA\n EM-HS Freischaltschein\n---verschoben---\n#Revision EM-HS \n Rückkühlanl. Trafo 8 1600kVA\n EM-HS Freischaltschein\n---verschoben---\n#Revision EM-HS \n Trafo 2B 1600kVA\n EM-HS Freischaltschein\n-Ausbau Frischluftlüfter\n GFK Gerüst benutzen\n Lüfter zur ELW transportieren\n\n**STW, 35m:**\nWechsel Protem D404:\nRevision EM-HS:\n#Trafo 15 1600kVA \n(126325)\n\n**STW, Seku:**\nUmrichter 2 Reinwasserpatrone wechseln\n(EM-HS)\n---verschoben---\n\n**Zentrale 1:**\n#EM-HS, Schützwechsel K201\n IS-Begrenzerschrank ET HO4\n(Jakobs)",
+        "mittag": "Inbetriebnahme HO4, ca. 16:00Uhr\nInbetriebnahme SA2, ca. 17.00Uhr\nInbetriebnahme STW,",
+        "nacht": "E-Häuser kontrollieren und ggf. durchlüften,\nz.B. 35/5kV PHHO"
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**ZKS: ca. 6:45Uhr**\n-Freischaltung für Betrieb\n Saugventilator 1 +\n Entstaubungsgebläse 2\n DH Safe (126749)\n\n**Mittelwerk: **\nAnlieferung Fertigfundamente VSE\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n\nZentrale 1/Zentrale 2:\n#5kV RK Zentr. 1-Zentr. 2\nKontrolle/Reinigung (126245)\n\n",
+        "mittag": "Stillstand HO4 von 14:00 bis 17:00Uhr\n\nAußerbetriebnahme GKW, ca. 20:00Uhr\nfür ca. 24h",
+        "nacht": "E-Häuser kontrollieren und ggf. durchlüften,\nz.B. 35/5kV PHHO"
+      },
+      "4": {
+        "frueh": "**Stillstand HO5 von 07:00 bis 11:00Uhr**\n\n**Trafo DH Nord:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)\n\n**Mittelwerk:**\n#Umlegen von 35kV RK2 Anlage 1-Anlage 2\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "Inbetriebnahme GKW",
+        "nacht": "E-Häuser kontrollieren und ggf. durchlüften,\nz.B. 35/5kV PHHO"
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Außerbetriebnahme SA3, ca. 03.00Uhr"
+      },
+      "6": {
+        "frueh": "**SA3:**\n-Freischaltungen nach Anforderung\n\nKontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nReparatur SA3 vom 28.06. bis voraussichtlich 19.07.2026"
+    },
+    "27": {
+      "0": {
+        "frueh": "**SA3/Abgasnachbehandlung**: !\n#Revision EM-HS\n PAN2 Trafo 4 1600kVA\n EM-HS Freischaltschein\n\n**SA3:** \n#Revision EM-HS\n SR Trafo 1 IED Anlage\n EM-HS Freischaltschein\n#Revision EM-HS\n SR Trafo 2 IED Anlage\n EM-HS Freischaltschein\n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "**SA3/Raumentstaubung:**\n-Revision EM-HS\n Raumentstaubung Systeme/Aggregate/Trafos\n EM-HS Freischaltschein Möllerung",
+        "nacht": "Außerbetriebnahme HO5:"
+      },
+      "1": {
+        "frueh": "**HO5:**\nFreischaltungen nach Anforderungen\n\n**SA3/Abgasentstaubung:**\n-Revision EM-HS\n Abgasentstaubung Systeme/Aggregate/Trafos\n Isolatorenkontrolle,Reinigung\n EM-HS Freischaltschein/BSeR Möllerung\n\n**SA3/MIW:** \n#Revision EM-HS\n RK1 MIW-SA2\n EM-HS DH Safe (125812)\n#Revision EM-HS\n RK3 MIW-SA2\n EM-HS DH Safe (125813) \n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "Kontrolle Außenanlagen\n\n**SA3/Raumentstaubung:**\n-Revision EM-HS\n Raumentstaubung\n Isolatorenkontrolle, Reinigung\n EM-HS Freischaltschein/BSeR Möllerung\n----verschoben----",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**SA2/SA3:** \n#Revision EM-HS\n Trafo 2 12,5MVA\n EM-HS DH Safe (125815)\n Gerüstbau Anmeldung  \n MIW/Möllerung\n\n**SA3:**\n#Revision EM-HS\n Saugzuggebläse SA3\n Freischaltschein Warte\n Gerüst wird gestellt\n\n**SA3:**\n#Außerbetriebnahme\n SR Trafo 5 Mischtr. 800kVA\n Freischaltschein Möllerung\n\n**Zentrale 1/D1:**\n#Revision EM-HS\n Speisewasserpumpe D1\n EM-HS DH Safe (125814)\n**__verschoben durch EM-MD !!!__**\n\n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\n**Mittelwerk:** \nAnlieferung Stahlbau VSE\nTeilsperrung Parkplatz NKT\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)\n",
+        "mittag": "Restarbeiten Frühschicht\n\n**SA3:**\n#Revision EM-HS\n Saugzuggebläse SA3\n Freischaltschein Warte\n Gerüst wird gestellt\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Mittelwerk:** \nEinbringung Stahlbau VSE\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)\n\n**SA2/SA3:** \n#Revision EM-HS\n Trafo 3 12,5MVA\n EM-HS DH Safe (125817)\n Gerüstbau Anmeldung  \n MIW/Möllerung\n\n\n**SA3:**\n#Revision/Restarbeiten EM-HS\n Saugzuggebläse SA3\n Freischaltschein Warte\n\n**SA3:**\n#Instandsetzung T&S\n SR Trafo 5 Mischtr. 800kVA\n EM-HS Freischaltschein\n",
+        "mittag": "Restarbeiten Frühschicht\n\n",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "**Außerbetriebnahme GKW:**\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA3:**\n#Revision EM-HS\n SR Trafo 5 Mischtr. 800kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Trafo 5 1600kVA\n EM-HS Freischaltschein Möllerung\n\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)\n \n\nZentrale 1\nKabeltrommeln\n2x nach Motorenhalle\n1x nach Mittelwerk Technikraum (5x70²)",
+        "mittag": "\n",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nStillstand GKW geplant derzeit: 03.07. bis 11.08.\nZR HO5 vom 30.06. bis voraussichtlich 13.08.2026"
+    },
+    "28": {
+      "0": {
+        "frueh": "**Mittelwerk:**\nca. 08:00Uhr\n#35kV RK1 MIW-ZKS von SS3 auf SS2 umlegen\n\n**Zentrale 1:**\nca.10:00Uhr, \n#Umlegen Hütte von GKW auf T3\n**verschoben durch EM-MD !!!**\n\n**HO5/E-Haus 5.2:** \n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein \n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS Freischaltschein \n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**HO5/E-Haus 5.2:** \n#Revision EM-HS\n Trafo 5 1600kVA\n EM-HS Freischaltschein\n ca.10:30 Uhr\n Inbetriebnahme Trafo 1 1600kVA\n\n**HO5/Möllerung 3:**\n#Revision EM-HS\n Trafo A Möllerung 3 1600kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Trafo B Möllerung 3 1600kVA\n EM-HS Freischaltschein\n\n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**HO5/E-Haus 5.2:**\n#Revision EM-HS\n Gießhallenentst. Trafo 1+2\n EM-HS DH Safe (126491)\n-Trennerwechsel/Erneuerung  \n Verkabelung Aggr.1 \n **verschoben!!!**\n (Auffälligkeit Thermographie)\n\n-Revision EM-HS **verschoben!!!**\n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein\n\n**SA3/ Raumentstaubung:**\n-E-Filter Spannungsprobe nach  \n Anweisung Betrieb durchführen.\n\n**GWW1/U2:**\n-Fa. Graber\n RK GWW1-U2 verlängern und \n auf neue 5kV Anlage \n Zelle 18 auflegen.\n Graber DH Safe (126378)\n\n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "**STW/ E-Haus 0.9:**\n#Freischaltungen u. abklemmen\n von Motor Entstaubungsgebläse 2\n EM-HS DH Safe (127603)\n Gebläse Lager wird von Betrieb\n gewechselt\n  ",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**HO5/E-Haus 5.2:**\n#Revision EM-HS\n Trafo A D2 1600kVA\n EM-HS DH Safe (125503)\n#Revision EM-HS\n Trafo B D2 1600kVA\n EM-HS DH Safe (125502)\n---verschoben auf 14.07.2026---\n\n**SA3/ Raumentstaubung:**\n-Revision EM-HS\n Raumentstaubung\n Isolatorenkontrolle, Reinigung\n EM-HS Freischaltschein/BSeR \n Möllerung\n\n**HO5/E-Haus 5.2:**\n#Revision EM-HS\n Pressluftverdichter 07\n EM-HS DH Safe (125818)\n\n**HO5/E-Haus 5.1:**\n-E-Filter Gießhallenentstaubung\n Trennerwechsel/Erneuerung  \n Verkabelung Aggr.1\n (Auffälligkeit Thermographie)\n\n\n**GWW1/U2:**\n-Fa. Graber\n RK GWW1-U2 verlängern und \n auf neue 5kV Anlage \n Zelle 18 auflegen.\n Graber DH Safe (126378)\n Feuerwehr duplizieren !\n\n\n**Zentrale 1:**\nca.10:00Uhr, nach Absprache \nEM-MD\n#Umlegen Hütte von GKW auf T3\n**verschoben durch EM-MD !!!**\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein\n\n**HO5:**\nAnlieferung Material für Schottplattenwechsel in KW 30/31\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\nWechselweise Freischaltung Trafo Süd\n(Raß/Dörr)",
+        "mittag": "**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "mittag": "Kontrolle Außenanlagen\n\n**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\n**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "mittag": "**HO5/Gießhallenentstaubung:**\n#Revision,Reinigung EM-HS \n E-Filter Gießhallenentstaubung\n Kontrolle Reinigung (126492),  \n BSeR -Schein",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "29": {
+      "0": {
+        "frueh": "**E8 in Betrieb**\n\n**SA3/Raumentstaubung:**\n-Umbau Filtersteuerung\n Anreise Monteur RICO\n\n**SA3:**\nUmbau Motor Saugzug auf Hartingstecker (Woll)\n\n\n**Zentrale 1:**\n ca.10:00Uhr, nach Absprache \nEM-MD **verschoben !!!**\n#Umlegen Hütte von GKW auf T3\n\n**Zentrale 1/D1:**\n#Revision EM-HS\n Speisewasserpumpe D1\n EM-HS DH Safe (125814)\n\n**SHHO/HO4:**\n-Revision EM-HS\n Kreislaufwasserpumpe 1 HO3\n EM-HS Freischaltschein Warte\n-Revision EM-HS\n Kreislaufwasserpumpe 2 HO3\n EM-HS Freischaltschein Warte\n\n**STW/E-Haus 0.9**:\n-PIH STW\n Lagerwechsel Gebläse 2\n Sekundär\n\nMIW:\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**E8 in Betrieb**\n\n**SA3/Raumentstaubung:**\n-Umbau Filtersteuerung Fa. Rico\n Freischaltschein Möllerung\n\n GWW1/Motorenhalle: ca.7:30Uhr\n-Fa. Jücker\n Umbau 400V-Verteiler\n Motorenhalle nach Anmeldung\n aufsperren.\n\n\n**Zentrale 1:**\nca.9:00Uhr, nach Absprache \nEM-MD verschoben!!!\n#Umlegen Hütte von GKW auf T3\n\n**HO5/E-Haus 5.2:**\n#Revision EM-HS\n Trafo A D2 1600kVA\n EM-HS DH Safe (125503)\n#Revision EM-HS\n Trafo B D2 1600kVA\n EM-HS DH Safe (125502)\n\n**MIW:**\nTrafo DH Nord:\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(De-)Montage Überspannungsrohre\n(Raß/Dörr)\n\n**STW/E-Haus 0.9**:\n-PIH STW\n Lagerwechsel Gebläse 2\n Sekundär\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**E8 in Betrieb**\n\n**SA3/Raumentstaubung:**\n-Umbau Filtersteuerung Fa. Rico\n Freischaltschein Möllerung \n\n\n**PHHO: nach Absprache EM-MD!**\n#Revision EM-HS\n WW Trafo 1 1600kVA\n EM-HS DH Safe (125859)\n wenn Pumpe 3 fördert!\n\n**SHHO/HO4:**\n-Revision EM-HS\n Kreislaufwasserpumpe 3 HO3\n EM-HS Freischaltschein Warte\n-Revision EM-HS\n Kreislaufwasserpumpe 2 Ofen\n HO4\n\n **Trafo DH Nord:**\nAustausch Trafo DH Nord durch VSE\nBeginn Demontage & Vorbereitungen für Transport\n(Raß/Dörr)\n#verschoben auf KW30#\n\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(De-)Montage Überspannungsrohre\n(Raß/Dörr)\n\n**STW/E-Haus 0.9**:\n-PIH STW\n Lagerwechsel Gebläse 2\n Sekundär\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nAustausch Trafo DH Nord durch VSE\nab 6:00Uhr\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n#Austausch verschoben auf KW 30#\nVorbereitungsarbeiten Trafowechsel\nwechselweise Freischaltung Trafo DH Süd\n\n**Zentrale 1:**\nnach Absprache EM-MD \n#Umlegen Hütte von GKW auf T3\n\n**SHHO/HO4:**\n-Revision EM-HS\n Kreislaufwasserpumpe 3 Ofen\n HO4\n EM-HS Freischaltschein Warte\n-Revision EM-HS\n Kreislaufwasserpumpe 4 Ofen\n HO4\n EM-HS Freischaltschein Warte",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA3/Raumentstaubung:**\n-EM-HS\n Signale mit Fa. Rico  \n kontrollieren und testen\n Erstinbetriebnahme der\n neuen Steuerung.\n (Einweisung neue Steuerung)\n\n**Trafo DH Nord:**\nAustausch Trafo DH Nord durch VSE\nvoraussichtlich bis 18:00 Uhr\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n#Austausch verschoben auf KW30#\nVorbereitungsarbeiten Trafowechsel\nwechselweise Freischaltung Trafo DH Süd\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n\n**ZKS/Fremdfirmenplatz**:\n#Freischaltung EM-HS\n Trafo 13 +14 Fremdfirmenplatz\n Ausbau Trafo 14, Aufstellung \n 400V Verteilung u. Anschlüsse \n Fa. Graber DH Safe (127480)\n\n#Revision, Reinigung EM-HS\n Trafo 13 Fremdfirmenplatz\n EM-HS DH Safe (127975)\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\n\n",
+        "mittag": "HO5/E-Filter Giehallenentst.:\n-EM-HS Trafo/Aggregat3\n abklemmen, freimachen für \n Abtransport nach Motorenhalle\n am 22.07.2026.\n EM-HS DH Safe (128178)",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nGebläse E8 vom 13.07. bis 15.07 in Betrieb (Reparatur D1 und D2)"
+    },
+    "30": {
+      "0": {
+        "frueh": "**Außerbetriebnahme STW:**\nFreischaltungen nach Anforderung\n\n**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 1 12,5MVA\n EM-HS     DH Safe (126497)\n Gerüstbau DH Safe (126498)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 2 12,5MVA\n EM-HS DH Safe (126499)\n\n**Motorenhalle: ca. 8:00Uhr**\n-Fa Wisag\n Entnahme von Kabeltrommeln\n DH Safe Wisag (128241)\n\n\n**HO5**\nKontrolle ET-HO5 durch Fa. Innomotics\n1 MA zur Unterstützung auf Abruf",
+        "mittag": "Kontrolle Außenanlagen\n\nSA3/Raumentstaubung:\n-Potentialausgleich E-Filter\n Raumentstaubung, \n Aggregateschrank, Trafo und E-\n Filter.",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 3 12,5MVA\n EM-HS DH Safe (126500)\n\n\n**HO5/E-Filter Gießhallentst.:**\n-Kran Fa. Steil 8:00 Uhr\n Entnahme Trafo/Aggregat 3 von\n Filterdach und Transport\n nach Motorenhalle.\n \n**Trafo DH Nord:**\nBeginn Austausch Trafo DH Nord durch VSE\nDemontage & Transport alter Trafo zu VSE\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n\n\n**HO5**\nKontrolle ET-HO5 durch Fa. Innomotics\nDH Safe Innomotics (128436)\n1MA zur Unterstützung auf Abruf",
+        "mittag": "E-Haus Ost/Menegatti:\n-Trafo 14 Fremdfirmenplatz steht\n vor Trafo 2 Fa. Horn\n Revision, Reinigung, Kontrolle\n Trafo 14 durchführen.",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Motorenhalle:**\n#Fa. Hintz\n Reparatur, Abdichtung\n Trafo/Aggregat 3 HO5/E-Filter\n DH Safe Fa. Hintz (128510)\n Freischaltung Rauchmelder\n in der Halle.\n\n\n**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 5 12,5MVA\n EM-HS DH Safe (126537)\n\nSTW/PH Anl.1:\n#Revision EM-HS\n Stahlwerk 2\n EM-HS DH Safe (126495)\n\n**Trafo DH Nord:**\nAustausch Trafo DH Nord durch VSE\nEinbringen neuer Trafo\nTeilsperrung Parkplatz NKT\n(Raß/Dörr)\n\n**HO5**\nKontrolle ET-HO5 durch Fa. Innomotics\n1MA zur Unterstützung auf Abruf",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Geplante Inbetriebnahme SA3:\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 4 12,5MVA\n EM-HS DH Safe (126538)\n **Verschoben !!!**\n\n**STW/PH Anl.1:**\n#Revision EM-HS\n Stahlwerk 1\n EM-HS DH Safe (126494)\n\n**Trafo DH Nord:**\nAustausch Trafo DH Nord durch VSE\nvoraussichtlich bis 18:00Uhr\n(Raß/Dörr)\n\n**HO5**\nKontrolle ET-HO5 durch Fa. Innomotics\n1MA zur Unterstützung auf Abruf",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "**Außerbetriebnahme GWW2:**\n\nZentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**Trafo DH Nord:**\nInbetriebnahme Trafo DH Nord \n(Raß/Dörr)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\n\n**Inbetriebnahme SA3**\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nReparatur Stahlwerk vom 20.07. bis voraussichtlich 10.08.2026\nReparatur GWW2 vom 25.07. bis voraussichtlich 09.08.2026"
+    },
+    "31": {
+      "0": {
+        "frueh": "**STW/Anl.1 35m:**\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS DH Safe (127036)\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS DH Safe ( 127037)\n\n**GWW1 Motorenhalle**\nArbeiten an 5kV Anlage durch Fa. Natus",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Motorenhalle/HO5:**\n-Fa.Steil 10:30Uhr\n Entnahme Trafo/Aggregat 3 \n aus Motorenhalle Transport nach \n E-Filter HO5 und aufstellen auf \n Filterdach.\n\n**STW/Anl.1 35m:**\n#Revision EM-HS\n Trafo 3 1600kVA\n EM-HS DH Safe (127038)\n\n**STW/PH/E.H.0.9:**\n#Revision EM-HS\n Trafo 4 12,5MVA\n EM-HS DH Safe (126538)\n\n",
+        "mittag": "Restarbeiten Frühschicht\n",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**STW/Anl.1 35m:**\n#Revision EM-HS\n Trafo 4 1600kVA\n EM-HS DH Safe (127039)\n#Revision EM-HS\n Trafo 5 1600kVA\n EM-HS DH Safe (127058)\n\n**Stahlwerk 35m:**\n-Revision E-Filter 1+2\nSysteme/Aggregate/Trafos/\nSteuerschränke \nDH Safe (128749)\n\n\n",
+        "mittag": "**HO5:**\n-Aggr. 3 Entstaubung anschließen, \n ggf. Test Inbetriebnahme\n (128178)\n\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**STW/Anl.1 35m:**\n#Freischaltung EM-HS für PIH\n Trafo 7+8 1600kVA\n PIH DH Safe (127902)\n\n**STW/CC6:**\n#Revision EM-HS\n RK PH STW-CC6\n EM-HS DH Safe (126493)\n\n**ZKS:**\n#Vor- und Nachmühle für Betrieb nach Anforderung freischalten (128844)\n\n**Zentrale 1, H32:**\n-Flur für Malerarbeiten vorbereiten\n Azubis/Zimmer (AVO 8859588)\n\nMittelwerk:\n-Holz nach Holzhof transportieren\n-Entsorgung Kabelreste\n\n\n\n\n\n ",
+        "mittag": "**HO5:**\n-Sichtkontrolle 5kV SS1 und SS2\n#Reinigung/Kontrolle 5V LK SS2/SS4\n (128761)",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**Mittelwerk:**\n#Außerbetriebnahme Trafo DH201 50MVA, Arbeiten Amprion\nEM-HS DH Safe (126338) \n\n**STW/Anl.2 35m:**\n#Freischaltung für PIH nach \n Absprache\n Trafo 6+9+15 1600kVA\n PIH DH Safe (127903)\n#Revision EM-HS\n Trafo 9 1600kVA\n EM-HS DH Safe (127067)\n\n**Motorenhalle/GWW1:**\n-Abholung Kabeltrommeln/400V Verteiler\nFa. Wisag (128890, BMA)\n\n**SA2:**\n#Revision EM-HS\n Trafo 4 12,5MVA\n EM-HS DH Safe (125881)\n Gerüstbau Anmeldung  \n MIW/Möllerung\n**Trafo bleibt außer Betrieb!**\n **Verschoben!**\n\n",
+        "mittag": "**Mischbett 2 E.Haus Ost:**\nca. 14:00 bis 17:00Uhr**\n#Trafowechsel Halde Trafo 2 (250/800kVA)\n (127671, Graber)\nRevision EM-HS (128816)",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**Mittelwerk:**\n#Trafo DH201 50MVA\n Revision EM-HS (126338)\n\n",
+        "mittag": "**STW/ E-Haus 0.9:**\n#Anklemmen von Motor Entstaubungsgebläse 2\n EM-HS DH Safe (127603)\n \n  ",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nDH201 vom 31.07. bis 04.08. für Amprion a. B."
+    },
+    "32": {
+      "0": {
+        "frueh": "**Mittelwerk **\n#Überprüfung Is-Begrenzer\n Trafo DH201 durch ABB\n Aufsicht EM-HS (126338)\n (AVO 8847528)\n\n#Außerbetriebnahme von\n 35kV RK MIW-GKW (126340)\n Revision EM-HS \n\n**SA2:**\n#Vorbereitungen \n Außerbetriebnahme SS2 5kV SA2\n-RK1 SA2-PAN1\n-Trafo 1, Trafo 2 1600kVA\n-Trafo 4 12,5MVA\n (AVO 8847524)\n\n**SA2:**\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein\n Trafo 1 1600kVA bleibt außer \n Betrieb\n\nGKW:\n#E8 für EM-MD freischalten (128979)\n (Arbeiten am Kühlwasser)\n\n",
+        "mittag": "siehe Frühschicht:\n\n**Vergüterei GWW1/U2:**\n#Vorbereitung Erstinbetriebnahme GWW1\n (128800)\n\n\n**Sinteranlage 2 A25 & A26**\n#Feuerwehr baut Pressluftgerät auf\n",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Mittelwerk:**\n#Inbetriebnahme Trafo DH201 50MVA\n (126338)\n\n**Mittelwerk:**\n#Überprüfung Is-Begrenzer \n 35kV RK MIW-GKW durch ABB\n Aufsicht EM-HS (AVO 8847528)\n\n**Mittelwerk:**\n#Überprüfung Is-Begrenzer\n 35kV Querkupplung 2 durch ABB\n Aufsicht EM-HS (126341)\n(AVO 8847528)\n\n**SA2:**\n#Revision EM-HS\n Trafo 4 12,5MVA\n EM-HS DH Safe (125881)\n Gerüstbau Anmeldung  \n MIW/Möllerung\nTrafo bleibt außer Betrieb!\n\n**SA2:**\n#Außerbetriebnahme SS2 5kV SA2 (125520)\n-Reparatur Gasleckage Feld 19 durch ABB\nAufsicht EM-HS\n (AVO 8847524)\n\n**SA2:**\n#Trafo Erzmischbett 1 1600kVA\n Revision EM-HS,  \n Freischaltschein\n\n**SA2:**\n#A25/A26\nMotorreinigung Fa. Fischer/M&S\n(Freischaltschein Möllerung)\n\n**SA2:**\n#EM-HS Freischaltung für \n Fa. Graber\n IF Entladestation, Austausch\n der Endverschlüsse Größe 3\n Freischaltschein\n \n**Vergüterei/GWW1:**\n#Erstinbetriebnahme 5kV Anlage\n(126378, 128800)\nZimmer/Raß\n",
+        "mittag": "siehe Frühschicht\n\n**Mittelwerk:**\n#35kV Querkupplung 2\n Revision EM-HS (126341)\n\n#Einschaltbereitschaft von 35kV RK MIW-GKW\n herstellen (126340)\n\n**SA2:**\n#Inbetriebnahme SS2 5kV SA2 (126520)\n (AVO 8847524)\n\n",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Mittelwerk:**\n#Außerbetriebnahme Trafo DH202 50MVA, Arbeiten Amprion\nEM-HS DH Safe (126339)\n\n**Mittelwerk:**\n#Inbetriebnahme von 35kV RK MIW-GKW\n (126340)\n#Außerbetriebnahme von \n 35kV RK3 MIW-GKW (126342)\n\n**SA2:**\n#Revision EM-HS\n Trafo 1 12,5MVA\n EM-HS DH Safe (125880) \n Gerüstbau Anmeldung  \n MIW/Möllerung\n\n**SA2:**\n- Restarbeiten Inbetriebnahme Abgänge/Einspeisungen SS2 5kV SA2 \n(125520), (AVO 8847524)\n\n**SA2:**\n#A25/A26\nMotorreinigung Fa. Fischer/M&S\n(Freischaltschein Möllerung)\n\n**HO5/Granulation:**\n#Trafo 1 1600kVA\n#Trafo 2 1600kVA\nFreischaltung für PIH, \nRevision 400V Schalter\n(Freischaltschein)\n\n**STW/35m:**\n#Freischaltung für Betrieb\n Konverterkippantrieb 1-3\n für STW freischalten. (129049)\n\n\n",
+        "mittag": "siehe Frühschicht\n\n#Inbetriebnahme von \n 35kV RK3 MIW-GKW (126342)\n\n**SA2**\n-Revision EM-HS\n #Motor A24\n\n",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**SA2/A25/A26:**\n-Revision EM-HS\n Abgasentstaubung E-Filter\n Kontrolle, Reinigung Isolatoren\n EM-HS Freischaltschein/BSeR  \n Möllerung\n\n**SA2/Raumentstaubung:**\n-Revision EM-HS\n Raumentstaubung E-Filter\n Kontrolle, Reinigung Isolatoren\n EM-HS Freischaltschein/BSeR  \n Möllerung\n\n\n\n",
+        "mittag": "**SA2:**\n-Revision EM-HS\nAbgas/Raumentstaubung\nSysteme/Trafos/Aggregate\n(Freischaltschein Möllerung)\n\n**SA2/A25/A26**\n-Revision EM-HS\nAnlasser/Hilfsölpumpen\n(Freischaltschein Möllerung)",
+        "nacht": "**SA2:**\n-Revision EM-HS\nAbgas/Raumentstaubung\nSysteme/Trafos/Aggregate\n(Freischaltschein Möllerung)"
+      },
+      "4": {
+        "frueh": "**Mittelwerk:**\n#Inbetriebnahme Trafo DH202 50MVA\n (126339)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2/PAN1:**\n#Revision EM-HS\n Trafo 1 1600kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Trafo 2 1600kVA\n EM-HS Freischaltschein\n\n",
+        "mittag": "**Inbetriebnahme SA2, geplant**\n\n**STW/35m:**\n#Inbetriebnahme\n Konverterkippantrieb 1-3\n für STW freischalten. (129049)",
+        "nacht": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme"
+      },
+      "5": {
+        "frueh": "**MIW/GKW:**\n#Revision EM-HS\n Siebkreis E8\n EM-HS (DH Safe 128835)\n",
+        "mittag": "**MIW/GKW:**\n#Revision EM-HS\n Motor/Trafo/Umrichterraum\n EM-HS (DH Safe 128835)\n",
+        "nacht": "MIW/GKW:\n#Revision EM-HS\n Motor/Trafo/Umrichterraum\n EM-HS (DH Safe 128835)\n"
+      },
+      "6": {
+        "frueh": "**Inbetriebnahme GWW2:**\n\nKontrolle Filtermatten und\nKohlen T3\n\n**MIW/GKW:**\n#Revision EM-HS\n Siebkreis E8\n EM-HS (DH Safe 128835)\n\n",
+        "mittag": "**E.Haus West/Schalthaus HO:**\n#Außerbetriebnahme \n5kV RK SHHO-SFG-MB2 EH-West\n(Baggerarbeiten Saarwasser Bereich ZKS)\n\n**MIW/GKW:**\n#Revision EM-HS\n Siebkreis E8 (Restarbeiten)\n Motor/Trafo/Umrichterraum\n EM-HS (DH Safe 128835)\n",
+        "nacht": "MIW/GKW:\n#Revision EM-HS\n Motor/Trafo/Umrichterraum\n EM-HS (DH Safe 128835)"
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nDH201 vom 31.07. bis 04.08. für Amprion a. B.\nDH202 vom 05.08. bis 07.08. für Amprion a. B.\nSA2: Reparatur Feld 19 (Trafo 2) vom 03.08. bis 05.08. durch ABB"
+    },
+    "33": {
+      "0": {
+        "frueh": "**Inbetriebnahme HO5, geplant**\n**Inbetriebnahme GKW, geplant**\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\nArbeitstägliche Freischaltung Trafo notwendig\n(Raß/Dörr)\n\n**Mittelwerk:**\n-Beginn Verlegung der Kabeltröge \n für 35kV RK Hafen\n\n**MIW/Siebkreis:**\n-Fa. GE \n #Revision Leistungsschalter\n Aufsicht EM-HS, (128837)\n (AVO 8854713)\n---abgesagt---\n\n-Fa. AST\n #Revision Trenner + Reparatur Trenner \n Filterkreis 1 (128833)\n (AVO 8822486)\n\n-Fa. Seger\n#Verlegung Bodenplatten Filterkreis 2+3\n (128831) (AVO 8795351)\n---abgesagt----\n\n**MIW/GKW:**\n#Revision EM-HS\n Motor/Trafo/Umrichterraum/Siebkreis E8\n EM-HS (DH Safe 128835)\n",
+        "mittag": "**MIW/GKW:**\n#Inbetriebnahme Siebkreis/Freigabe E8\n(128835)",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Inbetriebnahme STW, geplant**\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\n(Raß/Dörr)\n\n**Mittelwerk:**\n-Räumungsarbeiten Keller 35kV Anlage 2\n (RS Zimmer)\n\n-Allgemeine Arbeiten nach AK\n (Meisterbüro)\n\n",
+        "mittag": "Kontrolle Außenanlagen\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers\n(Raß/Dörr)",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "Stillstand GWW2, 4h:\n\n**ZKS/Kohlenvorbereitung**\n#Schalterrevision 400V PIH\nvon Trafo 6, Trafo 7 und Trafo 8 1600kVA\nnach Anforderung\n\n10kV Trafostation Backes\n-Kabelreparatur Trafo 2+3 (VSE)\n Zuschaltung ca. 11:00Uhr \n (RS Zimmer)\n\n**PH Stahlwerk/Seku:**\n#5kV RK PH Stahlwerk-Seku\nRevision EM-HS (129075)\nKontrolle/Wechsel Capdis\n\nHO5, E.Haus 5.2:\nÖl entsorgen, Schalter kontrollieren\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Sinteranlage 2/Zentrale 1:**\n#5kV RK Sinteranlage 2 Zentrale 1\nRevision EM-HS (129077)\n\n**Stahlwerk/Sinteranlage 2**\n#5kV RK Stahlwerk-Sinteranlage 2\nRevision EM-HS (129076)",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\n**Verlegung Saarwasserleitung im Bereich ZKS, 5kV RK SHHO-SFG-MB2 EH. West außer Betrieb!**\n**Verlegung Kabeltröge für Hafen im Bereich Mittelwerk**"
+    },
+    "34": {
+      "0": {
+        "frueh": "**Trafo DH Nord:**\nVorarbeiten Trafotausch DH Süd\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n\n**ZKS:**\n#Revision EM-HS\n Portalkratzer\n Trommelwechsel durch Fa. Graber\n DH Safe EM-HS (123064)\n DH Safe Fa. Graber ( )\n---verschoben---\n\n**Mittelwerk/Zentrale 1:**\n#Außerbetriebnahme \nZentrale 1 Trafo 1 12,5MVA\n(Baggerarbeiten im Bereich Möllerung/Primsseite)\n\n**Mittelwerk:**\nca. 08:00Uhr\n#35kV RK1 MIW-ZKS von SS2 auf SS3 umlegen\n\n**Zentrale 1:**\nca.10:00Uhr, \n#Umlegen Hütte von T3 auf GKW\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n\n**HO5/Granulation:**\nRevision EM-HS\n#RK2 E.Haus 5.2-Granulation (129079)\n#RK1 E.Haus 5.2-Granulation (129078)\n\n",
+        "mittag": "Kontrolle Außenanlagen\n\nBaustelle EAF Trafo 3 1600kVA\nKontrolle Trafolüfter",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**KMA:**\n#Revision EM-HS\n Mühlenmotor 1, 5kV-Motor,\n 5kV-Zellen\n EM-HS Freischaltschein Warte\n\n**GWW1/U2:**\n#Außerbetriebnahme 5kV RK GWW1-U2\n(Arbeiten Natus GWW1)\n\n**ZKS/KTM:**\n#Außerbetriebnahme KTM Trafo 12 1600kVA\n (Anforderung PIH)\n \n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand HO4, 05:00-14:00Uhr\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**KMA:**\n#Revision EM-HS\n Mühlenventilator 1, 5kV-Motor,\n 5kV-Zellen\n EM-HS Freischaltschein Warte\n\n**Zentrale 1:**\n-Erdschlusssuche 110V= Batterie 1\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Stillstand HO5, 07:00-14:00Uhr\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**ZKS:**\n#Reparatur Schleppkabel SBA3\n (Fa. Graber, EM-HS, 129575, \n AVO: 8871917) ca.10:00Uhr\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\n**Baggerarbeiten im Bereich Möllerung/Primsseite, Kabelverlauf Hafen**\n"
+    },
+    "35": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**ZKS:**\n#Revision EM-HS\n Gasverdichter 3,  \n 5kV-Motor, Kontrolle Axiallager \n Lüftermotoren 1+2,Anlasser etc.\n EM-HS DH Safe (129792)\n Gerüst wird gestellt\n\n\nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Schäfer FS",
+        "mittag": "siehe Frühschicht",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**ZKS:**\n#Revision EM-HS\n Gasverdichter 1\n 5kV-Motor, Lüftermotoren 1+2\n Anlasser etc.\n Sichtkontrolle  \n USK, Rückspeisetrafo\n EM-HS DH Safe (129791)\n Gerüst wird gestellt\n---verschoben EM-HS----\n\n\nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Uzun",
+        "mittag": "siehe Frühschicht\n\nKontrolle Außenanlagen",
+        "nacht": "Außerbetriebnahme SA2, ca. 03:00Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand SA2:\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**HO5/Zentrale 2:**\n#Revision EM-HS\n Pressluftverdichter 02\n 5kV-Motor, Anlasstrafo, Öl-\n dunstabsauger, Hilfsölpumpe,\n EM-HS DH Safe (129793)  \n EM-MD DH Safe (130194)\n \nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Uzun",
+        "mittag": "**Sinteranlage 2:**\n-Motorrevision A25/26 und Hilfsölpumpen\n(Restarbeiten)\n\nAnlasser A25/26\n2 Kühler (1+2) in Betrieb lassen\nKontrolle Solestand",
+        "nacht": "Außerbetriebnahme HO4, ca. 02:00Uhr\n\n**Mittelwerk, 35kV Anlage 1:**\nIs-Begrenzer wegräumen\n(siehe Mail)"
+      },
+      "3": {
+        "frueh": "Stillstand SA2:\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n\nStillstand HO4, 12h:\nStillstand GWW2, 4h:\nStillstand SA2:\n\n**ZKS**:\nnach Anforderung:\n#SBA2 Außerbetriebnahme für PIH\n(Umbau Steuerkabine, 130135)\n----verschoben ZKS-----\n\n**HO4:**\n#Revision EM-HS, ca.08:30Uhr\n Trafo 7 1600kVA Rückkühlanl.\n EM-HS/PIH-HO Freischaltschein\n#Revision EM-HS\n Trafo 8 1600kVA Rückkühlanl.\n EM-HS/PIH-HO Freischaltschein\n\n**SA2:**\nÜberprüfung/Revision Leistungsschalter\nA23/A24/A25/A26 durch AST\n(AVO: 8872176)\n\nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Uzun",
+        "mittag": "Inbetriebnahme SA2, ca. 15:00Uhr\nInbetriebnahme HO4, ca. 15:00Uhr",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "**Zentrale 1:**\n-EM-HS\n Elektroschrott, \n Leuchtstoffröhren entsorgen\n\n**KMA1:**\n#PV08 nach Anforderung EM-MD freischalten\n (130412)\n\n**ZKS, FFP, GSV2:**\nKabel ablegen, rausschneiden, RS Zimmer\n\n**Mittelwerk, 35kV Anlage 1**\nKernbohrung Kabel Hafen\n\nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Schäfer FS\n\nReinigung Betriebsfahrzeuge\n(Leihfahrzeug wird nicht gereinigt!!)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nMittelwerk Richtung Hafen Kabelzug 35kV durch Fa. Wisag."
+    },
+    "36": {
+      "0": {
+        "frueh": "**ZKS:**\n#Revision EM-HS\n Portalkratzer\n Trommelwechsel durch Sitral/Fa. Graber\n DH Safe EM-HS (123064)\n DH Safe Fa. Graber (129942)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Gebläsehaus/Zentrale 1:**\n#Arbeiten EM-HS\n Turbine T3\n Kohlenwechsel,Reinigung\n EM-HS DH Safe (130138)\n\n**ZKS:**\n#Saugventilator 1 und Gebläse 2 Kokss.Enstaubung nach Anforderung freischalten 07:00Uhr (130463)\n\n**ZKS:**\n#Revision EM-HS\n Portalkratzer\n Trommelwechsel durch Sitral/Fa. Graber\n DH Safe EM-HS (123064)\n DH Safe Fa. Graber (129942)\n\n**Motorenhalle/ZKS:** ca.8:00Uhr\nMotor Nachmühle zur ZKS transportieren",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": "Außerbetriebnahme STW,\nAußerbetriebnahme HO5, ca. 03.00Uhr\nAußerbetriebnahme SA3, ca. 03:00Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand STW:\nStillstand HO5:\nStillstand SA3:\n\n**ZKS:**\n#Wechsel Motor Nachmühle\n Revision EM-HS (129946)\n Kabelmontage Graber (129944)\n---abgesagt ZKS----\n\n**Mittelwerk:**\n-Technikraum\nAustausch 400V Batterie USV1+2\n(Fa. Triathlon, AVO: 8849699)\nDH-Safe: 130603 USV1\n          130605 USV2\n---abgesagt----",
+        "mittag": "Inbetriebnahme STW,\nInbetriebnahme HO5, ca. 15:00Uhr\nInbetriebnahme SA3, ca. 17.00Uhr",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**ZKS:**\n#Revision EM-HS\n Gasverdichter 1\n 5kV-Motor, Lüftermotoren 1+2\n Anlasser etc.\n Sichtkontrolle  \n USK, Rückspeisetrafo\n EM-HS DH Safe (129791)\n Gerüst wird gestellt\n\n**Mischbett 2/FFP ZKS:**\n-Zählerwechsel GSV nach Vorgabe\n (Jakobs, FS)",
+        "mittag": "siehe Frühschicht:",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeug nicht reinigen\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**SA2:**\n#Trafo 1 12,5MVA\nTrafo im Anschlusskasten elektrisch freimachen\n(130945)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nMittelwerk Richtung Hafen Kabelzug 35kV durch Fa. Wisag.\nSA2: Trafo 1 12,5MVA außer Betrieb, Erdschluss!!"
+    },
+    "37": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**E-Haus Ost/Mischbett II:**\n#Revision EM-HS\n Stapler 2\n EM-HS DH Safe (130161)\n---Verschoben durch Betrieb---\n\n\n**MIW:**\nVDE-Prüfungen und Messungen\nnach Arbeitskarte\n\n**E-Haus Ost/Mischbett II:**\nStapler 2\nAustausch Außenringe durch PIH\nSchleppkabel EM-HS\n\n**SA2:**\n#Trafo 1 12,5MVA\nÜberprüfung Trafo durch Fa.Hintz\n(130678)\n\nFa. Hintz Ölprobenentnahme im GWW2\n\n**Motorenhalle:**\nKabelzug neue 5kV Anlage\n(Fa. Graber, 130756), \nAnschlussarbeiten Feld 15 (130757)\nAVO: 8811762\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n\n**SA2/3, Trafo 1 12,5MVA:**\n-Auflegen 35kV Kabel u. \n Überspannungsableiter\n Fa. Graber\n DH Safe (131137)\n\n\n**MIW/Zentrale 1:**\n-Revision EM-HS\n Trafo 1 12,5MVA\n EM-HS DH Safe (130865)\n Gerüst wird gestellt\n\n\nFa. Hintz Ölprobenentnahme im GWW2\n\n\n**Motorenhalle:**\nMontagearbeiten neue 5kV Anlage\n(Fa. Graber (130xxx), AVO: 8811762)\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\nMitarbeiter nach Anforderung zur Unterstützung VSE beim Tragen der Systemrohre.\n\nFa. Hintz Ölprobenentnahme im GWW2\n\n\n**MIW/Zentrale 1:**\n#Revision EM-HS\n Trafo 2 12,5MVA\n EM-HS DH Safe (130866)\n Gerüstbau DH Safe (130867)\n",
+        "mittag": "**MIW/Zentrale 1:**\n Gerüstabbau Trafo 2 12,5MVA\n Isolationsmessung und  \n Inbetriebnahme nach  \n Schaltanweisung",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**SIA2/3:**\n#Firma M&S\n Reinigung vor 35kV/5kV Trafos\n\n**SiA3/Abgasentst.:**\n-Kontrolle E-Filter wegen\n schlechter Staubwerte\n Freischaltung, Kontrolle  \n Isolatoren, Klopfisolator\n Feld 2 Seite SiA defekt!\n\n**Motorenhalle:**\nMontagearbeiten neue 5kV Anlage\n(Fa. Graber (131277), AVO: 8811762)\n",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**10kV Trafostation Backes:**\n08:00Uhr Freischaltung \n#Abgang Garagenstation Backes Trafo 2+3 \nUmverlegung 10kV Kabel\n\n\n**SIA2/3:**\n#Firma M&S\n Reinigung vor 35kV/5kV Trafos\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\nMotorenhalle\nMontagearbeiten neue 5kV Anlage\n(Fa. Graber (131278), AVO: 8811762)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "**Zentrale 1:**\nReinigen/Kontrolle der Airstream Systeme\n\n\n**Zentrale 1:**\n-EM-HS\n 3 Ölfässer im Ölkeller \n verproben u. beschriften.\n\n**H32:**\nGrundreinigung Boden Flur!",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nMittelwerk Richtung Hafen Kabelzug 35kV durch Fa. Wisag."
+    },
+    "38": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\nMitarbeiter nach Anforderung zur Unterstützung VSE beim Tragen der Systemrohre.\n\n**Mittelwerk:**\n#Revision Leistungsschalter \nQuerkupplung 2 SS1-SS3 (Fa. AST)\n(AVO: 8871291, DH-Safe:130546)\n\n**ZKS:**\n#Wechsel Motor Nachmühle\n Revision EM-HS (131525)\n Kabelmontage Graber (131522)\n",
+        "mittag": "**SA2:**\n#Trafo 1 12,5MVA\nTrafo vor Ort erden\n(131358)",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:30-16:00Uhr\n(Raß/Dörr)\n\n**HO5:**\nSicherheitsviertelstunde F+G\n09:00-10:00Uhr\n\n**Zentrale 1:**\n-Geräteprüfungen nach DIN/VDE\n\n**ZKS:**\n#Revision EM-HS\n 35kV Querkupplung SS1/SS2\n EM-HS DH Safe (130952)\n\n**SA2:**\n#Trafo 1 12,5MVA\n35kV seitig von Feld A05 nach Feld A04 umverlegen (Fa. Graber, 131358)\nAVO: 8878724",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Außerbetriebnahme GWW2:**\n\n**ZKS:**\n#Revision EM-HS \n RK ZKS-Zentralstation\n Ausbau IS Begrenzer\n EM HS-DH Safe (131263)\n\n-Revision EM-HS\n#Längskupplung SS4-SS6 (131285)\n\n**ZKS/Kohlevorbereitung:**  \n**ca.9:00Uhr**\n-Abholung 5kV-Motor Nachmühle\n Transport nach Motorenhalle\n\n**SA2:**\n#Trafo 1 12,5MVA\n35kV seitig von Feld A05 nach Feld A04 umverlegen (Fa. Graber, 131358)\nAVO: 8878724\n",
+        "mittag": "**SA2:**\n#Trafo 1 12,5MVA\nSchutz und Funktionsprüfungen durchführen\nTrafo enterden und Isolationsmessung\n(DH-Safe:131358)\nAVO: 8878724",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**GWW2:** nur Info!!!\n-Arbeiten an Netztrafo II\n\n**Mittelwerk:**\n#Trafo DH 203 50MVA\nSchutzgerätetausch Amprion (130792)\n\n**WAB/GWW2:**\nRevision EM-HS, ab 08:30Uhr\n#5kV Zul.1 GWW2-WAB \n EM-HS DH Safe (130220, 130222)\n#5kV Zul.2 GWW2-WAB \n EM-HS DH Safe (130225, 130227)\n#5kV Zul.3 GWW2-WAB \n EM-HS DH Safe (130231, 130232)\n\n**HO5:**\nErdschlusssuche 110V=",
+        "mittag": "Halter Is-Begrenzer \nMittelwerk montieren\n",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "**Mittelwerk:**\n12:00-12:10Uhr\nTestschaltung Amprion 220kV \nEllbach Nord/Uchtelfangen\nnur Info!!\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**GWW2/WAB:**\n#Revision EM-HS\n Sinterwasserpumpe 1\n EM-HS DH Safe (130774)\n\n**GWW2:** nur Info!!!\n-Arbeiten an Netztrafo III\n\n**HO5:**\nErdschlusssuche 110V=\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\n**Baustelle EAF Trafo 4:**\nca. 08:00Uhr \n#Anschlussarbeiten Feld A02 Reserve\n (Fa. Graber,131976)\n\n**GWW2:** nur Info!!!\n-Arbeiten an Netztrafo IV\n\n**GWW2/WAB:**\n#Revision EM-HS\n Sinterwasserpumpe 2\n EM-HS DH Safe (130775)\n\n",
+        "mittag": "Kontrolle Außenanlagen\n\n\n**HO5:**\nErdschlusssuche 110V=\n",
+        "nacht": "**Zentrale 1: für 20.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen."
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3\n\n**GWW2/WAB:**\n#Revision EM-HS\n Sinterwasserpumpe 3\n EM-HS DH Safe (130776)\n\n**GWW2:** nur Info!!!\n-Arbeiten an Netztrafo V\n",
+        "mittag": "**HO5:**\nErdschlusssuche 110V=",
+        "nacht": "**Zentrale 1: für 21.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen."
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nStillstand GWW2 vom 16.09. bis 29.09.26\nStahlwerk, Neuzustellung Konverter 2 bis 01.10.2026"
+    },
+    "39": {
+      "0": {
+        "frueh": "**MIW/GWW2:**\n#Revision EM-HS, ab 08:30Uhr\n 35kV RK1 MIW-GWW2 \n EM-HS DH Safe (130203, 130204)\n 35kV RK3 MIW-GWW2 \n EM-HS DH Safe (130210, 130212)\n\n**WAB/GWW2:**\n#Revision EM-HS\n Sinterwasserpumpe 4\n EM-HS DH Safe (130777)\n\n**Mittelwerk:**\nSchulung PSA und Airstream 07:00-11:00Uhr\nneue MA und Azubis",
+        "mittag": "**WAB/GWW2:**\n-Revision EM-HS\n#Sinterwasserpumpe 5\n EM-HS DH Safe (130778)",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**MIW/GWW2:**\n#Revision EM-HS, ab 08:30Uhr\n 35kV RK2 MIW-GWW2 \n EM-HS DH Safe (130205, 130206)\n\n**STW/GWW2:**\n#Revision EM-HS, ab 08:30Uhr\n 35kV RK GWW2-Stahlwerk\n EM-HS DH Safe (130215, 130216)\n\n**WAB/GWW2:**\n#Revision -EM-HS\n Kreislaufwasserpumpe 1\n EM-HS DH Safe (131293)\n\n",
+        "mittag": "**WAB/GWW2:**\n-Revision -EM-HS\n#Kreislaufwasserpumpe 3\n EM-HS DH Safe (131295)\n\n\nKontrolle Außenanlagen\n\n",
+        "nacht": "**Zentrale 1: für 23.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen."
+      },
+      "2": {
+        "frueh": "**MIW/GWW2:**\n#Revision EM-HS, ab 08:30Uhr\n 35kV RK4 MIW-GWW2 \n EM-HS DH Safe (130213, 130214)\n\n**WAB/GWW2:**\n#Revision -EM-HS\n Kreislaufwasserpumpe 4\n EM-HS DH Safe (131296)\n#Revision -EM-HS\n Kreislaufwasserpumpe 5\n EM-HS DH Safe (131297)",
+        "mittag": "",
+        "nacht": "**Zentrale 1: für 24.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen.\n\nAußerbetriebnahme SA3, ca. 04:00Uhr\nAußerbetriebnahme HO4, ca. 02:00Uhr"
+      },
+      "3": {
+        "frueh": "Stillstand HO4:\nStillstand SA3:\nStillstand SA2, von 08:00-16:00Uhr\n\n**HO4:**\n#Revision EM-HS\n Trafo 1a 1600kVA\n EM-HS Freischaltschein\n#Revision EM-HS\n Granulation Trafo 4 1600kVA\n EM-HS  Freischaltschein\n\n**SA3:**\n-EM-HS\n Anlasser Saugzug:\n Thermostat wechseln.\n  ",
+        "mittag": "Inbetriebnahme SA2, ca. 16:00Uhr\nInbetriebnahme SA3, ca. 18:00Uhr\nInbetriebnahme HO4, ca. 16:00Uhr",
+        "nacht": "**Zentrale 1: für 25.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen.\n\nZentrale 1:\nParkplatz unter Kohleband\nabsperren. "
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**E-Haus Ost:**\n#Revision EM-HS\n Räumer Feld C, 5KV-Zelle,\n Übergabezelle\n EM-HS DH Safe (130917)\n\n**GWW2:** nur Info!!!\n-Arbeiten an Netztrafo III\n",
+        "mittag": "",
+        "nacht": "**Zentrale 1: für 26.09.26**\n-Ölkeller\n 2x 20Liter Ölkanister\n mit geprüftem Trafoöl \n für WW PIH bereitstellen."
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nStillstand GWW2 vom 16.09. bis 29.09.26"
+    },
+    "40": {
+      "0": {
+        "frueh": "**Mittelwerk:**\n#Trafo DH204 50MVA\n Außerbetriebnahme für Amprion\n Revision EM-HS (131360)\n\n**E-Haus Ost:**\n#Revision EM-HS\n Räumer Feld B, 5KV-Zelle,\n Übergabezelle\n EM-HS DH Safe (129136)",
+        "mittag": "siehe Frühschicht",
+        "nacht": "**ZKS:**\nInbetriebnahme E-Sauger\n(Reparatur T-Sauger)"
+      },
+      "1": {
+        "frueh": "**Inbetriebnahme GWW2:**\n\n**Stahlwerk:**\n-Revision E-Filter 2 (131361)\n\n",
+        "mittag": "Kontrolle Außenanlagen\n\n**ZKS:**\nAußerbetriebnahme E-Sauger\n",
+        "nacht": "Außerbetriebnahme STW, ca.\nAußerbetriebnahme HO5, ca. 03:00Uhr\nAußerbetriebnahme SA2, ca. 03:00Uhr"
+      },
+      "2": {
+        "frueh": "Stillstand STW:\nStillstand HO5:\nStillstand SA2:\n\n**HO5:**\n#Revision EM-HS\n Rückkühlanlage Trafo 8 1600kVA\n EM-HS Freischaltschein\n----verschoben----\n\n**Zentrale 1/Gebläsehaus HO:**\n#Kohlenwechsel T3 (132857, EM-HS)\n\n**HO5:**\n#Revision EM-HS\n Trafo 9 1600kVA\n EM-HS Freischaltschein\n\n#Revision EM-HS\n Trafo 11 1600kVA\n EM-HS Freischaltschein\n** Revision Trafo 11 verschoben**\n\nFa. Hintz Ölprobenentnahme\nGWW2",
+        "mittag": "Inbetriebnahme STW, ca.\nInbetriebnahme HO5, ca. 15:00Uhr\nInbetriebnahme SA2, ca. 17:00Uhr",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Theorie\nSchicht B+F, 08:00-12:00 Uhr\n\nFa. Hintz Ölprobenentnahme\n(AVO: 8850966), Schäfer FS",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Praxis\nSchicht B+F, 08:00-12:00 Uhr\n----verschoben----\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "41": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**MIW:**\n#Revision EM-HS\n Trafo 2 12,5MVA\n EM-HS DH Safe (130953)\n Gerüstbau DH Safe (130954)\n\nWeiland Schulung P4S",
+        "mittag": "",
+        "nacht": "**SA2/Erzbrechanlage:**\n-Erzbrecher B4a Schalter auf Test stellen\n-Erzbrecher B4b Störmeldungen Leitsystem ablegen"
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**ZKS:**\n-NOT-AUS Tests mit Saugventilator 1 \nund Gebläse 2 Kokss. Entstaubung.\n1 MA EM-HS vor Ort! RS Zimmer\n\n**MIW:**\n#Revision EM-HS\n Haustrafo 2 1600kVA\n EM-HS DH Safe (131626) \n Haustrafo 1 1600kVA\n EM-HS DH Safe (131622)",
+        "mittag": "Kontrolle Außenanlagen\n\nWinden-Hub- und Zuggeräte von E-Filter 1+2 STW nach Liste in Peugeot DH82 ablegen.",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**ZKS:**\n-NOT-AUS Tests mit Saugventilator 1 \nund Gebläse 2 Kokss. Entstaubung.\n1 MA EM-HS vor Ort! RS Zimmer\n\n**MIW/Kesselstation 6:**\n#Revision EM-HS\n Trafo Kesselstation 6 800kVA\n EM-HS DH Safe (130958)\n\n**Motorenhalle:**\nKabelzug neue 5kV Anlage\n(Fa. Graber, 133415), \nAVO: 8811762\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**Zentrale 2/HO5:** \n#Revision EM-HS\n Pressluftverdichter 05\n EM-HS DH Safe (131639)\n---verschoben EM-MD-----\n\n**ZKS:**\n-NOT-AUS Tests mit Saugventilator 1 \nund Gebläse 2 Kokss. Entstaubung.\n1 MA EM-HS vor Ort! RS Zimmer\n\n",
+        "mittag": "#5kV RK SHHO-SFG-MB2 EH-West\n(Isolationsmessung)",
+        "nacht": "Zentrale 1:\nEnde Nachtschicht:\nParkplatz unter Kohleband komplett absperren. \n(zwischen Kondensatbehälter und Zugang PIH Werkstatt)"
+      },
+      "4": {
+        "frueh": "**Parkplatz Zentrale 1 Bereich Toilette\nfür Fahrzeuge und Personen \ngesperrt bis Ende FS \n**\n\n**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n\n**Motorenhalle:**\nMontagearbeiten neue 5kV Anlage\n(Fa. Graber, 133545), \nAVO: 8811762\n\nBaldauf Schulung P4S\n11:00 Uhr Neue Ausweisstelle Tor 4\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nEnde Nachtschicht:\nParkplatz unter Kohleband komplett absperren. \n(zwischen Kondensatbehälter und Zugang PIH Werkstatt)"
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "42": {
+      "0": {
+        "frueh": "**Parkplatz Zentrale 1 Bereich Toilette\nfür Fahrzeuge und Personen \ngesperrt bis Ende FS**\n\n**Halde Trafo 2 800kVA**\n-Frühschicht:\nEinlegen/Fixieren der Holzbohlen\n(liegen in der Motorenhalle)\n\n**ZKS:**\n#Revision EM-HS\n NH3-Verdichter\n EM-HS DH Safe (133476)\n\n**Mittelwerk, 35kV Anl.1**:\n-35kV Kupplung 1+2\nAustausch Schienen Is-Begrenzer\n(133339)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Theorie\nSchicht C+F, 08:00-12:00 Uhr",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Praxis\nSchicht C+F, 08:00-12:00 Uhr\n\n**Motorenhalle: 7:00Uhr**\nAufladen 5kV Motor Nachmühle\nTransport nach ELW.",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**ZKS:**\n#Revision EM-HS\n Kühlwasserpumpe 1\n EM-HS DH Safe (133465)\n\n\n**ZKS:**\n NOT-AUS Tests NH3-Verdichter\n 1MA EM-HS vor Ort\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "**Zentrale 1 / KFZ:**\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "**Gebläsehaus / T3:**\nKontrolle Filtermatten und\nKohlen",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "43": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**Mittelwerk:**\n#Inbetriebnahme Trafo 1 10MVA und Außerbetriebnahme Trafo 2 12,5MVA\n(Trafotausch DH Süd)\n\n**ZKS**:\nnach Anforderung:\n#SBA2 Außerbetriebnahme für PIH\n(Umbau Steuerkabine, 130135)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nTrafotausch 07:00Uhr bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers,\n(Raß/Dörr)\n\n\n",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n**Tor 4 informieren:**\nAnkunft Zählerschrank \nfür Fa. Amprion\n\n**Zentrale 2/HO5:** \n#Revision EM-HS\n Pressluftverdichter 05\n EM-HS DH Safe (133526)\n\n\n\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n\n",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
+      },
+      "4": {
+        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\n**SA2 A25/A26:**\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm\n",
+        "mittag": "**Trafo DH Süd:**\n-Erstinbetriebnahme Trafo DH Süd 50/63MVA\n",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "44": {
+      "0": {
+        "frueh": "**Trafo DH Süd:**\nRestarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "**Trafo DH Süd:**\nRestarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\nMittelwerk:\nInhouse-Schulung TüV Saarland\n\"Schaltberechtigung 400kV\"\nBesprechungsraum Mittelwerk\n(Raß/Brandau/ Zimmer/...)",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Trafo DH Süd:**\nRestarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\nMittelwerk:\nInhouse-Schulung TüV Saarland\n\"Schaltberechtigung 400kV\"\nBesprechungsraum Mittelwerk\n(Raß/Brandau/ Zimmer/...)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "**Trafo DH Nord:**\nRestarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\nMittelwerk:\nInhouse-Schulung TüV Saarland\n\"Schaltberechtigung 400kV\"\nBesprechungsraum Mittelwerk\n(Raß/Brandau/ Zimmer/...)",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "**Trafo DH Nord:**\nRestarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "45": {
+      "0": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "**Mittelwerk:**\n-Technikraum\nAustausch 400V Batterie USV1+2\n(Fa. Triathlon, AVO: 8849699)\n",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "Stillstand Stahlwerk \n\n**Mittelwerk:**\n-Technikraum\nAustausch 400V Batterie USV1+2\n(Fa. Triathlon, AVO: 8849699)\n",
+        "mittag": "",
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
+        "mittag": "",
+        "nacht": ""
+      },
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    },
+    "46": {
+      "0": {
+        "frueh": "**Stahlwerk:**\n-Revision E-Filter 1 ()",
+        "mittag": "",
+        "nacht": ""
+      },
+      "1": {
+        "frueh": "",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "2": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "3": {
+        "frueh": "",
+        "mittag": "",
+        "nacht": ""
+      },
+      "4": {
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
+        "mittag": "",
+        "nacht": ""
+      },
+      "5": {
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
+        "nacht": ""
+      },
+      "6": {
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
@@ -915,7 +2931,7 @@
     "47": {
       "0": {
         "frueh": "",
-        "mittag": "Zentrale 1 :\nSicherheitsviertelstunde B\n15:00-17:00 Uhr",
+        "mittag": "",
         "nacht": ""
       },
       "1": {
@@ -931,7 +2947,7 @@
       "3": {
         "frueh": "",
         "mittag": "",
-        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
       },
       "4": {
         "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
@@ -939,12 +2955,12 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "Mittelwerk:\n400V NSHV\nD0001.A Werksarzt\nD0001.B Kantine\nD0010.D Werksarzt\nZählerwechsel und Messungen\nTermin in Klärung\n",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
@@ -977,12 +2993,12 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
@@ -1007,7 +3023,7 @@
       "3": {
         "frueh": "",
         "mittag": "",
-        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
       },
       "4": {
         "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
@@ -1015,16 +3031,16 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
-      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche\nInbetriebnahme neue 5kV Anlage Hafen"
     },
     "50": {
       "0": {
@@ -1053,12 +3069,12 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
@@ -1083,7 +3099,7 @@
       "3": {
         "frueh": "",
         "mittag": "",
-        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren."
+        "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
       },
       "4": {
         "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
@@ -1091,12 +3107,12 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
@@ -1119,7 +3135,7 @@
         "nacht": ""
       },
       "3": {
-        "frueh": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme\n\nReinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
         "mittag": "",
         "nacht": ""
       },
@@ -1134,15 +3150,13 @@
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
       "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
-    }
-  },
-  "2026": {
-    "16": {
+    },
+    "53": {
       "0": {
         "frueh": "",
         "mittag": "",
@@ -1150,16 +3164,16 @@
       },
       "1": {
         "frueh": "",
-        "mittag": "",
+        "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "2": {
-        "frueh": "1. Anlieferung neuer VSE Trafo 63MVA (voraussichtlich, eingetragen am 16.10.2025)",
+        "frueh": "",
         "mittag": "",
         "nacht": ""
       },
       "3": {
-        "frueh": "",
+        "frueh": "Reinigung Betriebsfahrzeuge/\nLeihfahrzeuge\n\nSA2 A25/A26:\nKontrolle Anlasser/Solestand\nLeitwert zwischen 20-21mS/cm",
         "mittag": "",
         "nacht": ""
       },
@@ -1169,20 +3183,22 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "",
-        "mittag": "",
+        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "",
+        "frueh": "Kontrolle Filtermatten und\nKohlen T3",
         "mittag": "",
         "nacht": ""
       },
-      "kwinfo": ""
-    },
-    "22": {
+      "kwinfo": "Kontrolle der Schleppkabel MB2, ZKS, Hafen mindestens 2x pro Woche"
+    }
+  },
+  "2027": {
+    "39": {
       "0": {
-        "frueh": "",
+        "frueh": "Geplante Anlieferung Ofentrafos EAF",
         "mittag": "",
         "nacht": ""
       },
@@ -1192,7 +3208,7 @@
         "nacht": ""
       },
       "2": {
-        "frueh": "2. Anlieferung VSE Trafo 63MVA (eingetragen am 16.10.2025)",
+        "frueh": "",
         "mittag": "",
         "nacht": ""
       },
