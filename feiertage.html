@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Feiertage auswählen</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .feiertag-list { margin: 20px 0; }
+        label { display: block; margin-bottom: 8px; }
+        button { margin-top: 20px; }
+        a { display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Feiertage auswählen</h1>
+    <form id="feiertageForm" class="feiertag-list"></form>
+    <button onclick="saveFeiertage()">Speichern</button>
+    <a href="index.html">Zurück zum Kalender</a>
+<script>
+const alleFeiertage = [
+    { monat: 0, tag: 1, name: "Neujahr" },
+    { monat: 0, tag: 6, name: "Heilige Drei Könige" },
+    { monat: 3, tag: 1, name: "Ostermontag" },
+    { monat: 4, tag: 1, name: "Tag der Arbeit" },
+    { monat: 4, tag: 9, name: "Christi Himmelfahrt" },
+    { monat: 4, tag: 20, name: "Pfingstmontag" },
+    { monat: 5, tag: 8, name: "Fronleichnam" },
+    { monat: 9, tag: 3, name: "Tag der Deutschen Einheit" },
+    { monat: 10, tag: 31, name: "Reformationstag" },
+    { monat: 11, tag: 25, name: "1. Weihnachtstag" },
+    { monat: 11, tag: 26, name: "2. Weihnachtstag" }
+];
+
+function loadFeiertage() {
+    const selected = JSON.parse(localStorage.getItem('feiertage')) || [];
+    const form = document.getElementById('feiertageForm');
+    form.innerHTML = '';
+    alleFeiertage.forEach(f => {
+        const checked = selected.includes(f.name) ? 'checked' : '';
+        form.innerHTML += `<label>
+            <input type="checkbox" name="feiertag" value="${f.name}" ${checked}>
+            ${f.name} (${f.tag}.${f.monat+1}.)
+        </label>`;
+    });
+}
+
+function saveFeiertage() {
+    const checked = Array.from(document.querySelectorAll('input[name="feiertag"]:checked'))
+        .map(cb => cb.value);
+    localStorage.setItem('feiertage', JSON.stringify(checked));
+    alert('Feiertage gespeichert!');
+}
+
+loadFeiertage();
+</script>
+</body>
+</html>

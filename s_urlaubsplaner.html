@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schicht- & Urlaubsplaner</title>
+  <link rel="stylesheet" href="s_urlaubsplaner.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Schicht- & Urlaubsplaner</h1>
+    <div class="auth-controls">
+      <button id="anmeldenButton" class="btn">Anmelden</button>
+      <div id="login-status"></div>
+    </div>
+    <div class="controls">
+      <label>Jahr:
+        <input id="yearInput" type="number" min="2000" max="2100" value="2026" />
+      </label>
+      <label>Schicht:
+        <select id="shiftSelect">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F (Mo–Fr Früh)</option>
+        </select>
+      </label>
+      <div class="view-buttons">
+        <button data-view="year" class="view-btn active">Jahresübersicht</button>
+        <div class="month-buttons">
+          <button data-month="0" class="month-btn">Jan</button>
+          <button data-month="1" class="month-btn">Feb</button>
+          <button data-month="2" class="month-btn">Mär</button>
+          <button data-month="3" class="month-btn">Apr</button>
+          <button data-month="4" class="month-btn">Mai</button>
+          <button data-month="5" class="month-btn">Jun</button>
+          <button data-month="6" class="month-btn">Jul</button>
+          <button data-month="7" class="month-btn">Aug</button>
+          <button data-month="8" class="month-btn">Sep</button>
+          <button data-month="9" class="month-btn">Okt</button>
+          <button data-month="10" class="month-btn">Nov</button>
+          <button data-month="11" class="month-btn">Dez</button>
+        </div>
+      </div>
+      <button id="editToggle" class="btn" style="margin-left:auto; display:none;">Bearbeiten</button>
+    </div>
+    <div class="legend">
+      <span class="badge f">F = Früh</span>
+      <span class="badge m">M = Mittag</span>
+      <span class="badge n">N = Nacht</span>
+      <span class="badge frei">Frei</span>
+      <span class="badge feiertag">Feiertag</span>
+      <span class="badge weekend">Wochenende</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="plannerContainer"></div>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <form id="anmeldeForm">
+        <h2>RFID Anmeldung</h2>
+        <input type="password" id="rfidInput" placeholder="Mit RFID anmelden">
+        <button type="submit" class="btn">Anmelden</button>
+        <p id="loginMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Editor Panel -->
+  <aside id="editorPanel" class="editor-panel">
+    <div class="ep-header">
+      <h3>Urlaub bearbeiten</h3>
+      <button id="epClose" class="icon-btn" title="Schließen">&times;</button>
+    </div>
+    <div class="ep-body">
+      <div id="epInfo" class="ep-info"></div>
+      <div class="ep-date">Datum: <strong id="epDate">—</strong></div>
+      <div class="ep-names" id="epNames"></div>
+      <div class="ep-actions">
+        <button id="epClearDay" class="btn danger">Tag leeren</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="s_urlaubsplaner.js"></script>
+</body>
+</html>

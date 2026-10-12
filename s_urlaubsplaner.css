@@ -1,0 +1,395 @@
+/* Grundlayout */
+:root{
+  --bg:#f7f7f9; --text:#1a1a1a; --muted:#666; --border:#d8d8dd;
+  --f:#cfe2ff; --m:#e2f7cf; --n:#fff3cd; --frei:#ffffff;
+  --we:#f5f5f5; --holiday:#fde2e1;
+  --primary:#2b59ff; --primary-100:#eef4ff; --shadow: 0 6px 18px rgba(16,24,40,0.08);
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; font-family:Inter,system-ui,Segoe UI,Arial,sans-serif; color:var(--text); background:var(--bg); }
+.container{ max-width:1200px; margin:16px auto; padding:0 16px; position: relative; }
+
+/* Buttons/controls */
+.topbar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px;
+  background:#fff; border-bottom:1px solid var(--border);
+  padding:14px 16px 18px; position:sticky; top:0; z-index:8;
+  box-shadow: var(--shadow);
+}
+.topbar h1{ flex:1 1 auto; margin:0; font-size:24px; font-weight:700; letter-spacing:.2px; }
+
+.auth-controls{ margin-left:auto; display:flex; align-items:center; gap:10px; }
+.auth-controls .btn{ background:var(--primary); color:#fff; border-color:transparent; }
+.auth-controls .btn:hover{ filter:brightness(.96); }
+
+.controls{
+  width:100%; display:flex; flex-wrap:wrap; align-items:center; gap:10px 12px;
+  background:#f8faff; border:1px solid var(--border); border-radius:12px; padding:10px; 
+}
+.controls label{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:6px 10px; }
+.controls input[type=number], .controls select{ border:none; outline:none; background:transparent; }
+
+.view-buttons{ display:flex; align-items:center; gap:10px; }
+.month-buttons{ display:flex; flex-wrap:wrap; gap:6px; max-width:100%; }
+.view-btn, .month-btn, .btn{
+  padding:7px 12px; border:1px solid var(--border); background:#fff; border-radius:8px; cursor:pointer; 
+  transition:all .15s ease; box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.view-btn:hover, .month-btn:hover, .btn:hover{ transform:translateY(-1px); }
+.view-btn.active, .month-btn.active{ background:var(--primary-100); border-color:#b9cdfa; box-shadow: inset 0 0 0 1px rgba(43,89,255,.12); }
+
+.legend{ width:100%; margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
+.badge{ font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--border); background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.02); }
+
+/* Tabellen */
+.planner-table{ width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; border:1px solid var(--border); }
+.planner-table th, .planner-table td{ border:1px solid var(--border); text-align:center; padding:4px; font-size:12px; }
+.planner-table thead th{ background:#f1f3f9; position:sticky; top:64px; z-index:4; }
+.schichtkopf{ text-align:left; min-width:120px; width:120px; }
+.tagkopf{ min-width:28px; }
+
+.cell{ display:flex; flex-direction:column; align-items:center; gap:2px; min-height:28px; }
+.cell .shift{ font-weight:600; }
+.cell .dow{ font-size:10px; color:var(--muted); }
+
+/* Farben für Zellen */
+.s-f{ background:var(--f); }
+.s-m{ background:var(--m); }
+.s-n{ background:var(--n); }
+.s-frei{ background:var(--frei); }
+/* Wo-ende nur als dezente Schraffur-OVERLAY, damit Schichtfarbe dominiert */
+.weekend{
+  background-image: none;
+  background-color: var(--we);
+}
+.feiertag{ background:var(--holiday); }
+.na{ background:#fafafa; }
+
+/* Landing */
+.container .btn{ margin-top:8px; }
+/* Auth */
+.modal{ display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.4); }
+.modal .modal-content{ background:#fff; margin:10% auto; padding:20px; border:1px solid var(--border); width:90%; max-width:380px; border-radius:8px; }
+.modal .close-button{ float:right; font-size:22px; cursor:pointer; }
+.modal input[type=password]{ width:100%; padding:10px; margin:10px 0; border:1px solid var(--border); border-radius:6px; }
+.modal .btn{ width:100%; }
+
+/* Ensure legend badges keep their colors in the header */
+.legend .badge.f{ background:var(--f); }
+.legend .badge.m{ background:var(--m); }
+.legend .badge.n{ background:var(--n); }
+.legend .badge.frei{ background:var(--frei); }
+.legend .badge.weekend{ background:var(--we); }
+.legend .badge.feiertag{ background:var(--holiday); }
+
+/* --- Vacation editor styles --- */
+.btn.danger{ background:#ef4444; color:#fff; border-color:#ef4444; }
+.btn.danger:hover{ filter:brightness(.95); }
+
+.editor-panel{ position:fixed; top:0; right:-380px; width:360px; height:100%; background:#fff; box-shadow: -8px 0 24px rgba(16,24,40,.12); border-left:1px solid var(--border); transition:right .25s ease; z-index:1200; display:flex; flex-direction:column; }
+.editor-panel.open{ right:0; }
+.editor-panel .ep-header{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--border); }
+.editor-panel .ep-header h3{ margin:0; font-size:18px; }
+.editor-panel .icon-btn{ background:transparent; border:none; font-size:22px; cursor:pointer; }
+.editor-panel .ep-body{ padding:12px 14px; overflow:auto; }
+.editor-panel .ep-info{ font-size:13px; color:#475467; margin-bottom:8px; }
+.editor-panel .ep-date{ margin:8px 0 12px; }
+.editor-panel .ep-names{ display:flex; flex-wrap:wrap; gap:8px; }
+.editor-panel .name-pill{ padding:6px 10px; border:1px solid var(--border); border-radius:999px; cursor:pointer; background:#f8fafc; }
+.editor-panel .name-pill.active{ background:#dbeafe; border-color:#93c5fd; }
+.editor-panel .ep-actions{ margin-top:12px; display:flex; gap:8px; }
+
+/* Clickable cells in edit mode */
+.edit-mode .planner-table td{ cursor:pointer; }
+
+/* Vacation highlight on day cells - subtler */
+.planner-table td.urlaub{ box-shadow: inset 0 0 0 1px #f87171; position:relative; }
+.planner-table td.urlaub::after{ content: attr(data-vcount); position:absolute; top:2px; right:4px; font-size:11px; color:#ef4444; font-weight:700; }
+/* --- end Vacation editor styles --- */
+
+/* Shift content when editor open to avoid overlap */
+body.editor-open .container{ margin-right: 360px; transition: margin-right .25s ease; }
+@media (max-width: 1024px){ body.editor-open .container{ margin-right: 0; } }
+
+@media (max-width: 720px){
+  .topbar{ gap:10px; }
+  .topbar h1{ font-size:20px; }
+  .auth-controls{ width:100%; justify-content:flex-end; }
+  .controls{ gap:8px; }
+}
+
+/* Dark mode baseline */
+body.dark{ 
+  background:#0b1220; color:#e5e7eb; 
+  --s-f-bg:#0f3a2d;   --s-f-bd:#1a6f57;   --s-f-fg:#d7fbe8;
+  --s-m-bg:#3c2f07;   --s-m-bd:#8a6d12;   --s-m-fg:#fff3bf;
+  --s-n-bg:#13264d;   --s-n-bd:#2a55b6;   --s-n-fg:#dbeafe;
+  --frei-bg:#111827;  --frei-bd:#374151;  --frei-fg:#cbd5e1;
+  --feiertag-bg:#421414; --feiertag-bd:#9f2727; --feiertag-fg:#fecaca;
+  --weekend-bg:#1f2a3a; --weekend-bd:#445268; --weekend-fg:#e5e7eb;
+}
+body.dark a{ color:#93c5fd; }
+/* Tables */
+body.dark .planner-table{ color:#e5e7eb; border-color:#334155; background:transparent; }
+body.dark .planner-table thead th{ background:#111827; color:#e5e7eb; border-color:#334155; }
+body.dark .planner-table .schichtkopf{ background:#0f172a; color:#e5e7eb; }
+body.dark .planner-table th, body.dark .planner-table td{ border-color:#334155; }
+body.dark .planner-table td.na{ background:transparent; }
+/* Shift colors with subtle tints */
+body.dark .planner-table td.s-f{ background:rgba(34,197,94,.12); }
+body.dark .planner-table td.s-m{ background:rgba(234,179,8,.14); }
+body.dark .planner-table td.s-n{ background:rgba(59,130,246,.13); }
+body.dark .planner-table td.s-frei.weekend{ background:rgba(148,163,184,.12); }
+body.dark .planner-table td.feiertag{ outline:1px dashed #94a3b8; outline-offset:-3px; }
+/* Vacation marker */
+body.dark .planner-table td.urlaub{ box-shadow: inset 0 0 0 1px #fca5a5; }
+body.dark .planner-table td.urlaub::after{ color:#fca5a5; }
+/* Cell inner labels */
+body.dark .planner-table .cell .shift{ color:#cbd5e1; }
+body.dark .planner-table .cell .dow{ color:#94a3b8; }
+/* Buttons and controls */
+body.dark .btn, body.dark .view-btn, body.dark .month-btn{ background:#1f2937; color:#e5e7eb; border:1px solid #374151; transition:background .2s ease, border-color .2s ease, color .2s ease; }
+body.dark .btn:hover, body.dark .view-btn:hover, body.dark .month-btn:hover{ background:#273244; border-color:#4b5563; }
+body.dark .view-btn.active, body.dark .month-btn.active{ background:#334155; border-color:#64748b; color:#e5e7eb; }
+/* Editor panel */
+body.dark #editorPanel{ background:#0f172a; color:#e5e7eb; border-left:1px solid #334155; box-shadow:-8px 0 16px rgba(0,0,0,.25); }
+body.dark #editorPanel .name-pill{ background:#111827; color:#e5e7eb; border:1px solid #374151; }
+body.dark #editorPanel .name-pill:hover{ background:#192234; }
+body.dark #editorPanel .name-pill.active{ background:#155e75; border-color:#0ea5b7; color:#e0f2fe; }
+body.dark #epInfo{ color:#cbd5e1; }
+/* Inputs */
+body.dark input, body.dark select{ background:#0f172a; color:#e5e7eb; border:1px solid #334155; }
+body.dark input::placeholder{ color:#94a3b8; }
+/* Modal */
+body.dark #modal{ background:rgba(2,6,23,.6); }
+body.dark #modal .modal-content{ background:#0f172a; color:#e5e7eb; border:1px solid #334155; }
+body.dark #modal .close-button{ color:#e5e7eb; }
+/* Actions container spacing */
+#plannerActions{ display:inline-flex; gap:8px; margin-left:8px; align-items:center; }
+/* Smooth theme transition */
+*{ transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+/* Print styles */
+@media print{
+  body{ background:#fff !important; color:#000 !important; }
+  .view-btn, .month-btn, #editorPanel, #editToggle, #anmeldenButton, #login-status, #modal, #plannerActions{ display:none !important; }
+  body.editor-open .container{ margin-right:0 !important; }
+  .planner-table{ width:100%; border-color:#000 !important; }
+  .planner-table th, .planner-table td{ color:#000 !important; background:#fff !important; border-color:#000 !important; }
+  .planner-table td.urlaub{ box-shadow: inset 0 0 0 1px #000 !important; }
+  .planner-table td.urlaub::after{ color:#000 !important; }
+}
+
+/* --- Additional dark mode polish --- */
+body.dark #login-status span{ color:#86efac; }
+body.dark #login-status button.btn{ background:#1f2937; border-color:#374151; color:#e5e7eb; }
+
+/* Buttons focus/active */
+body.dark .btn:focus-visible, body.dark .view-btn:focus-visible, body.dark .month-btn:focus-visible, body.dark #editorPanel .name-pill:focus-visible{ outline:2px solid #60a5fa; outline-offset:2px; }
+body.dark .btn:active, body.dark .view-btn:active, body.dark .month-btn:active{ transform: translateY(1px); }
+
+/* Inputs/select focus */
+body.dark input:focus, body.dark select:focus{ outline:2px solid #22d3ee; outline-offset:0; border-color:#22d3ee; }
+
+/* Modal inner controls */
+body.dark #modal input, body.dark #modal button{ background:#0f172a; color:#e5e7eb; border:1px solid #334155; }
+body.dark #modal .close-button:hover{ color:#93c5fd; }
+
+/* Table hover to improve readability */
+body.dark .planner-table td:hover{ background-color: rgba(148,163,184,.10); }
+
+/* Shift labels inside tinted cells for contrast */
+body.dark .planner-table td.s-f .cell .shift{ color:#a7f3d0; }
+body.dark .planner-table td.s-m .cell .shift{ color:#fde68a; }
+body.dark .planner-table td.s-n .cell .shift{ color:#93c5fd; }
+
+/* Dark scrollbars */
+body.dark ::-webkit-scrollbar{ width:10px; height:10px; }
+body.dark ::-webkit-scrollbar-track{ background:#0b1220; }
+body.dark ::-webkit-scrollbar-thumb{ background:#334155; border-radius:8px; }
+body.dark ::-webkit-scrollbar-thumb:hover{ background:#475569; }
+/* --- Cohesive dark-mode UI pass --- */
+/* Header/title */
+body.dark h1, body.dark .title{ color:#e5e7eb; text-shadow:none; }
+
+/* Top control bar containers (cover common class names) */
+body.dark .toolbar, body.dark .controls, body.dark .control-bar, body.dark .filter-bar, body.dark .legendbar{
+  background:#0f172a; border:1px solid #334155; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+
+/* Inputs and selects in top bar */
+body.dark .toolbar input, body.dark .toolbar select,
+body.dark .controls input, body.dark .controls select,
+body.dark input[type="text"], body.dark select{
+  background:#0b1220; color:#e5e7eb; border:1px solid #334155; border-radius:10px; }
+body.dark .toolbar input:focus, body.dark .toolbar select:focus,
+body.dark .controls input:focus, body.dark .controls select:focus{ outline:2px solid #60a5fa; border-color:#60a5fa; }
+
+/* Buttons - states */
+body.dark .btn:disabled, body.dark .view-btn:disabled, body.dark .month-btn:disabled{
+  opacity:.55; cursor:not-allowed; background:#111827; border-color:#1f2937; color:#94a3b8;
+}
+body.dark .btn.active, body.dark .view-btn.active, body.dark .month-btn.active{ background:#334155; color:#e5e7eb; border-color:#64748b; }
+
+/* Actions container spacing */
+#plannerActions{ margin-left:12px; gap:10px; }
+
+/* Legend chips (try common classes) */
+body.dark .legend, body.dark #legend{ color:#cbd5e1; }
+body.dark .legend .chip, body.dark .legend .badge, body.dark .legend .pill{
+  background:#111827; color:#e5e7eb; border:1px solid #374151; border-radius:999px; padding:.25rem .5rem;
+}
+
+/* Dark mode: restore colored legend chips (header preview) */
+body.dark .legend .chip.s-f, body.dark #legend .chip.s-f{ background:#0b5e3c !important; border-color:#0e7a52 !important; color:#e5e7eb !important; }
+body.dark .legend .chip.s-m, body.dark #legend .chip.s-m{ background:#a16207 !important; border-color:#ca8a04 !important; color:#111827 !important; }
+body.dark .legend .chip.s-n, body.dark #legend .chip.s-n{ background:#1e3a8a !important; border-color:#2563eb !important; color:#e5e7eb !important; }
+body.dark .legend .chip.s-frei, body.dark #legend .chip.s-frei, body.dark .legend .chip.frei, body.dark #legend .chip.frei{ background:#111827 !important; border-color:#374151 !important; color:#cbd5e1 !important; }
+body.dark .legend .chip.feiertag, body.dark #legend .chip.feiertag{ background:#7f1d1d !important; border-color:#b91c1c !important; color:#fee2e2 !important; }
+body.dark .legend .chip.weekend, body.dark #legend .chip.weekend{ background:#334155 !important; border-color:#475569 !important; color:#e5e7eb !important; }
+/* Table header contrast and row labels */
+body.dark .planner-table thead th{ background:#0e1627; color:#e5e7eb; }
+body.dark .planner-table .schichtkopf{ background:#0d1424; color:#e5e7eb; font-weight:600; }
+body.dark .planner-table .tagkopf{ color:#cbd5e1; }
+
+/* Table row hover and cell inner */
+body.dark .planner-table tbody tr:hover td{ background-color: rgba(148,163,184,.06); }
+body.dark .planner-table .cell .dow{ color:#9ca3af; }
+
+/* Feiertag marker, clearer and subtle */
+body.dark .planner-table td.feiertag{ outline-color:#8193a8; }
+
+/* Panel and modal fine-tune */
+body.dark #editorPanel{ background:#0d1424; }
+body.dark #modal .modal-content{ background:#0d1424; }
+
+/* Improve focus ring on inputs/buttons for accessibility */
+body.dark :focus-visible{ outline-offset:2px; }
+
+/* Dark scrollbars already set earlier; keep consistent thickness */
+body.dark ::-webkit-scrollbar{ width:10px; height:10px; }
+/* Make all remaining light areas dark in dark mode */
+/* Neutral cells (not shift/holiday/free) */
+body.dark .planner-table td:not(.s-f):not(.s-m):not(.s-n):not(.s-frei):not(.feiertag):not(.na){ background:#0b1220; }
+/* Free days base */
+body.dark .planner-table td.s-frei{ background:rgba(148,163,184,.08); }
+/* NA cells */
+body.dark .planner-table td.na{ background:#0b1220; }
+
+/* Top containers that might still be light */
+body.dark .container, body.dark .page, body.dark .content, body.dark .header, body.dark header,
+body.dark .toolbar, body.dark .controls, body.dark .control-bar, body.dark .filter-bar,
+body.dark .panel, body.dark .card, body.dark .box, body.dark .topbar, body.dark .top-controls{
+  background:#0f172a; color:#e5e7eb; }
+body.dark .container, body.dark .panel, body.dark .card, body.dark .box, body.dark .toolbar, body.dark .controls{
+  border:1px solid #334155; border-radius:12px;
+}
+
+/* Labels and small texts */
+body.dark label, body.dark .label, body.dark .hint, body.dark .subtle{ color:#cbd5e1; }
+
+/* Keep hover and focus readable over new dark neutrals */
+body.dark .planner-table td:hover{ background-color: rgba(148,163,184,.10); }
+body.dark :focus-visible{ outline:2px solid #60a5fa; outline-offset:2px; }
+
+/* Darken top year/shift controls */
+body.dark label[for="yearInput"], body.dark label[for="shiftSelect"]{ color:#cbd5e1; }
+body.dark #yearInput, body.dark #shiftSelect{ background:#0b1220 !important; color:#e5e7eb !important; border:1px solid #334155 !important; box-shadow:none !important; }
+body.dark #yearInput:focus, body.dark #shiftSelect:focus{ outline:2px solid #60a5fa; border-color:#60a5fa; }
+/* Possible wrappers around controls */
+body.dark #topControls, body.dark .top-controls, body.dark .controls-row, body.dark .filters, body.dark .filter-group{
+  background:#0f172a; border:1px solid #334155; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+
+/* Darken bottom legend/status/footer bar */
+body.dark footer, body.dark .footer, body.dark #footer, body.dark .legend-bar, body.dark #legendBar, body.dark .bottom-bar, body.dark #bottomBar{
+  background:#0f172a !important; color:#e5e7eb !important; border-top:1px solid #334155 !important; box-shadow:0 -2px 10px rgba(0,0,0,.25);
+}
+body.dark .legend-bar .chip, body.dark #legendBar .chip{ background:#111827; color:#e5e7eb; border:1px solid #374151; }
+/* Top selectors (year/shift) wrapper, labels and fields */
+body.dark .selector-bar, body.dark #selectorBar, body.dark .header-controls, body.dark .control-wrapper, body.dark .controls-row, body.dark .filters, body.dark .filter-group, body.dark .input-group, body.dark .form-group{
+  background:#0f172a !important; color:#e5e7eb !important; border:1px solid #334155 !important; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+body.dark .form-group label, body.dark .input-group label, body.dark .header-controls label, body.dark .control-wrapper label{ color:#cbd5e1 !important; }
+body.dark .form-group input, body.dark .form-group select, body.dark .input-group input, body.dark .input-group select, body.dark .header-controls input, body.dark .header-controls select{
+  background:#0b1220 !important; color:#e5e7eb !important; border:1px solid #334155 !important; }
+/* Explicit IDs for year/shift */
+body.dark #yearInput, body.dark #shiftSelect{ background:#0b1220 !important; color:#e5e7eb !important; border:1px solid #334155 !important; }
+body.dark label[for="yearInput"], body.dark label[for="shiftSelect"]{ color:#cbd5e1 !important; }
+/* Bottom legend/status/footer bar */
+body.dark .legend-bar, body.dark #legendBar, body.dark .bottom-bar, body.dark #bottomBar, body.dark .status-bar, body.dark #statusBar, body.dark footer, body.dark .footer, body.dark #footer{
+  background:#0f172a !important; color:#e5e7eb !important; border-top:1px solid #334155 !important; box-shadow:0 -2px 10px rgba(0,0,0,.25);
+}
+body.dark .legend, body.dark #legend, body.dark .legend-wrap, body.dark .legend-container{ background:#0f172a !important; color:#e5e7eb !important; }
+body.dark .legend .chip, body.dark #legend .chip{ background:#111827 !important; color:#e5e7eb !important; border:1px solid #374151 !important; }
+/* Ensure page wrappers are dark (avoids white bands) */
+body.dark .page, body.dark .app, body.dark .main, body.dark .content, body.dark .container{ background:#0b1220 !important; color:#e5e7eb; }
+/* Root backgrounds to remove any white edges */
+html.dark, body.dark{ background:#0b1220; min-height:100vh; }
+/* Fieldset/legend dark */
+body.dark fieldset{ background:#0f172a; border:1px solid #334155; border-radius:10px; }
+body.dark legend{ color:#e5e7eb; }
+/* Select dropdown options */
+body.dark select, body.dark option{ background:#0b1220; color:#e5e7eb; }
+/* Generic bottom spacer/white bar fixes */
+body.dark .spacer, body.dark .space, body.dark .pad, body.dark .separator{ background:#0b1220; }
+/* Ensure plan container footer area is dark */
+body.dark #plannerContainer + *, body.dark #plannerContainer ~ .footer-like{ background:#0f172a; color:#e5e7eb; }
+/* Darken the remaining white wrappers around year/shift controls and ensure no white bottom edge; also hide light number-input spinners and style scrollbar corner. */
+body.dark .form-control, body.dark .control, body.dark .field, body.dark .input, body.dark .input-wrapper, body.dark .input-container,
+body.dark .select-wrapper, body.dark .select-container, body.dark .chip, body.dark .pill{
+  background:#0f172a !important; color:#e5e7eb !important; border:1px solid #334155 !important; border-radius:12px !important;
+}
+body.dark div:has(#yearInput), body.dark div:has(#shiftSelect){
+  background:#0f172a !important; color:#e5e7eb !important; border:1px solid #334155 !important; border-radius:12px !important;
+}
+body.dark .form-control > *, body.dark .input-wrapper > *, body.dark .input-container > *{ background:transparent !important; }
+body.dark input[type="number"]{ appearance: textfield; -moz-appearance: textfield; }
+/* Dark mode specific styles for number input to hide spinners */
+body.dark input[type="number"]::-webkit-outer-spin-button,
+body.dark input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance: none; margin:0; }
+/* Ensure explicit control wrapper is dark */
+body.dark .control-wrap{ background:#0f172a !important; color:#e5e7eb !important; border:1px solid #334155 !important; border-radius:12px !important; }
+body.dark .control-wrap input, body.dark .control-wrap select{ background:#0b1220 !important; color:#e5e7eb !important; border:1px solid #334155 !important; }
+/* Remove light number spinners on year input specifically */
+body.dark #yearInput{ appearance:textfield; -moz-appearance:textfield; }
+body.dark #yearInput::-webkit-outer-spin-button,
+body.dark #yearInput::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+/* Re-enable spinners for the year input in dark mode */
+body.dark #yearInput[type="number"]{ appearance:auto !important; -moz-appearance:auto !important; color-scheme:dark; }
+body.dark #yearInput[type="number"]::-webkit-outer-spin-button,
+body.dark #yearInput[type="number"]::-webkit-inner-spin-button{ -webkit-appearance:auto !important; }
+
+/* Dark mode palette for shifts and states */
+body.dark{
+  --s-f-bg:#0f3a2d;   --s-f-bd:#1a6f57;   --s-f-fg:#d7fbe8;
+  --s-m-bg:#3c2f07;   --s-m-bd:#8a6d12;   --s-m-fg:#fff3bf;
+  --s-n-bg:#13264d;   --s-n-bd:#2a55b6;   --s-n-fg:#dbeafe;
+  --frei-bg:#111827;  --frei-bd:#374151;  --frei-fg:#cbd5e1;
+  --feiertag-bg:#421414; --feiertag-bd:#9f2727; --feiertag-fg:#fecaca;
+  --weekend-bg:#1f2a3a; --weekend-bd:#445268; --weekend-fg:#e5e7eb;
+}
+
+/* Keep generic chips dark, but not the typed legend chips */
+body.dark .chip:not(.s-f):not(.s-m):not(.s-n):not(.s-frei):not(.frei):not(.feiertag):not(.weekend){
+  background:#0f172a !important; color:#e5e7eb !important; border:1px solid #334155 !important;
+}
+
+/* Legend chips mapping (stronger specificity to override generic rules) */
+body.dark .legend .chip.s-f, body.dark #legend .chip.s-f, body.dark .legend-chip.s-f, body.dark .chip.s-f.legend, body.dark .chip.s-f[data-role="legend"]{
+  background:var(--s-f-bg) !important; border-color:var(--s-f-bd) !important; color:var(--s-f-fg) !important;
+}
+body.dark .legend .chip.s-m, body.dark #legend .chip.s-m, body.dark .legend-chip.s-m, body.dark .chip.s-m.legend, body.dark .chip.s-m[data-role="legend"]{
+  background:var(--s-m-bg) !important; border-color:var(--s-m-bd) !important; color:var(--s-m-fg) !important;
+}
+body.dark .legend .chip.s-n, body.dark #legend .chip.s-n, body.dark .legend-chip.s-n, body.dark .chip.s-n.legend, body.dark .chip.s-n[data-role="legend"]{
+  background:var(--s-n-bg) !important; border-color:var(--s-n-bd) !important; color:var(--s-n-fg) !important;
+}
+body.dark .legend .chip.s-frei, body.dark #legend .chip.s-frei, body.dark .legend-chip.s-frei, body.dark .legend .chip.frei, body.dark #legend .chip.frei{
+  background:var(--frei-bg) !important; border-color:var(--frei-bd) !important; color:var(--frei-fg) !important;
+}
+body.dark .legend .chip.feiertag, body.dark #legend .chip.feiertag, body.dark .legend-chip.feiertag{
+  background:var(--feiertag-bg) !important; border-color:var(--feiertag-bd) !important; color:var(--feiertag-fg) !important;
+}
+body.dark .legend .chip.weekend, body.dark #legend .chip.weekend, body.dark .legend-chip.weekend{
+  background:var(--weekend-bg) !important; border-color:var(--weekend-bd) !important; color:var(--weekend-fg) !important;
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Datensicherung",
+    "bearbeiter": "Marc",
+    "start": "2025-06-22",
+    "end": "2025-08-29",
+    "farbe": "#38a169",
+    "notizen": "",
+    "parentId": null,
+    "subprojekte": []
+  },
+  {
+    "name": "Hauptseite",
+    "bearbeiter": "Timo",
+    "start": "2025-06-26",
+    "end": "2026-07-01",
+    "farbe": "#4299e1",
+    "notizen": "",
+    "parentId": null,
+    "subprojekte": []
+  },
+  {
+    "name": "Fahrtenbuch Rework",
+    "bearbeiter": "Timo",
+    "start": "2025-07-06",
+    "end": "2025-07-11",
+    "farbe": "#4299e1",
+    "notizen": "",
+    "parentId": "1",
+    "subprojekte": []
+  },
+  {
+    "name": "Wochenplaner Druckfunktion",
+    "bearbeiter": "Timo",
+    "start": "2025-07-07",
+    "end": "2025-07-31",
+    "farbe": "#4299e1",
+    "notizen": "",
+    "parentId": "1",
+    "subprojekte": []
+  }
+]

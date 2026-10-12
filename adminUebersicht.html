@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Übersicht - Dashboard</title>
+    <link rel="stylesheet" href="adminUebersicht.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="dark">
+    <header>
+        <div class="header-left-controls">
+            <button id="backButton" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Zurück</span>
+            </button>
+        </div>
+        <h1>Admin Dashboard</h1>
+        <div class="header-right-controls">
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Statistiken Dashboard -->
+        <section class="stats-section">
+            <h2>System Übersicht</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Mitarbeiter gesamt</h3>
+                        <p id="totalEmployees">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Administratoren</h3>
+                        <p id="totalAdmins">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>RFID Chips</h3>
+                        <p id="totalRfidChips">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Schichten</h3>
+                        <p id="totalShifts">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schnellzugriff Bereich -->
+        <section class="quick-actions-section">
+            <h2>Schnellzugriff</h2>
+            <div class="quick-actions-grid">
+                <div class="action-card" onclick="window.location.href='benutzerverwaltung.html'">
+                    <div class="action-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Benutzerverwaltung</h3>
+                        <p>Mitarbeiter verwalten, Berechtigungen bearbeiten</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="action-card" onclick="showReports()">
+                    <div class="action-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Berichte</h3>
+                        <p>Statistiken und Auswertungen</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="action-card" onclick="showBackup()">
+                    <div class="action-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Backup & Export</h3>
+                        <p>Datensicherung und Export</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schichten Übersicht -->
+        <section class="shifts-section">
+            <h2>Schichten Übersicht</h2>
+            <div class="shifts-grid" id="shiftsGrid">
+                <!-- Schichten werden dynamisch geladen -->
+            </div>
+        </section>
+
+        
+
+        <!-- Letzte Aktivitäten (ohne detaillierte Logs) 
+        <section class="recent-section">
+            <h2>Letzte Systemereignisse</h2>
+            <div class="recent-card">
+                <div class="recent-list" id="recentEvents">
+                     Ereignisse werden dynamisch geladen 
+                </div>
+            </div>
+        </section>
+    -->
+    </main>
+
+    <script src="adminUebersicht.js"></script>
+</body>
+</html>

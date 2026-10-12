@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schaltanweisungen Übersicht</title>
+    <!-- Version erhöht auf v=10 gegen Caching-Probleme -->
+    <link rel="stylesheet" href="sawindex.css?v=10">
+</head>
+<body>
+
+    <div id="notification-area"></div>
+
+    <!-- NEUER HOME SCREEN / LOGIN (Initial sichtbar) -->
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>Schaltanweisungen</h2>
+            <p>Bitte melden Sie sich an, um fortzufahren.</p>
+            
+            <input type="password" id="inpMainLogin" class="login-input" placeholder="RFID Code scannen..." autofocus>
+            <button onclick="performMainLogin()" class="login-btn">Anmelden</button>
+            
+            <div id="loginStatus" style="margin-top: 15px; font-size: 0.9em; min-height: 20px;"></div>
+        </div>
+    </div>
+
+    <!-- HAUPTINHALT (Initial versteckt) -->
+    <div id="app-content" style="display: none;">
+
+        <div class="container">
+            <!-- Datalist für Anlagen-Vorschläge im Editor -->
+            <datalist id="anlagenList"></datalist>
+
+            <!-- Altes ModalLogin entfernt/ausgeblendet, da nun Fullscreen Login -->
+            <!-- Modal für Neue Schaltanweisung -->
+            <div id="modalNewSaw" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Neue Schaltanweisung erstellen</h2>
+                        <span class="modal-close" onclick="closeNewSawModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="filter-group">
+                            <label for="modalSelectAnlage">Anlage auswählen:</label>
+                            <select id="modalSelectAnlage">
+                                <option value="0">-- Bitte wählen --</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="modalSelectZelle">Zelle auswählen:</label>
+                            <select id="modalSelectZelle">
+                                <option value="0">-- Bitte erst Anlage wählen --</option>
+                            </select>
+                        </div>
+                        <!-- NEU: Schaltart Auswahl für Kopftext-Vorbelegung -->
+                        <div class="filter-group">
+                            <label for="modalSelectSchaltart">Art der Schaltung:</label>
+                            <select id="modalSelectSchaltart">
+                                <option value="">-- Keine Vorlage --</option>
+                                <option value="Inbetriebnahme">Inbetriebnahme</option>
+                                <option value="Außerbetriebnahme">Außerbetriebnahme</option>
+                                <option value="Umlegen">Umlegen</option>
+                                <option value="Wechselw. Freischalten">Wechselw. Freischalten</option>
+                                <option value="Frequenzrelaisprüfung">Frequenzrelaisprüfung</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-reset" onclick="closeNewSawModal()" style="background:#95a5a6;">Abbrechen</button>
+                        <button class="btn-reset" onclick="confirmNewSaw()" style="background:#2ecc71; color:white;">Erstellen</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal für Bearbeitungs-Entscheidung (Kopie vs Original) -->
+            <div id="modalEditDecision" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Schaltanweisung bearbeiten</h2>
+                        <span class="modal-close" onclick="closeEditDecisionModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalEditMsg" style="font-size:1.1em; margin-bottom: 20px;"></p>
+                    </div>
+                    <div class="modal-footer" id="modalEditFooter" style="display:flex; justify-content:flex-end; gap:10px;">
+                        <!-- Buttons werden dynamisch eingefügt -->
+                    </div>
+                </div>
+            </div>
+
+            <header style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h1>Schaltanweisungen</h1>
+                    <p>Filtern Sie nach Anlage oder Zelle, um zugehörige Dokumente zu finden.</p>
+                </div>
+                <div class="nav-buttons" id="navButtons">
+                    <button onclick="switchView('list')" class="btn-reset" id="btnToList" style="display:none;">← Übersicht</button>
+                    <button onclick="createNew()" class="btn-reset" id="btnCreateNew" style="background:#2ecc71; color:white; display:none;">+ Neu erstellen</button>
+                    <button onclick="switchView('manage')" class="btn-reset" id="btnToManage" style="background:#e67e22; color:white; display:none;">⚙ Verwaltung</button>
+                    <!-- Login Button geändert zu Logout -->
+                    <button onclick="doLogout()" class="btn-reset" id="btnLogout" style="background:#7f8c8d; color:white;">Benutzer (Logout)</button>
+                </div>
+            </header>
+
+            <!-- LIST VIEW -->
+            <div id="view-list" class="view-section">
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="selectAnlage">Anlage:</label>
+                        <select id="selectAnlage">
+                            <option value="0">-- Alle Anlagen --</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="selectZelle">Zelle:</label>
+                        <select id="selectZelle">
+                            <option value="0">-- Alle Zellen --</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="inpSearch">Suche:</label>
+                        <input type="text" id="inpSearch" placeholder="SAW-Nr, Text, Ersteller...">
+                    </div>
+                    
+                    <button id="btnReset" class="btn-reset">Filter zurücksetzen</button>
+                </div>
+
+                <div id="loading" class="loading" style="display:none;">Lade Daten...</div>
+
+                <table class="saw-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 140px;">SAW-Nr</th>
+                            <th style="width: 140px;">Datum</th>
+                            <th>Beschreibung</th>
+                            <th style="width: 150px;">Ersteller</th>
+                            <th style="width: 100px; text-align: center;">Status</th>
+                            <th style="width: 140px;">Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sawTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- DETAIL VIEW -->
+            <div id="view-detail" style="display:none;" class="view-section">
+                <div class="filter-bar" style="justify-content: space-between;">
+                    <h2>Detailansicht: <span id="detailTitle"></span></h2>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <label style="font-weight:bold;">Schaltdatum:</label>
+                        <input type="date" id="detailPrintDate" style="padding:6px; border:1px solid #ccc; border-radius:4px;" required>
+                        <button id="btnDetailEdit" class="btn-reset">Bearbeiten</button>
+                        <button id="btnDetailPrint" class="btn-reset" style="background:#f39c12; color:white;">Drucken</button>
+                        <button onclick="switchView('list')" class="btn-reset">Zurück</button>
+                    </div>
+                </div>
+
+                <!-- NEU: Zusatzfelder für den Druck -->
+                <div style="background:#f0f4f8; padding:10px; border-radius:5px; margin-bottom:15px; border:1px solid #dce4ec;">
+                    <strong style="display:block; margin-bottom:5px; color:#2c3e50;">Verteiler & DH-Safe:</strong>
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                        <input type="text" id="inpFooterVert4" placeholder="Verteiler 4..." style="padding:8px; font-size:1em; border:1px solid #ddd; border-radius:4px; flex:1;">
+                        <input type="text" id="inpFooterVert5" placeholder="Verteiler 5..." style="padding:8px; font-size:1em; border:1px solid #ddd; border-radius:4px; flex:1;">
+                        <input type="text" id="inpFooterSafeNr" placeholder="DH-SAFE Nr..." style="padding:8px; font-size:1em; border:1px solid #ddd; border-radius:4px; flex:1;">
+                    </div>
+                </div>
+
+                <div class="detail-header-grid">
+                    <div>
+                        <strong>Ersteller:</strong> <span id="detailUser"></span><br>
+                        <strong>Datum:</strong> <span id="detailDate"></span><br>
+                        <strong>Status:</strong> <span id="detailStatusBadge"></span>
+                    </div>
+                    <div>
+                        <strong>Kopftext:</strong><br>
+                        <pre id="detailKopf" style="background:#f9f9f9; padding:5px; border:1px solid #eee;"></pre>
+                    </div>
+                </div>
+
+                <h3>Schritte</h3>
+                <table class="detail-step-table">
+                    <thead id="detailTableHead"></thead>
+                    <tbody id="detailTableBody"></tbody>
+                </table>
+            </div>
+
+            <!-- PRINT VIEW (versteckt, nur für Druck) -->
+            <div id="view-print" style="display:none;">
+                <div id="printContent"></div>
+            </div>
+
+            <!-- EDITOR VIEW -->
+            <div id="view-editor" style="display:none;" class="view-section">
+                <h2>Schaltanweisung bearbeiten</h2>
+                
+                <div class="editor-header-grid">
+                    <div class="filter-group">
+                        <label>SAW-Nr.:</label>
+                        <input type="text" id="inpSawNr" readonly style="background:#eee;">
+                    </div>
+                    <div class="filter-group">
+                        <label>Benutzer:</label>
+                        <input type="text" id="inpUser">
+                    </div>
+                    <!-- WIEDERHERGESTELLT: Zelle Anzeige (Read-Only) -->
+                    <div class="filter-group">
+                        <label>Zelle:</label>
+                        <div style="display:flex; gap:5px;">
+                            <input type="text" id="inpCurrentZelle" readonly style="background:#eee; color:#555; flex:1;" title="Aktuell zugewiesene Zelle">
+                            <button type="button" onclick="changeMainZelle()" class="btn-reset btn-sm" style="background:#3498db; color:white;" title="Zelle/Anlage ändern (z.B. falsch zugewiesene SAW korrigieren)">Ändern</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEU: Feld für Anlage (Generell) als Liste -->
+                <div class="filter-group" style="margin-bottom: 30px; width: 50%;">
+                    <label>Zuweisung Anlagen:</label>
+                    <div id="editorAnlagenContainer" style="border: 1px solid #ccc; border-radius: 4px; padding: 5px; background: #fff; min-height: 38px;">
+                        <div id="editorAnlagenList" style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 5px;"></div>
+                        <div style="display: flex; gap: 5px;">
+                            <button type="button" onclick="addAnlageToSaw()" class="btn-reset btn-sm" style="background: #3498db; color: white;">+ Anlage</button>
+                        </div>
+                    </div>
+                    <!-- Hidden field for legacy text behavior if needed, currently unused via UI -->
+                    <input type="hidden" id="inpAnlageText">
+                </div>
+
+                <div class="filter-group" style="margin-bottom: 15px;">
+                    <label>Kopf (Beschreibung):</label>
+                    <textarea id="inpKopf" rows="3" style="width:100%; font-family:'Roboto', monospace; padding:5px; border:1px solid #ccc; border-radius:4px;"></textarea>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <input type="checkbox" id="chkOriginal">
+                    <label for="chkOriginal">Dies ist ein Original-Dokument</label>
+                </div>
+
+                <h3>Schritte</h3>
+                <p style="font-size:0.9em; color:#666; margin-top:-10px; margin-bottom:10px;">
+                    Bearbeiten Sie die Schritte direkt in der Tabelle. Klicken Sie auf eine Zelle um zu schreiben.
+                    <br>Ziehen Sie die Nummer links, um Zeilen zu verschieben.
+                </p>
+                
+                <!-- Header Inputs Grid (Restored) -->
+                <div class="editor-col-headers" id="colHeaderContainer"></div>
+                
+                <table class="editor-step-table">
+                    <thead id="stepTableHead">
+                        <!-- Wird dynamisch gefüllt (Labels) -->
+                    </thead>
+                    <tbody id="stepTableBody">
+                        <!-- Content -->
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 15px; display:flex; gap:10px;">
+                    <button onclick="addEditorRow()" class="btn-reset" style="background:#27ae60;">+ Zeile hinzufügen</button>
+                </div>
+
+                <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; display:flex; gap:10px;">
+                    <button onclick="saveSaw()" class="btn-reset" style="background:#2ecc71; color:white;">Speichern</button>
+                    <button onclick="switchView('list')" class="btn-reset" style="background:#95a5a6;">Abbrechen</button>
+                    <button onclick="printCurrentSaw()" class="btn-reset" style="background:#f39c12; color:white;">Vorschau drucken</button>
+                    <button id="btnDeleteSaw" onclick="deleteCurrentSaw()" class="btn-reset" style="background:#e74c3c; color:white; display:none; margin-left:auto;">Löschen</button>
+                </div>
+            </div>
+
+            <!-- MANAGE VIEW -->
+            <div id="view-manage" style="display:none;" class="view-section">
+                <h2>Verwaltung</h2>
+                
+                <div style="display:flex; gap:20px;">
+                    <!-- Anlagen -->
+                    <div style="flex:1; background:#f9f9f9; padding:15px; border-radius:5px; display:flex; flex-direction:column;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <h3>Anlagen</h3>
+                            <button onclick="addAnlagePrompt()" class="btn-reset" style="padding: 2px 8px; font-size: 0.8em; background:#2ecc71; color:white;" title="Neue Anlage hinzufügen">+ Hinzufügen</button>
+                        </div>
+                        
+                        <input type="text" id="manAnlSearch" placeholder="🔍 Anlage suchen..." style="width:100%; margin-bottom:5px; padding:5px;">
+                        <select id="manAnlSel" size="10" style="width:100%; margin-bottom:10px; flex-grow:1;"></select>
+                        
+                        <div style="border-top:1px solid #ddd; padding-top:10px;">
+                            <input type="text" id="manAnlBez" placeholder="Bezeichnung" style="width:100%; margin-bottom:5px;">
+                            <div style="display:flex; gap:5px;">
+                                <button id="btnSaveAnlage" onclick="saveAnlage()" class="btn-reset" style="background:#2ecc71; color:white; flex:1;">Speichern</button>
+                                <button onclick="deleteAnlage()" class="btn-reset" style="background:#e74c3c; color:white; flex:1;">Löschen</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zellen -->
+                    <div style="flex:1; background:#f9f9f9; padding:15px; border-radius:5px; display:flex; flex-direction:column;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <h3>Zellen</h3>
+                            <div style="font-size: 0.8em;">
+                                 <input type="checkbox" id="manFilterZellen" checked> <label for="manFilterZellen" title="Zeigt nur Zellen der links ausgewählten Anlage">Nur zugehörige</label>
+                                 <button onclick="addZellePrompt()" class="btn-reset" style="padding: 2px 8px; margin-left:5px; background:#2ecc71; color:white;" title="Neue Zelle hinzufügen">+ Hinzufügen</button>
+                            </div>
+                        </div>
+
+                        <input type="text" id="manZelSearch" placeholder="🔍 Zelle suchen (Nr oder Bez)..." style="width:100%; margin-bottom:5px; padding:5px;">
+                        <select id="manZelSel" size="10" style="width:100%; margin-bottom:10px; flex-grow:1;"></select>
+                        
+                        <div style="border-top:1px solid #ddd; padding-top:10px;">
+                            <input type="text" id="manZelNr" placeholder="Nr (z.B. +A01)" style="width:100%; margin-bottom:5px;">
+                            <input type="text" id="manZelBez" placeholder="Bezeichnung" style="width:100%; margin-bottom:5px;">
+                            
+                            <div style="display:flex; gap:5px;">
+                                <button id="btnSaveZelle" onclick="saveZelle()" class="btn-reset" style="background:#2ecc71; color:white; flex:1;">Speichern</button>
+                                <button onclick="deleteZelle()" class="btn-reset" style="background:#e74c3c; color:white; flex:1;">Löschen</button>
+                            </div>
+                        </div>
+
+                        <!-- NEU: Verknüpfungen Bereich IM Zellen Container oder separat -->
+                        <div style="border-top:2px solid #ccc; margin-top:15px; padding-top:10px;">
+                           <h4>Verknüpfte Zellen</h4>
+                           <div style="font-size:0.85em; color:#666; margin-bottom:5px;">Wählen Sie oben eine Zelle, um Verknüpfungen zu sehen.</div>
+                           <div id="manLinkedCellsList" style="margin-bottom:10px; min-height:30px;">
+                               <!-- Tags here -->
+                           </div>
+                           <div style="display:flex; flex-direction:column; gap:5px;">
+                               <select id="manLinkAnlSel" style="width:100%; margin-bottom:2px;">
+                                   <option value="0">-- 1. Anlage wählen --</option>
+                               </select>
+                               <div style="display:flex; gap:5px;">
+                                   <select id="manLinkCandidateSel" style="flex:1;">
+                                       <option value="">-- 2. Zelle wählen --</option>
+                                   </select>
+                                   <button onclick="addGlobalCellLink()" class="btn-reset btn-sm" style="background:#3498db; color:white;">+ Link</button>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+
+                    <!-- NEU: Textbausteine -->
+                    <div style="flex:1; background:#f9f9f9; padding:15px; border-radius:5px; display:flex; flex-direction:column;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <h3>Textbausteine</h3>
+                            <button onclick="addTextbausteinPrompt()" class="btn-reset" style="padding: 2px 8px; font-size: 0.8em; background:#2ecc71; color:white;" title="Neuen Textbaustein hinzufügen">+ Hinzufügen</button>
+                        </div>
+                        
+                        <input type="text" id="manTxtSearch" placeholder="🔍 Suchen..." style="width:100%; margin-bottom:5px; padding:5px;">
+                        <select id="manTxtSel" size="10" style="width:100%; margin-bottom:10px; flex-grow:1;"></select>
+                        
+                        <div style="border-top:1px solid #ddd; padding-top:10px;">
+                            <textarea id="manTxtContent" placeholder="Inhalt (Autofill-Text)" style="width:100%; margin-bottom:5px; height: 60px; font-family: inherit; resize: vertical; padding:5px;"></textarea>
+                            <div style="display:flex; gap:5px;">
+                                <button id="btnSaveTextbaustein" onclick="saveTextbaustein()" class="btn-reset" style="background:#2ecc71; color:white; flex:1;">Speichern</button>
+                                <button onclick="deleteTextbaustein()" class="btn-reset" style="background:#e74c3c; color:white; flex:1;">Löschen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Ende app-content -->
+
+    <script src="sawindex.js?v=10"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulare</title>
+    <link rel="stylesheet" href="formulare.css" />
+</head>
+<body>
+<header>
+  <h1>Formulare</h1>
+  <button id="themeToggle" class="theme-toggle" title="Theme wechseln">🌙</button>
+</header>
+
+<nav class="sidebar"> 
+        <h2>Navigation</h2>
+        <ul>
+			<li><a href="../index.html">Startseite</a></li>
+            <li><a href="formulare.html" class="active">Formulare</a></li>
+            <li><a href="../fahrtenbuch.html">Fahrtenbuch</a></li>
+            <li><a href="../tabelle.html">Fahrtenbuch<br>Tabellenübersicht</a></li>
+            <li><a href="../schwarzesbrett.html">Schwarzes Brett</a></li>
+            <li><a href="../telefonbuch.html">Telefonbuch</a></li>
+            <li><a href="../wochenplan.html">Wochenplan</a></li>
+            <li><a href="../x_dashboard.php">Fremdfirmen</a></li>
+            <li><a href="https://stromspitzen.dillinger.de/index.htm" target="_blank">Stromspitzen</a></li>
+            <li><a href="https://elv1.dillinger.de/filter.htm" target="_blank">Filter Stahlwerk</a></li>
+            <li><a href="https://fiori.dillinger.de:8001/fiori" target="_blank">Fiori</a></li>
+            <li><a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank">Planoview</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank">Intranet</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank">Speiseplan</a></li>
+        </ul>
+    </nav>
+
+<main>
+  <section class="search-bar">
+    <input id="searchInput" class="search-input" type="search" placeholder="Nach Formularen suchen... (z. B. Turbine, Leihschein, 19.4-75a)" />
+    <div id="resultCount" class="result-count"></div>
+  </section>
+
+  <!-- Upload vorübergehend deaktiviert
+  <section class="card">
+    <div class="upload-card">
+      <form id="uploadForm" method="post" enctype="multipart/form-data" action="formulare_uploads.php">
+        <input id="fileInput" name="files[]" type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.jpg,.jpeg,.png" />
+        <button type="submit" class="btn-small btn-primary">Hochladen</button>
+        <span id="uploadStatus" style="margin-left:10px;color:var(--color-secondary);"></span>
+      </form>
+      <div style="margin-top:8px;color:var(--color-secondary);font-size:.9em;">Max. 20MB pro Datei. Erlaubte Formate: PDF, Office, Bilder, TXT, CSV.</div>
+    </div>
+  </section>
+  -->
+
+  <ul id="formsList" class="forms-list">
+    <li><a href="/dokumente/formulare/El.H 19.4-02b.pdf">El.H 19.4-02b  Messung Kohlen Verdichter 1</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-14a.pdf">El.H 19.4-14a  13MW-Turbine</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-21a.pdf">El.H 19.4-21a  Arbeiten St&ouml;rungen Zentrale 1</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-29e.pdf">El.H 19.4-29e  ZKS Antriebsmaschine Verdichter 1</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-31f.pdf">El.H 19.4-31f  ZKS Teerfilter</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-32.pdf">El.H 19.4-32  Turbokompressor 2 Zentrale 2</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-34.pdf">El.H 19.4-34  Entspannungsturbine HO5</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-39a.pdf">El.H 19.4-39a  Entspannungsturbine HO4</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-43.pdf">El.H 19.4-43  B&uuml;rstenmessung 13MW-Turbine</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-54g.pdf">El.H 19.4-54g  Betriebsstunden Mittelwerk</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-58.pdf">El.H 19.4-58  Z&auml;hler Mittelwerk</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-59.pdf">El.H 19.4-59  Z&auml;hler Mittelwerk</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-62h.pdf">El.H 19.4-62h Meldeformular f&uuml;r Arbeiten innerhalb EMV / ELV</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-72.pdf">El.H 19.4-72 &Ouml;l-Leckagezettel Aggregate</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-73.pdf">El.H 19.4-73 &Ouml;l-Leckagezettel Transformator</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-74.pdf">El.H 19.4-74 &Ouml;l-Leckagezettel Transduktor</a></li>
+    <li><a href="/dokumente/formulare/Miw_Zaehlerbuch_A3.pdf">Z&auml;hlerbuch Mittelwerk (Beim Drucken A3 und Duplex einstellen)</a></li>
+    <li><a href="/dokumente/formulare/Geraeteentnahme_Z1.pdf">Ger&auml;teausgabe Handy / Funkger&auml;te / Gaswarner Zentrale 1</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-75a.pdf">El.H 19.4-75a Sicherheitsunterweisung f&uuml;r Arbeiten innerhalb EM / HS</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-76.1.pdf">El.H 19.4-76.1 Filter und Antriebe Sinteranlage 3</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-78b.pdf">El.H 19.4-78b Filter Sinteranlage 2</a></li>
+    <li><a href="/dokumente/formulare/El.H 19.4-79.1.pdf">El.H 19.4-79.1 Gebl&auml;se Sinteranlage 2 / 3</a></li>
+    <li><a href="/dokumente/formulare/Is-Begrenzer.pdf">Formular f&uuml;r Is-Begrenzerpr&uuml;fung</a></li>
+    <li><a href="/dokumente/formulare/sj600 Leer.pdf">SJ600 Schutzrelaisbedienung Leerforumlar</a></li>
+    <li><a href="/dokumente/formulare/LEIHSCHEIN_A4.pdf">Leihschein f&uuml;r Ger&auml;te und sonstiges im A4-Format</a></li>
+    <li><a href="/dokumente/formulare/LEIHSCHEIN_A5.pdf">Leihschein f&uuml;r Ger&auml;te und sonstiges im A5-Format</a></li>
+    <li><a href="/dokumente/formulare/Erdungen_Mittelwerk.pdf">Erdungsformbl&auml;tter Mittelwerk</a></li>
+    <li><a href="/dokumente/formulare/Freischaltanweisung.pdf">Freischaltanweisung bei fehlendem DH-Safe (Doppelseitiges Formular)</a></li>
+    <li><a href="/dokumente/formulare/Handy+Kurzwahl.pdf">Handykurzwahlen EM-HS (Stand: 17.08.2023)</a></li>
+  </ul>
+
+  <div id="noResults" class="no-results" style="display:none;">Keine Ergebnisse gefunden.</div>
+</main>
+
+<script>
+// Theme Toggle an x_dashboard angelehnt
+(function(){
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme') || 'dark';
+  root.setAttribute('data-theme', saved);
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', current);
+    localStorage.setItem('theme', current);
+  });
+})();
+
+// Cards + Suche
+(function(){
+  const list = document.getElementById('formsList');
+  const items = Array.from(list.querySelectorAll('li'));
+
+  // Wrap in moderne Cards mit Download-Button
+  items.forEach(li => {
+    const a = li.querySelector('a');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    const title = a.innerHTML; // enthält evtl. HTML-Entities
+
+    const card = document.createElement('li');
+    card.className = 'form-item';
+    card.innerHTML = `
+      <a class="form-link" href="${href}" target="_blank" rel="noopener">${title}</a>
+      <div class="form-actions">
+        <a class="btn-small btn-outline" href="${href}" download>⬇️ Download</a>
+        <a class="btn-small btn-primary" href="${href}" target="_blank" rel="noopener">Öffnen</a>
+      </div>`;
+    li.replaceWith(card);
+  });
+
+  const searchInput = document.getElementById('searchInput');
+  const resultCount = document.getElementById('resultCount');
+  const empty = document.getElementById('noResults');
+
+  const filter = () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    Array.from(list.children).forEach(card => {
+      const text = card.querySelector('.form-link').textContent.toLowerCase();
+      const show = !q || text.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    resultCount.textContent = q ? `${visible} Ergebnis(se)` : '';
+    empty.style.display = visible === 0 ? '' : 'none';
+  };
+
+  searchInput.addEventListener('input', filter);
+  filter();
+})();
+</script>
+<!-- <script src="formulare.js"></script> -->
+</body>
+</html>

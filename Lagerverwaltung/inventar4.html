@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EM-HS Lagerverwaltung · Inventar</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter Typeface for a clean, non-AI, highly professional SaaS look -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="index.css" />
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Neues, seriöses Corporate Design (Slate/Indigo-Mischung mit klarem Blau)
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand": "#2563eb", // Royal/Enterprise Blue
+                        "brand-hover": "#1d4ed8",
+                        "surface": "#ffffff",
+                        "surface-dark": "#1e293b", // Slate 800
+                        "bg-light": "#f8fafc", // Slate 50
+                        "bg-dark": "#0f172a", // Slate 900
+                        "border-light": "#e2e8f0", // Slate 200
+                        "border-dark": "#334155", // Slate 700
+                        "primary": "#2563eb",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"]
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'floating': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; letter-spacing: -0.015em; -webkit-font-smoothing: antialiased; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+
+        /* Elegante, dünne Scrollbars */
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.4); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.6); }
+
+        /* Butterweiche Layout-Animationen */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeUp 0.3s ease-out forwards; }
+
+        @keyframes scalePop { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+        .modal-content-pop { animation: scalePop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        .animate-slide-in-right { animation: slideInRight 0.3s ease-out forwards; }
+
+        /* Flache, professionelle Tabellen mit ausreichendem Weißraum */
+        table { border-collapse: separate; border-spacing: 0; }
+        th { font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.70rem; }
+        td { border-bottom: 1px solid theme('colors.border-light'); }
+        .dark td { border-bottom: 1px solid theme('colors.border-dark'); }
+        tr:hover td { background-color: rgba(37, 99, 235, 0.02); }
+        .dark tr:hover td { background-color: rgba(255, 255, 255, 0.02); }
+    </style>
+</head>
+<body class="bg-bg-light dark:bg-bg-dark text-slate-800 dark:text-slate-300 h-screen overflow-hidden flex selection:bg-brand selection:text-white">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="w-64 bg-surface dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex flex-col shrink-0 transition-all duration-300 z-20 shadow-soft">
+        <div id="sidebar-header" class="h-16 px-6 flex items-center justify-between transition-all duration-300 border-b border-border-light dark:border-border-dark">
+            <div class="sidebar-text flex items-center gap-3 overflow-hidden">
+                <div class="w-8 h-8 rounded shrink-0 flex items-center justify-center bg-brand text-white">
+                    <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="text-sm font-bold leading-none tracking-tight text-slate-900 dark:text-white">EM-HS</h1>
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase tracking-widest mt-0.5">Lagerverwaltung</span>
+                </div>
+            </div>
+            <button id="btn-toggle-sidebar" class="text-slate-400 hover:text-brand transition-colors outline-none shrink-0">
+                <span class="material-symbols-outlined text-[20px]" id="sidebar-toggle-icon">menu_open</span>
+            </button>
+        </div>
+
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <p class="sidebar-text text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-3 mt-2">Menü</p>
+            <a href="../index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all group">
+                <span class="material-symbols-outlined text-[18px]">home</span>
+                <span class="text-sm font-medium sidebar-text">Startseite</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all group">
+                <span class="material-symbols-outlined text-[18px]">dashboard</span>
+                <span class="text-sm font-medium sidebar-text">Dashboard</span>
+            </a>
+            <a href="inventar4.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand/10 text-brand font-medium transition-all group relative">
+                <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-brand rounded-r-full"></span>
+                <span class="material-symbols-outlined text-[18px]">list_alt</span>
+                <span class="text-sm sidebar-text">Inventar-Verwaltung</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+
+        <!-- HEADER -->
+        <header class="h-16 px-6 lg:px-8 flex items-center justify-between border-b border-border-light dark:border-border-dark bg-surface dark:bg-surface-dark z-10 shrink-0">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-semibold tracking-tight text-slate-900 dark:text-white">Inventar</h2>
+                <div class="hidden md:flex px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5 text-slate-500 text-xs items-center gap-1">
+                    <span id="stat-total" class="font-bold">0</span> Artikel
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative w-64 md:w-80 group hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+                    <input id="header-search" placeholder="Quick Search..." type="text" class="w-full bg-slate-100 hover:bg-slate-200 dark:bg-bg-dark dark:hover:bg-black/30 border border-transparent rounded-md pl-9 pr-4 py-1.5 text-sm focus:bg-surface dark:focus:bg-surface-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all placeholder:text-slate-400"/>
+                </div>
+
+                <div class="h-5 w-px bg-border-light dark:bg-border-dark hidden sm:block mx-1"></div>
+
+                <div class="flex items-center gap-1.5 border border-border-light dark:border-border-dark rounded-md p-0.5 bg-slate-50 dark:bg-bg-dark">
+                    <button id="theme-toggle" class="w-7 h-7 rounded flex items-center justify-center text-slate-500 hover:bg-white hover:shadow-sm dark:hover:bg-surface-dark transition-all">
+                        <span class="material-symbols-outlined text-[16px]">light_mode</span>
+                    </button>
+                    <button id="btn-notifications" class="relative w-7 h-7 rounded flex items-center justify-center text-slate-500 hover:bg-white hover:shadow-sm dark:hover:bg-surface-dark transition-all">
+                        <span class="material-symbols-outlined text-[16px]">notifications</span>
+                        <span id="notification-badge" class="hidden absolute top-1 right-1 w-1.5 h-1.5 bg-rose-500 rounded-full ring-2 ring-white dark:ring-surface-dark"></span>
+                    </button>
+                </div>
+
+                <div class="h-5 w-px bg-border-light dark:bg-border-dark hidden sm:block mx-1"></div>
+
+                <!-- ADD ITEM BUTTON -->
+                <button id="btn-add-item-modal" class="h-8 px-3 rounded-md bg-brand hover:bg-brand-hover text-white text-xs font-semibold transition-all shadow-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px]">add</span> Neuer Artikel
+                </button>
+
+                <div id="user-profile" class="hidden items-center gap-2 pl-2 pr-3 py-1 cursor-pointer rounded-md hover:bg-slate-100 dark:hover:bg-bg-dark px-2 transition-colors border border-transparent">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 leading-tight">Gast</p>
+                    </div>
+                </div>
+                
+                <button id="login-btn" class="h-8 px-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                    Login
+                </button>
+            </div>
+        </header>
+
+        <!-- TABLE WORKSPACE -->
+        <div id="main-content-container" class="flex-1 flex flex-col p-6 overflow-hidden hidden bg-bg-light dark:bg-bg-dark relative">
+            <div class="bg-surface dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl shadow-soft flex flex-col flex-1 overflow-hidden">
+                
+                <!-- Table Controls -->
+                <div class="px-5 py-3 border-b border-border-light dark:border-border-dark flex justify-between items-center bg-surface dark:bg-surface-dark shrink-0">
+                    <div class="flex gap-2">
+                        <button id="btn-col-toggle" class="px-2.5 py-1.5 text-xs font-medium bg-slate-50 hover:bg-slate-100 dark:bg-bg-dark dark:hover:bg-black/30 border border-border-light dark:border-border-dark rounded text-slate-600 dark:text-slate-400 transition-colors flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[14px]">view_column</span> Spalten
+                        </button>
+                        <div id="col-dropdown" class="hidden absolute top-auto left-4 mt-8 w-48 bg-surface dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg shadow-floating p-2 z-50">
+                            <div id="col-dropdown-content" class="flex flex-col gap-0.5"></div>
+                        </div>
+
+                        <button id="btn-sort-recent" onclick="toggleRecentSort()" class="px-2.5 py-1.5 text-xs font-medium bg-slate-50 hover:bg-slate-100 dark:bg-bg-dark dark:hover:bg-black/30 border border-border-light dark:border-border-dark rounded text-slate-600 dark:text-slate-400 transition-colors flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[14px]">history</span> Verlauf Sortierung
+                        </button>
+                    </div
+                    
+                    <button onclick="resetFilters()" class="text-xs font-medium text-rose-500 hover:text-rose-600 hover:underline px-2 transition-colors flex items-center gap-1">
+                        Filter zurücksetzen
+                    </button>
+                </div>
+
+                <!-- Table Container -->
+                <div class="flex-1 overflow-auto custom-scrollbar">
+                    <table class="w-full text-left">
+                        <thead class="sticky top-0 z-10 bg-slate-50 dark:bg-surface-dark border-b border-border-light dark:border-border-dark shadow-sm">
+                            <tr class="text-slate-500 dark:text-slate-400">
+                                <th data-col="emhsnr" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">EM-HS NR.</span><input id="filter-emhsnr" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="sapnr" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">SAP NR.</span><input id="filter-sapnr" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="bezeichnung" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">BEZEICHNUNG / HERST.</span><input id="filter-bezeichnung" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="typ" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">TYP</span><input id="filter-typ" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="bestnr" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">BESTELLNR.</span><input id="filter-bestnr" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="bemerkung" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">BEMERKUNG</span><input id="filter-bemerkung" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                                <th data-col="bestand" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">BESTAND</span><input id="filter-status" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Leer / Knapp / OK"></div></th>
+                                <th data-col="lagerort" class="px-4 py-2 border-b border-border-light dark:border-border-dark"><div class="flex flex-col gap-1.5"><span class="px-1">LAGERORT / PLATZ</span><input id="filter-lagerort" class="w-full text-xs p-1.5 rounded bg-white hover:bg-slate-50 focus:bg-white dark:bg-bg-dark border border-border-light dark:border-border-dark focus:border-brand focus:ring-0 outline-none font-normal" placeholder="Hier filtern..."></div></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr><td colspan="8" class="px-4 py-16 text-center text-slate-500">
+                                <span class="material-symbols-outlined text-3xl animate-spin mb-2 block">sync</span> Lade Inventar...
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container p-3 border-t border-border-light dark:border-border-dark bg-slate-50 dark:bg-surface-dark flex flex-row items-center justify-between shrink-0 hidden text-xs"></div>
+            </div>
+        </div>
+
+        <div id="login-placeholder" class="absolute inset-0 z-10 bg-bg-light/80 dark:bg-bg-dark/80 backdrop-blur-sm flex flex-col items-center justify-center p-8 hidden text-center">
+            <span class="material-symbols-outlined text-4xl text-slate-300 dark:text-slate-600 mb-4">lock</span>
+            <h2 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">Authentifizierung erforderlich</h2>
+            <p class="text-slate-500 text-sm">Bitte loggen Sie sich ein, um das Bestandsverzeichnis anzuzeigen.</p>
+        </div>
+    </main>
+
+    <!-- ==================================================================================== -->
+    <!-- MODALS (CLEAN ENTERPRISE LOOK)                                                       -->
+    <!-- ==================================================================================== -->
+
+    <!-- ITEM DETAILS MODAL -->
+    <div id="item-details-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/40 dark:bg-black/60 backdrop-blur-sm" onclick="closeDetailsModal()"></div>
+        <div class="relative bg-surface dark:bg-surface-dark w-full max-w-5xl max-h-[85vh] rounded-xl shadow-floating border border-border-light/50 dark:border-border-dark flex flex-col md:flex-row overflow-hidden modal-content-pop">
+            
+            <button onclick="closeDetailsModal()" class="absolute top-4 right-4 z-20 w-8 h-8 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full flex items-center justify-center transition-all text-slate-500">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+
+            <!-- LEFT: Image -->
+            <div id="detail-left-side" class="w-full md:w-[40%] bg-slate-50/50 dark:bg-bg-dark/30 border-b md:border-b-0 md:border-r border-border-light dark:border-border-dark p-6 flex flex-col items-center justify-between">
+                <div class="w-full flex justify-between items-center mb-4">
+                    <span id="detail-badge-typ" class="px-2.5 py-0.5 rounded text-[10px] font-semibold uppercase bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300">Typ</span>
+                    <span id="detail-badge-status" class="px-2.5 py-0.5 rounded text-[10px] font-semibold uppercase">Status</span>
+                </div>
+                <div class="w-full flex-1 min-h-[200px] bg-white dark:bg-black/20 rounded-lg shadow-sm border border-border-light dark:border-white/5 mb-4 overflow-hidden flex relative items-center justify-center" id="detail-image-container"></div>
+                <button id="detail-btn-upload" class="w-full py-2.5 rounded-md font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:text-brand transition-all text-sm shrink-0 flex items-center justify-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px]">upload</span> Datei anhängen
+                </button>
+            </div>
+
+            <!-- RIGHT: Info -->
+            <div id="detail-right-side" class="flex-1 flex flex-col overflow-hidden bg-surface dark:bg-surface-dark">
+                <div class="px-6 pt-6 pb-0 shrink-0 border-b border-border-light dark:border-border-dark">
+                    <p id="detail-manufacturer" class="text-[10px] font-semibold text-brand uppercase tracking-widest mb-1">Hersteller</p>
+                    <h2 id="detail-title" class="text-xl font-bold text-slate-900 dark:text-white leading-tight mb-4">Artikel Bezeichnung</h2>
+
+                    <div class="grid grid-cols-3 gap-3 mb-5">
+                        <div class="bg-slate-50 dark:bg-bg-dark border border-border-light/50 dark:border-border-dark rounded-md p-2">
+                            <p class="text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-0.5">EM-HS NR.</p>
+                            <p id="detail-emhs" class="font-mono text-sm font-semibold text-slate-800 dark:text-slate-200">-</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-bg-dark border border-border-light/50 dark:border-border-dark rounded-md p-2">
+                            <p class="text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-0.5">SAP NR.</p>
+                            <p id="detail-sap" class="font-mono text-sm font-semibold text-slate-800 dark:text-slate-200">-</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-bg-dark border border-border-light/50 dark:border-border-dark rounded-md p-2">
+                            <p class="text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-0.5">DH NR.</p>
+                            <p id="detail-dhnr" class="font-mono text-sm font-semibold text-slate-800 dark:text-slate-200">-</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <button onclick="switchDetailTab('overview')" data-tab-btn="overview" class="detail-tab-btn pb-2.5 text-xs font-semibold uppercase tracking-wider border-b-2 border-primary text-primary transition-all">Übersicht</button>
+                        <button onclick="switchDetailTab('orders')" data-tab-btn="orders" class="detail-tab-btn pb-2.5 text-xs font-semibold uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">Bestellungen</button>
+                        <button onclick="switchDetailTab('notes')" data-tab-btn="notes" class="detail-tab-btn pb-2.5 text-xs font-semibold uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">Bemerkungen</button>
+                    </div>
+                </div>
+
+                <div class="flex-1 overflow-y-auto custom-scrollbar p-6">
+                    <!-- Tab 1 -->
+                    <div id="detail-tab-overview" class="detail-tab-content grid grid-cols-2 gap-4 h-full">
+                        <div class="bg-slate-50 dark:bg-bg-dark border border-border-light/50 dark:border-border-dark rounded-lg p-5 flex flex-col justify-center">
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Lagerbestand</p>
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span id="detail-stock" class="text-3xl font-bold text-slate-900 dark:text-white">0</span>
+                                <span class="text-xs font-medium text-slate-400">/ <span id="detail-target">0</span></span>
+                            </div>
+                            <div class="h-1.5 w-full bg-slate-200 dark:bg-border-dark rounded-full overflow-hidden">
+                                <div id="detail-progress" class="h-full bg-brand" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-bg-dark border border-border-light/50 dark:border-border-dark rounded-lg p-5 flex flex-col justify-center">
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-3">Lagerort</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded shrink-0 bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[16px]">location_on</span>
+                                </div>
+                                <div>
+                                    <p id="detail-location" class="text-sm font-semibold leading-tight text-slate-800 dark:text-slate-200">Unbekannt</p>
+                                    <p id="detail-place" class="text-xs text-slate-500 mt-0.5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab 2 -->
+                    <div id="detail-tab-orders" class="detail-tab-content hidden"><div id="detail-bestnr" class="flex flex-col gap-2"></div></div>
+                    <!-- Tab 3 -->
+                    <div id="detail-tab-notes" class="detail-tab-content hidden"><div id="detail-notes" class="flex flex-col gap-2"></div></div>
+                </div>
+
+                <div class="px-6 py-4 border-t border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-bg-dark/30 flex gap-3 shrink-0">
+                    <button id="detail-btn-add-shift" class="flex-1 py-2.5 rounded-md font-medium text-white bg-brand hover:bg-brand-hover shadow-sm transition-all text-sm flex justify-center items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">add_task</span> In Schicht übertragen</button>
+                    <button id="detail-btn-edit" class="w-32 py-2.5 rounded-md font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:border-brand hover:text-brand shadow-sm transition-all text-sm">Editieren</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD ITEM MODAL (DAS GEWÜNSCHTE HINZUFÜGEN-MODAL) -->
+    <div id="add-item-modal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/40 dark:bg-black/60 backdrop-blur-sm" onclick="document.getElementById('add-item-modal').classList.add('hidden')"></div>
+        <div class="relative bg-surface dark:bg-surface-dark w-full max-w-xl rounded-xl shadow-floating border border-border-light dark:border-border-dark modal-content-pop overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center shrink-0">
+                <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2"><span class="material-symbols-outlined text-brand">add_box</span> Neuer Eintrag</h3>
+                <button type="button" onclick="document.getElementById('add-item-modal').classList.add('hidden')" class="w-8 h-8 rounded text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-600 transition-all flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-1 space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">EM-HS Nr. (Auto)</span>
+                        <input type="text" id="add-emhs" readonly class="w-full bg-slate-100 dark:bg-bg-dark border-none rounded-md px-3 py-2 text-sm font-mono text-slate-500 cursor-not-allowed">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Bezeichnung *</span>
+                        <input type="text" id="add-bezeichnung" placeholder="z.B. Kugellager" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-colors">
+                    </label>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">SAP Nr.</span>
+                        <input type="text" id="add-sap" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm font-mono focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Typ</span>
+                        <input type="text" id="add-typ" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Hersteller</span>
+                        <input type="text" id="add-hersteller" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Lagerort</span>
+                        <input type="text" id="add-lagerort" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Lagerplatz</span>
+                        <input type="text" id="add-lagerplatz" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-1.5 block">Soll Bestand</span>
+                        <input type="number" id="add-soll" value="0" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none text-brand">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-1.5 block">Ist Bestand</span>
+                        <input type="number" id="add-ist" value="0" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none">
+                    </label>
+                </div>
+
+                <hr class="border-border-light dark:border-border-dark">
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">Bestellnummern</span>
+                        <button type="button" onclick="addOrderRow('add-bestnr-list')" class="text-xs font-medium text-brand hover:underline">+ Zeile</button>
+                    </div>
+                    <div id="add-bestnr-list" class="space-y-2"></div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">Bemerkungen</span>
+                        <button type="button" onclick="addBemerkungRow('add-bem-list')" class="text-xs font-medium text-brand hover:underline">+ Zeile</button>
+                    </div>
+                    <div id="add-bem-list" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 border-t border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-bg-dark/30 flex gap-3 shrink-0">
+                <button type="button" onclick="document.getElementById('add-item-modal').classList.add('hidden')" class="flex-1 py-2.5 rounded-md font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-sm shadow-sm">Abbrechen</button>
+                <button type="button" id="btn-create-item" onclick="createNewItem()" class="flex-[2] py-2.5 rounded-md font-medium text-white bg-brand hover:bg-brand-hover shadow-sm transition-all text-sm">Eintrag speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT ITEM MODAL -->
+    <div id="edit-item-modal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/40 dark:bg-black/60 backdrop-blur-sm" onclick="document.getElementById('edit-item-modal').classList.add('hidden')"></div>
+        <div class="relative bg-surface dark:bg-surface-dark w-full max-w-xl rounded-xl shadow-floating border border-border-light dark:border-border-dark modal-content-pop overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center shrink-0">
+                <h3 class="text-base font-bold flex items-center gap-2"><span class="material-symbols-outlined text-brand">edit_square</span> Artikel anpassen</h3>
+                <button type="button" onclick="document.getElementById('edit-item-modal').classList.add('hidden')" class="w-8 h-8 rounded text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-600 transition-all flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-1 space-y-5">
+                <!-- Gleiche Felder wie Hinzufügen -->
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">EM-HS Nr. *</span>
+                        <input type="text" id="edit-emhs" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm font-mono focus:border-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Bezeichnung *</span>
+                        <input type="text" id="edit-bezeichnung" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                    </label>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">SAP Nr.</span>
+                        <input type="text" id="edit-sap" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm font-mono focus:border-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Typ</span>
+                        <input type="text" id="edit-typ" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Hersteller</span>
+                        <input type="text" id="edit-hersteller" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Lagerort</span>
+                        <input type="text" id="edit-lagerort" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Lagerplatz</span>
+                        <input type="text" id="edit-lagerplatz" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-1.5 block">Soll Bestand</span>
+                        <input type="number" id="edit-soll" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none text-brand">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-1.5 block">Ist Bestand</span>
+                        <input type="number" id="edit-ist" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none">
+                    </label>
+                </div>
+
+                <hr class="border-border-light dark:border-border-dark">
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">Bestellnummern</span>
+                        <button type="button" onclick="addOrderRow('edit-bestnr-list')" class="text-xs font-medium text-brand hover:underline">+ Zeile</button>
+                    </div>
+                    <div id="edit-bestnr-list" class="space-y-2"></div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">Bemerkungen</span>
+                        <button type="button" onclick="addBemerkungRow('edit-bem-list')" class="text-xs font-medium text-brand hover:underline">+ Zeile</button>
+                    </div>
+                    <div id="edit-bem-list" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 border-t border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-bg-dark/30 flex gap-3 shrink-0">
+                <button type="button" onclick="document.getElementById('edit-item-modal').classList.add('hidden')" class="flex-1 py-2.5 rounded-md font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-slate-50 transition-all text-sm shadow-sm">Abbrechen</button>
+                <button type="button" id="btn-save-edit" onclick="saveEditItem()" class="flex-[2] py-2.5 rounded-md font-medium text-white bg-brand hover:bg-brand-hover shadow-sm transition-all text-sm">Änderungen speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IN SCHICHT ÜBERNEHMEN MODAL -->
+    <div id="add-to-shift-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/40 dark:bg-black/60 backdrop-blur-sm" onclick="document.getElementById('add-to-shift-modal').classList.add('hidden')"></div>
+        <div class="relative bg-surface dark:bg-surface-dark w-full max-w-sm rounded-xl shadow-floating border border-border-light dark:border-border-dark modal-content-pop overflow-hidden">
+            <div class="px-5 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center">
+                <h3 class="text-base font-bold">Im Schichtinventar anlegen</h3>
+                <button type="button" onclick="document.getElementById('add-to-shift-modal').classList.add('hidden')" class="w-7 h-7 rounded text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+            <div class="p-5 space-y-4">
+                <div class="bg-brand/5 border border-brand/10 p-3 rounded-lg mb-2">
+                    <p class="text-xs text-brand font-semibold" id="shift-modal-item-name">Artikelname</p>
+                </div>
+                <!-- Unsichtbare ID für Request -->
+                <input type="hidden" id="shift-modal-item-id">
+                
+                <label class="block">
+                    <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Schicht Zuweisung</span>
+                    <!-- Passend zum Schicht-System Dropdown gebaut -->
+                    <select id="shift-modal-select" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 text-sm focus:border-brand outline-none">
+                        <option value="">Bitte wählen...</option>
+                        <option value="A">Schicht A</option>
+                        <option value="B">Schicht B</option>
+                        <option value="C">Schicht C</option>
+                        <option value="D">Schicht D</option>
+                        <option value="F">Schicht F (Frühschicht)</option>
+                    </select>
+                </label>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-brand uppercase tracking-widest mb-1.5 block">Soll Bestand</span>
+                        <input type="number" id="shift-modal-soll" value="1" min="0" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none">
+                    </label>
+                    <label class="block">
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5 block">Ist Bestand</span>
+                        <input type="number" id="shift-modal-ist" value="0" min="0" class="w-full bg-slate-50 dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-md px-3 py-2 font-mono font-medium focus:border-brand outline-none">
+                    </label>
+                </div>
+            </div>
+            <div class="p-4 border-t border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-bg-dark/30 flex gap-2">
+                <button type="button" onclick="document.getElementById('add-to-shift-modal').classList.add('hidden')" class="flex-1 py-2 rounded-md font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-slate-50 text-xs text-center shadow-sm">Abbrechen</button>
+                <button type="button" id="btn-submit-add-shift" onclick="submitAddToShift()" class="flex-[2] py-2 rounded-md font-medium text-white bg-brand hover:bg-brand-hover shadow-sm transition-all text-xs text-center">Übernehmen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MELDUNGEN MODAL -->
+    <div id="notifications-modal" class="fixed inset-0 z-[60] hidden flex justify-end">
+        <div class="absolute inset-0 bg-slate-900/10 dark:bg-black/40 backdrop-blur-sm" onclick="document.getElementById('notifications-modal').classList.add('hidden')"></div>
+        <div class="relative bg-surface dark:bg-surface-dark w-full max-w-sm h-full shadow-floating border-l border-border-light dark:border-border-dark flex flex-col animate-slide-in-right z-10">
+            <div class="h-16 px-5 flex items-center justify-between border-b border-border-light dark:border-border-dark shrink-0">
+                <h3 class="font-semibold text-[15px] flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">notifications</span> Meldungen</h3>
+                <button onclick="document.getElementById('notifications-modal').classList.add('hidden')" class="w-7 h-7 rounded hover:bg-slate-100 dark:hover:bg-white/5 flex items-center justify-center transition-all text-slate-500">
+                    <span class="material-symbols-outlined text-[16px]">close</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-2" id="notification-list"></div>
+            <div class="p-4 border-t border-border-light dark:border-border-dark shrink-0 bg-slate-50 dark:bg-bg-dark/50">
+                <button onclick="clearAllNotifications()" class="w-full py-2.5 text-xs font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-md hover:text-brand transition-all shadow-sm">Alle als gelesen markieren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[90] flex flex-col gap-2 pointer-events-none"></div>
+
+    <script src="inventar.js?v=21"></script>
+</body>
+</html>

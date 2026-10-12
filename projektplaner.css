@@ -1,0 +1,884 @@
+/* Modern CSS Variables for consistent theming */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --bg-hover: rgba(88, 166, 255, 0.1);
+    --color-primary: #c9d1d9;
+    --color-secondary: #8b949e;
+    --color-accent: #58a6ff;
+    --color-accent-hover: #42a5f5;
+    --color-success: #238636;
+    --color-warning: #f85149;
+    --border-color: #30363d;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --border-radius: 12px;
+    --border-radius-small: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-primary: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    --gradient-card: linear-gradient(145deg, #161b22 0%, #1c2128 50%, #161b22 100%);
+}
+
+/* Light Mode Variables */
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #ffffff;
+    --bg-hover: rgba(54, 54, 54, 0.05);
+    --color-primary: #24292f;
+    --color-secondary: #656d76;
+    --color-accent: #0969da;
+    --color-accent-hover: #0550ae;
+    --color-success: #1a7f37;
+    --color-warning: #cf222e;
+    --border-color: #d0d7de;
+    --shadow: 0 8px 32px rgba(31, 35, 40, 0.1);
+    --shadow-hover: 0 12px 40px rgba(31, 35, 40, 0.15);
+    --gradient-primary: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+    --gradient-card: linear-gradient(145deg, #ffffff 0%, #f6f8fa 50%, #ffffff 100%);
+}
+
+[data-theme="light"] body::before {
+    background: radial-gradient(circle at 20% 80%, rgba(9, 105, 218, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(9, 105, 218, 0.03) 0%, transparent 50%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--gradient-primary);
+    background-attachment: fixed;
+    color: var(--color-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(88, 166, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(88, 166, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    font-weight: 500;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+a:hover::before {
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    margin: 1rem 0 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+/* Form styles */
+.form-container {
+    margin-bottom: 20px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}#projektForm {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#projektForm input {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+#projektForm input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+#projektForm input[type="text"] {
+    min-width: 180px;
+}
+
+#projektForm input[type="date"] {
+    min-width: 150px;
+}        #projektForm input[type="color"] {
+    width: 40px;
+    height: 38px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#projektForm select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    min-width: 200px;
+    background-color: var(--bg-secondary);
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+#projektForm select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+#projektForm button {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+#projektForm button:hover {
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+  .color-field-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.color-label {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow);
+}
+
+.color-option.active {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+}
+
+#projektForm button:hover {
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Navigation controls */
+.controls {
+    margin-bottom: 15px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navigation button {
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.navigation button:hover {
+    background: var(--bg-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}#todayBtn {
+    background: linear-gradient(135deg, var(--color-success), #2ea043);
+    border-color: var(--color-success);
+    color: white;
+}
+
+#todayBtn:hover {
+    background: linear-gradient(135deg, #2ea043, var(--color-success));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#zoomToggleBtn {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    border-color: #8b5cf6;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+#zoomToggleBtn:hover {
+    background: linear-gradient(135deg, #a855f7, #8b5cf6);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#zoomIcon {
+    font-size: 1.1em;
+}
+
+/* Gantt chart container */
+.gantt-container {
+    overflow-x: auto;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    min-height: 400px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+/* Gantt table styles */
+.gantt-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.gantt-header {
+    background: var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gantt-month {
+    background: var(--color-success);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    height: 30px;
+}
+
+.gantt-week {
+    background: var(--bg-tertiary);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    height: 25px;
+    font-size: 0.9rem;
+    padding: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.gantt-day {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    height: 42px;
+    padding: 4px 2px;
+}
+
+.gantt-weekend {
+    background: var(--bg-hover); /* Light accent for weekends */
+}
+
+.weekday-name {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: var(--color-secondary);
+    display: block;
+    margin-top: 2px;
+}
+
+/* Fixed columns */        
+.gantt-fixed-header {
+    position: sticky;
+    left: 0;
+    z-index: 15;
+    background: var(--bg-secondary);
+    border-right: 3px solid var(--color-accent);
+    width: 300px; /* Combined width of both columns */
+}
+
+@media (max-width: 768px) {
+    .gantt-fixed-header {
+        width: 220px;
+    }
+}
+
+.fixed-header-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.bearbeiter-header,
+.projekt-header {
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}        
+
+.bearbeiter-header {
+    min-width: 100px;
+    max-width: 150px;
+    width: 120px;
+    background: var(--bg-secondary);
+}
+
+.projekt-header {
+    min-width: 150px;
+    max-width: 220px;
+    width: 180px;
+    background: var(--bg-tertiary);
+}
+
+.gantt-fixed-cells {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    width: 300px; /* Combined width of both columns */
+}        .gantt-bearbeiter-cell {
+    min-width: 100px;
+    max-width: 150px;
+    width: 120px;
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* Fixed height for consistency */
+    font-size: 0.9em; /* Smaller font size */
+    line-height: 1.2;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}        
+
+.gantt-projekt-cell {
+    min-width: 150px;
+    max-width: 220px;
+    width: 180px;
+    background: var(--bg-tertiary);
+    color: var(--color-primary);
+    padding: 8px 10px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    height: 42px; /* Fixed height for consistency */
+    font-size: 0.95em; /* Slightly smaller font size */
+    line-height: 1.2;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Subprojekt Styles */
+.subprojekt-row .gantt-fixed-cells {
+    padding-left: 15px; /* Indent subprojekt cells */
+}
+
+.subprojekt-row .gantt-projekt-cell {
+    font-weight: 400;
+}
+
+.subprojekt-row .projekt-balken {
+    height: 80%; /* Smaller height for subproject bars */
+}
+
+.projekt-indikator {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 0.8em;
+    color: var(--color-secondary);
+}
+
+/* Day cells */
+.gantt-cell {
+    border: 1px solid var(--border-color);
+    min-width: 35px;
+    height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    background: var(--bg-primary);
+    color: var(--color-primary);
+}
+
+.gantt-cell-weekend {
+    background-color: var(--bg-hover);
+}
+
+/* First timeline cell */
+.gantt-table th.gantt-day:first-of-type,
+.gantt-table td.gantt-cell:first-of-type {
+    border-left: 3px solid var(--color-accent);
+}
+
+/* Project bars */
+.projekt-balken {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}        /* Today marker - new version */
+.heute-marker {
+    position: absolute;
+    width: 2px;
+    background-color: var(--color-warning);
+    z-index: 2;
+    height: 100%;
+    top: 0;
+    box-shadow: 0 0 8px rgba(248, 81, 73, 0.5);
+}
+
+.heutiger-tag {
+    background-color: rgba(248, 81, 73, 0.1) !important;
+    border: 2px solid var(--color-warning) !important;
+    position: relative;
+    box-shadow: 0 0 12px rgba(248, 81, 73, 0.3);
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    color: var(--color-primary);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 130%;
+    max-width: 600px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.modal textarea {
+    width: 100%;
+    height: 100px;
+    margin: 15px 0;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.modal textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#saveNotes {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+}
+
+#saveNotes:hover {
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#editProjekt {
+    background: linear-gradient(135deg, var(--color-success), #2ea043);
+    color: white;
+}
+
+#editProjekt:hover {
+    background: linear-gradient(135deg, #2ea043, var(--color-success));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#addSubprojekt {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+}
+
+#addSubprojekt:hover {
+    background: linear-gradient(135deg, #a855f7, #8b5cf6);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#subprojektListe {
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-radius: var(--border-radius-small);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    color: var(--color-primary);
+}
+
+#subprojektListe h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+
+#subprojektListeItems {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+#subprojektListeItems li {
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+#subprojektListeItems li:before {
+    content: "└";
+    margin-right: 5px;
+    color: var(--color-secondary);
+}
+
+#deleteProjekt {
+    background: linear-gradient(135deg, var(--color-warning), #dc2626);
+    color: white;
+    border: none;
+}
+
+#deleteProjekt:hover {
+    background: linear-gradient(135deg, #dc2626, var(--color-warning));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+#cancelModal, #cancelEditBtn, #cancelDelete {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--color-primary);
+}
+
+#cancelModal:hover, #cancelEditBtn:hover, #cancelDelete:hover {
+    background: var(--bg-hover);
+    transform: translateY(-1px);
+}
+
+#confirmDelete {
+    background: linear-gradient(135deg, var(--color-warning), #dc2626);
+    color: white;
+    border: none;
+}
+
+#confirmDelete:hover {
+    background: linear-gradient(135deg, #dc2626, var(--color-warning));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}/* Monatsansicht Styles */
+.gantt-year {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    height: 30px;
+    color: white;
+}
+
+.aktueller-monat {
+    background-color: rgba(248, 81, 73, 0.1);
+    position: relative;
+    box-shadow: inset 0 0 8px rgba(248, 81, 73, 0.2);
+}
+
+th.aktueller-monat {
+    background-color: rgba(248, 81, 73, 0.2);
+    border: 1px solid rgba(248, 81, 73, 0.5);
+}
+
+.projekt-balken-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.monatsansicht .projekt-balken {
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow);
+}
+
+/* Responsive adjustments */        @media (max-width: 768px) {
+    #projektForm {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+      .gantt-fixed-cells {
+        width: 220px;
+    }
+    
+    .bearbeiter-header {
+        min-width: 80px;
+        max-width: 100px;
+        width: 90px;
+    }
+    
+    .projekt-header {
+        min-width: 100px;
+        max-width: 150px;
+        width: 130px;
+    }
+    
+    .gantt-bearbeiter-cell {
+        min-width: 80px;
+        max-width: 100px;
+        width: 90px;
+        font-size: 0.85em;
+        padding: 5px;
+    }
+    
+    .gantt-projekt-cell {
+        min-width: 100px;
+        max-width: 150px;
+        width: 130px;
+        font-size: 0.85em;
+        padding: 5px;
+    }
+}
+
+/* Modern Card Styles */
+.card {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0.5;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-accent);
+}
+
+/* Animation Keyframes */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInStagger {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}

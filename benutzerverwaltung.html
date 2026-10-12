@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benutzerverwaltung</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <button id="backButton" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Zurück</span>
+            </button>
+        </div>
+        <h1>Benutzerverwaltung</h1>
+        <div class="header-right">
+            <span id="currentUser" class="current-user"></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Neuen Mitarbeiter hinzufügen -->
+        <section class="add-employee-section">
+            <div class="section-card">
+                <h2><i class="fas fa-user-plus"></i> Neuen Mitarbeiter hinzufügen</h2>
+                <form id="addEmployeeForm" class="employee-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="employeeName">
+                                <i class="fas fa-user"></i>
+                                Name des Mitarbeiters
+                            </label>
+                            <input 
+                                type="text" 
+                                id="employeeName" 
+                                name="name" 
+                                placeholder="Vollständigen Namen eingeben..."
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employeeSchicht">
+                                <i class="fas fa-clock"></i>
+                                Schicht zuweisen
+                            </label>
+                            <select id="employeeSchicht" name="schicht">
+                                <option value="">Keine Schicht</option>
+                                <option value="A">Schicht A</option>
+                                <option value="B">Schicht B</option>
+                                <option value="C">Schicht C</option>
+                                <option value="D">Schicht D</option>
+                                <option value="E">Schicht E</option>
+                                <option value="F">Schicht F</option>
+                                <option value="Buero">Büro</option>
+                                <option value="Azubi">Azubi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group rfid-group">
+                            <label for="rfidInput1">
+                                <i class="fas fa-id-card"></i>
+                                RFID Chip 1
+                            </label>
+                            <input 
+                                type="text" 
+                                id="rfidInput1" 
+                                name="rfid1" 
+                                placeholder="Ersten Chip an Lesegerät halten..."
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group rfid-group">
+                            <label for="rfidInput2">
+                                <i class="fas fa-id-card"></i>
+                                RFID Chip 2 (optional)
+                            </label>
+                            <input 
+                                type="text" 
+                                id="rfidInput2" 
+                                name="rfid2" 
+                                placeholder="Zweiten Chip an Lesegerät halten..."
+                            >
+                        </div>
+                    </div>
+
+                    <div class="permissions-section">
+                        <h3><i class="fas fa-shield-alt"></i> Berechtigungen</h3>
+                        <div class="permissions-grid">
+                            <div class="permission-item">
+                                <input type="checkbox" id="isAdmin" name="isAdmin">
+                                <label for="isAdmin">
+                                    <i class="fas fa-crown"></i>
+                                    Administrator
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="kannFahrtenLoeschen" name="kannFahrtenLoeschen">
+                                <label for="kannFahrtenLoeschen">
+                                    <i class="fas fa-trash"></i>
+                                    Fahrten löschen
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="meister" name="meister">
+                                <label for="meister">
+                                    <i class="fas fa-trash"></i>
+                                    Meister
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="vertreter" name="vertreter">
+                                <label for="kannFahrtenLoeschen">
+                                    <i class="fas fa-trash"></i>
+                                    Meistervertreter
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="kannFahrtenBearbeiten" name="kannFahrtenBearbeiten">
+                                <label for="kannFahrtenBearbeiten">
+                                    <i class="fas fa-edit"></i>
+                                    Fahrten bearbeiten
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="kannWochenplanBearbeiten" name="kannWochenplanBearbeiten">
+                                <label for="kannWochenplanBearbeiten">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Wochenplan bearbeiten
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="kannProjektplanerBearbeiten" name="kannProjektplanerBearbeiten">
+                                <label for="kannProjektplanerBearbeiten">
+                                    <i class="fas fa-project-diagram"></i>
+                                    Projektplaner
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-save"></i>
+                        Mitarbeiter speichern
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Mitarbeiterliste -->
+        <section class="employees-section">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Mitarbeiterliste</h2>
+                    <div class="search-controls">
+                        <div class="search-group">
+                            <i class="fas fa-search search-icon"></i>
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="Nach Name suchen..."
+                            >
+                        </div>
+                        <select id="schichtFilter" class="filter-select">
+                            <option value="">Alle Schichten</option>
+                            <option value="A">Schicht A</option>
+                            <option value="B">Schicht B</option>
+                            <option value="C">Schicht C</option>
+                            <option value="D">Schicht D</option>
+                            <option value="E">Schicht E</option>
+                            <option value="F">Schicht F</option>
+                            <option value="Buero">Büro</option>
+                            <option value="Azubi">Azubi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="employees-grid" id="employeesGrid">
+                    <!-- Mitarbeiter werden hier dynamisch geladen -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal für Berechtigungsbearbeitung -->
+    <div id="editPermissionsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-edit"></i> Berechtigungen bearbeiten</h3>
+                <button class="close-modal" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <input type="hidden" id="editEmployeeId">
+                <div class="employee-info">
+                    <h4 id="editEmployeeName"></h4>
+                    <span id="editEmployeeSchicht" class="schicht-badge"></span>
+                </div>
+
+                <div class="edit-form">
+                    <div class="form-group">
+                        <label for="editSchicht">
+                            <i class="fas fa-clock"></i>
+                            Schicht
+                        </label>
+                        <select id="editSchicht" name="schicht">
+                            <option value="">Keine Schicht</option>
+                            <option value="A">Schicht A</option>
+                            <option value="B">Schicht B</option>
+                            <option value="C">Schicht C</option>
+                            <option value="D">Schicht D</option>
+                            <option value="E">Schicht E</option>
+                            <option value="F">Schicht F</option>
+                            <option value="Buero">Büro</option>
+                            <option value="Azubi">Azubi</option>
+                        </select>
+                    </div>
+
+                    <div class="permissions-section">
+                        <h4><i class="fas fa-shield-alt"></i> Berechtigungen</h4>
+                        <div class="permissions-grid">
+                            <div class="permission-item">
+                                <input type="checkbox" id="editIsAdmin">
+                                <label for="editIsAdmin">
+                                    <i class="fas fa-crown"></i>
+                                    Administrator
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editMeister">
+                                <label for="editMeister">
+                                    <i class="fas fa-trash"></i>
+                                    Meister
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editMeisterVertreter">
+                                <label for="editMeisterVertreter">
+                                    <i class="fas fa-trash"></i>
+                                    Meistervertreter
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editKannFahrtenLoeschen">
+                                <label for="editKannFahrtenLoeschen">
+                                    <i class="fas fa-trash"></i>
+                                    Fahrten löschen
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editKannFahrtenBearbeiten">
+                                <label for="editKannFahrtenBearbeiten">
+                                    <i class="fas fa-edit"></i>
+                                    Fahrten bearbeiten
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editKannWochenplanBearbeiten">
+                                <label for="editKannWochenplanBearbeiten">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Wochenplan bearbeiten
+                                </label>
+                            </div>
+                            <div class="permission-item">
+                                <input type="checkbox" id="editKannProjektplanerBearbeiten">
+                                <label for="editKannProjektplanerBearbeiten">
+                                    <i class="fas fa-project-diagram"></i>
+                                    Projektplaner
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rfid-management">
+                        <h4><i class="fas fa-id-card"></i> RFID Chips verwalten</h4>
+                        <div id="rfidChipsList" class="rfid-chips-list">
+                            <!-- RFID Chips werden hier dynamisch angezeigt -->
+                        </div>
+                        <button type="button" id="addRfidButton" class="add-rfid-button">
+                            <i class="fas fa-plus"></i>
+                            Neuen Chip hinzufügen
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" onclick="closeEditModal()" class="cancel-button">
+                    <i class="fas fa-times"></i>
+                    Abbrechen
+                </button>
+                <button type="button" onclick="saveEmployeeChanges()" class="save-button">
+                    <i class="fas fa-save"></i>
+                    Änderungen speichern
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="benutzerverwaltung.js"></script>
+</body>
+</html>

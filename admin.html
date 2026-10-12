@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Bereich</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Administration</h1>
+    </header>
+    <nav class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="index.html" onclick="event.stopPropagation()">Startseite</a></li>
+            <li><a href="adminUebersicht.html" onclick="event.stopPropagation()">Admin Dashboard</a></li>
+        </ul>
+    </nav>
+    <div id="passwortContainer">
+        <label for="passwort">Passwort:</label>
+        <input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" onclick="event.stopPropagation()">
+        <button type="button" id="anmeldenButton" onclick="event.stopPropagation()">Anmelden</button>
+    </div>
+
+    <div id="adminEbene" class="hidden"> 
+        <p>Diese Seite wurde durch die neue Benutzerverwaltung ersetzt.</p>
+        <p><a href="adminUebersicht.html">Zum neuen Admin Dashboard</a></p>
+    </div>
+</body>
+</html>

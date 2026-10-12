@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektplaner</title>
+    <link rel="stylesheet" href="projektplaner.css">
+    <script src="projektplaner.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Projektplaner</h1>
+        
+        <!-- Zurück Button -->
+        <div style="margin-bottom: 20px;">
+            <button id="backBtn" style="background: linear-gradient(135deg, #6b46c1, #8b5cf6); color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                ← Zurück zur Startseite
+            </button>
+        </div>
+        
+        <div class="form-container">
+            <form id="projektForm">
+                <input type="text" id="projektName" placeholder="Projektname" required>
+                <input type="text" id="bearbeiter" placeholder="Bearbeiter" required>
+                <input type="date" id="startDatum" required title="Startdatum">
+                <input type="date" id="endDatum" title="Enddatum (optional)">                <div class="color-field-wrapper">
+                    <span class="color-label">Farbe:</span>
+                    <input type="color" id="projektFarbe" value="#4299e1" title="Projektfarbe">
+                    <div class="color-palette" id="farbPalette">
+                        <!-- Standardfarben werden per JavaScript hinzugefügt -->
+                    </div>
+                </div>
+                <select id="parentProjekt" title="Übergeordnetes Projekt (optional)">
+                    <option value="">Kein übergeordnetes Projekt</option>
+                </select>
+                <input type="hidden" id="editProjektId" value="">
+                <input type="hidden" id="addAsSubProjekt" value="">
+                <button type="submit" id="submitBtn">Hinzufügen</button>
+                <button type="button" id="cancelEditBtn" style="display: none;">Abbrechen</button>
+            </form>
+        </div>        <div class="controls">
+            <div class="navigation">
+                <button id="prevBtn">◀ Zurück</button>
+                <button id="todayBtn">Heute</button>
+                <button id="nextBtn">Vorwärts ▶</button>
+                <button id="zoomToggleBtn" title="Zwischen Tages- und Monatsansicht wechseln">
+                    <span id="zoomIcon">🔍</span> <span id="viewModeText">Monatsansicht</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="gantt-container">
+            <div id="ganttChart"></div>
+        </div>
+    </main>    <!-- Projekt-Info Modal Template -->
+    <div id="projektModal" class="modal" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h2>Projektinfo</h2>
+            <div id="projektDetails"></div>
+            <div id="subprojektListe" style="margin-top: 10px; margin-bottom: 10px; display: none;">
+                <h3>Unterprojekte</h3>
+                <ul id="subprojektListeItems"></ul>
+            </div>
+            <textarea id="projektNotes"></textarea>
+            <div class="modal-actions">
+                <button id="saveNotes">Speichern</button>
+                <button id="addSubprojekt">+ Unterprojekt</button>
+                <button id="editProjekt">Bearbeiten</button>
+                <button id="deleteProjekt">Löschen</button>
+                <button id="cancelModal">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Löschen-Bestätigung Modal -->
+    <div id="deleteConfirmModal" class="modal" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h2>Projekt löschen</h2>
+            <p>Möchten Sie dieses Projekt wirklich löschen?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" style="background-color: #f56565;">Ja, löschen</button>
+                <button id="cancelDelete">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

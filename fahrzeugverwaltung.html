@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM-HS Fahrzeugverwaltung</title>
+    <link rel="stylesheet" href="fahrzeugverwaltung.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <h1>Fahrzeugverwaltung</h1>
+        <div class="header-content-right">
+            <div class="login-area">
+                <button id="anmeldenButton" style="margin-left:12px;">Anmelden</button>
+                <div id="login-status"></div>
+            </div>
+            <nav id="mainNav">
+                <button id="navToggle" aria-label="Navigation umschalten">
+                    <span></span> <span></span> <span></span>
+                </button>
+                <ul id="navLinks">
+                    <li><a href="index.html">Zur Startseite</a></li>
+                    <li><a href="fahrtenbuch.html">Fahrtenbuch</a></li>
+                    <li><a href="tabelle.html">Fahrtentabelle</a></li>
+                    <li><button class="nav-button" id="themeToggleBtn">Dark Mode</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="access-denied" style="display:none; text-align:center; margin-top:50px;">
+            <h2>🚫 Zugriff verweigert</h2>
+            <p>Sie benötigen Administrator-Berechtigungen für diese Seite.</p>
+            <button onclick="window.location.href='index.html'">Zur Startseite</button>
+        </div>
+
+        <div id="admin-content" style="display:none;">
+            <!-- Fahrzeug Status Übersicht -->
+            <section class="vehicle-overview-section">
+                <h2>Fahrzeugstatus Übersicht</h2>
+                <div id="vehicleOverviewContainer" class="vehicle-overview-grid">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </section>
+
+            <!-- Fahrzeug hinzufügen -->
+            <section class="form-section">
+                <h2>Neues Fahrzeug hinzufügen</h2>
+                <form id="addVehicleForm">
+                    <div class="form-group">
+                        <label for="newVehicleKey">Fahrzeug-Schlüssel:</label>
+                        <input type="text" id="newVehicleKey" required placeholder="z.B. LKW_DH159">
+                    </div>
+                    <div class="form-group">
+                        <label for="newVehicleName">Anzeigename:</label>
+                        <input type="text" id="newVehicleName" required placeholder="z.B. LKW DH-159">
+                    </div>
+                    <div class="form-group">
+                        <label for="newVehicleStatus">Anfangsstatus:</label>
+                        <select id="newVehicleStatus">
+                            <option value="ok">✅ Alles in Ordnung</option>
+                            <option value="minor">⚠️ Kleinere Probleme</option>
+                            <option value="major">🚨 Größere Probleme</option>
+                            <option value="critical">❌ Kritische Probleme</option>
+                        </select>
+                    </div>
+                    <button type="submit">Fahrzeug hinzufügen</button>
+                </form>
+            </section>
+
+            <!-- Fahrzeug Status bearbeiten -->
+            <section class="form-section">
+                <h2>Fahrzeugstatus bearbeiten</h2>
+                <form id="editStatusForm">
+                    <div class="form-group">
+                        <label for="selectVehicle">Fahrzeug auswählen:</label>
+                        <select id="selectVehicle" required>
+                            <option value="">-- Bitte auswählen --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editVehicleStatus">Status:</label>
+                        <select id="editVehicleStatus">
+                            <option value="ok">✅ Alles in Ordnung</option>
+                            <option value="minor">⚠️ Kleinere Probleme</option>
+                            <option value="major">🚨 Größere Probleme</option>
+                            <option value="critical">❌ Kritische Probleme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="statusDetails">Statusdetails:</label>
+                        <textarea id="statusDetails" rows="3" placeholder="Beschreibung der Probleme oder Wartungshinweise"></textarea>
+                    </div>
+                    <button type="submit">Status aktualisieren</button>
+                </form>
+            </section>
+
+            <!-- Fahrzeug Lebenslauf -->
+            <section class="vehicle-history-section">
+                <h2>Fahrzeug-Lebenslauf</h2>
+                <div class="form-group">
+                    <label for="historyVehicleSelect">Fahrzeug auswählen:</label>
+                    <select id="historyVehicleSelect">
+                        <option value="">-- Bitte auswählen --</option>
+                    </select>
+                </div>
+                <div id="vehicleHistoryContainer" class="vehicle-history-timeline">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </section>
+
+            <!-- Fahrzeug entfernen (nur für Super-Admins) -->
+            <section class="danger-section">
+                <h2>⚠️ Gefahrenbereich</h2>
+                <div class="form-group">
+                    <label for="deleteVehicleSelect">Fahrzeug entfernen:</label>
+                    <select id="deleteVehicleSelect">
+                        <option value="">-- Bitte auswählen --</option>
+                    </select>
+                </div>
+                <button id="deleteVehicleBtn" class="danger-button" type="button">Fahrzeug entfernen</button>
+                <p class="warning-text">⚠️ Achtung: Das Entfernen eines Fahrzeugs kann nicht rückgängig gemacht werden!</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="anmeldeForm">
+                <h2>RFID Anmeldung</h2>
+                <input type="password" id="rfidInput" placeholder="Mit RFID anmelden">
+                <button type="submit">Anmelden</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container">
+        <p id="notification-message"></p>
+    </div>
+
+    <script src="fahrzeugverwaltung.js"></script>
+</body>
+</html>

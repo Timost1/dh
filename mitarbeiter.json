@@ -1,0 +1,922 @@
+[
+  {
+    "name": "Timo Steffensky",
+    "rfid": "77139B91",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 2
+  },
+  {
+    "name": "Marc Beitz",
+    "rfid": "8396180E",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 3
+  },
+  {
+    "name": "Pascal Becker",
+    "rfid": "775B8891",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "id": 1
+  },
+  {
+    "name": "Pascal Becker",
+    "rfid": "40BB7EFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "id": 4
+  },
+  {
+    "name": "Stefan Schäfer",
+    "rfid": "40C1ADFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "id": 5
+  },
+  {
+    "name": "Stefan Schäfer",
+    "rfid": "838D580E",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "id": 6
+  },
+  {
+    "name": "Jakob Woll",
+    "rfid": "8358A324",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "id": 8
+  },
+  {
+    "name": "Jakob Woll",
+    "rfid": "401395FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "id": 9
+  },
+  {
+    "name": "Lauren Ukaj",
+    "rfid": "79B1FBB3",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "id": 901
+  },
+  {
+    "name": "Rainer Spurk",
+    "rfid": "408474FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 10
+  },
+  {
+    "name": "Volker Spurk",
+    "rfid": "404689FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 11
+  },
+  {
+    "name": "Volker Spurk",
+    "rfid": "41DA6216",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 12
+  },
+  {
+    "name": "Jonas Scherer",
+    "rfid": "77258191",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 13
+  },
+  {
+    "name": "Jonas Scherer",
+    "rfid": "793E08B4",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 14
+  },
+  {
+    "name": "Maximilian Sturm",
+    "rfid": "83683E0E",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "id": 16
+  },
+  {
+    "name": "Rainer Spurk",
+    "rfid": "412C6716",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 17
+  },
+  {
+    "name": "Albion Dragusha",
+    "rfid": "79CBFBB3",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "D",
+    "id": 18
+  },
+  {
+    "name": "Florian Welsch",
+    "rfid": "40DEADFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "D",
+    "id": 19
+  },
+  {
+    "name": "Yasar Tokay",
+    "rfid": "40E479FA",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "C",
+    "id": 20
+  },
+  {
+    "name": "Hakan Uzun",
+    "rfid": "404BABFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "id": 21
+  },
+  {
+    "name": "Merlin Böhm",
+    "rfid": "4024B9FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "F",
+    "id": 23
+  },
+  {
+    "name": "Tim Hippchen",
+    "rfid": "40B9A1FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "id": 24
+  },
+  {
+    "name": "Michael Hauser",
+    "rfid": "792B4DB4",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 3,
+    "id": 902
+  },
+  {
+    "name": "Michael Hauser",
+    "rfid": "83438F05",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 3,
+    "id": 903
+  },
+  {
+    "name": "Jochem Hermann",
+    "rfid": "40D3B9FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 3,
+    "id": 904
+  },
+  {
+    "name": "Ahmad Altaei",
+    "rfid": "3EBF18E6",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 2,
+    "id": 905
+  },
+  {
+    "name": "Etienne Pistorius",
+    "rfid": "40C3BAFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 2,
+    "id": 906
+  },
+  {
+    "name": "Timo Endres",
+    "rfid": "40D8C6FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "E",
+    "adminUserId": 3,
+    "id": 907
+  },
+  {
+    "name": "Marcel Dörr",
+    "rfid": "41803016",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 16,
+    "id": 909
+  },
+  {
+    "name": "Zimmer Alex",
+    "rfid": "41A91F16",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 16,
+    "id": 913
+  },
+  {
+    "name": "Michael Schütz",
+    "rfid": "41E45216",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 16,
+    "id": 916
+  },
+  {
+    "name": "Richard Daniel",
+    "rfid": "40B2BEFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "adminUserId": 16,
+    "id": 917
+  },
+  {
+    "name": "Christian Selzer",
+    "rfid": "41FC6D16",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 3,
+    "id": 918
+  },
+  {
+    "name": "Christian Selzer",
+    "rfid": "4018D5FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 3,
+    "id": 919
+  },
+  {
+    "name": "Philipp Raß",
+    "rfid": "839B430E",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 16,
+    "id": 921
+  },
+  {
+    "name": "Dirk Brandau",
+    "rfid": "3EE516E6",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 908,
+    "id": 922
+  },
+  {
+    "name": "Thomas Guilaume",
+    "rfid": "4083D5FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "adminUserId": 3,
+    "id": 923
+  },
+  {
+    "name": "Thomas Guilaume",
+    "rfid": "41912516",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "adminUserId": 3,
+    "id": 924
+  },
+  {
+    "name": "Annika Jakobs",
+    "rfid": "40DDCFFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "adminUserId": 3,
+    "id": 925
+  },
+  {
+    "name": "Marvin Schumacher",
+    "rfid": "40B690FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 2,
+    "id": 926
+  },
+  {
+    "name": "Marvin Schumacher",
+    "rfid": "83BB9224",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 2,
+    "id": 927
+  },
+  {
+    "name": "Achim Reichert",
+    "rfid": "40D4B9FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "D",
+    "adminUserId": 928,
+    "id": 929
+  },
+  {
+    "name": "Maurice Tecquert",
+    "rfid": "40827DFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 928,
+    "id": 930
+  },
+  {
+    "name": "Reuter Thomas",
+    "rfid": "409995FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 908,
+    "id": 931
+  },
+  {
+    "name": "Maximilian Sturm",
+    "rfid": "797CC798",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 932
+  },
+  {
+    "name": "Marcel Dörr",
+    "rfid": "40C2ACFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 933
+  },
+  {
+    "name": "Zimmer Alex",
+    "rfid": "40C1A1FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 934
+  },
+  {
+    "name": "Michael Schütz",
+    "rfid": "408CDCFA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 935
+  },
+  {
+    "name": "Philipp Raß",
+    "rfid": "4098D8FA",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 936
+  },
+  {
+    "name": "Timo Steffensky",
+    "rfid": "40E1ABFA",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "adminUserId": 2,
+    "id": 937
+  },
+  {
+    "name": "Marc Beitz",
+    "rfid": "402176FA",
+    "permissions": {
+      "isAdmin": true,
+      "kannFahrtenLoeschen": true,
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "A",
+    "adminUserId": 937,
+    "id": 938
+  },
+  {
+    "name": "test",
+    "rfid": "test",
+    "permissions": {
+      "isAdmin": false,
+      "meister": true,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "F",
+    "adminUserId": 2,
+    "id": 939
+  },
+  {
+    "name": "Julian Seger",
+    "rfid": "40F588FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "D",
+    "adminUserId": 938,
+    "id": 940
+  },
+  {
+    "name": "Rami Alasmi",
+    "rfid": "408789FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "adminUserId": 2,
+    "id": 941
+  },
+  {
+    "name": "Rami Alasmi",
+    "rfid": "77B18091",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "B",
+    "adminUserId": 2,
+    "id": 942
+  },
+  {
+    "name": "Andreas Meyer",
+    "rfid": "40EAC5FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 2,
+    "id": 943
+  },
+  {
+    "name": "Andreas Meyer",
+    "rfid": "41082716",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "C",
+    "adminUserId": 2,
+    "id": 944
+  },
+  {
+    "name": "Lauren Ukaj",
+    "rfid": "77C4D691",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "F",
+    "adminUserId": 2,
+    "id": 945
+  },
+  {
+    "name": "Axel Müllenbach",
+    "rfid": "4007C0FA",
+    "permissions": {
+      "isAdmin": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false,
+      "Meister": false,
+      "Vertreter": false
+    },
+    "schicht": "Buero",
+    "adminUserId": 2,
+    "id": 946
+  }
+]

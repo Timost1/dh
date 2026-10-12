@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Startseite EM-HS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;family=Fira+Code:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #081425;
+            color: #d8e3fb;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+        }
+        .glass-card {
+            background: rgba(21, 32, 49, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            background: rgba(21, 32, 49, 0.6);
+        }
+        .industrial-glow {
+            box-shadow: 0 0 40px -10px rgba(99, 102,241, 0.15);
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(192, 193, 255, 0.1);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(192, 193, 255, 0.2);
+        }
+        .sidebar-transition {
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .main-content-transition {
+            transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sidebar-collapsed {
+            width: 80px;
+        }
+        .sidebar-collapsed .nav-text, .sidebar-collapsed .logo-text, .sidebar-collapsed .sidebar-footer-text {
+            display: none;
+        }
+        .sidebar-collapsed .nav-item {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .sidebar-collapsed .logo-container {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .sidebar-collapsed .sidebar-header {
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: center;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c0c1ff",
+                        "brand-hover": "#4f46e5",
+                        "on-surface": "#d8e3fb",
+                        "primary": "#c0c1ff",
+                        "brand-indigo": "#6366f1",
+                        "surface": "#081425",
+                        "on-surface-variant": "#c7c4d7",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "surface-container": "#152031",
+                        "surface-container-high": "#1f2a3c",
+                        "surface-container-highest": "#2a3548",
+                        "error-rose": "#f43f5e",
+                        "success-emerald": "#10b981",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "256px",
+                        "gutter": "1.5rem",
+                        "header-height": "80px",
+                    },
+                    "fontFamily": {
+                        "headline-2": ["Outfit"],
+                        "headline-1": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "mono-data": ["Fira Code"]
+                    },
+                    "fontSize": {
+                        "headline-2": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "headline-1": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "mono-data": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SIDEBAR -->
+<aside class="fixed left-0 top-0 h-screen w-sidebar-width border-r border-glass-border backdrop-blur-3xl bg-surface/80 z-50 flex flex-col pt-6 sidebar-transition" id="sidebar">
+    <div class="px-6 mb-6 pb-6 border-b border-glass-border flex items-center gap-3 logo-container transition-all shrink-0">
+        <div class="w-10 h-10 min-w-[40px] bg-brand-indigo rounded-xl flex items-center justify-center shadow-lg shadow-brand-indigo/20">
+            <span class="material-symbols-outlined text-white text-[20px]">factory</span>
+        </div>
+        <div class="logo-text flex flex-col overflow-hidden">
+            <h1 class="text-lg font-bold leading-none tracking-tight text-primary uppercase">EM-HS</h1>
+            <span class="text-[10px] text-on-surface-variant font-semibold uppercase tracking-widest mt-1 whitespace-nowrap">Startseite</span>
+        </div>
+    </div>
+
+    <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+        <p class="nav-text text-[10px] font-bold text-on-surface-variant uppercase tracking-widest px-4 mb-3 mt-2">Navigation</p>
+        
+        <a href="index.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-primary font-bold border-l-4 border-primary bg-white/5 transition-all group">
+            <span class="material-symbols-outlined text-[20px]">home</span>
+            <span class="text-sm font-medium nav-text">Startseite</span>
+        </a>
+        <a href="../Fahrtenbuch/fahrtenbuch.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">directions_car</span>
+            <span class="text-sm font-medium nav-text">Fahrtenbuch</span>
+        </a>
+        <a href="../schwarzesbrett.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">campaign</span>
+            <span class="text-sm font-medium nav-text">Schwarzes Brett</span>
+        </a>
+        <a href="../telefonbuch.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">contact_phone</span>
+            <span class="text-sm font-medium nav-text">Telefonbuch</span>
+        </a>
+        <a href="../wochenplan.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+            <span class="text-sm font-medium nav-text">Wochenplan</span>
+        </a>
+        <a href="../Schaltanweisungen/sawindex.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">electric_bolt</span>
+            <span class="text-sm font-medium nav-text">Schaltanw.</span>
+        </a>
+        <a href="../x_dashboard.php" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">engineering</span>
+            <span class="text-sm font-medium nav-text">Fremdfirmen</span>
+        </a>
+
+        <!-- Dropdown Lagerverwaltung -->
+        <div>
+            <button onclick="document.getElementById('lager-submenu').classList.toggle('max-h-0'); document.getElementById('lager-submenu').classList.toggle('opacity-0'); document.getElementById('lager-submenu').classList.toggle('max-h-[500px]'); document.getElementById('lager-submenu').classList.toggle('opacity-100'); document.getElementById('lager-chevron').classList.toggle('rotate-90')" class="nav-item w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group outline-none">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+                    <span class="text-sm font-medium nav-text">Lagerverwaltung</span>
+                </div>
+                <span id="lager-chevron" class="material-symbols-outlined text-[18px] transition-transform duration-300 nav-text">chevron_right</span>
+            </button>
+            <div id="lager-submenu" class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                <div class="pl-11 pr-4 py-1 space-y-1">
+                    <a href="../Lagerverwaltung/index.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-white/10 hover:text-primary text-sm font-medium transition-all group nav-text">
+                        Dashboard
+                    </a>
+                    <a href="../Lagerverwaltung/inventar.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-white/10 hover:text-primary text-sm font-medium transition-all group nav-text">
+                        Inventar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="../Formulare/formulare.html" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">description</span>
+            <span class="text-sm font-medium nav-text">Formulare</span>
+        </a>
+        
+        <p class="nav-text text-[10px] font-bold text-on-surface-variant uppercase tracking-widest px-4 mb-3 mt-6">Externe Links</p>
+        <a href="https://stromspitzen.dillinger.de/index.htm" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="text-sm font-medium nav-text">Stromspitzen</span>
+        </a>
+        <a href="https://elv1.dillinger.de/filter.htm" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="text-sm font-medium nav-text">Filter Stahlwerk</span>
+        </a>
+        <a href="https://fiori.dillinger.de:8001/fiori" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="text-sm font-medium nav-text">Fiori</span>
+        </a>
+        <a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="text-sm font-medium nav-text">Planoview</span>
+        </a>
+        <a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="text-sm font-medium nav-text">Intranet</span>
+        </a>
+        <a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank" class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/10 hover:text-primary transition-all group">
+            <span class="material-symbols-outlined text-[20px]">restaurant</span>
+            <span class="text-sm font-medium nav-text">Speiseplan</span>
+        </a>
+    </nav>
+</aside>
+<!-- HEADER -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-header-height border-b border-glass-border backdrop-blur-xl bg-surface/80 z-40 flex justify-between items-center px-8 main-content-transition" id="header">
+<div class="flex items-center gap-6">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/5 transition-colors" id="sidebar-toggle">
+<span class="material-symbols-outlined" id="toggle-icon">menu_open</span>
+</button>
+<h2 class="font-headline-1 text-headline-1 text-primary">Startseite EM-HS</h2>
+<div class="hidden md:flex items-center gap-3 ml-4 bg-surface-container/50 border border-glass-border rounded-full px-4 py-1.5 text-on-surface-variant shadow-inner">
+    <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+        <span id="header-date" class="text-body-md font-medium tracking-wide"></span>
+    </div>
+    <span class="w-px h-4 bg-glass-border"></span>
+    <span class="text-body-md font-bold text-primary">KW <span id="header-kw"></span></span>
+    <span class="w-px h-4 bg-glass-border"></span>
+    <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">schedule</span>
+        <span id="header-time" class="font-mono-data text-body-md font-bold tracking-widest text-primary"></span>
+    </div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button id="theme-toggle" class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-white/5 transition-all">
+        <span class="material-symbols-outlined text-[22px]">light_mode</span>
+    </button>
+    <button id="btn-notifications" class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-white/5 transition-all">
+        <span class="material-symbols-outlined text-[22px]">notifications</span>
+        <span id="notification-badge" class="hidden absolute top-2 right-2 w-2.5 h-2.5 bg-error-rose border-2 border-surface rounded-full"></span>
+    </button>
+    
+    <div class="h-8 w-px bg-glass-border mx-2"></div>
+    
+    <button id="login-btn" class="h-10 px-5 bg-brand-indigo hover:bg-brand-hover text-white text-sm font-bold rounded-xl transition-all shadow-md shadow-brand-indigo/20 flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">login</span> Anmelden
+    </button>
+
+    <div id="user-profile" class="hidden items-center gap-3 pl-2 pr-4 py-1.5 cursor-pointer rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-glass-border group">
+        <div class="text-right hidden sm:block">
+            <p class="text-sm font-bold text-on-surface leading-none truncate">Gast User</p>
+            <p class="text-xs text-on-surface-variant mt-1 truncate">Nur Ansicht</p>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 border border-glass-border group-hover:border-brand-indigo transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-brand-indigo">person</span>
+        </div>
+    </div>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="ml-sidebar-width pt-header-height h-screen overflow-y-auto custom-scrollbar p-8 bg-gradient-to-br from-surface via-surface to-surface-container-low main-content-transition" id="main-content">
+<div class="max-w-6xl mx-auto space-y-6 pb-12">
+<!-- CENTRAL INFORMATION CARD (REDUCED HEIGHT) -->
+<section class="fade-in-up" style="animation-delay: 0.1s;">
+<div class="glass-card industrial-glow rounded-3xl p-6 relative overflow-hidden group">
+<div class="flex items-center gap-4 mb-4 border-b border-glass-border pb-3">
+<div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">campaign</span>
+</div>
+<h3 class="font-headline-1 text-headline-2 text-primary">System-Informationen</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-glass-border group/info">
+<div class="mt-1.5 w-2 h-2 min-w-[8px] rounded-full bg-brand-indigo shadow-[0_0_8px_#6366f1]"></div>
+<div>
+<p class="font-label-caps text-on-surface-variant mb-0.5 uppercase tracking-[0.1em]">Update: 18.03.25</p>
+<p class="text-body-md leading-relaxed text-[13px]">Tür Zentrale 1: <strong class="text-primary font-mono-data bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">8449#</strong>.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-glass-border group/info">
+<div class="mt-1.5 w-2 h-2 min-w-[8px] rounded-full bg-primary/40"></div>
+<div>
+<p class="font-label-caps text-on-surface-variant mb-0.5 uppercase tracking-[0.1em]">Support</p>
+<p class="text-body-md text-[13px]">E-Mail an <span class="text-primary hover:underline cursor-pointer font-bold">Dörr &amp; Sturm</span>.</p>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="bg-error-rose/5 border border-error-rose/20 p-4 rounded-xl flex gap-3 hover:bg-error-rose/10 transition-all">
+<span class="material-symbols-outlined text-error-rose text-2xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-headline-2 text-error-rose text-[14px] mb-0.5">Sicherheitsanweisung</p>
+<p class="text-[12px] text-on-surface/80">Werkstatt nicht offen lassen!</p>
+</div>
+</div>
+<div class="bg-surface-container-highest/40 border border-glass-border p-4 rounded-xl flex gap-3 hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-2xl">fire_extinguisher</span>
+<div>
+<p class="font-headline-2 text-primary text-[14px] mb-0.5">Brandschutz Info</p>
+<p class="text-[12px] text-on-surface/80">Rauchmelder A25/26 -&gt; Feuerwehr.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW WIDGETS ROW: LEAN & WEATHER -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 fade-in-up" style="animation-delay: 0.2s;">
+<!-- LEAN MANAGEMENT WIDGET -->
+<section class="md:col-span-8">
+<div class="glass-card rounded-3xl p-6 h-full border-l-4 border-success-emerald/50">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-2 text-headline-2 text-success-emerald flex items-center gap-2">
+<span class="material-symbols-outlined">trending_up</span>
+                                LEAN Management
+                            </h3>
+<div class="flex items-center gap-2 bg-success-emerald/10 px-4 py-2 rounded-full border border-success-emerald/20">
+<span class="material-symbols-outlined text-success-emerald text-sm">verified</span>
+<span class="text-[12px] font-bold text-success-emerald uppercase tracking-wider">Unfallfreie Tage: 124</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="bg-white/5 p-4 rounded-2xl border border-glass-border">
+<p class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mb-2">Prozessoptimierung</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-headline-1 text-primary">94%</span>
+<span class="text-[11px] text-success-emerald">+2.4% vs LM</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<div class="bg-white/5 p-4 rounded-2xl border border-glass-border">
+<p class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mb-2">Arbeitssicherheit</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-headline-1 text-success-emerald">100%</span>
+<span class="text-[11px] text-on-surface-variant">Optimal</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-success-emerald h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="bg-white/5 p-4 rounded-2xl border border-glass-border">
+<p class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mb-2">5S Standard</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-headline-1 text-primary">A+</span>
+<span class="text-[11px] text-on-surface-variant">Zertifiziert</span>
+</div>
+<div class="flex gap-1 mt-3">
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WEATHER WIDGET -->
+<section class="md:col-span-4">
+<div class="glass-card rounded-3xl p-6 h-full flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-[-20px] right-[-20px] opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary">cloud</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-2 text-on-surface-variant text-[12px] uppercase tracking-widest mb-4">Wetter Lokal</h3>
+<div class="flex items-center gap-4">
+<span id="weather-icon" class="material-symbols-outlined text-primary text-5xl">sync</span>
+<div>
+<p id="weather-temp" class="text-4xl font-headline-1 text-primary">--°C</p>
+<p id="weather-desc" class="text-on-surface-variant font-medium">Lade Wetter...</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-glass-border grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Wind</p>
+<p id="weather-wind" class="text-[13px] font-mono-data">-- km/h</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Feuchte</p>
+<p id="weather-humidity" class="text-[13px] font-mono-data">--%</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- BOTTOM GRID (PHONE & DAILY PLAN) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- PHONE NUMBERS -->
+<section class="lg:col-span-4 fade-in-up" style="animation-delay: 0.3s;">
+<div class="glass-card rounded-3xl h-full flex flex-col overflow-hidden">
+<div class="p-6 border-b border-glass-border flex justify-between items-center bg-white/[0.02]">
+<h3 class="font-headline-2 text-headline-2 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                                Aktuelle Tel. Nummern
+                            </h3>
+</div>
+<div class="p-4 space-y-2 overflow-y-auto max-h-[400px] custom-scrollbar">
+<div class="phone-item group flex items-center justify-between p-3 rounded-xl border border-transparent hover:border-glass-border hover:bg-white/5 transition-all cursor-pointer" data-num="6012">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-on-surface text-xl font-bold tracking-widest w-14 text-right">6012</span>
+<span class="phone-name text-on-surface-variant font-medium text-lg">: -</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">chevron_right</span>
+</div>
+<div class="phone-item group flex items-center justify-between p-3 rounded-xl border border-transparent hover:border-glass-border hover:bg-white/5 transition-all cursor-pointer" data-num="6721">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-on-surface text-xl font-bold tracking-widest w-14 text-right">6721</span>
+<span class="phone-name text-on-surface-variant font-medium text-lg">: -</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">chevron_right</span>
+</div>
+<div class="phone-item group flex items-center justify-between p-3 rounded-xl border border-transparent hover:border-glass-border hover:bg-white/5 transition-all cursor-pointer" data-num="6747">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-on-surface text-xl font-bold tracking-widest w-14 text-right">6747</span>
+<span class="phone-name text-on-surface-variant font-medium text-lg">: -</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">chevron_right</span>
+</div>
+<div class="phone-item group flex items-center justify-between p-3 rounded-xl border border-transparent hover:border-glass-border hover:bg-white/5 transition-all cursor-pointer" data-num="6749">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-on-surface text-xl font-bold tracking-widest w-14 text-right">6749</span>
+<span class="phone-name text-on-surface-variant font-medium text-lg">: -</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">chevron_right</span>
+</div>
+<div class="phone-item group flex items-center justify-between p-3 rounded-xl border border-transparent hover:border-glass-border hover:bg-white/5 transition-all cursor-pointer" data-num="Vertretung">
+<div class="flex items-center gap-3">
+<span class="font-headline-1 text-on-surface text-sm font-bold uppercase tracking-widest w-14 text-right opacity-70">Vertr.</span>
+<span class="phone-name text-on-surface-variant font-medium text-lg">: -</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- DAILY PLAN -->
+<section class="lg:col-span-8 fade-in-up" style="animation-delay: 0.4s;">
+<div class="glass-card rounded-3xl h-full flex flex-col overflow-hidden">
+<div class="p-6 border-b border-glass-border flex justify-between items-center bg-white/[0.02]">
+<h3 class="font-headline-2 text-headline-2 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">event_available</span>
+                                Tagesplan heute
+                            </h3>
+<div class="flex items-center gap-3">
+<span id="tagesplan-datum" class="font-mono-data text-[12px] bg-primary/10 text-primary px-3 py-1.5 rounded-full border border-primary/20 font-bold uppercase tracking-widest">--.--.----</span>
+</div>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 flex-1" id="tagesplan-container">
+<!-- Frühschicht -->
+<div class="space-y-4 p-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">wb_sunny</span>
+<h4 class="font-headline-2 text-[15px] uppercase tracking-[0.1em]">Frühschicht</h4>
+</div>
+<div id="tp-frueh" class="space-y-4 text-body-md text-on-surface/80">
+<p class="text-xs text-on-surface-variant italic">Lade Daten...</p>
+</div>
+</div>
+<!-- Mittagsschicht -->
+<div class="space-y-4 p-2">
+<div class="flex items-center gap-2 text-brand-indigo">
+<span class="material-symbols-outlined text-[20px]">light_mode</span>
+<h4 class="font-headline-2 text-[15px] uppercase tracking-[0.1em]">Mittagsschicht</h4>
+</div>
+<div id="tp-mittag" class="space-y-3">
+<p class="text-xs text-on-surface-variant italic">Lade Daten...</p>
+</div>
+</div>
+<!-- Nachtschicht -->
+<div class="space-y-4 p-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">bedtime</span>
+<h4 class="font-headline-2 text-[15px] uppercase tracking-[0.1em]">Nachtschicht</h4>
+</div>
+<div id="tp-nacht" class="space-y-3">
+<p class="text-xs text-on-surface-variant italic">Lade Daten...</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-surface/80 backdrop-blur-md" onclick="document.getElementById('btn-cancel-login').click()"></div>
+    <div class="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-surface-container/90 backdrop-blur-2xl border border-glass-border shadow-2xl modal-content-pop">
+        <div class="absolute top-0 inset-x-0 h-40 bg-brand-indigo/20 blur-3xl pointer-events-none"></div>
+        <div class="px-8 pt-10 pb-8 relative z-10">
+            <div class="w-20 h-20 mx-auto bg-surface-container-highest rounded-full shadow-lg border border-glass-border flex items-center justify-center mb-6 relative">
+                <div class="absolute inset-0 rounded-full border-2 border-glass-border"></div>
+                <div class="absolute inset-[-2px] rounded-full border-2 border-transparent border-t-brand-indigo animate-[spin_3s_linear_infinite]"></div>
+                <span class="material-symbols-outlined text-3xl text-brand-indigo">badge</span>
+            </div>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold tracking-tight text-primary mb-2">Mitarbeiter Login</h3>
+                <p class="text-sm text-on-surface-variant font-medium">Scannen Sie Ihren Werksausweis am Lesegerät</p>
+            </div>
+            <div class="space-y-4">
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
+                        <span class="material-symbols-outlined text-[20px] text-on-surface-variant group-focus-within:text-brand-indigo transition-colors">key</span>
+                    </div>
+                    <input type="password" id="login-rfid" class="w-full bg-black/20 border border-glass-border rounded-2xl py-4 pl-14 pr-4 text-center font-mono tracking-[0.3em] text-lg focus:ring-2 focus:ring-brand-indigo transition-all shadow-inner outline-none text-on-surface placeholder:tracking-normal placeholder:font-body-md placeholder:text-sm placeholder:text-on-surface-variant/50" placeholder="Warte auf Eingabe..." autofocus>
+                </div>
+                <p id="login-error" class="text-sm border border-error-rose/20 bg-error-rose/10 text-error-rose rounded-xl py-2 px-4 hidden text-center font-medium shadow-sm"></p>
+            </div>
+            <div class="mt-8 flex flex-col gap-3">
+                <button type="button" id="btn-submit-login" class="w-full py-3.5 rounded-xl font-bold text-white bg-brand-indigo hover:bg-brand-hover hover:shadow-lg hover:shadow-brand-indigo/25 active:scale-[0.98] transition-all text-sm flex items-center justify-center gap-2">
+                    Authentifizieren <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+                <button type="button" id="btn-cancel-login" class="w-full py-3.5 rounded-xl font-bold text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors text-sm">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div id="logout-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-surface/80 backdrop-blur-sm" onclick="document.getElementById('btn-cancel-logout').click()"></div>
+    <div class="relative bg-surface-container w-full max-w-sm rounded-[2rem] shadow-2xl p-8 border border-glass-border modal-content-pop text-center z-10">
+        <div class="w-16 h-16 bg-error-rose/10 text-error-rose rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="material-symbols-outlined text-3xl">logout</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Abmelden</h3>
+        <p class="text-sm text-on-surface-variant mb-8">Möchten Sie Ihre Sitzung wirklich beenden?</p>
+        <div class="flex gap-3">
+            <button type="button" id="btn-cancel-logout" class="flex-1 py-3 rounded-xl font-bold text-on-surface-variant bg-white/5 hover:bg-white/10 transition-all">Zurück</button>
+            <button type="button" id="btn-confirm-logout" class="flex-1 py-3 rounded-xl font-bold text-white bg-error-rose hover:bg-error-rose/80 shadow-lg shadow-error-rose/20 transition-all">Abmelden</button>
+        </div>
+    </div>
+</div>
+
+<!-- PHONE EDIT MODAL -->
+<div id="phone-edit-modal" class="fixed inset-0 z-[75] hidden flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-surface/80 backdrop-blur-md" onclick="document.getElementById('btn-cancel-phone').click()"></div>
+    <div class="relative w-full max-w-sm overflow-hidden rounded-[2rem] bg-surface-container/90 backdrop-blur-2xl border border-glass-border shadow-2xl modal-content-pop">
+        <div class="px-8 pt-8 pb-8 relative z-10">
+            <h3 class="text-2xl font-bold tracking-tight text-primary mb-1 text-center">Nummer zuweisen</h3>
+            <p id="phone-edit-subtitle" class="text-sm text-on-surface-variant font-medium text-center mb-6">Für Durchwahl: -</p>
+            
+            <input type="hidden" id="phone-edit-id">
+            
+            <div class="space-y-4">
+                <label class="block">
+                    <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest pl-1 mb-2 block">Name manuell</span>
+                    <input type="text" id="phone-edit-name" class="w-full bg-black/20 border border-glass-border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-indigo outline-none text-on-surface transition-all">
+                </label>
+
+                <div class="relative flex items-center py-2 opacity-50">
+                    <div class="flex-grow border-t border-glass-border"></div>
+                    <span class="flex-shrink-0 mx-4 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">ODER</span>
+                    <div class="flex-grow border-t border-glass-border"></div>
+                </div>
+
+                <label class="block">
+                    <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest pl-1 mb-2 flex justify-between items-center">
+                        Ausweis scannen 
+                        <span class="text-[9px] text-brand-indigo animate-pulse bg-brand-indigo/10 px-2 py-0.5 rounded-full">Bereit</span>
+                    </span>
+                    <input type="password" id="phone-edit-rfid" class="w-full bg-black/20 border border-glass-border rounded-xl px-4 py-3 text-center font-mono tracking-[0.3em] text-sm focus:ring-2 focus:ring-brand-indigo outline-none text-on-surface transition-all placeholder:tracking-normal placeholder:font-body-md" placeholder="Ausweis auflegen..." autocomplete="off">
+                </label>
+                <p id="phone-edit-error" class="text-sm text-error-rose text-center hidden font-medium"></p>
+            </div>
+            
+            <div class="mt-8 flex gap-3">
+                <button type="button" id="btn-cancel-phone" class="flex-1 py-3 rounded-xl font-bold text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors text-sm">Zurück</button>
+                <button type="button" id="btn-save-phone" class="flex-1 py-3 rounded-xl font-bold text-white bg-brand-indigo hover:bg-brand-hover shadow-lg shadow-brand-indigo/25 transition-all text-sm">Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTIFICATIONS MODAL -->
+<div id="notifications-modal" class="fixed inset-0 z-[60] hidden flex justify-end">
+    <div class="absolute inset-0 bg-surface/50 backdrop-blur-sm" onclick="document.getElementById('notifications-modal').classList.add('hidden')"></div>
+    <div class="relative bg-surface-container w-full max-w-sm h-full shadow-2xl border-l border-glass-border flex flex-col animate-slide-in-right z-10">
+        <div class="h-header-height px-6 flex items-center justify-between border-b border-glass-border bg-surface shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-indigo/10 text-brand-indigo flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[20px]">notifications</span>
+                </div>
+                <h3 class="font-headline-2 text-lg text-primary">Meldungen</h3>
+            </div>
+            <button onclick="document.getElementById('notifications-modal').classList.add('hidden')" class="w-10 h-10 rounded-full hover:bg-white/5 flex items-center justify-center transition-all text-on-surface-variant">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4" id="notification-list"></div>
+        <div class="p-6 border-t border-glass-border shrink-0 bg-surface-container-low">
+            <button onclick="clearAllNotifications()" class="w-full py-4 text-sm font-bold text-on-surface-variant bg-white/5 border border-glass-border rounded-2xl hover:text-primary hover:border-primary transition-all">Alles gelesen</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container" class="fixed bottom-6 right-6 z-[80] flex flex-col gap-3 pointer-events-none"></div>
+
+<script>
+        const sidebar = document.getElementById('sidebar');
+        const header = document.getElementById('header');
+        const mainContent = document.getElementById('main-content');
+        const toggleBtn = document.getElementById('sidebar-toggle');
+        const toggleIcon = document.getElementById('toggle-icon');
+        
+        let isCollapsed = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isCollapsed = !isCollapsed;
+            if (isCollapsed) {
+                sidebar.classList.add('sidebar-collapsed');
+                sidebar.classList.remove('w-sidebar-width');
+                sidebar.classList.add('w-[80px]');
+                header.classList.remove('w-[calc(100%-256px)]');
+                header.classList.add('w-[calc(100%-80px)]');
+                mainContent.classList.remove('ml-sidebar-width');
+                mainContent.classList.add('ml-[80px]');
+                toggleIcon.innerText = 'menu';
+            } else {
+                sidebar.classList.remove('sidebar-collapsed');
+                sidebar.classList.add('w-sidebar-width');
+                sidebar.classList.remove('w-[80px]');
+                header.classList.add('w-[calc(100%-256px)]');
+                header.classList.remove('w-[calc(100%-80px)]');
+                mainContent.classList.add('ml-sidebar-width');
+                mainContent.classList.remove('ml-[80px]');
+                toggleIcon.innerText = 'menu_open';
+            }
+        });
+
+        // Uhrzeit, Datum und KW Logik
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Uhrzeit
+            document.getElementById('header-time').innerText = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            
+            // Datum
+            document.getElementById('header-date').innerText = now.toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' });
+            
+            // Kalenderwoche (ISO 8601)
+            const d = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+            const dayNum = d.getUTCDay() || 7;
+            d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+            const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+            const kw = Math.ceil((((d - yearStart) / 86400000) + 1)/7);
+            document.getElementById('header-kw').innerText = kw;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initialer Aufruf
+
+        function systemHeartbeat() {
+            const timestamp = new Date().toLocaleTimeString('de-DE');
+            console.log(`[Industrial OS] System Heartbeat @ ${timestamp}: All modules operational.`);
+        }
+        setInterval(systemHeartbeat, 60000);
+    </script>
+<script src="index.js"></script>
+</body></html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schwarzes Brett</title>
+    <link rel="stylesheet" href="schwarzesbrett.css">
+    <script src="schwarzesbrett.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1>Schwarzes Brett</h1>
+        
+        <!-- Theme Toggle Button -->
+        <div style="position: fixed; top: 15px; right: 15px; z-index: 1000;">
+            <button id="theme-toggle" style="background: linear-gradient(135deg, #6b46c1, #8b5cf6); color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer; font-size: 1.2em; width: 50px; height: 50px; box-shadow: 0 4px 12px rgba(107, 70, 193, 0.3); transition: all 0.3s ease;">
+                🌙
+            </button>
+        </div>
+        
+        <nav class="sidebar"> 
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="fahrtenbuch.html">Fahrtenbuch</a></li>
+                <li><a href="tabelle.html">Fahrtenbuch<br>Tabellenübersicht</a></li>
+                <li><a href="telefonbuch.html">Telefonbuch</a></li>
+                <li><a href="wochenplan.html" target="_blank">Wochenplan</a></li>
+                <li><a href="/public/Schaltanweisungen/sawindex.html">Schaltanweisungen</a></li>
+                <li><a href="x_dashboard.php">Fremdfirmen</a></li>
+                <li><a href="Formulare/formulare.html">Formulare</a></li>
+                <li><a href="https://stromspitzen.dillinger.de/index.htm" target="_blank">Stromspitzen</a></li>
+                <li><a href="https://elv1.dillinger.de/filter.htm" target="_blank">Filter Stahlwerk</a></li>
+                <li><a href="https://fiori.dillinger.de:8001/fiori" target="_blank">Fiori</a></li>
+                <li><a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank">Planoview</a></li>
+                <li><a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank">Intranet</a></li>
+                <li><a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank">Speiseplan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <!-- Search Section -->
+        <section class="search-section">
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Im Text suchen...">
+            <button class="btn btn-secondary" id="toggle-history">📜 Verlauf</button>
+        </section>
+
+        <!-- History Panel (Initially Hidden) - Moved above form -->
+        <section class="history-panel" id="history-panel" style="display: none;">
+            <h3>📜 Verlauf</h3>
+            <div id="history-container">
+                <!-- History items will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>✏️ Bearbeiten</h2>
+            <form id="sbForm"> 
+                <div class="editor-container">
+                    <!-- Rich Text Toolbar -->
+                    <div class="rich-text-toolbar">
+                        <div class="toolbar-group">
+                            <button type="button" class="toolbar-btn" data-command="bold" title="Fett (Ctrl+B)">
+                                <strong>B</strong>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="italic" title="Kursiv (Ctrl+I)">
+                                <em>I</em>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="underline" title="Unterstrichen (Ctrl+U)">
+                                <u>U</u>
+                            </button>
+                        </div>
+                        
+                        <div class="toolbar-group">
+                            <button type="button" class="toolbar-btn" data-command="h1" title="Überschrift 1">H1</button>
+                            <button type="button" class="toolbar-btn" data-command="h2" title="Überschrift 2">H2</button>
+                            <button type="button" class="toolbar-btn" data-command="h3" title="Überschrift 3">H3</button>
+                        </div>
+                        
+                        <div class="toolbar-group">
+                            <button type="button" class="toolbar-btn" data-command="bullet" title="Aufzählung">•</button>
+                            <button type="button" class="toolbar-btn" data-command="number" title="Nummerierung">1.</button>
+                        </div>
+                        
+                        <div class="toolbar-group">
+                            <select class="toolbar-select" id="emoji-selector">
+                                <option value="">😊 Emoji</option>
+                                <option value="📢">📢 Ankündigung</option>
+                                <option value="⚠️">⚠️ Warnung</option>
+                                <option value="✅">✅ Erledigt</option>
+                                <option value="🔧">🔧 Wartung</option>
+                                <option value="📅">📅 Termin</option>
+                                <option value="🎉">🎉 Event</option>
+                                <option value="💡">💡 Info</option>
+                                <option value="🚨">🚨 Wichtig</option>
+                            </select>
+                        </div>
+                        
+                        <div class="toolbar-group">
+                            <button type="button" class="toolbar-btn" id="clear-text" title="Text löschen">🗑️</button>
+                            <button type="button" class="toolbar-btn" id="undo-btn" title="Rückgängig (Ctrl+Z)">↶</button>
+                            <button type="button" class="toolbar-btn" id="redo-btn" title="Wiederholen (Ctrl+Y)">↷</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Text Editor -->
+                    <div class="textarea-wrapper">
+                        <textarea id="sbttext" name="sbttext" placeholder="Geben Sie hier Ihren Text ein..."></textarea>
+                    </div>
+                    
+                    <!-- Editor Statistics -->
+                    <div class="editor-stats">
+                        <div class="stats-left">
+                            <span id="char-count">0 Zeichen</span>
+                            <span id="word-count">0 Wörter</span>
+                            <span id="line-count">1 Zeile</span>
+                        </div>
+                        <div class="stats-right">
+                            <div class="auto-save-indicator" id="auto-save-status">
+                                <span>💾</span>
+                                <span id="auto-save-text">Bereit</span>
+                            </div>
+                            <span id="last-saved">Nie gespeichert</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <div class="form-actions-left">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="addTimestampCheckbox" name="addTimestamp">
+                            <label for="addTimestampCheckbox" class="checkbox-label">⏰ Zeitstempel hinzufügen</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="autoSaveCheckbox" name="autoSave" checked>
+                            <label for="autoSaveCheckbox" class="checkbox-label">💾 Auto-Speichern</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions-right">
+                        <button type="button" class="btn btn-secondary" id="export-btn">📤 Exportieren</button>
+                        <button type="button" class="btn btn-danger" id="clear-all-btn">🗑️ Alles löschen</button>
+                        <button type="submit" class="btn btn-primary">💾 Speichern</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">📤 Text exportieren</h3>
+                <span class="close" id="close-modal">&times;</span>
+            </div>
+            <div class="export-options">
+                <div class="export-option" data-format="txt">
+                    <div class="export-icon">📄</div>
+                    <div class="export-info">
+                        <div class="export-title">Als Textdatei (.txt)</div>
+                        <div class="export-description">Einfacher Text ohne Formatierung</div>
+                    </div>
+                </div>
+                <div class="export-option" data-format="html">
+                    <div class="export-icon">🌐</div>
+                    <div class="export-info">
+                        <div class="export-title">Als HTML-Datei (.html)</div>
+                        <div class="export-description">Formatierter Text für Webseiten</div>
+                    </div>
+                </div>
+                <div class="export-option" data-format="copy">
+                    <div class="export-icon">📋</div>
+                    <div class="export-info">
+                        <div class="export-title">In Zwischenablage kopieren</div>
+                        <div class="export-description">Text in die Zwischenablage kopieren</div>
+                    </div>
+                </div>
+                <div class="export-option" data-format="print">
+                    <div class="export-icon">🖨️</div>
+                    <div class="export-info">
+                        <div class="export-title">Drucken</div>
+                        <div class="export-description">Text direkt drucken</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification-container-schwarzesbrett" class="notification-container-sb">
+        <p id="notification-message-schwarzesbrett"></p>
+    </div>
+</body>
+</html>
