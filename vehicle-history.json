@@ -1,0 +1,387 @@
+[
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-07-21T03:07:43.561Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T03:07:51.214Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T03:07:51.220Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Test",
+    "timestamp": "2025-07-21T03:08:02.839Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Test",
+    "timestamp": "2025-07-21T03:08:02.839Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Test",
+    "timestamp": "2025-07-21T03:08:02.842Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinker links setzt sich nicht mehr zurück",
+    "timestamp": "2025-07-21T03:08:23.074Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinker links setzt sich nicht mehr zurück",
+    "timestamp": "2025-07-21T03:08:23.075Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinker links setzt sich nicht mehr zurück",
+    "timestamp": "2025-07-21T03:08:23.079Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinker links setzt sich nicht mehr zurück",
+    "timestamp": "2025-07-21T03:08:23.080Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:08:38.886Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:08:38.887Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:08:38.895Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:08:38.896Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:08:38.896Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinker links setzt sich nicht mehr automatisch zurück",
+    "timestamp": "2025-07-21T03:11:22.481Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T03:17:46.164Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T03:17:46.165Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:17:57.863Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:17:57.867Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Adblue nachfüllen",
+    "timestamp": "2025-07-21T03:17:57.868Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T11:52:04.307Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-21T19:44:51.334Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-07-23T03:09:17.245Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-07-24T19:57:55.588Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel",
+    "timestamp": "2025-07-24T19:58:13.135Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-07-27T00:15:57.336Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel",
+    "timestamp": "2025-07-27T00:16:21.360Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-07-28T22:15:19.047Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-07-29T03:24:56.597Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel",
+    "timestamp": "2025-07-29T03:26:39.179Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel",
+    "timestamp": "2025-07-29T03:26:42.101Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel",
+    "timestamp": "2025-07-29T03:26:42.104Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Quietschgeräusche vom Lenkrad beim lenken.",
+    "timestamp": "2025-07-30T11:52:02.900Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Motoröl min !",
+    "timestamp": "2025-08-05T10:54:03.385Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-08-05T11:08:38.053Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-08-06T18:47:13.720Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "! Vorsicht Servolenkung nicht in Ordnung hat mehrmals während der Fahrt blockiert !\nVon Werkstatt überprüfen lassen. für Aussenfahrten am besten nicht benutzen.",
+    "timestamp": "2025-08-07T11:28:51.415Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "! Vorsicht Servolenkung nicht in Ordnung hat mehrmals während der Fahrt blockiert ! Kühlwasserstand unter min!\nVon Werkstatt überprüfen lassen. für Aussenfahrten am besten nicht benutzen.",
+    "timestamp": "2025-08-10T03:47:42.133Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Lenkung macht Geräusche",
+    "timestamp": "2025-08-10T10:37:26.004Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Blinkerhebel (ist bestellt)",
+    "timestamp": "2025-08-22T12:08:46.859Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Öl nachfüllen lassen",
+    "timestamp": "2025-09-07T19:22:13.213Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Frontscheibe defekt, neue ist Bestellt",
+    "timestamp": "2025-09-08T11:51:23.924Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-09-09T19:56:50.153Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-09-09T19:56:50.154Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-09-12T06:10:45.656Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Steinschlag Frontscheibe Fahrerseite. \n",
+    "timestamp": "2025-09-13T10:55:46.371Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Steinschlag Frontscheibe Fahrerseite. \nÖl nachfüllen",
+    "timestamp": "2025-09-20T21:06:48.755Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Steinschlag Frontscheibe Fahrerseite. \nÖl nachfüllen\nAnschnallgurt blockiert.",
+    "timestamp": "2025-10-03T20:16:10.707Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Lenkung macht Geräusche,\nUnterbodenschutz hängt zur Straße runter",
+    "timestamp": "2025-10-05T11:52:06.535Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "not_ok",
+    "details": "Reifen Beifahrerseite, hinten muss ausgetauscht werden",
+    "timestamp": "2025-10-08T13:13:06.266Z",
+    "user": "933"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Steinschlag Frontscheibe Fahrerseite. \nÖl nachfüllen.",
+    "timestamp": "2025-10-12T18:29:39.164Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-10-14T09:50:34.983Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-10-14T09:51:13.768Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "",
+    "timestamp": "2025-10-14T09:51:13.769Z",
+    "user": "anonymous"
+  }
+]

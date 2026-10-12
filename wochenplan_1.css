@@ -1,0 +1,1564 @@
+/* Modern CSS Variables for consistent theming */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --bg-hover: rgba(88, 166, 255, 0.1);
+    --color-primary: #c9d1d9;
+    --color-secondary: #8b949e;
+    --color-accent: #58a6ff;
+    --color-accent-hover: #42a5f5;
+    --color-success: #238636;
+    --color-warning: #f85149;
+    --border-color: #30363d;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --border-radius: 12px;
+    --border-radius-small: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-primary: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    --gradient-card: linear-gradient(145deg, #161b22 0%, #1c2128 50%, #161b22 100%);
+    
+    /* Legacy variables kept for compatibility */
+    --background-color: var(--bg-primary);
+    --text-color: var(--color-primary);
+    --table-border-color: var(--border-color);
+    --header-bg-color: var(--bg-secondary);
+    --header-text-color: var(--color-primary);
+    --button-bg-color: var(--color-accent);
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: var(--color-accent-hover);
+    --input-bg-color: var(--bg-secondary);
+    --input-border-color: var(--border-color);
+    --input-text-color: var(--color-primary);
+    --link-color: var(--color-accent);
+    --wochenende-bg: rgba(88, 166, 255, 0.1);
+    --feiertag-bg: rgba(248, 81, 73, 0.2);
+    --ferien-indicator-bg: var(--color-accent);
+    --today-bg: rgba(35, 134, 54, 0.3);
+    --schichtkopf-bg: var(--bg-secondary);
+    --schichtnamen-row-bg: var(--bg-tertiary);
+    --modal-bg: var(--gradient-card);
+    --modal-overlay-bg: rgba(0,0,0,0.7);
+}
+
+/* Light Mode Variables */
+[data-theme="light"] {
+    --bg-primary: #fff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #fafdff;
+    --bg-hover: #f0f4fa;
+    --color-primary: #22272a;
+    --color-secondary: #57606a;
+    --color-accent: #0969da;
+    --color-accent-hover: #0550ae;
+    --color-success: #1a7f37;
+    --color-warning: #cf222e;
+    --border-color: #d0d7de;
+    --shadow: 0 4px 24px rgba(31, 35, 40, 0.08);
+    --shadow-hover: 0 8px 32px rgba(31, 35, 40, 0.12);
+    --gradient-primary: none;
+    --gradient-card: none;
+    --background-color: #fff;
+    --text-color: #22272a;
+    --table-border-color: #d0d7de;
+    --header-bg-color: #f6f8fa;
+    --header-text-color: #22272a;
+    --button-bg-color: #0969da;
+    --button-text-color: #fff;
+    --button-hover-bg-color: #0550ae;
+    --input-bg-color: #f6f8fa;
+    --input-border-color: #d0d7de;
+    --input-text-color: #22272a;
+    --link-color: #0969da;
+    --wochenende-bg: #e6f0fa;
+    --feiertag-bg: #ffeaea;
+    --ferien-indicator-bg: #b6e0fe;
+    --today-bg: #e6ffe6;
+    --schichtkopf-bg: #f3f6fa;
+    --schichtnamen-row-bg: #fafdff;
+    --modal-bg: #fff;
+    --modal-overlay-bg: rgba(0,0,0,0.15);
+}
+[data-theme="light"] body {
+    background: #fff !important;
+    color: var(--color-primary);
+}
+[data-theme="light"] body::before {
+    background: none !important;
+}
+[data-theme="light"] table {
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(31, 35, 40, 0.08);
+    border-radius: 16px;
+}
+[data-theme="light"] th, [data-theme="light"] td {
+    border: 2px solid var(--table-border-color);
+    background: #fff;
+    color: var(--color-primary);
+}
+[data-theme="light"] th.schichtkopf, [data-theme="light"] td.schichtkopf {
+    background: #f3f6fa;
+    color: #22272a;
+}
+[data-theme="light"] .wochenende {
+    background: #e6f0fa !important;
+}
+[data-theme="light"] .feiertag {
+    background: #ffeaea !important;
+}
+[data-theme="light"] .ferien::after {
+    background: #b6e0fe;
+}
+[data-theme="light"] .today {
+    background: #e6ffe6 !important;
+}
+[data-theme="light"] .schichtfeld-preview,
+[data-theme="light"] textarea.schichtfeld,
+[data-theme="light"] #kwinfo {
+    background: #fafdff;
+    color: #22272a;
+    border-radius: 6px;
+    border: 1px solid #e3e8ef;
+    box-shadow: 0 1px 2px #0001;
+}
+[data-theme="light"] .schichtfeld-preview {
+    min-height: 80px;
+    padding: 8px 10px;
+}
+[data-theme="light"] textarea.schichtfeld,
+[data-theme="light"] #kwinfo {
+    padding: 8px 10px;
+}
+[data-theme="light"] .settings-btn, [data-theme="light"] .quick-btn, [data-theme="light"] .edit-toggle-btn, [data-theme="light"] .link-btn {
+    background: #0969da;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px #0001;
+    border: none;
+}
+[data-theme="light"] .settings-btn:hover, [data-theme="light"] .quick-btn:hover, [data-theme="light"] .edit-toggle-btn:hover, [data-theme="light"] .link-btn:hover {
+    background: #0550ae;
+}
+[data-theme="light"] .edit-toggle-btn.active {
+    background: #1a7f37;
+}
+[data-theme="light"] .link-url-input {
+    background: #fafdff;
+    color: #22272a;
+    border: 1px solid #d0d7de;
+}
+[data-theme="light"] .modal {
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(31, 35, 40, 0.12);
+    border-radius: 12px;
+}
+[data-theme="light"] .modal .quick-list {
+    background: #fafdff;
+    border: 1px solid #e3e8ef;
+}
+[data-theme="light"] .quick-list-entry {
+    border-bottom: 1px solid #e3e8ef;
+}
+[data-theme="light"] .quick-list-edit-btn {
+    background: #e3f0ff;
+    color: #0969da;
+}
+[data-theme="light"] .quick-list-edit-btn:hover {
+    background: #c7e0ff;
+}
+[data-theme="light"] .quick-list-delete-btn {
+    background: #fff0f0;
+    color: #cf222e;
+    border: 1px solid #f5c2c7;
+}
+[data-theme="light"] .quick-list-delete-btn:hover {
+    background: #cf222e;
+    color: #fff;
+}
+[data-theme="light"] .quick-list-edit-save-btn {
+    background: #e8f5e9;
+    color: #1a7f37;
+    border: 1px solid #b7e4c7;
+}
+[data-theme="light"] .quick-list-edit-save-btn:hover {
+    background: #1a7f37;
+    color: #fff;
+}
+[data-theme="light"] .quick-list-edit-cancel-btn {
+    background: #fafdff;
+    color: #22272a;
+    border: 1px solid #d0d7de;
+}
+[data-theme="light"] .quick-list-edit-cancel-btn:hover {
+    background: #e3e8ef;
+}
+[data-theme="light"] .kw-nav-btn {
+    background: #fafdff;
+    color: #0969da;
+    border: 1px solid #d0d7de;
+}
+[data-theme="light"] .kw-nav-btn:hover {
+    background: #e6f0fa;
+}
+[data-theme="light"] .format-btns button {
+    background: #fafdff;
+    color: #0969da;
+    border: 1px solid #d0d7de;
+}
+[data-theme="light"] .format-btns button:hover {
+    background: #0969da;
+    color: #fff;
+    border-color: #0969da;
+}
+[data-theme="light"] header {
+    background: #f6f8fa;
+    color: #22272a;
+    border-bottom: 1px solid #d0d7de;
+}
+[data-theme="light"] #navLinks {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    box-shadow: 0 4px 16px rgba(31, 35, 40, 0.08);
+}
+[data-theme="light"] #navLinks li a, [data-theme="light"] #navLinks li button.nav-button {
+    color: #0969da;
+    background: none;
+    border-radius: 6px;
+}
+[data-theme="light"] #navLinks li a:hover, [data-theme="light"] #navLinks li button.nav-button:hover {
+    background: #e6f0fa;
+    color: #0550ae;
+    border-color: #0969da;
+}
+[data-theme="light"] #navToggle span {
+    background-color: #22272a;
+}
+[data-theme="light"] .close-btn {
+    color: #22272a;
+}
+[data-theme="light"] .close-btn:hover {
+    color: #cf222e;
+}
+[data-theme="light"] #quickPreview {
+    background: #fafdff;
+    border: 1px solid #e3e8ef;
+    color: #22272a;
+}
+[data-theme="light"] #quickPreview a {
+    color: #0969da;
+}
+[data-theme="light"] #quickPreview hr {
+    border-color: #e3e8ef;
+}
+[data-theme="light"] .today-column {
+    border-left: 3px solid #0969da !important;
+    border-right: 3px solid #0969da !important;
+}
+[data-theme="light"] #wochenkopf .today-column {
+    border-top: 2.5px solid #0969da !important;
+}
+[data-theme="light"] #nachtschicht .today-column {
+    border-bottom: 2.5px solid #0969da !important;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    text-align: center;
+    background: var(--gradient-primary);
+    background-attachment: fixed;
+    color: var(--color-primary);
+    margin: 0;
+    padding: 70px 8px 0 8px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(88, 166, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(88, 166, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: calc(100% - 16px);
+            table-layout: fixed;
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border-radius: 0; /* Remove border-radius for full-width */
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        th, td {
+            border: 3px solid var(--table-border-color);
+            text-align: center;
+            vertical-align: top;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-line;
+        }
+        th.schichtkopf, td.schichtkopf {
+            width: var(--first-col-width, 160px) !important;
+            min-width: var(--first-col-width, 160px) !important;
+            background: var(--schichtkopf-bg);
+            font-weight: bold;
+            text-align: left;
+            padding: 8px 12px;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        th.kw, td.kw { min-width: 70px; width: 70px; }
+        th.tagkopf, td.tagkopf { 
+            min-width: 0 !important;
+            width: auto;
+            white-space: pre-line !important;
+            padding: 4px 8px;
+        }
+        .wochenende { background: var(--wochenende-bg) !important; }
+        .feiertag { background: var(--feiertag-bg) !important; }
+        .ferien { position: relative; }
+        .ferien::after {
+            content: "";
+            position: absolute;
+            left: 2px; right: 2px; bottom: 2px;
+            height: 20%;
+            background: var(--ferien-indicator-bg);
+            border-radius: 2px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .today { background: var(--today-bg) !important; }
+        #wochenreihe td {
+            /*min-height: 24px;
+            height: 24px; */
+            vertical-align: middle;
+            font-size: 1em;
+            padding: 0px 0;
+            line-height: 1.1;
+        }
+        .schichtnamen-row {
+            background: var(--schichtnamen-row-bg);
+            font-weight: bold;
+            font-size: 1em;
+            text-align: center;
+            height: 28px;
+        }
+        .schichtfeld-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .schichtfeld-checkbox {
+            margin: 8px 4px 0 2px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        .schichtfeld-preview {
+            width: 100%;
+            min-height: 80px;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: transparent; /* Hintergrund entfernt */
+            color: var(--input-text-color);
+            font-size: 1em;
+            white-space: pre-wrap;
+            text-align: left;
+            overflow: auto;
+            box-sizing: border-box;
+            display: block;
+        }
+        textarea.schichtfeld {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            min-height: 80px;
+            font-size: 1em;
+            box-sizing: border-box;
+            padding: 8px;
+            border-radius: 0; /* Kein Radius, wenn kein sichtbarer Rand/Hintergrund */
+            border: none; /* Rand entfernt, da Hintergrund transparent */
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: pre-wrap;
+            background-color: transparent; /* Hintergrund entfernt */
+            resize: vertical;
+            transition: min-height 0.2s;
+            color: var(--input-text-color);
+            display: block;
+            overflow-x: hidden;
+        }
+        #kwinfo { /* Dieser Stil wird für die KW-Info Textarea verwendet */
+            width: calc(100% - 16px);
+            margin: 0 auto;
+            min-width: 0;
+            max-width: calc(100% - 16px);
+            min-height: 5em; /* oder eine andere passende Höhe */
+            font-size: 1em;
+            box-sizing: border-box;
+            padding: 8px;
+            border-radius: 0; /* Kein Radius, wenn kein sichtbarer Rand/Hintergrund */
+            border: none; /* Rand entfernt, da Hintergrund transparent */
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: pre-wrap;
+            background-color: transparent; /* Hintergrund entfernt */
+            resize: vertical;
+            color: var(--input-text-color);
+            display: block;
+            overflow-x: hidden;
+        }
+        .settings-btn, .quick-btn, .edit-toggle-btn, .link-btn {
+            font-size: 1em;
+            padding: 8px 18px;
+            margin: 8px 8px 8px 0;
+            border: none;
+            border-radius: 5px;
+            background: var(--button-bg-color);
+            color: var(--button-text-color);
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 1px 4px #0001;
+        }
+        .settings-btn:hover, .quick-btn:hover, .edit-toggle-btn:hover, .link-btn:hover {
+            background: var(--button-hover-bg-color);
+        }
+        .edit-toggle-btn.active {
+            background: #43a047;
+        }
+        .link-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            justify-content: center;
+        }
+        .link-url-input {
+            font-size: 1em;
+            padding: 6px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--input-border-color);
+            width: 260px;
+            max-width: 40vw;
+        }
+        /* Modal Styles */
+        #login-modal {
+            display: none;
+            position: fixed;
+            z-index: 2001;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--modal-overlay-bg);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal {
+            position: fixed;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: var(--modal-overlay-bg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .modal-content {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            width: 400px;
+            max-width: 90%;
+            box-shadow: var(--shadow-hover);
+            animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(20px);
+        }
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        }
+        .modal-bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--modal-overlay-bg);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-modal {
+            position: static;
+            margin: 0;
+            top: auto;
+            left: auto;
+            transform: none;
+            min-width: 600px;
+            max-width: 90vw;
+            z-index: 2001;
+            overflow: visible;
+            background: var(--modal-bg);
+            border-radius: 8px;
+            padding: 32px 28px 22px 28px;
+            box-shadow: 0 4px 32px #0006;
+            text-align: left;
+        }
+        @media (max-width: 700px) {
+            .custom-modal {
+                min-width: 95vw;
+                max-width: 99vw;
+                padding: 10px 2vw;
+            }
+        }
+        .modal h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        .modal label {
+            display: block;
+            margin: 10px 0 4px 0;
+            font-weight: bold;
+        }
+        .modal input[type="text"], .modal textarea {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 8px;
+            border-radius: 3px;
+            border: 1px solid var(--input-border-color);
+            font-size: 1em;
+        }
+        .modal textarea {
+            min-height: 60px;
+            font-family: inherit;
+        }
+        .modal .quick-list {
+            margin: 0 0 12px 0;
+            padding: 0;
+            list-style: none;
+            max-height: 220px;
+            overflow-y: auto;
+            border: 1px solid #eee; /* Wird im Dark Mode angepasst */
+            background: #fafbfc; /* Wird im Dark Mode angepasst */
+            padding-right: 4px;
+        }
+        .modal .quick-list li {
+            margin-bottom: 0;
+        }
+        .quick-list-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            border-bottom: 1px solid #e0e0e0; /* Wird im Dark Mode angepasst */
+            padding: 8px 0 8px 0;
+        }
+        .quick-list-entry:last-child {
+            border-bottom: none;
+        }
+        .quick-list-checkbox {
+            margin-top: 3px;
+            margin-right: 6px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .quick-list-text {
+            flex: 1;
+            white-space: pre-line;
+            margin-right: 8px;
+        }
+        .quick-list-edit-btn {
+            margin-left: 4px;
+            padding: 2px 8px;
+            font-size: 0.95em;
+            border-radius: 3px;
+            border: 1px solid /*var(--input-border-color)*/;
+            background: #4a90e2;
+            cursor: pointer;
+        }
+        .quick-list-edit-btn:hover {
+            background: #357ab8; /* Wird im Dark Mode angepasst */
+        }
+        .quick-list-delete-btn {
+            margin-left: 4px;
+            padding: 2px 8px;
+            font-size: 0.95em;
+            border-radius: 3px;
+            border: 1px solid #e24a4a;
+            background: #fff0f0;
+            color: #e24a4a;
+            cursor: pointer;
+        }
+        .quick-list-delete-btn:hover {
+            background: #e24a4a;
+            color: #fff;
+        }
+        .quick-list-editarea {
+            width: 100%;
+            min-height: 40px;
+            margin-bottom: 4px;
+        }
+        .quick-list-edit-actions {
+            margin-top: 2px;
+        }
+        .quick-list-edit-save-btn {
+            padding: 2px 8px;
+            font-size: 0.95em;
+            border-radius: 3px;
+            border: 1px solid #43a047;
+            background: #e8f5e9;
+            color: #43a047;
+            cursor: pointer;
+        }
+        .quick-list-edit-save-btn:hover {
+            background: #43a047;
+            color: #fff;
+        }
+        .quick-list-edit-cancel-btn {
+            padding: 2px 8px;
+            font-size: 0.95em;
+            border-radius: 3px;
+            border: 1px solid var(--input-border-color);
+            background: var(--input-bg-color);
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        .quick-list-edit-cancel-btn:hover {
+            background: #e0e0e0; /* Wird im Dark Mode angepasst */
+        }
+        .kw-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .kw-nav-btn {
+            font-size: 1.2em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            border: 1px solid var(--input-border-color);
+            background: var(--input-bg-color);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .kw-nav-btn:hover {
+            background: #e0e0e0; /* Wird im Dark Mode angepasst */
+        }
+        .quick-search-input {
+            width: 98%;
+            margin-bottom: 6px;
+            padding: 5px;
+            font-size: 1em;
+            border-radius: 4px;
+            border: 1px solid var(--input-border-color);
+        }        .format-btns {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            justify-content: center;
+        }
+        .format-btns button {
+            font-size: 1em;
+            padding: 8px 16px;
+            border-radius: var(--border-radius-small);
+            border: 1px solid var(--border-color);
+            background: var(--gradient-card);
+            color: var(--color-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .format-btns button:hover {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(88, 166, 255, 0.3);
+        }
+
+.custom-modal {
+    position: static;
+    margin: 0;
+    top: auto;
+    left: auto;
+    transform: none;
+    min-width: 600px;
+    max-width: 90vw;
+    z-index: 2001;
+    overflow: visible;
+    background: var(--modal-bg);
+    border-radius: 8px;
+    padding: 32px 28px 22px 28px;
+    box-shadow: 0 4px 32px #0006;
+    text-align: left;
+}
+@media (max-width: 700px) {
+    .custom-modal {
+        min-width: 95vw;
+        max-width: 99vw;
+        padding: 10px 2vw;
+    }
+}
+
+/* Header and Navigation Styles */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--header-text-color);
+    flex-shrink: 0;
+}
+
+.header-content-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0; /* Allow shrinking */
+}
+
+#login-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px; /* Reserve space for login status */
+    justify-content: flex-start;
+}
+
+#anmeldenButton {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+    backdrop-filter: blur(10px);
+    min-width: 120px; /* Fixed minimum width */
+}
+
+#anmeldenButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(88, 166, 255, 0.4);
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+}
+
+nav#mainNav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent navigation from shrinking */
+}
+
+/* Navigation Toggle Button (Hamburger Menu) */
+#navToggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    gap: 4px;
+}
+
+#navToggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--header-text-color);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+/* Navigation Links */
+#navLinks {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    align-items: center;
+}
+
+#navLinks li {
+    margin: 0;
+}
+
+#navLinks li a,
+#navLinks li button.nav-button {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-small);
+    transition: var(--transition);
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    display: block;
+}
+
+#navLinks li a:hover,
+#navLinks li button.nav-button:hover {
+    background: var(--bg-hover);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    #navToggle {
+        display: flex;
+    }
+
+    #navLinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        gap: 0;
+        min-width: 200px;
+        z-index: 1000;
+        margin-top: 10px;
+    }
+
+    #navLinks.show {
+        display: flex;
+    }
+
+    #navLinks li {
+        width: 100%;
+    }
+
+    #navLinks li a,
+    #navLinks li button.nav-button {
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    #navLinks li:last-child a,
+    #navLinks li:last-child button.nav-button {
+        border-bottom: none;
+    }
+}
+
+/* Modern Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInStagger {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] {
+    /* Use modern design variables for consistency */
+    color: var(--color-primary);
+    background: var(--gradient-primary);
+    
+    /* Wochenplan-specific variables that need to remain for functionality */
+    --wochenende-bg: #424230 !important;
+    --feiertag-bg: #5c3b3b !important;
+    --ferien-indicator-bg: #2a5263;
+    --today-bg: #2d6565 !important; /* Dunkleres Türkis für Dark Mode */
+    --schichtkopf-bg: var(--bg-secondary);
+    --schichtnamen-row-bg: var(--bg-primary);
+    --modal-bg: var(--bg-secondary);
+    --modal-overlay-bg: rgba(0,0,0,0.5);
+}
+
+/* Dark Mode Input Field Fixes */
+[data-theme="dark"] .schichtfeld-preview,
+[data-theme="dark"] textarea.schichtfeld,
+[data-theme="dark"] #kwinfo {
+    background: var(--bg-secondary) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* More specific selectors to override transparent backgrounds */
+[data-theme="dark"] .schichtfeld-container .schichtfeld-preview,
+[data-theme="dark"] .schichtfeld-container textarea.schichtfeld {
+    background-color: var(--bg-secondary) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+}
+
+[data-theme="dark"] .modal input[type="text"], 
+[data-theme="dark"] .modal textarea,
+[data-theme="dark"] .quick-search-input,
+[data-theme="dark"] .link-url-input {
+    background: var(--bg-secondary) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Override any transparent background styles */
+[data-theme="dark"] textarea[style*="background-color: transparent"],
+[data-theme="dark"] .schichtfeld[style*="background-color: transparent"],
+[data-theme="dark"] #kwinfo[style*="background-color: transparent"] {
+    background-color: var(--bg-secondary) !important;
+    color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .format-btns button,
+[data-theme="dark"] .kw-nav-btn {
+    background: var(--gradient-card);
+    color: var(--color-primary);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+[data-theme="dark"] .format-btns button:hover,
+[data-theme="dark"] .kw-nav-btn:hover {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(88, 166, 255, 0.4);
+}
+[data-theme="dark"] .settings-btn,
+[data-theme="dark"] .quick-btn,
+[data-theme="dark"] .link-btn {
+    box-shadow: 0 1px 4px #0003; /* Dunklerer Schatten */
+}
+/* Apply primary button colors */
+[data-theme="dark"] .settings-btn,
+[data-theme="dark"] .quick-btn,
+[data-theme="dark"] .link-btn,
+[data-theme="dark"] .modal-actions .settings-btn {
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+}
+[data-theme="dark"] .settings-btn:hover, [data-theme="dark"] .quick-btn:hover, [data-theme="dark"] .link-btn:hover, [data-theme="dark"] .modal-actions .settings-btn:hover {
+    background: var(--button-hover-bg-color);
+}
+[data-theme="dark"] #navToggle span {
+    background-color: var(--header-text-color); /* Burger-Icon Farbe anpassen */
+}
+[data-theme="dark"] #navLinks li a,
+[data-theme="dark"] #navLinks li button.nav-button {
+    color: var(--color-accent);
+    border-color: transparent;
+}
+[data-theme="dark"] #navLinks li a:hover,
+[data-theme="dark"] #navLinks li button.nav-button:hover {
+    background: var(--bg-hover);
+    border-color: var(--color-accent);
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2);
+}
+
+/* Edit toggle button specific styles in dark mode */
+[data-theme="dark"] .edit-toggle-btn {
+    background: var(--color-accent); /* Blue background */
+    color: white; /* White text */
+    border: 1px solid var(--color-accent); /* Blue border */
+    box-shadow: none; /* No shadow for default state */
+}
+[data-theme="dark"] .edit-toggle-btn:hover {
+     background: var(--color-accent-hover); /* Lighter blue hover */
+     border-color: var(--color-accent-hover);
+}
+[data-theme="dark"] .edit-toggle-btn.active {
+    background: #238636; /* Green */
+    color: white;
+    border-color: #238636;
+    box-shadow: 0 1px 4px #0003; /* Shadow for active state */
+}
+[data-theme="dark"] .edit-toggle-btn.active:hover {
+    background: #2ea043; /* Lighter green hover */
+    border-color: #2ea043;
+}
+
+/* Dark Mode Anpassungen für Modals */
+[data-theme="dark"] .modal .quick-list {
+    border-color: var(--quick-list-border);
+    background: var(--quick-list-background);
+}
+[data-theme="dark"] .modal .quick-list-entry {
+    border-bottom-color: var(--quick-list-entry-border);
+}
+[data-theme="dark"] .quick-list-text {
+    color: var(--text-color); /* Ensure text color is correct */
+}
+[data-theme="dark"] .quick-list-edit-btn {
+    background: var(--color-accent);
+    color: white;
+    border: 1px solid var(--color-accent);
+}
+[data-theme="dark"] .quick-list-edit-btn:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+[data-theme="dark"] .quick-list-edit-cancel-btn:hover {
+    background: var(--bg-tertiary);
+}
+[data-theme="dark"] .quick-list-delete-btn {
+    border-color: #8B0000;
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff8a8a;
+}
+[data-theme="dark"] .quick-list-delete-btn:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff8a8a;
+    color: #fff;
+}
+[data-theme="dark"] .quick-list-edit-save-btn {
+    border-color: var(--save-button-border);
+    background: var(--save-button-bg);
+    color: var(--save-button-text);
+}
+[data-theme="dark"] .quick-list-edit-save-btn:hover {
+    background: var(--save-button-hover-bg);
+    color: #fff;
+}
+
+/* Close-Button im Modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+[data-theme="dark"] .close-btn {
+    color: var(--text-color); /* Keep text color */
+}
+[data-theme="dark"] .close-btn:hover {
+    color: #e73e3e; /* Red hover color */
+}
+.modal-actions {
+    margin-top: 15px;
+    text-align: right;
+}
+.modal-actions .settings-btn { /* Wiederverwendung der .settings-btn Klasse für Konsistenz */
+    margin-left: 8px; /* Keep margin */
+}
+
+.quick-edit-modal {
+    min-width: 500px;
+    max-width: 800px;
+}
+
+/* Quick Preview in Quick Edit Modal */
+[data-theme="dark"] #quickPreview {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+[data-theme="dark"] #quickPreview a {
+    color: var(--link-color); /* Ensure links are blue */
+}
+[data-theme="dark"] #quickPreview hr {
+    border-color: var(--input-border-color); /* Darker border for HR */
+}
+.today-column {
+    /* Nur seitliche Ränder und Hintergrund für die gesamte Spalte */
+    border-left: 4.1px solid var(--link-color) !important;
+    border-right: 4.1px solid var(--link-color) !important;
+    /* background-color: rgba(88, 166, 255, 0.05) !important; */ /* Hintergrund auskommentiert */
+}
+
+/* Oberer Rand nur für die Zelle in der Kopfzeile der heutigen Spalte */
+#wochenkopf .today-column {
+    border-top: 3.5px solid var(--link-color) !important;
+}
+
+/* Unterer Rand nur für die Zelle in der letzten Datenzeile (Nachtschicht) der heutigen Spalte */
+#nachtschicht .today-column {
+    border-bottom: 3.5px solid var(--link-color) !important;
+}
+
+/* Im Dark Mode wird var(--link-color) bereits angepasst, daher keine separate Regel nötig,
+   es sei denn, eine andere Schattierung oder ein anderer Effekt ist gewünscht. */
+
+/* Notification System */
+.notification-container {
+    position: fixed;
+    top: 120px;
+    right: -420px; /* Standardposition außerhalb des sichtbaren Bereichs */
+    width: 350px;
+    color: white;
+    text-align: center;
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.notification-container.show {
+    right: 30px; /* Wird nur bei einer aktiven Benachrichtigung sichtbar */
+}
+
+.notification-container.notification-success {
+    background: linear-gradient(135deg, var(--color-success), #2ea043);
+    border-color: var(--color-success);
+}
+
+.notification-container.notification-error {
+    background: linear-gradient(135deg, var(--color-warning), #da3633);
+    border-color: var(--color-warning);
+}
+
+.notification-container.notification-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-color: #f59e0b;
+}
+
+/* === Login-Modal, Anmelden-Button & Notification wie Startseite === */
+body.modal-open {
+    overflow: hidden;
+}
+.modal-content {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-color);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    width: 400px;
+    max-width: 90%;
+    box-shadow: var(--shadow-hover);
+    animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.modal h2 {
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.modal input[type="password"] {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    color: var(--color-primary);
+    padding: 15px 20px;
+    border-radius: var(--border-radius-small);
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: var(--transition);
+    font-size: 1.1em;
+    font-family: inherit;
+}
+.modal input[type="password"]:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    transform: translateY(-1px);
+}
+.modal input[type="password"]::placeholder {
+    color: var(--color-secondary);
+}
+.modal button {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 10px 5px;
+    transition: var(--transition);
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+}
+.modal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(88, 166, 255, 0.4);
+}
+.modal button:active {
+    transform: translateY(0);
+}
+.close-button {
+    color: var(--color-secondary);
+    float: right;
+    font-size: 32px;
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.close-button:hover {
+    color: var(--color-warning);
+    background: rgba(248, 81, 73, 0.1);
+    transform: rotate(90deg);
+}
+#login-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#login-status button {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+}
+#login-status button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(88, 166, 255, 0.4);
+}
+#loginMessage {
+    margin-right: 25px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+.notification-container {
+    position: fixed;
+    top: 120px;
+    right: -420px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+.notification-container.show {
+    right: 30px;
+}
+.notification-container.notification-success {
+    background: linear-gradient(135deg, var(--color-success), #2ea043);
+    border-color: var(--color-success);
+}
+.notification-container.notification-error {
+    background: linear-gradient(135deg, var(--color-warning), #da3633);
+    border-color: var(--color-warning);
+}
+@media (max-width: 768px) {
+    #anmeldenButton {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0;
+    }
+    .modal-content {
+        margin: 20% auto;
+        width: 90%;
+        padding: 30px 20px;
+    }
+    .notification-container {
+        width: 95vw;
+        right: -100vw;
+    }
+    .notification-container.show {
+        right: 2vw;
+    }
+}
+
+/* Edit Lock Status Display */
+.edit-lock-status {
+    border-radius: var(--border-radius-small);
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.3s ease-in-out;
+}
+
+[data-theme="light"] .edit-lock-status {
+    box-shadow: 0 2px 8px rgba(31, 35, 40, 0.08);
+}
+
+.edit-lock-status span {
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.edit-lock-status span:before {
+    content: "🔒";
+    font-size: 1.1em;
+}
+
+/* Conflict Resolution Styles */
+.conflict-modal {
+    max-width: 800px !important;
+    min-width: 600px !important;
+}
+
+.conflict-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.conflict-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: var(--transition);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.conflict-btn-merge {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+}
+
+.conflict-btn-merge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(88, 166, 255, 0.3);
+}
+
+.conflict-btn-overwrite {
+    background: linear-gradient(135deg, var(--color-warning), #da3633);
+    color: white;
+}
+
+.conflict-btn-overwrite:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(248, 81, 73, 0.3);
+}
+
+.conflict-btn-cancel {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    border: 1px solid var(--border-color);
+}
+
+.conflict-btn-cancel:hover {
+    background: var(--bg-tertiary);
+}
+
+.conflict-diff-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: var(--border-radius-small);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.diff-server {
+    color: var(--color-warning);
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.diff-local {
+    color: var(--color-accent);
+    font-style: italic;
+    margin: 5px 0;
+}
+
+[data-theme="light"] .conflict-diff-item {
+    background: #f8f9fa;
+}
+
+@media (max-width: 700px) {
+    .conflict-modal {
+        min-width: 95vw !important;
+        max-width: 99vw !important;
+    }
+    
+    .conflict-btn {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+/* Ensure equal-width day columns and flexible first column */
+/* Switch table to fixed layout to prevent content-based sizing */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: calc(100% - 16px);
+    table-layout: fixed;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border-radius: 0; /* Remove border-radius for full-width */
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+/* Column width control: first column flexible via variable, 7 day columns equal */
+col.schichtkopf { width: var(--first-col-width, 160px) !important; }
+col.tagcol { width: calc((100% - var(--first-col-width, 160px)) / 7) !important; }
+/* Unify first column (KW + Schichtkopf) width across all rows */
+th.kw, td.kw, th.schichtkopf, td.schichtkopf {
+    width: var(--first-col-width, 160px) !important;
+    min-width: var(--first-col-width, 160px) !important;
+}
+/* Remove constraints on day header cells that could break equal widths */
+th.tagkopf, td.tagkopf {
+    min-width: 0 !important;
+    white-space: pre-line !important;
+}

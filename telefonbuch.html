@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM-HS Geräteausgbeliste</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+    <script src="telefonbuch.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Telefonbuch</h1>
+        <div id="login-status"></div>
+        <nav>
+            <button id="navToggle" aria-label="Navigation umschalten">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navLinks">
+                <li>
+                    <button id="theme-toggle" title="Theme wechseln">
+                        🌙
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="sidebar"> 
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="fahrtenbuch.html">Fahrtenbuch</a></li>
+            <li><a href="tabelle.html">Fahrtenbuch<br>Tabellenübersicht</a></li>
+            <li><a href="telefonbuch.html">Telefonbuch</a></li>
+            <li><a href="schwarzesbrett.html">Schwarzes Brett</a></li>
+            <li><a href="wochenplan.html" target="_blank">Wochenplan</a></li>
+            <li><a href="/public/Schaltanweisungen/sawindex.html">Schaltanweisungen</a></li>
+            <li><a href="x_dashboard.php">Fremdfirmen</a></li>
+            <li><a href="Formulare/formulare.html">Formulare</a></li>
+            <li><a href="https://stromspitzen.dillinger.de/index.htm" target="_blank">Stromspitzen</a></li>
+            <li><a href="https://elv1.dillinger.de/filter.htm" target="_blank">Filter Stahlwerk</a></li>
+            <li><a href="https://fiori.dillinger.de:8001/fiori" target="_blank">Fiori</a></li>
+            <li><a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank">Planoview</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank">Intranet</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank">Speiseplan</a></li>
+        </ul>
+    </nav>
+
+    <main class="telefonbuch-main">
+        <section class="form-section">
+            <h2>Telefonnummern &amp; Co-Warner bearbeiten</h2>
+            <form id="telefonbuchGesamtForm">
+                <div class="telefonbuch-grid">
+                    <div class="telefonbuch-column">
+                        <h3>Telefonnummern</h3>
+                        <div class="form-group">
+                            <label for="name_Vertreter">Name für Vertreter:</label>
+                            <input type="text" id="name_Vertreter" name="name_Vertreter" autocomplete="off">
+                            <span class="clear-input-btn" data-target="name_Vertreter" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="name_6747">Name für 6747:</label>
+                            <input type="text" id="name_6747" name="name_6747" autocomplete="off">
+                            <span class="clear-input-btn" data-target="name_6747" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="name_6749">Name für 6749:</label>
+                            <input type="text" id="name_6749" name="name_6749" autocomplete="off">
+                            <span class="clear-input-btn" data-target="name_6749" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="name_6721">Name für 6721:</label>
+                            <input type="text" id="name_6721" name="name_6721" autocomplete="off">
+                            <span class="clear-input-btn" data-target="name_6721" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="name_6012">Name für 6012:</label>
+                            <input type="text" id="name_6012" name="name_6012" autocomplete="off">
+                            <span class="clear-input-btn" data-target="name_6012" title="Textfeld leeren">&times;</span>
+                        </div>
+                    </div>
+
+                    <div class="telefonbuch-column">
+                        <h3>Co-Warner</h3>
+                        <div class="cowarner-header-row">
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">1</span>
+                            <span class="cowarner-number">7004</span>
+                            <input type="text" id="cowarner_7004" name="cowarner_7004" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_7004" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">2</span>
+                            <span class="cowarner-number">1737</span>
+                            <input type="text" id="cowarner_1737" name="cowarner_1737" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_1737" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">3</span>
+                            <span class="cowarner-number">2306</span>
+                            <input type="text" id="cowarner_2306" name="cowarner_2306" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_2306" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">4</span>
+                            <span class="cowarner-number">0509</span>
+                            <input type="text" id="cowarner_0509" name="cowarner_0509" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_0509" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">5</span>
+                            <span class="cowarner-number">1824</span>
+                            <input type="text" id="cowarner_1824" name="cowarner_1824" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_1824" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">6</span>
+                            <span class="cowarner-number">6979</span>
+                            <input type="text" id="cowarner_6979" name="cowarner_6979" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_6979" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">7</span>
+                            <span class="cowarner-number">0511</span>
+                            <input type="text" id="cowarner_0511" name="cowarner_0511" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_0511" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">8</span>
+                            <span class="cowarner-number">5705</span>
+                            <input type="text" id="cowarner_5705" name="cowarner_5705" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_5705" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">9</span>
+                            <span class="cowarner-number">7005</span>
+                            <input type="text" id="cowarner_7005" name="cowarner_7005" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_7005" title="Textfeld leeren">&times;</span>
+                        </div>
+                        <div class="form-group cowarner-row">
+                            <span class="cowarner-index">10</span>
+                            <span class="cowarner-number">ARTD1836</span>
+                            <input type="text" id="cowarner_ARTD1836" name="cowarner_ARTD1836" autocomplete="off">
+                            <span class="clear-input-btn" data-target="cowarner_ARTD1836" title="Textfeld leeren">&times;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="telefonbuch-actions">
+                    <button type="submit">Telefonnummern &amp; Co-Warner speichern</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="form-section telefonbuch-uebersicht-section">
+            <h2>Aktuelle Übersicht</h2>
+            <table id="telefonbuch-uebersicht" class="telefonbuch-uebersicht-tabelle">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Nummer</th>
+                        <th>Co-Warner</th>
+                        <th>Aktion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- wird per JS befüllt -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="notification-container-telefonbuch" class="notification-container-bottom">
+        <p id="notification-message-telefonbuch"></p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM-HS Fahrtenübersicht</title>
+    <link rel="stylesheet" href="tabelle.css"> 
+</head>
+<body>
+    <header>
+        <h1>Fahrtenübersicht</h1>
+        <div class="header-content-right">
+            <div class="login-area">
+                <button id="anmeldenButton" style="margin-left:12px;">Anmelden</button>
+                <div id="login-status"></div>
+            </div>
+            <nav id="mainNav">
+                <button id="navToggle" aria-label="Navigation umschalten">
+                    <span></span> <span></span> <span></span>
+                </button>
+                <ul id="navLinks">
+                    <li><a href="index.html">Zur Startseite</a></li>
+                    <li><a href="fahrtenbuch.html">Fahrtenbuch</a></li>
+                    <li><a href="fahrzeugverwaltung.html" id="fahrzeugVerwaltungNav" style="display:none;">Fahrzeugverwaltung</a></li>
+                    <li><button class="nav-button" id="theme-toggle">Light Mode</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Fahrzeugstatus Anzeige -->
+        <section class="vehicle-status-section">
+            <h2>Fahrzeugstatus</h2>
+            <div id="vehicleStatusContainer" class="vehicle-status-grid">
+                <!-- Wird dynamisch gefüllt -->
+            </div>
+        </section>
+
+        <section class="form-section"> 
+            <h2>Fahrzeug auswählen</h2>
+            <div class="form-group">
+                <label for="fahrzeugFilter">Fahrzeug:</label>
+                <select id="fahrzeugFilter">
+                    <option value="">Alle Fahrzeuge</option> 
+                    <option value="LKW DH158">LKW DH-158</option>
+                    <option value="Schwarzer Peugeot">Schwarzer Peugeot DH-82</option>
+                    <option value="Weisser Peugeot">Weißer Peugeot DH-322</option>
+                    <option value="VW">VW Caddy</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h2>Fahrtentabelle</h2>
+            <div class="table-container">
+                <table id="fahrtenTabelle">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Fahrzeug</th>
+                            <th>Fahrer</th>
+                            <th>Kilometerstand</th>
+                            <th>Strecke (in km)</th>
+                            <th>Ort/Grund</th>
+                            <th>Anmerkung</th>
+                            <th>Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="anmeldeForm">
+                <h2>RFID Anmeldung</h2>
+                <input type="password" id="rfidInput" placeholder="Mit RFID anmelden">
+                <button type="submit">Anmelden</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Status Modal (Popup) -->
+    <div id="vehicle-status-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button-status">&times;</span>
+            <h2 id="statusModalTitle">Fahrzeugstatus</h2>
+            <div id="statusModalContent">
+                <div class="status-display">
+                    <div id="currentStatusDisplay"></div>
+                </div>
+                <form id="updateStatusForm">
+                    <div class="form-group">
+                        <label for="modalStatusSelect">Status ändern:</label>
+                        <select id="modalStatusSelect">
+                            <option value="ok">✅ Alles in Ordnung</option>
+                            <option value="not_ok">❌ Nicht in Ordnung</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="modalStatusDetailsGroup" style="display:none;">
+                        <label for="modalStatusDetails">Beschreibung der Probleme:</label>
+                        <textarea id="modalStatusDetails" rows="3" placeholder="Beschreiben Sie die Probleme..."></textarea>
+                    </div>
+                    <button type="submit">Status aktualisieren</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="tabelle.js"></script> 
+</body>
+</html>

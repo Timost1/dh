@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Wochenübersicht</title>
+    <link rel="stylesheet" href="wochenplan_1.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+    <script src="Quickbearbeitung.js"></script>
+    <script src="kalenderdaten.js"></script>
+    <script src="wochenplandaten.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="wochentitel"></h1>
+        <div class="header-content-right">
+            <div class="login-area">
+                <button id="anmeldenButton" style="margin-left:12px;">Anmelden</button>
+                <div id="login-status"></div>
+            </div>
+            <nav id="mainNav">
+                <button id="navToggle" aria-label="Navigation umschalten">
+                    <span></span> <span></span> <span></span>
+                </button>
+                <ul id="navLinks">
+                    <li><a href="index.html">Zur Startseite</a></li>
+                    <li><button class="nav-button" id="themeToggleBtn">Dark Mode</button></li>
+                    <li><button class="nav-button" id="printBtn" onclick="printWochenplan()">Drucken</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bestehende Steuerelemente bleiben hier -->
+    <div class="kw-nav" style="margin-top: 10px;">
+        <button class="kw-nav-btn" onclick="changeWeek(-1)" title="Vorherige Woche">&laquo;</button>
+        <button class="kw-nav-btn" onclick="goToCurrentWeek()" title="Zur aktuellen Woche">Heute</button>
+        <button class="kw-nav-btn" onclick="changeWeek(1)" title="Nächste Woche">&raquo;</button>
+    </div>
+    <button id="settingsBtn" class="settings-btn" onclick="openSettings()" style="display:none;">Einstellungen</button>
+    <button id="quickBtn" class="quick-btn" onclick="openQuickEdit()" style="display:none;">Quick Bearbeiten</button>
+    <button id="editToggleBtn" class="edit-toggle-btn" onclick="toggleEditMode()">Bearbeiten</button>
+    <div id="editLockStatus" class="edit-lock-status" style="display:none; margin:8px 0; padding:8px 12px; background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:4px; text-align:center;">
+        <span id="lockStatusText"></span>
+    </div>
+    <div id="mainFormatBtns" class="format-btns" style="display:none;">
+        <button type="button" title="Fett" onclick="insertFormatGlobal('**','**')"><b>F</b></button>
+        <button type="button" title="Kursiv" onclick="insertFormatGlobal('_','_')"><i>K</i></button>
+        <button type="button" title="Unterstrichen" onclick="insertFormatGlobal('__','__')"><u>U</u></button>
+        <button type="button" title="Überschrift" onclick="insertFormatGlobal('# ','')">H1</button>
+        <button type="button" title="Farbe" onclick="insertFormatGlobal('<span style=\'color:red\'>','</span>')"><span style='color:red'>A</span></button>
+    </div>
+    <div class="link-controls" id="linkControls" style="display:none;">
+        <input type="text" id="linkUrlInput" class="link-url-input" placeholder="Hyperlink-Anfang, z.B. https://..." />
+        <button class="link-btn" onclick="makeSelectionHyperlink()">Hyperlink einfügen</button>
+    </div>
+    <!-- KW-Info Eingabefeld -->
+    <div style="max-width:none;margin:0 auto 16px auto;width:calc(100% - 16px);">
+        <label for="kwinfo" style="font-weight:bold;display:block;text-align:left;margin:8px 0 2px 0;">KW-Info:</label>
+        <textarea id="kwinfo" class="schichtfeld" style="min-height:60px;max-width:100%;width:100%;box-sizing:border-box;resize:vertical;" placeholder="Wichtige Infos zur Woche..."></textarea>
+        <div id="kwinfoPreview" class="schichtfeld-preview" style="margin-top:2px;"></div>
+    </div>
+    <div style="max-width:1600px;margin:0 auto 16px auto;">
+    </div>
+    <table>
+        <colgroup>
+            <col class="schichtkopf" style="width:1%;">
+            <col class="tagcol" span="7">
+        </colgroup>
+        <tr id="wochenkopf"></tr>
+        <tr id="wochenreihe"></tr>
+        <tr id="fruehschicht"></tr>
+        <tr id="mittagsschicht"></tr>
+        <tr id="nachtschicht"></tr>
+    </table>
+    <br>
+    <button onclick="window.location.href='index.html'">Zurück zur Startseite</button>
+    <br><br>
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container">
+        <p id="notification-message"></p>
+    </div>
+    <!-- Login Modal (separat von anderen Modals) -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="anmeldeForm">
+                <h2>RFID Anmeldung</h2>
+                <input type="password" id="rfidInput" placeholder="Mit RFID anmelden">
+                <button type="submit">Anmelden</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+    <div id="modal-root"></div>
+    <script>
+    // --- Hilfsfunktionen für Login und Berechtigungen (bleiben bestehen) ---
+        // Überprüft ob ein Benutzer im lokalen Speicher als angemeldet markiert ist
+        function isLoggedInWochenplan() {
+            return localStorage.getItem("isLoggedIn") === "true";
+        }
+
+        // Lädt die Benutzerberechtigungen aus dem lokalen Speicher
+        function getPermissionsFromLocalStorageWochenplan() {
+            const permissionsString = localStorage.getItem("permissions");
+            try {
+                // Standardberechtigungen definieren
+                const defaultPerms = { isAdmin: false, kannWochenplanBearbeiten: false };
+                // Wenn keine Berechtigungen gespeichert sind, Standardwerte zurückgeben
+                if (!permissionsString) return defaultPerms;
+                // Berechtigungen aus JSON-String parsen
+                const parsed = JSON.parse(permissionsString);
+                // Standardwerte mit geladenen Werten zusammenführen
+                return { ...defaultPerms, ...parsed };
+            } catch (e) {
+                console.error("Error parsing permissions from localStorage (Wochenplan):", e);
+                // Bei Fehler Standardberechtigungen zurückgeben
+                return { isAdmin: false, kannWochenplanBearbeiten: false };
+            }
+        }
+    // Die IIFE für den Zugriffsschutz wurde entfernt, um die Seite öffentlich zugänglich zu machen.
+
+// --- Globale Hilfsfunktionen ---
+// Schließt ein Modal-Fenster durch Leeren des Modal-Containers
+function closeModal(e) {
+    if (e) e.preventDefault && e.preventDefault();
+    const modalRoot = document.getElementById("modal-root");
+    if (modalRoot) modalRoot.innerHTML = "";
+    // Login-Modal wieder anzeigen, falls nötig
+    var loginModal = document.getElementById("login-modal");
+    if (loginModal) loginModal.style.display = "none";
+}
+
+// Escaping-Funktion für HTML-Zeichen um XSS-Angriffe zu verhindern
+function escapeHtml(str) {
+    if (typeof str !== "string") return str;
+    return str.replace(/[&<>"]/g, function(c) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+}
+
+// Globale Funktionen verfügbar machen
+window.closeModal = closeModal;
+window.escapeHtml = escapeHtml;
+
+// Globale Variablen für den Bearbeitungsmodus und das zuletzt aktive Textfeld
+let editMode = false;
+let lastActiveTextarea = null;
+
+// Aktuelle Kalenderwoche und Jahr initialisieren
+let currentYear = new Date().getFullYear();
+let currentKw = getWeekNumber(new Date());
+// --- KW-Info Handling ---
+let todayCellIndexInRow = -1;
+
+// --- Aktivitätsüberwachung ---
+let lastActivityTime = Date.now();
+let activityCheckInterval = null;
+
+function setupActivityTracking() {
+    const activityEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click', 'input'];
+    const updateActivity = () => {
+        lastActivityTime = Date.now();
+    };
+    activityEvents.forEach(event => {
+        document.addEventListener(event, updateActivity, true);
+    });
+}
+
+function startActivityMonitoring() {
+    if (activityCheckInterval) {
+        clearInterval(activityCheckInterval);
+    }
+    activityCheckInterval = setInterval(() => {
+        if (editMode) {
+            const timeSinceLastActivity = Date.now() - lastActivityTime;
+            let logoutTime;
+            
+            // Prüfe ob Tab aktiv oder inaktiv ist
+            if (document.hidden) {
+                logoutTime = 10 * 60 * 1000; // 10 Minuten wenn Tab inaktiv
+            } else {
+                logoutTime = 10 * 60 * 1000; // 5 Minuten wenn Tab aktiv
+            }
+            
+            if (timeSinceLastActivity >= logoutTime) {
+                // Speichere vor dem automatischen Logout
+                saveBeforeLogout();
+            }
+        }
+    }, 30000);
+}
+
+function stopActivityMonitoring() {
+    if (activityCheckInterval) {
+        clearInterval(activityCheckInterval);
+        activityCheckInterval = null;
+    }
+}
+
+// Speichere Daten vor automatischem Logout aufgrund von Inaktivität
+async function saveBeforeLogout() {
+    try {
+        // Zeige Warnung
+        showNotification('Automatischer Logout wegen Inaktivität. Daten werden gespeichert...', 'warning', 5000);
+        
+        // Speichere alle Daten lokal
+        updateLocalWochenplanFromUI();
+        
+        // Versuche Server-Speicherung
+        try {
+            await sendCurrentWeekDataToServer();
+            showNotification('Daten erfolgreich gespeichert. Automatisch abgemeldet.', 'success', 3000);
+        } catch (error) {
+            console.error('Fehler beim Server-Upload:', error);
+            showNotification('Lokale Daten gespeichert, Server-Upload fehlgeschlagen. Bitte manuell speichern.', 'warning', 5000);
+        }
+        
+        // Lock freigeben
+        await releaseLock();
+        
+        // Nach kurzer Verzögerung ausloggen
+        setTimeout(() => {
+            stopLockStatusCheck();
+            localStorage.clear();
+            location.reload();
+        }, 2000);
+        
+    } catch (error) {
+        console.error('Fehler beim Speichern vor Logout:', error);
+        showNotification('Fehler beim Speichern! Daten könnten verloren gehen.', 'error', 5000);
+        setTimeout(() => {
+            stopLockStatusCheck();
+            localStorage.clear();
+            location.reload();
+        }, 2000);
+    }
+}
+
+// Beim KW-Wechsel nur noch Tabelle rendern
+async function renderWeek(forceReload = false) {
+    const year = currentYear;
+    const kw = currentKw;
+    // Wochentitel im Header setzen
+    document.getElementById('wochentitel').textContent = `Woche ${kw} / ${year}`;
+    // Startdatum der Woche berechnen
+    const weekStart = getDateOfISOWeek(kw, year);
+    todayCellIndexInRow = -1;
+
+    // Wochenplan-Daten laden falls noch nicht vorhanden ODER wenn forceReload=true
+    if (!window._wochenplan || forceReload) {
+        console.log('Loading fresh wochenplan data from server...');
+        window._wochenplan = await ladeWochenplan();
+    }
+
+    // KW-Info aus JSON laden (vor dem Rendern der Tabelle!)
+    const kwinfoInput = document.getElementById('kwinfo'); // Erste Deklaration
+    let kwinfoValue = '';
+    // KW-Info aus den geladenen Daten extrahieren
+    if (window._wochenplan?.[year]?.[kw]?.kwinfo) {
+        kwinfoValue = window._wochenplan[year][kw].kwinfo;
+    }
+    // KW-Info ins Eingabefeld laden
+    kwinfoInput.value = kwinfoValue || '';
+
+    // Tabellenkopf mit Wochentagen erstellen
+    let kopf = `<th class="kw"></th>`;
+    const tageLang = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
+    for (let i = 0; i < 7; i++) {
+        kopf += `<th class="tagkopf">${tageLang[i]}</th>`;
+    }
+    document.getElementById('wochenkopf').innerHTML = kopf;
+
+    // Datumszeile mit KW-Nummer und täglichen Informationen erstellen
+    let html = `<td class="kw">KW ${kw}</td>`;
+    for (let i = 0; i < 7; i++) {
+        // Datum für jeden Tag der Woche berechnen
+        const d = new Date(weekStart);
+        d.setDate(weekStart.getDate() + i);
+        let classes = [];
+        
+        // CSS-Klassen für spezielle Tage hinzufügen
+        if (typeof istFeiertag === "function" && istFeiertag(d)) classes.push("feiertag");
+        if (d.getDay() === 6 || d.getDay() === 0) classes.push("wochenende");
+        
+        // Heutiges Datum markieren
+        if (
+            d.getDate() === (new Date()).getDate() &&
+            d.getMonth() === (new Date()).getMonth() &&
+            d.getFullYear() === (new Date()).getFullYear()
+        ) classes.push("today");
+        
+        // Feiertagsname anzeigen falls vorhanden
+        let feiertagNameDisplay = (typeof istFeiertag === "function" && istFeiertag(d)) ? `<div style="font-size:0.8em;color:var(--feiertag-text-color, var(--text-color));margin-top:1px; font-weight:bold;">${getFeiertagsName(d)}</div>` : "";
+
+        // Tabellenzelle für jeden Tag erstellen
+        html += `<td class="${classes.join(' ')}" style="position:relative;">
+            <div style="position:relative; z-index:1;">
+                <div>${d.toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' })}</div>
+                ${feiertagNameDisplay}
+            <div style="font-size: 0.8em; margin-top: 1px; line-height:1.1;">${getSchichtForDate(d)}</div>            </div>
+        </td>`;
+    }
+    document.getElementById('wochenreihe').innerHTML = html;
+
+    // Hilfsfunktion zum Erstellen einer Schichtzeile
+    function makeRow(shiftName, shiftKey) {
+        console.log(`Creating row ${shiftName} (${shiftKey}) for week ${kw}/${year}`);
+        let row = `<td class="schichtkopf">${shiftName}</td>`;
+        for (let i = 0; i < 7; i++) {
+            // Schichtdaten direkt aus window._wochenplan laden (nicht über loadShift!)
+            const value = window._wochenplan?.[year]?.[kw]?.[i]?.[shiftKey] || '';
+            console.log(`Day ${i}, Shift ${shiftKey}: "${value?.substring(0, 20)}..."`);
+            row += `<td>
+                <div class="schichtfeld-container" data-day="${i}" data-shift="${shiftKey}">
+                    <input type="checkbox" class="schichtfeld-checkbox" style="display:none;" title="Feld für Quick Bearbeiten auswählen">
+                    <textarea class="schichtfeld" style="display:none;" oninput="this.parentElement.querySelector('.schichtfeld-preview').innerHTML=markdownToHtml(this.value);autoGrow(this);" onfocus="autoGrow(this);">${value ? value.replace(/</g, "&lt;").replace(/>/g, "&gt;") : ""}</textarea>
+                    <div class="schichtfeld-preview">${markdownToHtml(value ? value : "")}</div>
+                </div>
+            </td>`;
+        }
+        return row;
+    }
+    
+    // Schichtzeilen für Früh-, Mittags- und Nachtschicht erstellen
+    document.getElementById('fruehschicht').innerHTML = makeRow("Frühschicht", "frueh");
+    document.getElementById('mittagsschicht').innerHTML = makeRow("Mittagsschicht", "mittag");
+    document.getElementById('nachtschicht').innerHTML = makeRow("Nachtschicht", "nacht");
+    
+    // Textareas automatisch an Inhalt anpassen
+    setTimeout(function() {
+        document.querySelectorAll('textarea.schichtfeld').forEach(autoGrow);
+    }, 100);
+
+    // Vorschau/Anzeige wie gehabt
+    // const kwinfoInput = document.getElementById('kwinfo'); // Bereits oben in renderWeek deklariert (Zeile 126)
+    const kwinfoPreview = document.getElementById('kwinfoPreview'); // kwinfoInput ist bereits im Scope von renderWeek deklariert
+    if (kwinfoPreview) {
+        // KW-Info Anzeige je nach Bearbeitungsmodus
+        if (editMode) {
+            kwinfoPreview.style.display = 'none';
+            kwinfoInput.style.display = ''; // kwinfoInput ist hier verfügbar
+            kwinfoInput.disabled = false;
+        } else {
+            kwinfoPreview.innerHTML = markdownToHtml(kwinfoInput.value); // kwinfoInput ist hier verfügbar
+            kwinfoPreview.style.display = '';
+            kwinfoInput.style.display = 'none'; // kwinfoInput ist hier verfügbar
+            kwinfoInput.disabled = true;
+        }
+    }
+
+    // Hervorhebung für die Spalte des aktuellen Tages
+    // Zuerst alle vorherigen Hervorhebungen entfernen
+    document.querySelectorAll('.today-column').forEach(cell => {
+        cell.classList.remove('today-column');
+    });
+
+    // Finde die Zelle mit der .today Klasse in der Datumsreihe
+    const wochenreiheZellen = document.getElementById('wochenreihe').getElementsByTagName('td');
+    let currentDayColumnIndex = -1;
+    for (let i = 0; i < wochenreiheZellen.length; i++) {
+        if (wochenreiheZellen[i].classList.contains('today')) {
+            currentDayColumnIndex = i; // Dies ist der Index der Spalte (0-basiert, inkl. KW-Spalte)
+            break;
+        }
+    }
+
+    // Spalte des aktuellen Tages in allen Zeilen hervorheben
+    if (currentDayColumnIndex !== -1) {
+        const rowsToHighlight = ['wochenkopf', 'wochenreihe', 'fruehschicht', 'mittagsschicht', 'nachtschicht'];
+        rowsToHighlight.forEach(rowId => {
+            const rowElement = document.getElementById(rowId);
+            if (rowElement && rowElement.children[currentDayColumnIndex]) {
+                rowElement.children[currentDayColumnIndex].classList.add('today-column');
+            }
+        });
+    }
+}
+
+// KW-Info speichern wie andere Felder
+function saveAllFieldsToJson() {
+    const year = currentYear;
+    const kw = currentKw;
+    // Alle Schichtfelder durchgehen und speichern
+    document.querySelectorAll('.schichtfeld-container').forEach(container => {
+        const ta = container.querySelector('textarea.schichtfeld');
+        if (ta) {
+            const day = container.getAttribute('data-day');
+            const shift = container.getAttribute('data-shift');
+            
+            // Direkt in lokalen Daten speichern ohne Server-Call
+            if (!window._wochenplan[year]) window._wochenplan[year] = {};
+            if (!window._wochenplan[year][kw]) window._wochenplan[year][kw] = {};
+            if (!window._wochenplan[year][kw][day]) window._wochenplan[year][kw][day] = {};
+            
+            window._wochenplan[year][kw][day][shift] = ta.value;
+            
+            // Vorschau aktualisieren
+            const preview = container.querySelector('.schichtfeld-preview');
+            if (preview) preview.innerHTML = markdownToHtml(ta.value);
+        }
+    });
+    // KW-Info speichern
+    const kwinfoInput = document.getElementById('kwinfo');
+    if (kwinfoInput) {
+        if (!window._wochenplan[year]) window._wochenplan[year] = {};
+        if (!window._wochenplan[year][kw]) window._wochenplan[year][kw] = {};
+        window._wochenplan[year][kw].kwinfo = kwinfoInput.value;
+    }
+}
+
+// Event-Listener für Fokus auf Textareas um das zuletzt aktive zu verfolgen
+document.addEventListener('focusin', function(e) {
+    if (e.target.classList && e.target.classList.contains('schichtfeld')) {
+        lastActiveTextarea = e.target;
+    }
+});
+
+// --- Collaborative Editing System ---
+let editLockInterval = null;
+let lockCheckInterval = null;
+let sessionHeartbeatInterval = null;
+let currentUserId = null;
+let currentUserName = null;
+let failedLockChecks = 0;
+const MAX_FAILED_LOCK_CHECKS = 5;
+let lockCheckRetryTimeout = null;
+let dataPollingInterval = null;
+let lastDataHash = null;
+let conflictDetected = false;
+
+// Initialize collaborative editing system
+function initCollaborativeEditing() {
+    currentUserId = localStorage.getItem("userId");
+    currentUserName = localStorage.getItem("username");
+    
+    if (currentUserId && currentUserName && isLoggedInWochenplan()) {
+        // Start checking lock status every 2 seconds
+        startLockStatusCheck();
+        
+        // Start session heartbeat
+        startSessionHeartbeat();
+        
+        // Start data polling for live updates
+        startDataPolling();
+        
+        // Add beforeunload handler to release lock when page is closed
+        window.addEventListener('beforeunload', (event) => {
+            if (editMode) {
+                try {
+                    // Nur lokale Daten aktualisieren, kein Server-Call
+                    updateLocalWochenplanFromUI();
+                    
+                    // Verwende sendBeacon für Server-Speicherung beim Seitenverlassen
+                    const data = JSON.stringify(window._wochenplan);
+                    if (navigator.sendBeacon) {
+                        navigator.sendBeacon('/api/wochenplan', data);
+                    }
+                    
+                    // Lock freigeben mit sendBeacon
+                    if (currentUserId && currentUserName) {
+                        const unlockData = JSON.stringify({
+                            userId: parseInt(currentUserId),
+                            userName: currentUserName
+                        });
+                        if (navigator.sendBeacon) {
+                            navigator.sendBeacon('/api/wochenplan-unlock', unlockData);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Fehler beim Speichern vor Verlassen der Seite:', error);
+                }
+            }
+        });
+        
+        // Add visibility change handler to handle tab hiding/showing
+        document.addEventListener('visibilitychange', async () => {
+            if (document.hidden) {
+                // Tab wurde versteckt - aber Heartbeat läuft weiter
+                if (editMode) {
+                    lastActivityTime = Date.now();
+                }
+            } else if (!document.hidden) {
+                // Tab wurde wieder sichtbar - prüfe Session-Gültigkeit nur nach längerer Inaktivität
+                lastActivityTime = Date.now();
+                
+                // Nur prüfen wenn wir länger als 5 Minuten inaktiv waren
+                if (currentUserId && isLoggedInWochenplan()) {
+                    // Sende sofort einen Heartbeat beim Wiederaktivieren
+                    sendSessionHeartbeat();
+                    
+                    // Kurz warten und dann Session-Status prüfen
+                    setTimeout(async () => {
+                        const isSessionValid = await checkSessionValidity();
+                        if (!isSessionValid) {
+                            return; // Session abgelaufen, Logout wird automatisch ausgeführt
+                        }
+                        
+                        // Wenn Session gültig, prüfe Lock-Status (nur wenn im Edit-Mode)
+                        if (editMode) {
+                            checkLockStatusWithRetry();
+                        } else {
+                            // Auch im View-Mode Daten aktualisieren
+                            checkForDataUpdates();
+                        }
+                    }, 1000);
+                }
+            }
+        });
+    }
+}
+
+// Start periodic lock status checking
+function startLockStatusCheck() {
+    if (lockCheckInterval) {
+        clearInterval(lockCheckInterval);
+    }
+    
+    lockCheckInterval = setInterval(async () => {
+        await checkLockStatus();
+    }, 2000); // Check every 2 seconds
+}
+
+// Stop lock status checking
+function stopLockStatusCheck() {
+    if (lockCheckInterval) {
+        clearInterval(lockCheckInterval);
+        lockCheckInterval = null;
+    }
+}
+
+// Start data polling for live updates
+function startDataPolling() {
+    if (dataPollingInterval) {
+        clearInterval(dataPollingInterval);
+    }
+    
+    // Calculate initial hash only once when starting
+    calculateDataHash();
+    
+    dataPollingInterval = setInterval(async () => {
+        await checkForDataUpdates();
+    }, 3000); // Check every 3 seconds (für alle Benutzer)
+}
+
+// Stop data polling
+function stopDataPolling() {
+    if (dataPollingInterval) {
+        clearInterval(dataPollingInterval);
+        dataPollingInterval = null;
+    }
+}
+
+// Calculate hash of current data for change detection
+function calculateDataHash() {
+    const currentWeekData = window._wochenplan?.[currentYear]?.[currentKw] || {};
+    lastDataHash = JSON.stringify(currentWeekData);
+}
+
+// Check for data updates from server
+async function checkForDataUpdates() {
+    try {
+        // Don't check for updates if we're currently editing (have the lock)
+        if (editMode) {
+            console.log('Skipping data update check - currently editing');
+            return;
+        }
+        
+        console.log('Checking for data updates...');
+        const response = await fetch('/api/wochenplan');
+        const serverData = await response.json() || {};
+        
+        const serverWeekData = serverData?.[currentYear]?.[currentKw] || {};
+        const newDataHash = JSON.stringify(serverWeekData);
+        
+        /*console.log('Current hash:', lastDataHash?.substring(0, 50) + '...');
+        console.log('New hash:', newDataHash?.substring(0, 50) + '...');
+        console.log('Hashes equal?', newDataHash === lastDataHash);
+        console.log('Hash lengths - Current:', lastDataHash?.length, 'New:', newDataHash?.length);
+        */
+
+        // If data has changed, update the display
+        if (newDataHash !== lastDataHash) {
+            console.log('Data changed detected! Updating display...');
+            
+            // Update our local data completely
+            window._wochenplan = serverData;
+            
+            // Store the new hash BEFORE re-rendering to avoid issues
+            lastDataHash = newDataHash;
+            
+            // Re-render the week to show new data (force using the updated window._wochenplan)
+            await renderWeek(false); // Don't force reload since we just updated window._wochenplan
+            
+            // Show notification to user (for all users, not just logged in)
+            showNotification('Wochenplan wurde aktualisiert.', 'success', 3000);
+        } else {
+            console.log('No data changes detected');
+        }
+        
+    } catch (error) {
+        console.error('Error checking for data updates:', error);
+        // Don't show error notifications for polling failures to avoid spam
+    }
+}
+
+// Check for conflicts before saving
+async function checkForConflicts() {
+    try {
+        const response = await fetch('/api/wochenplan');
+        const serverData = await response.json() || {};
+        
+        const serverWeekData = serverData?.[currentYear]?.[currentKw] || {};
+        const newDataHash = JSON.stringify(serverWeekData);
+        
+        // If server data has changed since we started editing, there's a conflict
+        if (newDataHash !== lastDataHash) {
+            conflictDetected = true;
+            
+            // Show conflict resolution modal
+            showConflictResolutionModal(serverWeekData);
+            return false; // Don't proceed with save
+        }
+        
+        return true; // No conflicts, safe to save
+        
+    } catch (error) {
+        console.error('Error checking for conflicts:', error);
+        // If we can't check, proceed with save but warn user
+        showNotification('Warnung: Konfliktprüfung fehlgeschlagen. Daten werden trotzdem gespeichert.', 'warning', 5000);
+        return true;
+    }
+}
+
+// Show conflict resolution modal
+function showConflictResolutionModal(serverData) {
+    const modalRoot = document.getElementById("modal-root");
+    
+    let html = `
+        <div class="modal-bg" onclick="event.stopPropagation()">
+            <div class="custom-modal conflict-modal" onclick="event.stopPropagation()">
+                <h2 style="color: var(--color-warning);">⚠️ Konflikt erkannt</h2>
+                <p>Der Wochenplan wurde von einem anderen Benutzer geändert, während Sie bearbeitet haben.</p>
+                <p><strong>Was möchten Sie tun?</strong></p>
+                
+                <div class="conflict-actions" style="margin: 20px 0; display: flex; flex-direction: column; gap: 10px;">
+                    <button class="conflict-btn conflict-btn-merge" onclick="mergeConflictData()">
+                        📋 Neueste Daten laden und meine Änderungen übernehmen
+                    </button>
+                    <button class="conflict-btn conflict-btn-overwrite" onclick="overwriteConflictData()">
+                        💾 Meine Änderungen speichern (überschreibt andere Änderungen)
+                    </button>
+                    <button class="conflict-btn conflict-btn-cancel" onclick="cancelConflictResolution()">
+                        ❌ Abbrechen (Bearbeitungsmodus beibehalten)
+                    </button>
+                </div>
+                
+                <details style="margin-top: 20px;">
+                    <summary style="cursor: pointer; font-weight: bold;">🔍 Änderungen anzeigen</summary>
+                    <div id="conflictDiff" style="max-height: 300px; overflow-y: auto; margin-top: 10px; padding: 10px; background: var(--bg-secondary); border-radius: 4px;">
+                        Lade Unterschiede...
+                    </div>
+                </details>
+            </div>
+        </div>
+    `;
+    
+    modalRoot.innerHTML = html;
+    
+    // Generate and show diff
+    setTimeout(() => {
+        generateConflictDiff(serverData);
+    }, 100);
+}
+
+// Generate visual diff of conflicts
+function generateConflictDiff(serverData) {
+    const diffContainer = document.getElementById('conflictDiff');
+    if (!diffContainer) return;
+    
+    let diffHtml = '<h4>Unterschiede zwischen Server-Daten und Ihren Änderungen:</h4>';
+    
+    // Compare KW-Info
+    const serverKwInfo = serverData.kwinfo || '';
+    const localKwInfo = document.getElementById('kwinfo')?.value || '';
+    
+    if (serverKwInfo !== localKwInfo) {
+        diffHtml += `
+            <div class="conflict-diff-item">
+                <strong>KW-Info:</strong><br>
+                <div class="diff-server">Server: "${escapeHtml(serverKwInfo)}"</div>
+                <div class="diff-local">Ihre Version: "${escapeHtml(localKwInfo)}"</div>
+            </div>
+        `;
+    }
+    
+    // Compare shift data
+    const shifts = ['frueh', 'mittag', 'nacht'];
+    const days = ['0', '1', '2', '3', '4', '5', '6'];
+    const dayNames = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+    const shiftNames = {frueh: 'Frühschicht', mittag: 'Mittagsschicht', nacht: 'Nachtschicht'};
+    
+    days.forEach((day, dayIndex) => {
+        shifts.forEach(shift => {
+            const serverValue = serverData?.[day]?.[shift] || '';
+            const localElement = document.querySelector(`[data-day="${day}"][data-shift="${shift}"] textarea.schichtfeld`);
+            const localValue = localElement?.value || '';
+            
+            if (serverValue !== localValue) {
+                diffHtml += `
+                    <div class="conflict-diff-item">
+                        <strong>${dayNames[dayIndex]} - ${shiftNames[shift]}:</strong><br>
+                        <div class="diff-server">Server: "${escapeHtml(serverValue)}"</div>
+                        <div class="diff-local">Ihre Version: "${escapeHtml(localValue)}"</div>
+                    </div>
+                `;
+            }
+        });
+    });
+    
+    if (diffHtml === '<h4>Unterschiede zwischen Server-Daten und Ihren Änderungen:</h4>') {
+        diffHtml += '<p style="color: var(--color-success);">Keine Unterschiede gefunden.</p>';
+    }
+    
+    diffContainer.innerHTML = diffHtml;
+}
+
+// Merge conflict data (load server data, keep local changes where possible)
+async function mergeConflictData() {
+    try {
+        // Reload server data
+        window._wochenplan = await ladeWochenplan();
+        
+        // Re-render to show latest server data
+        renderWeek();
+        
+        // Update hash
+        calculateDataHash();
+        
+        // Clear conflict flag
+        conflictDetected = false;
+        
+        // Close modal
+        closeModal();
+        
+        showNotification('Neueste Daten geladen. Sie können jetzt Ihre Änderungen erneut vornehmen.', 'success', 5000);
+        
+    } catch (error) {
+        console.error('Error merging conflict data:', error);
+        showNotification('Fehler beim Laden der neuesten Daten.', 'error');
+    }
+}
+
+// Overwrite conflict data (force save local changes)
+async function overwriteConflictData() {
+    try {
+        // Force update local data and save to server
+        updateLocalWochenplanFromUI();
+        await sendCurrentWeekDataToServer();
+        
+        // Update hash with our data
+        calculateDataHash();
+        
+        // Clear conflict flag
+        conflictDetected = false;
+        
+        // Close modal
+        closeModal();
+        
+        showNotification('Ihre Änderungen wurden gespeichert und überschreiben die anderen Änderungen.', 'warning', 5000);
+        
+    } catch (error) {
+        console.error('Error overwriting conflict data:', error);
+        showNotification('Fehler beim Speichern der Daten.', 'error');
+    }
+}
+
+// Cancel conflict resolution
+function cancelConflictResolution() {
+    conflictDetected = false;
+    closeModal();
+    showNotification('Konfliktauflösung abgebrochen. Bearbeitungsmodus bleibt aktiv.', 'success');
+}
+
+// Start session heartbeat to keep session alive
+function startSessionHeartbeat() {
+    if (sessionHeartbeatInterval) {
+        clearInterval(sessionHeartbeatInterval);
+    }
+    
+    // Sende sofort ersten Heartbeat
+    sendSessionHeartbeat();
+    
+    sessionHeartbeatInterval = setInterval(() => {
+        sendSessionHeartbeat();
+    }, 90000); // Send heartbeat every 90 seconds (häufiger als vorher)
+}
+
+// Send session heartbeat
+async function sendSessionHeartbeat() {
+    if (currentUserId && currentUserName && isLoggedInWochenplan()) {
+        try {
+            await fetch('/api/session-heartbeat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    userId: parseInt(currentUserId),
+                    userName: currentUserName
+                })
+            });
+        } catch (error) {
+            // Nur bei mehreren aufeinanderfolgenden Fehlern reagieren
+            console.error('Error sending session heartbeat:', error);
+        }
+    }
+}
+
+// Stop session heartbeat
+function stopSessionHeartbeat() {
+    if (sessionHeartbeatInterval) {
+        clearInterval(sessionHeartbeatInterval);
+        sessionHeartbeatInterval = null;
+    }
+}
+
+// Check if current session is still valid
+async function checkSessionValidity() {
+    if (!currentUserId || !isLoggedInWochenplan()) {
+        return false;
+    }
+    
+    try {
+        const response = await fetch(`/api/session-status?userId=${currentUserId}`);
+        
+        if (!response.ok) {
+            console.log('Session check failed: Server error');
+            return false;
+        }
+        
+        const status = await response.json();
+        
+        if (!status.isValid) {
+            console.log('Session expired or invalid:', status.reason);
+            showNotification('Sitzung abgelaufen. Du wirst abgemeldet.', 'error', 4000);
+            setTimeout(() => {
+                stopSessionHeartbeat();
+                stopLockStatusCheck();
+                localStorage.clear();
+                location.reload();
+            }, 2000);
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Error checking session validity:', error);
+        return true; // Bei Netzwerkfehlern nicht automatisch ausloggen
+    }
+}
+
+// Check current lock status
+async function checkLockStatus() {
+    try {
+        const response = await fetch('/api/wochenplan-lock-status');
+        const status = await response.json();
+        
+        updateLockStatusDisplay(status);
+        
+        // If we're in edit mode but someone else has the lock, force exit edit mode
+        if (editMode && status.isLocked && status.userId !== parseInt(currentUserId)) {
+            showNotification(`${status.userName} bearbeitet jetzt den Wochenplan. Bearbeitungsmodus wurde beendet.`, 'error');
+            forceExitEditMode();
+        }
+        
+    } catch (error) {
+        console.error('Error checking lock status:', error);
+    }
+}
+
+// Zusätzliche Funktion für wiederholte Lock-Status-Prüfung
+async function checkLockStatusWithRetry() {
+    try {
+        const response = await fetch('/api/wochenplan-lock-status');
+        const status = await response.json();
+        failedLockChecks = 0;
+        if (!status.isLocked || status.userId !== parseInt(currentUserId)) {
+            showNotification('Bearbeitungssitzung abgelaufen. Du wirst abgemeldet.', 'error', 4000);
+            setTimeout(() => { logout(); }, 2000);
+        }
+    } catch (e) {
+        failedLockChecks++;
+        if (failedLockChecks >= MAX_FAILED_LOCK_CHECKS) {
+            showNotification('Netzwerkfehler. Bearbeitungsmodus wird beendet.', 'error', 4000);
+            setTimeout(() => { logout(); }, 2000);
+        } else {
+            // Versuche nach 10 Sekunden erneut
+            if (lockCheckRetryTimeout) clearTimeout(lockCheckRetryTimeout);
+            lockCheckRetryTimeout = setTimeout(checkLockStatusWithRetry, 10000);
+        }
+    }
+}
+
+// Update lock status display
+function updateLockStatusDisplay(status) {
+    const lockStatusDiv = document.getElementById('editLockStatus');
+    const lockStatusText = document.getElementById('lockStatusText');
+    const editToggleBtn = document.getElementById('editToggleBtn');
+    
+    if (status.isLocked) {
+        if (status.userId === parseInt(currentUserId)) {
+            // Current user has the lock
+            lockStatusText.textContent = `Du bearbeitest gerade den Wochenplan`;
+            lockStatusDiv.style.display = 'block';
+            lockStatusDiv.style.background = 'var(--color-success)';
+            lockStatusDiv.style.color = 'white';
+            editToggleBtn.disabled = false;
+        } else {
+            // Someone else has the lock
+            lockStatusText.textContent = `${status.userName} bearbeitet gerade den Wochenplan`;
+            lockStatusDiv.style.display = 'block';
+            lockStatusDiv.style.background = 'var(--color-warning)';
+            lockStatusDiv.style.color = 'white';
+            editToggleBtn.disabled = true;
+            editToggleBtn.textContent = 'Bearbeiten';
+        }
+    } else {
+        // No one has the lock
+        lockStatusDiv.style.display = 'none';
+        editToggleBtn.disabled = false;
+        if (!editMode) {
+            editToggleBtn.textContent = 'Bearbeiten';
+        }
+    }
+}
+
+// Acquire editing lock
+async function acquireLock() {
+    // Refresh login status
+    currentUserId = localStorage.getItem("userId");
+    currentUserName = localStorage.getItem("username");
+    
+    if (!currentUserId || !currentUserName || !isLoggedInWochenplan()) {
+        showNotification('Bitte anmelden, um den Wochenplan zu bearbeiten.', 'error');
+        return false;
+    }
+    
+    try {
+        const response = await fetch('/api/wochenplan-lock', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userId: parseInt(currentUserId),
+                userName: currentUserName
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Start heartbeat to maintain lock
+            startLockHeartbeat();
+            return true;
+        } else {
+            showNotification(result.message, 'error');
+            return false;
+        }
+        
+    } catch (error) {
+        console.error('Error acquiring lock:', error);
+        showNotification('Fehler beim Sperren des Wochenplans.', 'error');
+        return false;
+    }
+}
+
+// Release editing lock
+async function releaseLock() {
+    if (!currentUserId || !currentUserName) return;
+    
+    try {
+        // Verwende sendBeacon falls verfügbar (zuverlässiger beim Seitenverlassen)
+        const unlockData = JSON.stringify({
+            userId: parseInt(currentUserId),
+            userName: currentUserName
+        });
+        
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon('/api/wochenplan-unlock', unlockData);
+        } else {
+            await fetch('/api/wochenplan-unlock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unlockData
+            });
+        }
+        
+        stopLockHeartbeat();
+        
+    } catch (error) {
+        console.error('Error releasing lock:', error);
+    }
+}
+
+// Start heartbeat to maintain lock (every 30 seconds)
+function startLockHeartbeat() {
+    if (editLockInterval) {
+        clearInterval(editLockInterval);
+    }
+    
+    editLockInterval = setInterval(async () => {
+        if (editMode && currentUserId && currentUserName) {
+            try {
+                await fetch('/api/wochenplan-lock', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        userId: parseInt(currentUserId),
+                        userName: currentUserName
+                    })
+                });
+                failedLockChecks = 0;
+            } catch (error) {
+                // Fehler nur loggen, aber nach mehreren Fehlern Logout
+                console.error('Error maintaining lock:', error);
+                failedLockChecks++;
+                if (failedLockChecks >= MAX_FAILED_LOCK_CHECKS) {
+                    showNotification('Netzwerkfehler. Bearbeitungsmodus wird beendet.', 'error', 4000);
+                    setTimeout(() => { logout(); }, 2000);
+                }
+            }
+        }
+    }, 30000); // Every 30 seconds
+}
+
+// Stop heartbeat
+function stopLockHeartbeat() {
+    if (editLockInterval) {
+        clearInterval(editLockInterval);
+        editLockInterval = null;
+    }
+}
+
+// Force exit edit mode (called when someone else takes the lock)
+function forceExitEditMode() {
+    editMode = false;
+    stopLockHeartbeat();
+    stopActivityMonitoring();
+    
+    // Update UI
+    document.getElementById('editToggleBtn').classList.remove('active');
+    document.getElementById('editToggleBtn').textContent = "Bearbeiten";
+    
+    // Hide editing elements
+    document.querySelectorAll('.schichtfeld-checkbox').forEach(cb => cb.style.display = 'none');
+    document.querySelectorAll('.schichtfeld-preview').forEach(preview => preview.style.display = '');
+    document.querySelectorAll('textarea.schichtfeld').forEach(ta => ta.style.display = 'none');
+    document.getElementById('linkControls').style.display = 'none';
+    document.getElementById('settingsBtn').style.display = 'none';
+    document.getElementById('quickBtn').style.display = 'none';
+    document.getElementById('mainFormatBtns').style.display = 'none';
+
+    // Handle KW-Info field
+    const kwinfoInput = document.getElementById('kwinfo');
+    if (kwinfoInput) {
+        const kwinfoPreview = document.getElementById('kwinfoPreview');
+        kwinfoInput.style.display = 'none';
+        kwinfoInput.disabled = true;
+        if (kwinfoPreview) {
+            kwinfoPreview.innerHTML = markdownToHtml(kwinfoInput.value);
+            kwinfoPreview.style.display = '';
+        }
+    }
+}
+
+// Update local wochenplan data from UI
+function updateLocalWochenplanFromUI() {
+    const year = currentYear;
+    const kw = currentKw;
+    
+    // Update all shift fields - only in memory, don't save to server yet
+    document.querySelectorAll('.schichtfeld-container').forEach(container => {
+        const ta = container.querySelector('textarea.schichtfeld');
+        if (ta) {
+            const day = container.getAttribute('data-day');
+            const shift = container.getAttribute('data-shift');
+            
+            // Direkt in lokalen Daten speichern ohne Server-Call
+            if (!window._wochenplan[year]) window._wochenplan[year] = {};
+            if (!window._wochenplan[year][kw]) window._wochenplan[year][kw] = {};
+            if (!window._wochenplan[year][kw][day]) window._wochenplan[year][kw][day] = {};
+            
+            window._wochenplan[year][kw][day][shift] = ta.value;
+            
+            // Update preview
+            const preview = container.querySelector('.schichtfeld-preview');
+            if (preview) preview.innerHTML = markdownToHtml(ta.value);
+        }
+    });
+    
+    // Update KW-Info - only in memory
+    const kwinfoInput = document.getElementById('kwinfo');
+    if (kwinfoInput) {
+        if (!window._wochenplan[year]) window._wochenplan[year] = {};
+        if (!window._wochenplan[year][kw]) window._wochenplan[year][kw] = {};
+        window._wochenplan[year][kw].kwinfo = kwinfoInput.value;
+    }
+}
+
+// Send current week data to server
+async function sendCurrentWeekDataToServer() {
+    try {
+        const response = await fetch('/api/wochenplan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(window._wochenplan)
+        });
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Server response:', errorText);
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
+        }
+        
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            const responseText = await response.text();
+            console.error('Non-JSON response:', responseText);
+            throw new Error('Server returned non-JSON response');
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        // Nur loggen, nicht mehr automatisch Notification anzeigen
+        console.error('Error saving wochenplan data:', error);
+        throw error;
+    }
+}
+
+// Modified toggle edit mode function
+async function toggleEditMode() {
+    if (!editMode) {
+        // Entering edit mode - acquire lock first
+        const lockAcquired = await acquireLock();
+        if (!lockAcquired) {
+            return; // Don't enter edit mode if lock couldn't be acquired
+        }
+        
+        editMode = true;
+        lastActivityTime = Date.now();
+        startActivityMonitoring();
+        
+        // Calculate initial data hash when entering edit mode for conflict detection
+        calculateDataHash();
+        
+        showNotification('Bearbeitungsmodus aktiviert.', 'success');
+    } else {
+        // Exiting edit mode - check for conflicts before saving
+        try {
+            // Check for conflicts first
+            const canSave = await checkForConflicts();
+            if (!canSave) {
+                return; // Don't exit edit mode if there are conflicts
+            }
+            
+            editMode = false;
+            stopActivityMonitoring();
+            
+            // Save data
+            showNotification('Daten werden gespeichert...', 'success', 2000);
+            updateLocalWochenplanFromUI();
+            await sendCurrentWeekDataToServer();
+            
+            // Update hash after successful save
+            calculateDataHash();
+            
+            showNotification('Änderungen erfolgreich gespeichert.', 'success');
+        } catch (error) {
+            console.error('Fehler beim Speichern:', error);
+            showNotification('Fehler beim Speichern der Daten!', 'error');
+            return; // Don't exit edit mode if save failed
+        }
+        
+        // Then release lock
+        await releaseLock();
+        showNotification('Bearbeitungsmodus beendet.', 'success');
+    }
+    
+    // Update UI (rest of the existing toggleEditMode logic)
+    document.getElementById('editToggleBtn').classList.toggle('active', editMode);
+    document.getElementById('editToggleBtn').textContent = editMode ? "Speichern" : "Bearbeiten";
+    
+    // UI elements show/hide logic
+    document.querySelectorAll('.schichtfeld-checkbox').forEach(cb => cb.style.display = editMode ? '' : 'none');
+    document.querySelectorAll('.schichtfeld-preview').forEach(preview => preview.style.display = editMode ? 'none' : '');
+    document.querySelectorAll('textarea.schichtfeld').forEach(ta => ta.style.display = editMode ? '' : 'none');
+    document.getElementById('linkControls').style.display = editMode ? '' : 'none';
+    document.getElementById('settingsBtn').style.display = editMode ? '' : 'none';
+    document.getElementById('quickBtn').style.display = editMode ? '' : 'none';
+    document.getElementById('mainFormatBtns').style.display = editMode ? '' : 'none';
+
+    // KW-Info field handling
+    const kwinfoInput = document.getElementById('kwinfo');
+    if (kwinfoInput) {
+        const kwinfoPreview = document.getElementById('kwinfoPreview');
+        if (editMode) {
+            kwinfoInput.style.display = '';
+            kwinfoInput.disabled = false;
+            if (kwinfoPreview) kwinfoPreview.style.display = 'none';
+            kwinfoInput.focus();
+        } else {
+            kwinfoInput.style.display = 'none';
+            kwinfoInput.disabled = true;
+            if (kwinfoPreview) {
+                kwinfoPreview.innerHTML = markdownToHtml(kwinfoInput.value);
+                kwinfoPreview.style.display = '';
+            }
+        }
+    }
+
+    // Save data when exiting edit mode
+    if (!editMode) {
+        // Update local data and send to server
+        updateLocalWochenplanFromUI();
+        await sendCurrentWeekDataToServer();
+    }
+}
+
+// Modified week change functions to handle locks
+async function changeWeek(delta) {
+    // If in edit mode, save and release lock before changing week
+    if (editMode) {
+        try {
+            showNotification('Daten werden gespeichert...', 'success', 2000);
+            updateLocalWochenplanFromUI();
+            await sendCurrentWeekDataToServer();
+            showNotification('Änderungen erfolgreich gespeichert.', 'success');
+        } catch (error) {
+            console.error('Fehler beim Speichern:', error);
+            showNotification('Fehler beim Speichern der Daten!', 'error');
+        }
+        
+        await releaseLock();
+        editMode = false;
+        stopActivityMonitoring();
+        document.getElementById('editToggleBtn').classList.remove('active');
+        document.getElementById('editToggleBtn').textContent = "Bearbeiten";
+    }
+    
+    let kw = currentKw + delta;
+    let year = currentYear;
+    
+    // Handle year transitions
+    if (kw < 1) {
+        year--;
+        kw = getWeeksInYear(year);
+    }
+    if (kw > getWeeksInYear(year)) {
+        kw = 1;
+        year++;
+    }
+    
+    // Set new week and render
+    currentKw = kw;
+    currentYear = year;
+    window._wochenplan = await ladeWochenplan();
+    renderWeek();
+    
+    // Restart data polling for new week (for all users)
+    startDataPolling();
+}
+
+async function goToCurrentWeek() {
+    // If in edit mode, save and release lock before going to current week
+    if (editMode) {
+        try {
+            showNotification('Daten werden gespeichert...', 'success', 2000);
+            updateLocalWochenplanFromUI();
+            await sendCurrentWeekDataToServer();
+            showNotification('Änderungen erfolgreich gespeichert.', 'success');
+        } catch (error) {
+            console.error('Fehler beim Speichern:', error);
+            showNotification('Fehler beim Speichern der Daten!', 'error');
+        }
+        
+        await releaseLock();
+        editMode = false;
+        stopActivityMonitoring();
+        document.getElementById('editToggleBtn').classList.remove('active');
+        document.getElementById('editToggleBtn').textContent = "Bearbeiten";
+    }
+    
+    const now = new Date();
+    currentYear = now.getFullYear();
+    currentKw = getWeekNumber(now);
+    window._wochenplan = await ladeWochenplan();
+    renderWeek();
+    
+    // Restart data polling for current week (for all users)
+    startDataPolling();
+}
+
+// Modified logout function to release lock and save data
+function logout() {
+    // Save data if in edit mode before logout
+    if (editMode) {
+        saveBeforeLogout();
+        return; // saveBeforeLogout will handle the actual logout
+    }
+    
+    // Normal logout without edit mode
+    if (editMode) {
+        releaseLock();
+    }
+    stopLockStatusCheck();
+    showNotification('Erfolgreich abgemeldet. Die Seite wird neu geladen.', 'error', 2000);
+    setTimeout(() => {
+        localStorage.clear();
+        location.reload();
+    }, 3000);
+}
+
+// Formatierung in das aktive Textfeld einfügen
+function insertFormatGlobal(before, after) {
+    if (!lastActiveTextarea) return;
+    const ta = lastActiveTextarea;
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    const val = ta.value;
+    
+    // Formatierung um die Auswahl herum einfügen
+    ta.value = val.substring(0, start) + before + val.substring(start, end) + after + val.substring(end);
+    ta.focus();
+    ta.setSelectionRange(start + before.length, end + before.length);
+    autoGrow(ta);
+    
+    // Vorschau aktualisieren
+    const preview = ta.parentElement.querySelector('.schichtfeld-preview');
+    if (preview) preview.innerHTML = markdownToHtml(ta.value);
+}
+
+// Text an Cursor-Position in bestimmtes Textfeld einfügen
+function insertAtCursor(textareaId, before, after) {
+    const ta = document.getElementById(textareaId);
+    if (!ta) return;
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    const val = ta.value;
+    
+    // Text an Cursor-Position einfügen
+    ta.value = val.substring(0, start) + before + val.substring(start, end) + after + val.substring(end);
+    ta.focus();
+    ta.setSelectionRange(start + before.length, end + before.length);
+    if (typeof autoGrow === 'function') autoGrow(ta);
+}
+window.insertAtCursor = insertAtCursor;
+
+// Quick-Text Verwaltung jetzt über Quickbearbeitung.js/Quickbearbeitung.json
+// Quick-Texte laden
+async function getQuickTexts() {
+    return await ladeQuickTexte();
+}
+
+// Quick-Texte speichern
+async function setQuickTexts(arr) {
+    await speichereQuickTexte(arr);
+}
+
+// Einstellungen-Modal öffnen
+function openSettings() {
+    // Login-Modal ausblenden, falls offen
+    var loginModal = document.getElementById("login-modal");
+    if (loginModal) loginModal.style.display = "none";
+    const modalRoot = document.getElementById("modal-root");
+    // Quick-Texte laden und Modal erstellen
+    getQuickTexts().then(quicks => {
+        let html = `
+            <div class="modal-bg" onclick="closeModal(event)">
+                <div class="custom-modal" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="closeModal(event)">&times;</button>
+                    <h2>Quick-Text Einstellungen</h2>
+                    <label>Quick-Text (mehrzeilig, Markdown-Formatierung möglich)</label>
+                    <div class="format-btns">
+                        <button type="button" title="Fett" onclick="insertAtCursor('newQuickText','**','**')"><b>F</b></button>
+                        <button type="button" title="Kursiv" onclick="insertAtCursor('newQuickText','_','_')"><i>K</i></button>
+                        <button type="button" title="Unterstrichen" onclick="insertAtCursor('newQuickText','__','__')"><u>U</u></button>
+                        <button type="button" title="Überschrift" onclick="insertAtCursor('newQuickText','# ','')">H1</button>
+                        <button type="button" title="Farbe" onclick="insertAtCursor('newQuickText','<span style=\\'color:red\\'>','</span>')"><span style='color:red'>A</span></button>
+                    </div>
+                    <textarea id="newQuickText" class="schichtfeld" placeholder="z.B.&#10;# Revision&#10;**DH-safe**&#10;_________"></textarea>
+                    <button class="settings-btn" onclick="addQuickText()">Hinzufügen</button>
+                    <div style="margin:8px 0;">
+                        <small>
+                            <b>Formatierung:</b><br>
+                            <code># Überschrift</code>, <code>**fett**</code>, <code>_kursiv_</code>, <code>__unterstrichen__</code>, <code>---</code> (Linie),<br>
+                            <code>&lt;span style="font-size:20px"&gt;...&lt;/span&gt;</code> für Größe, <code>&lt;span style="color:red"&gt;...&lt;/span&gt;</code> für Farbe
+                        </small>
+                    </div>
+                    <label>Gespeicherte Quick-Texte</label>
+                    <input type="text" id="quickSearchInput" class="quick-search-input" placeholder="Suchen..." oninput="filterQuickList()">
+                    <ul class="quick-list" id="quickList">
+                        ${quicks.map((q,i)=>`
+                            <li class="quick-list-entry" data-index="${i}">
+                                <span class="quick-list-text" id="quickTextDisplay${i}">${escapeHtml(q.text)}</span>
+                                <button class="quick-list-edit-btn" onclick="editQuickText(${i})">Bearbeiten</button>
+                                <button class="quick-list-delete-btn" onclick="removeQuickText(${i})">Entfernen</button>
+                            </li>
+                        `).join("")}
+                    </ul>
+                    <div class="modal-actions">
+                        <button class="settings-btn" onclick="closeModal(event)">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        modalRoot.innerHTML = html;
+    });
+}
+
+// Quick-Text bearbeiten
+function editQuickText(idx) {
+    getQuickTexts().then(quicks => {
+        const li = document.querySelector(`li.quick-list-entry[data-index="${idx}"]`);
+        if (!li) return;
+        const oldText = quicks[idx].text;
+        
+        // Listeneintrag durch Bearbeitungsfeld ersetzen
+        li.innerHTML = `
+            <textarea class="quick-list-editarea schichtfeld" id="editQuickTextArea${idx}">${escapeHtml(oldText)}</textarea>
+            <div class="quick-list-edit-actions">
+                <button class="quick-list-edit-save-btn" onclick="saveQuickTextEdit(${idx})">Speichern</button>
+                <button class="quick-list-edit-cancel-btn" onclick="cancelQuickTextEdit(${idx}, '${escapeHtml(oldText).replace(/'/g,"&#39;")}')">Abbrechen</button>
+            </div>
+        `;
+        
+        // Fokus auf Bearbeitungsfeld setzen
+        setTimeout(() => {
+            document.getElementById(`editQuickTextArea${idx}`).focus();
+        }, 10);
+    });
+}
+
+// Quick-Text Bearbeitung speichern
+async function saveQuickTextEdit(idx) {
+    const ta = document.getElementById(`editQuickTextArea${idx}`);
+    if (!ta) return;
+    
+    // Quick-Texte laden, ändern und speichern
+    let arr = await getQuickTexts();
+    arr[idx].text = ta.value;
+    await setQuickTexts(arr);
+    
+    // Einstellungen-Modal neu laden
+    openSettings();
+}
+
+// Quick-Text Liste filtern (in Einstellungen)
+function filterQuickList() {
+    const searchTerm = document.getElementById('quickSearchInput').value.toLowerCase();
+    const listItems = document.querySelectorAll('#quickList .quick-list-entry');
+    
+    listItems.forEach(item => {
+        const textElement = item.querySelector('.quick-list-text');
+        const editArea = item.querySelector('.quick-list-editarea');
+        let text = '';
+        
+        // Text aus Anzeige oder Bearbeitungsfeld extrahieren
+        if (textElement) {
+            text = textElement.textContent.toLowerCase();
+        } else if (editArea) {
+            text = editArea.value.toLowerCase();
+        }
+        
+        // Eintrag je nach Suchbegriff anzeigen/verstecken
+        item.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+}
+
+// Quick-Text Liste filtern (in Quick-Bearbeitung)
+function filterQuickListQuickEdit() {
+    const searchTerm = document.getElementById('quickSearchInputQuickEdit').value.toLowerCase();
+    const listItems = document.querySelectorAll('#quickListQuickEdit .quick-list-entry');
+    
+    listItems.forEach(item => {
+        const text = item.querySelector('.quick-list-text label').textContent.toLowerCase();
+        item.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+}
+
+// Quick-Text Bearbeitung abbrechen
+function cancelQuickTextEdit(idx, oldText) {
+    openSettings();
+}
+
+// Neuen Quick-Text hinzufügen
+async function addQuickText() {
+    const inp = document.getElementById("newQuickText");
+    let val = inp.value.trim();
+    if (!val) return;
+    
+    // Quick-Texte laden und neuen hinzufügen falls nicht bereits vorhanden
+    let arr = await getQuickTexts();
+    if (!arr.some(q => q.text === val)) arr.push({text: val});
+    await setQuickTexts(arr);
+    
+    // Einstellungen-Modal neu laden
+    openSettings();
+}
+
+// Quick-Text entfernen
+async function removeQuickText(idx) {
+    let arr = await getQuickTexts();
+    arr.splice(idx,1);
+    await setQuickTexts(arr);
+    
+    // Einstellungen-Modal neu laden
+    openSettings();
+}
+
+// Benachrichtigungssystem (wie auf der Startseite)
+function showNotification(message, type = 'success', duration = 3000) {
+    const notificationContainer = document.getElementById('notification-container');
+    const notificationMessage = document.getElementById('notification-message');
+    
+    if (notificationContainer && notificationMessage) {
+        notificationMessage.textContent = message;
+        // Entferne vorherige Typ-Klassen
+        notificationContainer.classList.remove('notification-success', 'notification-error', 'notification-warning');
+        
+        // Füge aktuelle Typ-Klasse hinzu
+        if (type === 'success') {
+            notificationContainer.classList.add('notification-success');
+        } else if (type === 'error') {
+            notificationContainer.classList.add('notification-error');
+        } else if (type === 'warning') {
+            notificationContainer.classList.add('notification-warning');
+        }
+        
+        notificationContainer.classList.add('show');
+        
+        // Benachrichtigung nach bestimmter Zeit ausblenden
+        setTimeout(() => {
+            notificationContainer.classList.remove('show');
+        }, duration);
+    }
+}
+
+// Quick Bearbeiten Modal asynchron öffnen
+async function openQuickEdit() {
+    // Login-Modal ausblenden, falls offen
+    var loginModal = document.getElementById("login-modal");
+    if (loginModal) loginModal.style.display = "none";
+    // Prüfen ob Felder ausgewählt sind
+    const selected = Array.from(document.querySelectorAll('.schichtfeld-checkbox:checked'));
+    if (!selected.length) {
+        showNotification("Bitte mindestens ein Feld auswählen.", 'error');
+        return;
+    }
+    
+    const modalRoot = document.getElementById("modal-root");
+    const quicks = await getQuickTexts();
+    
+    // Prüfen ob Quick-Texte vorhanden sind
+    if (!quicks.length) {
+        showNotification("Keine Quick-Texte hinterlegt. Bitte zuerst in den Einstellungen anlegen.", 'error');
+        return;
+    }
+    
+    // Quick-Bearbeitung Modal erstellen
+    let html = `
+        <div class="modal-bg" onclick="closeModal(event)">
+            <div class="custom-modal quick-edit-modal" onclick="event.stopPropagation()">
+                <button class="close-btn" onclick="closeModal(event)">&times;</button>
+                <h2>Quick Bearbeiten</h2>
+                <form id="quickForm">
+                    <label>Wähle Quick-Texte aus:</label>
+                    <input type="text" id="quickSearchInputQuickEdit" class="quick-search-input" placeholder="Suchen..." oninput="filterQuickListQuickEdit()">
+                    <ul class="quick-list" id="quickListQuickEdit">
+                        ${quicks.map((q,i)=>`
+                            <li class="quick-list-entry">
+                                <input type="checkbox" class="quick-list-checkbox" id="quickCheck${i}" value="${q.text.replace(/"/g, '&quot;')}" onchange="showQuickPreview()">
+                                <span class="quick-list-text"><label for="quickCheck${i}" style="cursor:pointer;">${escapeHtml(q.text)}</label></span>
+                            </li>
+                        `).join("")}
+                    </ul>
+                    <div id="quickPreview" style="background:#f8f8fa;border:1px solid #ddd;padding:8px 10px;margin:10px 0;min-height:30px;"></div>
+                    <div class="modal-actions">
+                        <button type="button" class="settings-btn" onclick="insertQuickTexts()">Einfügen</button>
+                        <button type="button" class="settings-btn" onclick="closeModal(event)">Abbrechen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+    modalRoot.innerHTML = html;
+    showQuickPreview();
+}
+
+// Vorschau der ausgewählten Quick-Texte anzeigen
+function showQuickPreview() {
+    const checks = Array.from(document.querySelectorAll("#quickForm input[type=checkbox]:checked"));
+    const texts = checks.map(c=>c.value);
+    document.getElementById("quickPreview").innerHTML = texts.map(t=>markdownToHtml(t)).join("<br>");
+}
+
+// Ausgewählte Quick-Texte in die markierten Felder einfügen
+function insertQuickTexts() {
+    const checks = Array.from(document.querySelectorAll("#quickForm input[type=checkbox]:checked"));
+    if (!checks.length) return;
+    
+    const texts = checks.map(c=>c.value);
+    const selected = Array.from(document.querySelectorAll('.schichtfeld-checkbox:checked'));
+    
+    // Quick-Texte in alle ausgewählten Felder einfügen
+    selected.forEach(cb => {
+        const ta = cb.closest('.schichtfeld-container').querySelector('textarea.schichtfeld');
+        if (ta) {
+            const start = ta.selectionStart ?? ta.value.length;
+            const end = ta.selectionEnd ?? ta.value.length;
+            const before = ta.value.substring(0, start);
+            const after = ta.value.substring(end);
+            
+            // Texte einfügen
+            ta.value = before + texts.join("\n") + after;
+            ta.focus();
+            const pos = before.length + texts.join("\n").length;
+            ta.setSelectionRange(pos, pos);
+            autoGrow(ta);
+            
+            // Vorschau aktualisieren
+            const preview = ta.parentElement.querySelector('.schichtfeld-preview');
+            if (preview) preview.innerHTML = markdownToHtml(ta.value);
+        }
+    });
+    
+    closeModal();
+}
+
+// Markdown zu HTML konvertieren
+function markdownToHtml(md) {
+    if (!md) return ""; // Hinzugefügt, um Fehler bei leerem md zu vermeiden
+    
+    let html = escapeHtml(md);
+    
+    // Markdown-Formatierungen in HTML umwandeln
+    html = html.replace(/^# (.*)$/gm, '<b style="font-size:1.1em;">$1</b>'); // Überschrift 1
+    html = html.replace(/^## (.*)$/gm, '<b>$1</b>'); // Überschrift 2
+    html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); // Fett
+    html = html.replace(/__(.*?)__/g, '<u>$1</u>'); // Unterstrichen
+    html = html.replace(/_(.*?)_/g, '<i>$1</i>'); // Kursiv
+    html = html.replace(/^- (.*)$/gm, '<li>$1</li>'); // Aufzählung
+    html = html.replace(/^\d+\. (.*)$/gm, '<li>$1</li>'); // Nummerierte Liste
+    html = html.replace(/---+/g, '<div style="border-top: 3px solid #000; margin: 4px 0; height: 3px; background-color: #000;"></div>'); // Linie
+    html = html.replace(/_{5,}/g, '<div style="border-top: 3px solid #000; margin: 4px 0; height: 3px; background-color: #000;"></div>'); // Linie mit Unterstrichen
+    html = html.replace(/\n/g, '<br>'); // Zeilenumbrüche
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>'); // Links
+    // Erlaube <span style="...">...</span> für Styling
+    html = html.replace(/&lt;span (.*?)&gt;(.*?)&lt;\/span&gt;/g, '<span $1>$2</span>');
+    
+    return html;
+}
+
+// Druckfunktion - jetzt mit PDF-Generierung
+async function printWochenplan() {
+    const printBtn = document.querySelector('#printBtn');
+    const originalText = printBtn.textContent;
+    
+    try {
+        // Zeige Ladeindikator
+        printBtn.textContent = 'PDF wird erstellt...';
+        printBtn.disabled = true;
+        
+        // Hole die aktuellen Daten
+        const wochentitel = document.getElementById('wochentitel').textContent;
+        const kwinfoInput = document.getElementById('kwinfo');
+        const kwinfoValue = kwinfoInput.value || '';
+        
+        // Erstelle den HTML-Inhalt für die PDF-Generierung
+        const htmlContent = `
+            <div class="print-header">
+                <h1>${wochentitel}</h1>
+            </div>
+            
+            ${kwinfoValue ? `
+            <div class="kw-info-section">
+                <h3>KW-Info:</h3>
+                <div class="kw-info-content">${kwinfoValue}</div>
+            </div>
+            ` : ''}
+            
+            <div class="table-container">
+                ${getPrintableTableForPDF()}
+            </div>
+        `;
+        
+        // Generiere Dateinamen mit Zeitstempel
+        const now = new Date();
+        const timestamp = now.toISOString().slice(0, 16).replace(/:/g, '-');
+        const filename = `Wochenplan_${wochentitel.replace(/[^a-zA-Z0-9]/g, '_')}_${timestamp}`;
+        
+        // Sende HTML an Server für PDF-Generierung
+        const response = await fetch('/api/generate-pdf', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                htmlContent: htmlContent,
+                filename: filename
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Öffne PDF-HTML in neuem Tab (automatisches Drucken)
+            window.open(result.downloadUrl, '_blank');
+            showNotification('PDF wurde erfolgreich erstellt und der Druckdialog sollte sich automatisch öffnen.', 'success');
+        } else {
+            throw new Error(result.error || 'Unbekannter Fehler bei PDF-Generierung');
+        }
+        
+    } catch (error) {
+        console.error('Fehler bei PDF-Generierung:', error);
+        showNotification('Fehler bei der PDF-Erstellung: ' + error.message, 'error');
+    } finally {
+        // Setze Button zurück
+        printBtn.textContent = originalText;
+        printBtn.disabled = false;
+    }
+}
+
+// Hilfsfunktion für PDF-optimierte Tabelle
+function getPrintableTableForPDF() {
+    const table = document.querySelector('table');
+    if (!table) return '';
+    
+    const tableClone = table.cloneNode(true);
+    
+    // Strukturiere die Tabelle für PDF mit thead und tbody
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+    
+    // Verschiebe die ersten beiden Zeilen (Kopfzeilen) ins thead
+    const rows = Array.from(tableClone.querySelectorAll('tr'));
+    if (rows.length >= 2) {
+        thead.appendChild(rows[0].cloneNode(true)); // Wochentage-Header
+        thead.appendChild(rows[1].cloneNode(true)); // Datum-Zeile
+        
+        // Verschiebe die Schicht-Zeilen ins tbody
+        for (let i = 2; i < rows.length; i++) {
+            tbody.appendChild(rows[i].cloneNode(true));
+        }
+    }
+    
+    // Ersetze alle Schichtfeld-Container durch deren gerenderten Inhalt
+    const containers = tableClone.querySelectorAll('.schichtfeld-container');
+    containers.forEach(container => {
+        const textarea = container.querySelector('textarea.schichtfeld');
+        const preview = container.querySelector('.schichtfeld-preview');
+        
+        let htmlContent = '';
+        if (textarea && textarea.style.display !== 'none') {
+            // Im Bearbeitungsmodus: Verwende den bereits gerenderten Inhalt aus der Vorschau
+            htmlContent = preview ? preview.innerHTML : markdownToHtml(textarea.value);
+        } else if (preview) {
+            // Im Anzeigemodus: Verwende die bereits gerenderte Vorschau direkt
+            htmlContent = preview.innerHTML;
+        }
+        
+        // Erstelle div mit dem gerenderten Inhalt
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'schichtfeld-content';
+        contentDiv.innerHTML = htmlContent;
+        
+        // Ersetze Container durch Inhalt
+        container.parentNode.replaceChild(contentDiv, container);
+    });
+    
+    // Entferne Checkboxen
+    const checkboxes = tableClone.querySelectorAll('.schichtfeld-checkbox');
+    checkboxes.forEach(cb => cb.remove());
+    
+    // Ersetze den Tabelleninhalt durch die strukturierte Version
+    tableClone.innerHTML = '';
+    tableClone.appendChild(thead);
+    tableClone.appendChild(tbody);
+    
+    return tableClone.outerHTML;
+}
+
+// Berechnet die Kalenderwoche für ein gegebenes Datum
+function getWeekNumber(d) {
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
+}
+
+// Berechnet die Anzahl der ISO-Wochen in einem Jahr
+function getWeeksInYear(year) {
+    const d = new Date(year, 11, 31);
+    const week = getWeekNumber(d);
+    return week === 1 ? getWeekNumber(new Date(year, 11, 24)) : week;
+}
+
+// Berechnet das Datum für den Beginn einer ISO-Woche
+function getDateOfISOWeek(week, year) {
+    const simple = new Date(year, 0, 1 + (week - 1) * 7);
+    const dow = simple.getDay();
+    const ISOweekStart = simple;
+    if (dow <= 4)
+        ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+    else
+        ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+    return ISOweekStart;
+}
+
+// Holt einen URL-Parameter
+function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
+
+// Automatisches Vergrößern von Textareas basierend auf Inhalt
+function autoGrow(el) {
+    el.style.height = "auto";
+    el.style.height = (el.scrollHeight) + "px";
+}
+
+// --- autoGrow für alle Textareas bei Eingabe ---
+document.addEventListener('input', function(e) {
+    if (e.target && e.target.classList && e.target.classList.contains('schichtfeld')) {
+        autoGrow(e.target);
+    }
+});
+
+// --- Hyperlink-Funktion ---
+function makeSelectionHyperlink() {
+    const ta = lastActiveTextarea;
+    if (!ta || !ta.classList.contains('schichtfeld')) {
+        showNotification("Bitte zuerst ein Eingabefeld auswählen.", 'error');
+        return;
+    }
+    
+    const urlBase = document.getElementById('linkUrlInput').value.trim();
+    if (!urlBase) {
+        showNotification("Bitte gib einen Hyperlink-Anfang ein.", 'error');
+        return;
+    }
+    
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    
+    // Prüfen ob Text ausgewählt ist
+    if (start === end) {
+        showNotification("Bitte markiere den Text, der zum Link werden soll.", 'error');
+        return;
+    }
+    
+    const selectedText = ta.value.substring(start, end);
+    let fullUrl = urlBase;
+    
+    // Einfache Logik zur URL-Konstruktion, kann verfeinert werden
+    if (!fullUrl.startsWith('http://') && !fullUrl.startsWith('https://')) {
+        fullUrl = 'http://' + fullUrl; // Standard-Protokoll hinzufügen, falls fehlend
+    }
+    
+    // Markdown Link Format: angezeigter Text
+    const linkMarkdown = `${selectedText}`;
+    
+    // Link in Textarea einfügen
+    const before = ta.value.substring(0, start);
+    const after = ta.value.substring(end);
+    ta.value = before + linkMarkdown + after;
+    ta.focus();
+    ta.setSelectionRange(before.length, before.length + linkMarkdown.length);
+    autoGrow(ta);
+    
+    // Vorschau aktualisieren
+    const preview = ta.parentElement.querySelector('.schichtfeld-preview');
+    if (preview) preview.innerHTML = markdownToHtml(ta.value);
+}
+
+// --- Schichtberechnung ---
+function getSchichtForDate(date) {
+    const startDate = new Date(2025, 5, 16); // 16. Juni 2025 (Monat ist 0-basiert)
+    let schichten = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E']; // 10-Tage-Zyklus
+    
+    // Tage seit Startdatum berechnen
+    const diffInTime = date.getTime() - startDate.getTime();
+    const diffInDays = Math.floor(diffInTime / (1000 * 60 * 60 * 24));
+    
+    // Schichtindex basierend auf Zyklus berechnen
+    let schichtIndex = diffInDays % schichten.length;
+    if (schichtIndex < 0) { // Korrektur für Daten vor dem Startdatum
+        schichtIndex += schichten.length;
+    }
+    
+    return `Schicht ${schichten[schichtIndex]}`;
+}
+
+// Füge getSchichtForDate dem window-Objekt hinzu, damit es global verfügbar ist.
+window.getSchichtForDate = getSchichtForDate;
+
+// Hauptinitialisierung wenn DOM geladen ist
+window.addEventListener('DOMContentLoaded', async () => {
+    // URL-Parameter für Woche und Jahr auslesen
+    const urlKw = parseInt(getQueryParam('kw'));
+    const urlYear = parseInt(getQueryParam('year'));
+    if (urlKw) currentKw = urlKw;
+    if (urlYear) currentYear = urlYear;
+    
+    // Stelle sicher, dass die globale Funktion aus wochenplandaten.js verwendet wird, falls vorhanden
+    if (typeof window.ladeWochenplan === 'function' && window.ladeWochenplan.name === 'ladeWochenplanGlobal') { // Annahme eines eindeutigen Namens
+         window._wochenplan = await window.ladeWochenplanGlobal();
+    } else {
+        window._wochenplan = await window.ladeWochenplan(); // Direkt die globale Funktion verwenden
+    }
+    
+    // Woche initial rendern
+    renderWeek();
+    
+    // Live-Updates für alle Benutzer starten (nicht nur angemeldete)
+    // startDataPolling berechnet den initialen Hash automatisch
+    startDataPolling();
+
+    // Berechtigungen prüfen und UI entsprechend anpassen
+    const loggedIn = isLoggedInWochenplan();
+    const permissions = getPermissionsFromLocalStorageWochenplan();
+    const editToggleBtn = document.getElementById('editToggleBtn');
+
+    // Bearbeiten-Button nur anzeigen, wenn Berechtigung vorhanden
+    if (editToggleBtn) {
+        if (loggedIn && permissions.kannWochenplanBearbeiten) {
+            editToggleBtn.style.display = '';
+            console.log('Bearbeiten-Button angezeigt (Berechtigung vorhanden)');
+            
+            // Initialize collaborative editing only for users with edit permissions
+            // (wird unten in updateUIAfterLogin nochmal aufgerufen, aber das ist ok)
+        } else {
+            editToggleBtn.style.display = 'none';
+            console.log('Bearbeiten-Button NICHT angezeigt (keine Berechtigung)');
+        }
+    }
+
+    // Mobile Navigation Setup
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+
+    // Menu-Button Text synchronisieren mit Hauptbutton
+    const menuEditToggleBtn = document.getElementById('menuEditToggleBtn');
+    if (menuEditToggleBtn && editToggleBtn) {
+        // Observer für Änderungen am Hauptbutton
+        const observer = new MutationObserver(() => {
+            menuEditToggleBtn.textContent = editToggleBtn.textContent.replace("Bearbeitung: ", "Bearbeitung umschalten (") + ")";
+        });
+        observer.observe(editToggleBtn, { childList: true, characterData: true, subtree: true });
+        menuEditToggleBtn.textContent = editToggleBtn.textContent.replace("Bearbeitung: ", "Bearbeitung umschalten (") + ")";
+    }
+
+    // Theme-Umschalter Setup
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    // Theme anwenden
+    function applyTheme(theme) {
+        document.body.classList.remove('light-mode', 'dark-mode');
+        document.body.setAttribute('data-theme', theme); // <--- Attribut setzen
+        if (themeToggleBtn) {
+            themeToggleBtn.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    // Gespeichertes Theme anwenden
+    applyTheme(storedTheme);
+
+    // Theme-Button Event-Listener
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    }
+    
+    // Textareas nach kurzer Verzögerung automatisch anpassen
+    setTimeout(function() {
+        document.querySelectorAll('textarea.schichtfeld').forEach(autoGrow);
+    }, 100);
+
+    // === LOGIN/NOTIFICATION/HEADER-UI wie auf der Startseite ===
+    // DOM-Referenzen für Login/Notification
+    const anmeldenButton = document.getElementById("anmeldenButton");
+    const loginModal = document.getElementById("login-modal");
+    const closeButton = loginModal.querySelector('.close-button');
+    const anmeldenForm = document.getElementById("anmeldeForm");
+    const rfidInput = document.getElementById("rfidInput");
+    const loginMessage = document.getElementById("loginMessage");
+    const notificationContainer = document.getElementById('notification-container');
+    const notificationMessage = document.getElementById('notification-message');
+
+    // Login-UI anpassen
+    function updateUIAfterLogin() {
+        const editToggleBtn = document.getElementById('editToggleBtn');
+        if (isLoggedInWochenplan()) {
+            anmeldenButton.style.display = "none";
+            const permissions = getPermissionsFromLocalStorageWochenplan();
+            displayLogout(localStorage.getItem("username"));
+            if (editToggleBtn) {
+                if (permissions.kannWochenplanBearbeiten) {
+                    editToggleBtn.style.display = '';
+                } else {
+                    editToggleBtn.style.display = 'none';
+                }
+            }
+    // Initialize collaborative editing after successful login
+    initCollaborativeEditing();
+    startSessionHeartbeat();
+        } else {
+            anmeldenButton.style.display = '';
+            document.getElementById("login-status").innerHTML = '';
+            if (editToggleBtn) editToggleBtn.style.display = 'none';
+            // Stop collaborative editing when not logged in, but keep data polling
+            stopLockStatusCheck();
+            stopSessionHeartbeat();
+            // Keep data polling running for live updates even when not logged in
+            // stopDataPolling(); - entfernt damit auch nicht angemeldete Benutzer Live-Updates sehen
+        }
+    }
+    // Login-Prozess
+    async function login(rfid) {
+        try {
+            const response = await fetch("mitarbeiter.json");
+            const mitarbeiter = await response.json();
+            const user = mitarbeiter.find(m => String(m.rfid).trim() === rfid);
+            if (user) {
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("username", user.name);
+                localStorage.setItem("permissions", JSON.stringify(user.permissions || {}));
+                localStorage.setItem("userId", user.id);
+                loginModal.style.display = "none";
+                anmeldenButton.style.display ="none";
+                document.body.classList.remove('modal-open');
+                displayLogout(user.name);
+                showNotification(`Erfolgreich angemeldet, ${user.name}!`, 'success');
+                updateUIAfterLogin();
+            } else {
+                loginMessage.textContent = "RFID ungültig. Zugriff verweigert!";
+                loginMessage.style.color = "red";
+            }
+        } catch (e) {
+            loginMessage.textContent = "Fehler beim Login.";
+        }
+    }
+    // Logout-Prozess
+    function logout() {
+        // Save data if in edit mode before logout
+        if (editMode) {
+            saveBeforeLogout();
+            return; // saveBeforeLogout will handle the actual logout
+        }
+        
+        // Normal logout without edit mode
+        stopLockStatusCheck();
+        stopDataPolling();
+        showNotification('Erfolgreich abgemeldet. Die Seite wird neu geladen.', 'error', 2000);
+        setTimeout(() => {
+            localStorage.clear();
+            location.reload();
+        }, 3000);
+    }
+    // Logout-Button und Willkommensnachricht
+    function displayLogout(username) {
+        const loginStatusDiv = document.getElementById("login-status");
+        loginStatusDiv.innerHTML = `<span id="loginMessage" style="color:green;">Willkommen, ${username}!</span>`;
+        loginStatusDiv.innerHTML += `<button id="abmeldenButton">Abmelden</button>`;
+        document.getElementById("abmeldenButton").addEventListener("click", logout);
+    }
+    // Modal öffnen/schließen
+    anmeldenButton.addEventListener("click", () => {
+        loginModal.style.display = "flex";
+        document.body.classList.add('modal-open');
+        rfidInput.focus();
+    });
+    closeButton.addEventListener('click', () => {
+        loginModal.style.display = "none";
+        document.body.classList.remove('modal-open');
+        rfidInput.value = "";
+        loginMessage.textContent = "";
+    });
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+    anmeldenForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        login(rfidInput.value.trim());
+    });
+
+    // Initial UI Setup - wird am Ende von DOMContentLoaded aufgerufen
+    updateUIAfterLogin();
+    
+    setupActivityTracking();
+});
+</script>
+</body>
+</html>
