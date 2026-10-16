@@ -1,0 +1,29 @@
+﻿EM-HS – Umstieg auf neue Startseite, Wochenplan und Benutzerverwaltung
+=====================================================================
+
+1) DATENBANK (zuerst)
+   phpMyAdmin -> Datenbank db_emhs auswählen -> Reiter "Importieren" -> datenbank_update.sql
+   Das Skript löscht nichts und darf auch zweimal laufen.
+
+2) DATEIEN
+   Den Inhalt des Ordners "dh-main" hier 1:1 in den Webordner auf dem Server kopieren
+   (gleiche Stelle, an der heute index.html, wochenplan.html usw. liegen). Neue Ordner sind nicht nötig.
+
+   Hauptordner:   index.html (neue Startseite – ersetzt die alte)
+                  index_alt.html, index_alt.js (alte Startseite, umbenannt)
+                  verwaltung.html, verwaltung.js, verwaltung.css, verwaltung_api.php (neu)
+   Startseite/:   index.html (leitet nur noch auf die neue Startseite weiter), index.js, api.php, startseite.css
+   Wochenplan/:   index.html, wochenplan.js, wochenplan.css, api.php
+
+   Die alte index.js im Hauptordner wird nicht mehr gebraucht (ihr Inhalt steckt in index_alt.js).
+   Sie schadet nicht, kann aber gelöscht werden.
+   startseite.css im Hauptordner NICHT löschen – die Fremdfirmen-Seiten (x_*.php) brauchen sie.
+
+3) EINMAL ALS ADMINISTRATOR DIE BENUTZERVERWALTUNG ÖFFNEN (verwaltung.html)
+   Dabei werden die bisherigen Ausweise aller Mitarbeiter als "Werksausweis" übernommen.
+
+4) FALLS NACH DEM 16.10.2026 NOCH IM ALTEN WOCHENPLAN (wochenplan.html) GEARBEITET WURDE
+   Benutzerverwaltung -> Reiter "Datenübernahme" -> die aktuelle wochenplan.json vom Server auswählen,
+   Haken bei "überschreiben" setzen -> "Daten übernehmen". Bereits vorhandene gleiche Einträge werden übersprungen.
+
+NICHT hochladen: datenbank_update.sql, db_emhs*.sql, mitarbeiter.sql (gehören nicht in den Webordner).

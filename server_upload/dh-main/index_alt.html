@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM-HS Startseite</title>
+    <link rel="stylesheet" href="startseite.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+</head>
+<body>
+    <div id="notification-container" class="notification-container">
+        <p id="notification-message"></p>
+    </div>
+
+    <header>
+        <div class="header-left-controls">
+            <button id="theme-toggle" class="theme-toggle" title="Theme wechseln">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        <h1>Startseite EM-HS</h1>
+        <div class="header-right-controls"> </div>
+            <button id="anmeldenButton">Anmelden</button>
+            <div id="login-status"></div>
+        </div>
+    </header>
+    <!--Navigationsleiste links-->
+    <nav class="sidebar"> 
+        <h2>Navigation</h2>
+        <ul>
+            <li id="adminEbene"><a href="adminUebersicht.html">Admin Bereich</a></li>
+            <li id="projektplanerNav"><a href="projektplaner.html">Projektplaner</a></li>
+            <li><a href="/public/Fahrtenbuch/fahrtenbuch.html">Fahrtenbuch</a></li>
+            <li><a href="schwarzesbrett.html">Schwarzes Brett</a></li>
+            <li><a href="telefonbuch.html">Telefonbuch</a></li>
+            <li><a href="wochenplan.html">Wochenplan</a></li>
+            <li><a href="/public/Schaltanweisungen/sawindex.html">Schaltanweisungen</a></li>
+            <li><a href="x_dashboard.php">Fremdfirmen</a></li>
+            <li><a href="Lagerverwaltung/inventar.html">Lagerverwaltung</a></li>
+            <li><a href="Formulare/formulare.html">Formulare</a></li>
+            <li><a href="https://stromspitzen.dillinger.de/index.htm" target="_blank">Stromspitzen</a></li>
+            <li><a href="https://elv1.dillinger.de/filter.htm" target="_blank">Filter Stahlwerk</a></li>
+            <li><a href="https://fiori.dillinger.de:8001/fiori" target="_blank">Fiori</a></li>
+            <li><a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank">Planoview</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank">Intranet</a></li>
+            <li><a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank">Speiseplan</a></li>
+        </ul>
+    </nav>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="anmeldeForm">
+                <h2>RFID Anmeldung</h2>
+                <input type="password" id="rfidInput" placeholder="Mit RFID anmelden">
+                <button type="submit">Anmelden</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+    
+      
+
+    <main>
+        <!--Box für das schwarze Brett-->
+        <section class="schwarzes-brett">
+            <h2>Informationen</h2>
+            <p id="schwarzesBrettText">Hier können wichtige Informationen und Ankündigungen stehen.</p> 
+        </section>
+        <!-- Container für Telefonbuch und Tagesplan -->
+        <div class="side-by-side-container">
+            <!--Box für die Telefonnummern-->
+            <section class="nummern-box">
+                <h2>Aktuelle Tel. Nummern</h2>
+                <ul class="nummern" id="nummernListe">
+                </ul>
+            </section> 
+             <!-- Neuer Abschnitt für den Tagesplan -->
+             <section class="tagesplan-box">
+                <h2>Tagesplan heute</h2>
+                <div id="tagesplanInhalt" class="tagesplan-schichten-container">
+                    <p>Lade Tagesplan...</p>
+                </div>
+                <!-- <p>Der Wochenplan kann eventuell vom Original abweichen.</p> -->
+            </section>
+        </div>
+
+        <!-- Modal für Nummernänderung -->
+        <div id="nummernModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="nummernModalClose">&times;</span>
+                <form id="nummernModalForm">
+                    <h2>Nummer bearbeiten</h2>
+                    <label id="nummernModalLabel"></label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nummernModalInput" autocomplete="off" placeholder="RFID oder Name eingeben">
+                        <span class="clear-input-btn" id="clearNummernInput" title="Eingabe leeren">&times;</span>
+                    </div>
+                    <button type="submit">Speichern</button>
+                    <p id="nummernModalMessage"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Fehler an <a href="mailto:timo.steffensky@stahl-holding-saar.de">timo.steffensky@stahl-holding-saar.de</a> melden.</p>
+    </footer>
+    
+    <script src="index_alt.js" defer></script>
+</body>
+</html>

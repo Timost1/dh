@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Startseite EM-HS</title>
+<link rel="icon" href="../logo.png" type="image/png">
+<script>
+    // Gleiche Theme-Einstellung wie Wochenplan und Lagerverwaltung (localStorage.theme); Standard ist hell
+    if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
+</script>
+<link rel="stylesheet" href="Startseite/startseite.css?v=12">
+</head>
+<body>
+
+<!-- Symbole (inline, damit keine externen Schrift- oder Icon-Dateien nötig sind) -->
+<svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M9.500 17h5M3 12h18"/><circle cx="7.500" cy="17" r="2"/><circle cx="16.500" cy="17" r="2"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6l-5 4H4a1 1 0 0 0-1 1z"/><path d="M15.500 8.500a5 5 0 0 1 0 7M18.500 5.500a9 9 0 0 1 0 13"/></symbol>
+    <symbol id="i-contact" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.500"/><path d="M8 17a4 4 0 0 1 8 0"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20a6.500 6.500 0 0 1 13 0M16 4.600a3.500 3.500 0 0 1 0 6.800M18 14.200a6.500 6.500 0 0 1 3.500 5.800"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M5 2v7a2 2 0 0 0 4 0V2M7 11v11M17 2c-1.700 1-3 3-3 6v5h3zM17 13v9"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></symbol>
+    <symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M12 3v5M9.500 5.500 12 3l2.500 2.500M5.600 11.600 7 13M18.400 11.600 17 13M2 19h20M7 19a5 5 0 0 1 10 0"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.800A9 9 0 1 1 11.200 3a7 7 0 0 0 9.800 9.800z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.300 21a1.940 1.940 0 0 0 3.400 0"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.300-4.300"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 17v5M8 3h8l-1 6 3 4H6l3-4z"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.600 7.100L4 20.500l1.400-4.600A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.500 6.500l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.500 12 2.500 2.500 4.500-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.500 20h19zM12 10v4M12 17v.010"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.010"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.500 4.500 0 0 1-.5-9A6 6 0 0 1 18 10.500a3.800 3.800 0 0 1-.5 7.500z"/></symbol>
+    <symbol id="i-cloud-sun" viewBox="0 0 24 24"><path d="M12 2v2M4.900 4.900l1.400 1.400M2 12h2M19.100 4.900l-1.400 1.400M8.300 9.200a4 4 0 0 1 7.200-1.600"/><path d="M9 21a4 4 0 0 1-.4-8 5.500 5.500 0 0 1 10.500 1.500A3.300 3.300 0 0 1 18.700 21z"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 15a4.500 4.500 0 0 1-.5-9A6 6 0 0 1 18 7.500a3.800 3.800 0 0 1-.5 7.500zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M7 15a4.500 4.500 0 0 1-.5-9A6 6 0 0 1 18 7.500a3.800 3.800 0 0 1-.5 7.500zM8 19v.010M12 21v.010M16 19v.010M12 18v.010"/></symbol>
+    <symbol id="i-storm" viewBox="0 0 24 24"><path d="M7 15a4.500 4.500 0 0 1-.5-9A6 6 0 0 1 18 7.500a3.800 3.800 0 0 1-.5 7.500zM13 13l-3 4h4l-3 4"/></symbol>
+    <symbol id="i-fog" viewBox="0 0 24 24"><path d="M7 13a4.500 4.500 0 0 1-.5-9A6 6 0 0 1 18 5.500a3.800 3.800 0 0 1-.5 7.500zM4 17h16M6 21h12"/></symbol>
+</svg>
+
+<div class="app" id="app">
+
+    <!-- NAVIGATION -->
+    <nav class="rail" aria-label="Hauptnavigation">
+        <div class="rail-items">
+            <a class="rail-item active" href="index.html" aria-current="page" title="Startseite"><svg class="ic"><use href="#i-home"/></svg><span>Start</span></a>
+            <a class="rail-item" href="Wochenplan/index.html" title="Wochenplan"><svg class="ic"><use href="#i-calendar"/></svg><span>Wochenplan</span></a>
+            <a class="rail-item" href="Fahrtenbuch/fahrtenbuch.html" title="Fahrtenbuch"><svg class="ic"><use href="#i-car"/></svg><span>Fahrtenbuch</span></a>
+            <a class="rail-item" href="telefonbuch.html" title="Telefonbuch"><svg class="ic"><use href="#i-contact"/></svg><span>Telefonbuch</span></a>
+            <a class="rail-item" href="Schaltanweisungen/sawindex.html" title="Schaltanweisungen"><svg class="ic"><use href="#i-zap"/></svg><span>Schaltanw.</span></a>
+            <a class="rail-item" href="x_dashboard.php" title="Fremdfirmen"><svg class="ic"><use href="#i-users"/></svg><span>Fremdfirmen</span></a>
+            <a class="rail-item" href="Lagerverwaltung/index.html" title="Lagerverwaltung"><svg class="ic"><use href="#i-package"/></svg><span>Lager</span></a>
+            <a class="rail-item" href="Formulare/formulare.html" title="Formulare"><svg class="ic"><use href="#i-file"/></svg><span>Formulare</span></a>
+            <a class="rail-item" href="verwaltung.html" id="nav-verwaltung" title="Benutzerverwaltung" hidden><svg class="ic"><use href="#i-shield"/></svg><span>Verwaltung</span></a>
+        </div>
+        <div class="rail-sep"></div>
+        <button class="rail-item" id="rail-more" type="button" title="Weitere Seiten und externe Links" aria-haspopup="true" aria-expanded="false" aria-controls="flyout">
+            <svg class="ic"><use href="#i-grid"/></svg><span>Mehr</span>
+        </button>
+    </nav>
+
+    <div class="flyout" id="flyout" hidden>
+        <div class="flyout-label">Weitere Seiten</div>
+        <a href="Lagerverwaltung/inventar.html"><svg class="ic"><use href="#i-package"/></svg> Inventar</a>
+        <a href="#schwarzes-brett"><svg class="ic"><use href="#i-megaphone"/></svg> Schwarzes Brett</a>
+        <a href="projektplaner.html" id="nav-projektplaner" hidden><svg class="ic"><use href="#i-calendar"/></svg> Projektplaner</a>
+        <a href="adminUebersicht.html" id="nav-admin-alt" hidden><svg class="ic"><use href="#i-shield"/></svg> Admin-Bereich</a>
+        <div class="flyout-label">Externe Links</div>
+        <a href="https://stromspitzen.dillinger.de/index.htm" target="_blank" rel="noopener"><svg class="ic"><use href="#i-zap"/></svg> Stromspitzen <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+        <a href="https://elv1.dillinger.de/filter.htm" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg> Filter Stahlwerk <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+        <a href="https://fiori.dillinger.de:8001/fiori" target="_blank" rel="noopener"><svg class="ic"><use href="#i-grid"/></svg> Fiori <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+        <a href="https://elv1.dillinger.de/plano/planoview.htm" target="_blank" rel="noopener"><svg class="ic"><use href="#i-calendar"/></svg> Planoview <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+        <a href="http://www1.dillinger.de/intranet/startseite/index.shtml" target="_blank" rel="noopener"><svg class="ic"><use href="#i-home"/></svg> Intranet <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+        <a href="http://www1.dillinger.de/intranet/dhcenter/sozialleistungen/speiseplan/index.shtml" target="_blank" rel="noopener"><svg class="ic"><use href="#i-utensils"/></svg> Speiseplan <svg class="ic ic-sm ext"><use href="#i-external"/></svg></a>
+    </div>
+
+    <!-- BENACHRICHTIGUNGEN -->
+    <section class="notif-panel" id="notif-panel" aria-labelledby="notif-title" hidden>
+        <div class="notif-head">
+            <h2 id="notif-title">Benachrichtigungen</h2>
+            <button class="btn btn-sm btn-ghost" id="notif-alle-gelesen" type="button" title="Alle Benachrichtigungen als gelesen markieren">
+                <svg class="ic ic-sm"><use href="#i-check"/></svg> Alle gelesen
+            </button>
+            <button class="icon-btn" id="notif-close" type="button" aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="notif-filter">
+            <div class="segmented" role="group" aria-label="Anzeige">
+                <button type="button" id="notif-filter-alle" aria-pressed="true">Alle</button>
+                <button type="button" id="notif-filter-ungelesen" aria-pressed="false">Ungelesen</button>
+            </div>
+        </div>
+        <div class="notif-list" id="notification-list"></div>
+        <div class="notif-foot">Neue Meldungen und Kommentare der letzten 14 Tage sowie Lager-Bestellungen.</div>
+    </section>
+
+    <!-- INHALT -->    <main class="content" id="content">
+        <div class="content-inner">
+
+            <!-- KOPFZEILE -->
+            <header class="pagehead">
+                <div class="pagehead-main">
+                    <h1 id="hero-gruss">Willkommen</h1>
+                    <p class="pagehead-date"><span id="clock-date"></span> · Kalenderwoche <strong id="clock-kw"></strong></p>
+                </div>
+                <div class="toolgroup">
+                    <div class="tool-clock" title="Uhrzeit" aria-hidden="true">
+                        <svg class="ic"><use href="#i-clock"/></svg>
+                        <span class="tool-clock-time"><span id="clock-time"></span><span class="sec" id="clock-sec"></span></span>
+                    </div>
+                    <span class="tool-sep"></span>
+                    <button class="icon-btn" id="theme-toggle" type="button" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">
+                        <svg class="ic"><use id="theme-icon" href="#i-moon"/></svg>
+                    </button>
+                    <button class="icon-btn" id="btn-notifications" type="button" title="Benachrichtigungen" aria-label="Benachrichtigungen" aria-haspopup="true" aria-expanded="false" aria-controls="notif-panel" hidden>
+                        <svg class="ic"><use href="#i-bell"/></svg>
+                        <span class="badge" id="notification-badge" aria-hidden="true" hidden></span>
+                    </button>
+                    <span class="tool-sep"></span>
+                    <button class="btn btn-primary" id="login-btn" type="button">
+                        <svg class="ic ic-sm"><use href="#i-login"/></svg> Anmelden
+                    </button>
+                    <button class="profile" id="user-profile" type="button" title="Abmelden" hidden>
+                        <span class="avatar" id="user-initials"></span>
+                        <span class="profile-text">
+                            <span class="profile-name" id="user-name"></span>
+                            <span class="profile-role" id="user-role"></span>
+                        </span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="layout">
+                <div class="col-main">
+
+                    <!-- SCHWARZES BRETT -->
+                    <section class="card" id="schwarzes-brett" aria-labelledby="brett-title">
+                        <div class="card-head">
+                            <h2 class="card-title" id="brett-title"><svg class="ic"><use href="#i-megaphone"/></svg> Schwarzes Brett</h2>
+                            <div class="brett-tools">
+                                <label class="search">
+                                    <span class="sr-only">Meldungen durchsuchen</span>
+                                    <svg class="ic ic-sm"><use href="#i-search"/></svg>
+                                    <input class="input" type="search" id="brett-search" placeholder="Meldungen durchsuchen …" autocomplete="off">
+                                </label>
+                                <label>
+                                    <span class="sr-only">Kategorie</span>
+                                    <select class="select" id="brett-kategorie"></select>
+                                </label>
+                                <div class="segmented" role="group" aria-label="Ansicht">
+                                    <button type="button" id="brett-view-aktuell" aria-pressed="true">Aktuell</button>
+                                    <button type="button" id="brett-view-archiv" aria-pressed="false">Archiv</button>
+                                </div>
+                                <button class="btn btn-primary" id="brett-neu" type="button">
+                                    <svg class="ic ic-sm"><use href="#i-plus"/></svg> Neue Meldung
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tiles" id="brett-tiles"></div>
+                            <p class="empty" id="brett-empty" hidden></p>
+                        </div>
+                        <div class="brett-foot">
+                            <span id="brett-count"></span>
+                            <span class="spacer"></span>
+                            <div class="pager" id="brett-pager" hidden>
+                                <button class="btn btn-sm" id="brett-prev" type="button" aria-label="Vorherige Seite"><svg class="ic ic-sm"><use href="#i-chevron-left"/></svg></button>
+                                <span class="page-info" id="brett-page-info"></span>
+                                <button class="btn btn-sm" id="brett-next" type="button" aria-label="Nächste Seite"><svg class="ic ic-sm"><use href="#i-chevron-right"/></svg></button>
+                            </div>
+                        </div>
+                    </section>
+
+<!-- TAGESPLAN -->
+                    <section class="card" id="card-tagesplan" aria-labelledby="tagesplan-title">
+                        <div class="card-head">
+                            <h2 class="card-title" id="tagesplan-title"><svg class="ic"><use href="#i-calendar"/></svg> <span id="tagesplan-titel">Tagesplan heute</span></h2>
+                            <span class="chip chip-accent" id="tagesplan-datum"></span>
+                            <span class="spacer"></span>
+                            <a class="card-link" href="Wochenplan/index.html">Zum Wochenplan <svg class="ic ic-sm"><use href="#i-chevron-right"/></svg></a>
+                        </div>
+                        <div class="kwinfo" id="kwinfo" hidden>
+                            <div class="kwinfo-label">KW-Info</div>
+                            <div class="rich" id="kwinfo-text"></div>
+                        </div>
+                        <p class="plan-hint" id="tagesplan-leer" hidden></p>
+                        <div class="shifts">
+                            <div class="shift" data-shift="frueh">
+                                <div class="shift-head"><svg class="ic ic-sm"><use href="#i-sunrise"/></svg> Frühschicht</div>
+                                <div class="shift-body rich" id="tp-frueh"><p class="empty">Lade Daten …</p></div>
+                            </div>
+                            <div class="shift" data-shift="mittag">
+                                <div class="shift-head"><svg class="ic ic-sm"><use href="#i-sun"/></svg> Mittagsschicht</div>
+                                <div class="shift-body rich" id="tp-mittag"><p class="empty">Lade Daten …</p></div>
+                            </div>
+                            <div class="shift" data-shift="nacht">
+                                <div class="shift-head"><svg class="ic ic-sm"><use href="#i-moon"/></svg> Nachtschicht</div>
+                                <div class="shift-body rich" id="tp-nacht"><p class="empty">Lade Daten …</p></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="col-side" aria-label="Seitenspalte">
+
+                    <!-- TELEFONNUMMERN -->
+                    <section class="card" id="card-telefon" aria-labelledby="phone-title">
+                        <div class="card-head">
+                            <h2 class="card-title" id="phone-title"><svg class="ic"><use href="#i-phone"/></svg> Aktuelle Tel.-Nummern</h2>
+                        </div>
+                        <ul class="phone-list" id="phone-list"></ul>
+                    </section>
+
+                    <!-- WETTER -->
+                    <section class="card" id="card-wetter" aria-labelledby="weather-title">
+                        <div class="card-head">
+                            <h2 class="card-title" id="weather-title"><svg class="ic"><use href="#i-cloud-sun"/></svg> Wetter Dillingen</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="weather-now">
+                                <svg class="ic weather-icon"><use id="weather-icon" href="#i-cloud"/></svg>
+                                <div>
+                                    <div class="weather-temp" id="weather-temp">–</div>
+                                    <div class="weather-desc" id="weather-desc">Lade Wetter …</div>
+                                </div>
+                            </div>
+                            <div class="weather-stats">
+                                <div><div class="weather-stat-label">Min / Max</div><div class="weather-stat-value" id="weather-range">–</div></div>
+                                <div><div class="weather-stat-label">Wind</div><div class="weather-stat-value" id="weather-wind">–</div></div>
+                                <div><div class="weather-stat-label">Feuchte</div><div class="weather-stat-value" id="weather-humidity">–</div></div>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+
+<p class="page-foot" id="page-foot"></p>
+        </div>
+    </main>
+</div>
+
+<!-- ANMELDEN -->
+<dialog id="dlg-login" class="dlg-sm" aria-labelledby="dlg-login-title">
+    <form method="dialog" id="login-form" novalidate>
+        <div class="dlg-head">
+            <div style="flex:1">
+                <h2 id="dlg-login-title">Anmelden</h2>
+                <p class="dlg-sub">Werksausweis am Lesegerät scannen</p>
+            </div>
+            <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="dlg-body">
+            <label class="field">
+                <span class="field-label">Ausweis-Code</span>
+                <input class="input" type="password" id="login-rfid" autocomplete="off" placeholder="Warte auf Eingabe …">
+            </label>
+            <p class="form-error" id="login-error" hidden></p>
+        </div>
+        <div class="dlg-foot">
+            <button class="btn" type="button" data-close>Abbrechen</button>
+            <button class="btn btn-primary" type="submit" id="login-submit">Anmelden</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- BESTÄTIGUNG -->
+<dialog id="dlg-confirm" class="dlg-sm" aria-labelledby="confirm-title">
+    <div class="dlg-head"><h2 id="confirm-title"></h2></div>
+    <div class="dlg-body"><p id="confirm-text"></p></div>
+    <div class="dlg-foot">
+        <button class="btn" type="button" id="confirm-cancel">Abbrechen</button>
+        <button class="btn btn-primary" type="button" id="confirm-ok"></button>
+    </div>
+</dialog>
+
+<!-- TELEFONNUMMER ZUWEISEN -->
+<dialog id="dlg-phone" class="dlg-sm" aria-labelledby="phone-dlg-title">
+    <form method="dialog" id="phone-form" novalidate>
+        <div class="dlg-head">
+            <div style="flex:1">
+                <h2 id="phone-dlg-title">Nummer zuweisen</h2>
+                <p class="dlg-sub" id="phone-dlg-sub"></p>
+            </div>
+            <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="dlg-body">
+            <label class="field">
+                <span class="field-label">Ausweis scannen</span>
+                <input class="input" type="password" id="phone-rfid" autocomplete="off" placeholder="Ausweis auflegen …">
+            </label>
+            <label class="field">
+                <span class="field-label">oder Name eingeben</span>
+                <input class="input" type="text" id="phone-name" maxlength="80" autocomplete="off">
+                <span class="field-hint">Leer lassen, um die Zuweisung zu entfernen.</span>
+            </label>
+            <p class="form-error" id="phone-error" hidden></p>
+        </div>
+        <div class="dlg-foot">
+            <button class="btn btn-ghost" type="button" id="phone-entfernen" hidden><svg class="ic ic-sm"><use href="#i-x"/></svg> Namen entfernen</button>
+            <span class="spacer"></span>
+            <button class="btn" type="button" data-close>Abbrechen</button>
+            <button class="btn btn-primary" type="submit">Speichern</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- MELDUNG ANZEIGEN -->
+<dialog id="dlg-meldung" class="dlg-lg" aria-labelledby="meldung-titel">
+    <div class="dlg-head">
+        <div style="flex:1; min-width:0">
+            <div id="meldung-chips" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:6px"></div>
+            <h2 id="meldung-titel"></h2>
+            <div class="msg-meta" id="meldung-meta"></div>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="dlg-body" id="meldung-body">
+        <p class="msg-note" id="meldung-note" hidden></p>
+        <div class="msg-body" id="meldung-inhalt"></div>
+        <div class="msg-actions" id="meldung-actions" hidden></div>
+
+        <section class="comments" aria-labelledby="kommentare-title">
+            <h3 id="kommentare-title">Kommentare</h3>
+            <div id="kommentar-liste"></div>
+        </section>
+    </div>
+    <!-- Eingabe bleibt fest unten stehen; nur Meldung und Kommentare darüber scrollen -->
+    <form class="comment-form comment-dock" id="kommentar-form" novalidate>
+        <div class="field" id="kommentar-autor"></div>
+        <div class="comment-eingabe">
+            <label class="sr-only" for="kommentar-text">Kommentar</label>
+            <textarea class="textarea" id="kommentar-text" maxlength="2000" rows="2" placeholder="Kommentar schreiben …"></textarea>
+            <button class="btn btn-primary" type="submit" id="kommentar-submit">Kommentieren</button>
+        </div>
+        <p class="form-error" id="kommentar-error" hidden></p>
+    </form>
+</dialog>
+
+<!-- MELDUNG ERSTELLEN / BEARBEITEN -->
+<dialog id="dlg-editor" class="dlg-lg" aria-labelledby="editor-title">
+    <form id="editor-form" novalidate>
+        <div class="dlg-head">
+            <h2 id="editor-title">Neue Meldung</h2>
+            <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="dlg-body">
+            <label class="field">
+                <span class="field-label"><span>Überschrift <span class="req">*</span></span></span>
+                <input class="input" type="text" id="editor-titel" maxlength="120" autocomplete="off" placeholder="Worum geht es?">
+            </label>
+            <label class="field">
+                <span class="field-label"><span>Text <span class="req">*</span></span> <span class="muted" id="editor-zaehler" style="font-weight:400"></span></span>
+                <textarea class="textarea" id="editor-inhalt" maxlength="5000" rows="7" placeholder="Was sollen die Kollegen wissen?"></textarea>
+            </label>
+            <div class="field-row">
+                <label class="field">
+                    <span class="field-label">Kategorie</span>
+                    <select class="select" id="editor-kategorie"></select>
+                </label>
+                <label class="field">
+                    <span class="field-label">Gültig bis (optional)</span>
+                    <input class="input" type="date" id="editor-gueltig">
+                    <span class="field-hint">Danach wandert die Meldung automatisch ins Archiv.</span>
+                </label>
+            </div>
+            <label class="checkbox field" id="editor-pin-wrap" hidden>
+                <input type="checkbox" id="editor-pin"> Meldung oben anpinnen
+            </label>
+            <div class="field" id="editor-autor"></div>
+            <p class="form-error" id="editor-error" hidden></p>
+        </div>
+        <div class="dlg-foot">
+            <button class="btn" type="button" data-close>Abbrechen</button>
+            <button class="btn btn-primary" type="submit" id="editor-submit">Veröffentlichen</button>
+        </div>
+    </form>
+</dialog>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script src="Startseite/index.js?v=12"></script>
+</body>
+</html>

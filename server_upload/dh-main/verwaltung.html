@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benutzerverwaltung EM-HS</title>
+<link rel="icon" href="logo.png" type="image/png">
+<script>
+    // Gleiche Theme-Einstellung wie Startseite und Wochenplan (localStorage.theme); Standard ist hell
+    if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
+</script>
+<link rel="stylesheet" href="Startseite/startseite.css?v=12">
+<link rel="stylesheet" href="verwaltung.css?v=4">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M9.5 17h5M3 12h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6l-5 4H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+    <symbol id="i-contact" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8 17a4 4 0 0 1 8 0"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.500 6.500 0 0 1 3.5 5.8"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M5 2v7a2 2 0 0 0 4 0V2M7 11v11M17 2c-1.7 1-3 3-3 6v5h3zM17 13v9"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19zM12 10v4M12 17v.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0M15 10h3M15 14h3"/></symbol>
+</svg>
+
+<div class="app" id="app">
+
+    <!-- NAVIGATION -->
+    <nav class="rail" aria-label="Hauptnavigation">
+        <div class="rail-items">
+            <a class="rail-item" href="index.html" title="Startseite"><svg class="ic"><use href="#i-home"/></svg><span>Start</span></a>
+            <a class="rail-item" href="Wochenplan/index.html" title="Wochenplan"><svg class="ic"><use href="#i-calendar"/></svg><span>Wochenplan</span></a>
+            <a class="rail-item" href="Fahrtenbuch/fahrtenbuch.html" title="Fahrtenbuch"><svg class="ic"><use href="#i-car"/></svg><span>Fahrtenbuch</span></a>
+            <a class="rail-item" href="telefonbuch.html" title="Telefonbuch"><svg class="ic"><use href="#i-contact"/></svg><span>Telefonbuch</span></a>
+            <a class="rail-item" href="Schaltanweisungen/sawindex.html" title="Schaltanweisungen"><svg class="ic"><use href="#i-zap"/></svg><span>Schaltanw.</span></a>
+            <a class="rail-item" href="x_dashboard.php" title="Fremdfirmen"><svg class="ic"><use href="#i-users"/></svg><span>Fremdfirmen</span></a>
+            <a class="rail-item" href="Lagerverwaltung/index.html" title="Lagerverwaltung"><svg class="ic"><use href="#i-package"/></svg><span>Lager</span></a>
+            <a class="rail-item" href="Formulare/formulare.html" title="Formulare"><svg class="ic"><use href="#i-file"/></svg><span>Formulare</span></a>
+            <a class="rail-item active" href="verwaltung.html" aria-current="page" title="Benutzerverwaltung"><svg class="ic"><use href="#i-shield"/></svg><span>Verwaltung</span></a>
+        </div>
+    </nav>
+
+    <main class="content" id="content">
+        <div class="content-inner">
+
+            <div class="utilbar">
+                <span class="utilbar-title">EM-HS · Verwaltung</span>
+                <span class="spacer"></span>
+                <div class="toolgroup">
+                    <button class="icon-btn" id="theme-toggle" type="button" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">
+                        <svg class="ic"><use id="theme-icon" href="#i-moon"/></svg>
+                    </button>
+                    <span class="tool-sep"></span>
+                    <button class="btn btn-primary" id="login-btn" type="button">
+                        <svg class="ic ic-sm"><use href="#i-login"/></svg> Anmelden
+                    </button>
+                    <button class="profile" id="user-profile" type="button" title="Abmelden" hidden>
+                        <span class="avatar" id="user-initials"></span>
+                        <span class="profile-text">
+                            <span class="profile-name" id="user-name"></span>
+                            <span class="profile-role" id="user-role"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+<!-- ZUGANG -->
+                <section class="card gate" id="gate">
+                    <div class="gate-icon"><svg class="ic ic-lg"><use href="#i-shield"/></svg></div>
+                    <h2 id="gate-title">Anmeldung erforderlich</h2>
+                    <p id="gate-text">Die Benutzerverwaltung ist Administratoren vorbehalten. Bitte mit dem Werksausweis anmelden.</p>
+                    <button class="btn btn-primary" id="gate-login" type="button"><svg class="ic ic-sm"><use href="#i-login"/></svg> Anmelden</button>
+                </section>
+
+                <!-- VERWALTUNG -->
+                <div id="admin-area" class="content-inner" hidden>
+                    <div class="page-head">
+                        <div>
+                            <h2>Benutzerverwaltung</h2>
+                            <p>Benutzer, Ausweise und Rechte für alle Module an einer Stelle.</p>
+                        </div>
+                        <span class="spacer"></span>
+                        <button class="btn btn-primary" id="benutzer-neu" type="button"><svg class="ic ic-sm"><use href="#i-plus"/></svg> Neuer Benutzer</button>
+                    </div>
+
+
+                    <div class="tabs" role="tablist" aria-label="Bereiche">
+                        <button class="tab" type="button" role="tab" id="tab-btn-benutzer" data-tab="benutzer" aria-selected="true"><svg class="ic ic-sm"><use href="#i-users"/></svg> Benutzer</button>
+                        <button class="tab" type="button" role="tab" id="tab-btn-protokoll" data-tab="protokoll" aria-selected="false"><svg class="ic ic-sm"><use href="#i-history"/></svg> Änderungsprotokoll</button>
+                        <button class="tab" type="button" role="tab" id="tab-btn-import" data-tab="import" aria-selected="false"><svg class="ic ic-sm"><use href="#i-upload"/></svg> Datenübernahme</button>
+                    </div>
+
+                    <!-- BENUTZER -->
+                    <section class="card" id="tab-benutzer" role="tabpanel" aria-labelledby="tab-btn-benutzer">
+                        <div class="toolbar">
+                            <label class="search">
+                                <span class="sr-only">Benutzer suchen</span>
+                                <svg class="ic ic-sm"><use href="#i-search"/></svg>
+                                <input class="input" type="search" id="filter-suche" placeholder="Name suchen …" autocomplete="off">
+                            </label>
+                            <label><span class="sr-only">Schicht</span><select class="select" id="filter-schicht"></select></label>
+                            <label><span class="sr-only">Rolle oder Recht</span><select class="select" id="filter-recht"></select></label>
+                            <span class="spacer"></span>
+                            <span class="count" id="benutzer-count"></span>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="data">
+                                <thead>
+                                    <tr>
+                                        <th><button type="button" data-sort="name">Name <span class="sort" id="sort-name"></span></button></th>
+                                        <th><button type="button" data-sort="schicht">Schicht <span class="sort" id="sort-schicht"></span></button></th>
+                                        <th>Ausweise</th>
+                                        <th>Rollen</th>
+                                        <th>Rechte</th>
+                                        <th><span class="sr-only">Aktionen</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="benutzer-tbody"></tbody>
+                            </table>
+                        </div>
+                        <p class="empty" id="benutzer-empty" hidden>Keine Benutzer zu dieser Auswahl gefunden.</p>
+                    </section>
+
+                    <!-- PROTOKOLL -->
+                    <section class="card" id="tab-protokoll" role="tabpanel" aria-labelledby="tab-btn-protokoll" hidden>
+                        <div class="table-wrap">
+                            <table class="data">
+                                <thead><tr><th>Zeitpunkt</th><th>Aktion</th><th>Benutzer</th><th>Änderung</th><th>Durch</th></tr></thead>
+                                <tbody id="protokoll-tbody"></tbody>
+                            </table>
+                        </div>
+                        <p class="empty" id="protokoll-empty" hidden>Noch keine Änderungen protokolliert. Ab jetzt wird hier jede Änderung an Benutzern festgehalten.</p>
+                    </section>
+
+                    <!-- DATENÜBERNAHME -->
+                    <section class="card" id="tab-import" role="tabpanel" aria-labelledby="tab-btn-import" hidden>
+                        <div class="card-body">
+                            <p class="lead">Übernimmt die Daten der früheren JSON-Version einmalig in die Datenbank. Die Dateien selbst werden nicht verändert, und was bereits in der Datenbank steht, bleibt erhalten. Die Übernahme kann gefahrlos wiederholt werden – bereits übernommene Einträge werden übersprungen.</p>
+                            <div class="import-grid">
+                                <div class="import-item">
+                                    <h4>wochenplan.json</h4>
+                                    <p>Alle Wochen mit Schichteinträgen und KW-Infos.</p>
+                                    <input type="file" id="import-wochenplan" accept=".json,application/json">
+                                </div>
+                                <div class="import-item">
+                                    <h4>Quickbearbeitung.json</h4>
+                                    <p>Quick-Texte des Wochenplans.</p>
+                                    <input type="file" id="import-quick" accept=".json,application/json">
+                                </div>
+                                <div class="import-item">
+                                    <h4>schwarzesbrett.json</h4>
+                                    <p>Der Text des alten Schwarzen Bretts wird zu einer Meldung.</p>
+                                    <input type="file" id="import-brett" accept=".json,application/json">
+                                </div>
+                                <div class="import-item">
+                                    <h4>telefonbuch.json</h4>
+                                    <p>Telefonzuweisungen der Startseite, nur für noch freie Nummern.</p>
+                                    <input type="file" id="import-telefon" accept=".json,application/json">
+                                </div>
+                            </div>
+                            <label class="checkbox field">
+                                <input type="checkbox" id="import-ueberschreiben"> Wochenplan-Einträge überschreiben, die es in der Datenbank schon gibt
+                            </label>
+                            <div class="import-result" id="import-result" hidden></div>
+                            <div style="margin-top:16px">
+                                <button class="btn btn-primary" id="import-start" type="button"><svg class="ic ic-sm"><use href="#i-upload"/></svg> Daten übernehmen</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+</div>
+
+<!-- ANMELDEN -->
+<dialog id="dlg-login" class="dlg-sm" aria-labelledby="dlg-login-title">
+    <form id="login-form" novalidate>
+        <div class="dlg-head">
+            <div style="flex:1">
+                <h2 id="dlg-login-title">Anmelden</h2>
+                <p class="dlg-sub">Werksausweis am Lesegerät scannen</p>
+            </div>
+            <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="dlg-body">
+            <label class="field">
+                <span class="field-label">Ausweis-Code</span>
+                <input class="input" type="password" id="login-rfid" autocomplete="off" placeholder="Warte auf Eingabe …">
+            </label>
+            <p class="form-error" id="login-error" hidden></p>
+        </div>
+        <div class="dlg-foot">
+            <button class="btn" type="button" data-close>Abbrechen</button>
+            <button class="btn btn-primary" type="submit" id="login-submit">Anmelden</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- BESTÄTIGUNG -->
+<dialog id="dlg-confirm" class="dlg-sm" aria-labelledby="confirm-title">
+    <div class="dlg-head"><h2 id="confirm-title"></h2></div>
+    <div class="dlg-body"><p id="confirm-text"></p></div>
+    <div class="dlg-foot">
+        <button class="btn" type="button" id="confirm-cancel">Abbrechen</button>
+        <button class="btn btn-primary" type="button" id="confirm-ok"></button>
+    </div>
+</dialog>
+
+<!-- BENUTZER ANLEGEN / BEARBEITEN -->
+<dialog id="dlg-benutzer" class="dlg-lg" aria-labelledby="benutzer-title">
+    <form id="benutzer-form" novalidate>
+        <div class="dlg-head">
+            <h2 id="benutzer-title">Neuer Benutzer</h2>
+            <button class="icon-btn" type="button" data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="dlg-body">
+            <div class="form-section">
+                <div class="form-section-title">Stammdaten</div>
+                <div class="field-row">
+                    <label class="field">
+                        <span class="field-label"><span>Name <span class="req">*</span></span></span>
+                        <input class="input" type="text" id="benutzer-name" maxlength="100" autocomplete="off" placeholder="Vor- und Nachname">
+                    </label>
+                    <div class="field">
+                        <label class="field-label" for="benutzer-schicht"><span>Schicht <span class="req">*</span></span></label>
+                        <select class="select" id="benutzer-schicht"></select>
+                        <input class="input" type="text" id="benutzer-schicht-neu" maxlength="20" autocomplete="off" placeholder="Bezeichnung der neuen Schicht" style="margin-top:8px" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-section-head">
+                    <div class="form-section-title" id="ausweise-titel">Ausweise und Chips <span class="req" id="ausweise-pflicht">*</span></div>
+                    <span class="ausweis-zahl" id="ausweis-zahl"></span>
+                </div>
+                <ul class="ausweis-liste" id="ausweis-liste" aria-labelledby="ausweise-titel"></ul>
+                <p class="ausweis-leer" id="ausweis-leer" hidden>Noch kein Ausweis hinterlegt. Ohne Ausweis ist keine Anmeldung möglich.</p>
+                <div class="ausweis-neu">
+                    <label class="field">
+                        <span class="field-label">Ausweis oder Chip hinzufügen</span>
+                        <input class="input" type="password" id="ausweis-code" maxlength="64" autocomplete="new-password" placeholder="Am Lesegerät scannen …">
+                    </label>
+                    <label class="field">
+                        <span class="field-label">Bezeichnung</span>
+                        <input class="input" type="text" id="ausweis-bezeichnung" maxlength="40" list="ausweis-vorschlaege" autocomplete="off" placeholder="z. B. Schlüsselchip">
+                    </label>
+                    <button class="btn" type="button" id="ausweis-hinzufuegen"><svg class="ic ic-sm"><use href="#i-plus"/></svg> Hinzufügen</button>
+                </div>
+                <datalist id="ausweis-vorschlaege">
+                    <option value="Werksausweis"></option>
+                    <option value="Ersatzausweis"></option>
+                    <option value="Schlüsselchip"></option>
+                    <option value="Zusatzchip"></option>
+                </datalist>
+                <span class="field-hint ausweis-hinweis">Der Hauptausweis gilt in allen Modulen. Weitere Chips erkennen Startseite, Wochenplan und Benutzerverwaltung. Codes werden nie angezeigt, nur ihre letzten drei Zeichen. Änderungen gelten erst nach „Speichern“.</span>
+            </div>
+
+            <div class="form-section">
+                <div class="form-section-title">Rollen</div>
+                <div class="perm-grid" id="rollen-grid"></div>
+                <p class="form-note" id="admin-note" hidden>Administratoren haben in allen Modulen vollen Zugriff, unabhängig von den einzelnen Rechten unten.</p>
+            </div>
+
+            <div class="form-section">
+                <div class="form-section-title">Rechte je Modul</div>
+                <div id="rechte-gruppen"></div>
+            </div>
+
+            <p class="form-error" id="benutzer-error" hidden></p>
+        </div>
+        <div class="dlg-foot">
+            <button class="btn btn-ghost" type="button" id="benutzer-loeschen" hidden><svg class="ic ic-sm"><use href="#i-trash"/></svg> Benutzer löschen</button>
+            <span class="spacer"></span>
+            <button class="btn" type="button" data-close>Abbrechen</button>
+            <button class="btn btn-primary" type="submit" id="benutzer-submit">Speichern</button>
+        </div>
+    </form>
+</dialog>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script src="verwaltung.js?v=5"></script>
+</body>
+</html>
