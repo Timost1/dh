@@ -1,1 +1,206 @@
-[]
+[
+    {
+        "id": "1761633531_0324b53d",
+        "name": "UTG",
+        "ansprechpartner": "H.Andre Bruccoleri",
+        "rufnummer": "01722645487",
+        "email": "info@utg-deutschland.de",
+        "adresse": "Güterbahnhofstraße 15a, 66740 Saarlouis",
+        "bemerkung": "",
+        "erstelltAm": "2025-10-28T07:38:51+01:00"
+    },
+    {
+        "id": "1761809038_625777b5",
+        "name": "Amprion",
+        "ansprechpartner": "H.Maas",
+        "rufnummer": "015222547180",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-10-30T08:23:58+01:00"
+    },
+    {
+        "id": "1762154382_bf17aa92",
+        "name": "Iqony",
+        "ansprechpartner": "H.Rothner",
+        "rufnummer": "015155949503",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-11-03T08:19:42+01:00"
+    },
+    {
+        "id": "1762777346_b51b3ac6",
+        "name": "Kruchten Bau GmbH",
+        "ansprechpartner": "H.Kowalski",
+        "rufnummer": "01707373162",
+        "email": "m.kowalski@kruchten-bau.de",
+        "adresse": "        ",
+        "bemerkung": "",
+        "erstelltAm": "2025-11-10T13:22:26+01:00",
+        "aktualisiertAm": "2025-11-10T13:26:16+01:00"
+    },
+    {
+        "id": "1763541448_92f8c1b2",
+        "name": "Fa. KISTERS",
+        "ansprechpartner": "H.Müller",
+        "rufnummer": "0044193602237",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-11-19T09:37:28+01:00"
+    },
+    {
+        "id": "1764139745_7c3c9136",
+        "name": "Amprion",
+        "ansprechpartner": "Fr. Groß",
+        "rufnummer": "01741729619",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-11-26T07:49:05+01:00"
+    },
+    {
+        "id": "1765273043_c9afcf55",
+        "name": "Wisag",
+        "ansprechpartner": "Huwij Thomas",
+        "rufnummer": "01736340804",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-12-09T10:37:23+01:00"
+    },
+    {
+        "id": "1765273119_3d14bced",
+        "name": "Fa. Pfeifer",
+        "ansprechpartner": "Fabrice Raia",
+        "rufnummer": "01605309663",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2025-12-09T10:38:39+01:00"
+    },
+    {
+        "id": "1767611827_142d7b64",
+        "name": "Team Elektrotechnik (TET)",
+        "ansprechpartner": "H. Mond",
+        "rufnummer": "017684077513",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-05T12:17:07+01:00",
+        "aktualisiertAm": "2026-01-05T12:22:25+01:00"
+    },
+    {
+        "id": "1767616738_3d08b827",
+        "name": "Fa. Siemens",
+        "ansprechpartner": "H. Wortmann",
+        "rufnummer": "01736155618",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-05T13:38:58+01:00"
+    },
+    {
+        "id": "1767686552_d078547d",
+        "name": "Amprion",
+        "ansprechpartner": "H.Breiling",
+        "rufnummer": "015222547180",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-06T09:02:32+01:00"
+    },
+    {
+        "id": "1769062802_6b50541b",
+        "name": "Graber",
+        "ansprechpartner": "H.Kuhn",
+        "rufnummer": "01622475360",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-22T07:20:02+01:00"
+    },
+    {
+        "id": "1769149699_1e3f9ae5",
+        "name": "EIFFAGE",
+        "ansprechpartner": "H. Hamm",
+        "rufnummer": "01624276983",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-23T07:28:19+01:00",
+        "aktualisiertAm": "2026-03-23T08:42:27+01:00"
+    },
+    {
+        "id": "1769493442_8cfbee45",
+        "name": "Graber",
+        "ansprechpartner": "H.Mack Joachim",
+        "rufnummer": "01604478286",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-01-27T06:57:22+01:00"
+    },
+    {
+        "id": "1774512467_0b1b2945",
+        "name": "Clas Queck",
+        "ansprechpartner": "H. Arbeiter",
+        "rufnummer": "01621621397522",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "Hochbauarbeiten",
+        "erstelltAm": "2026-03-26T09:07:47+01:00"
+    },
+    {
+        "id": "1775710314_7e981032",
+        "name": "Graber",
+        "ansprechpartner": "Günter Einspenner",
+        "rufnummer": "0162236885",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-04-09T06:51:54+02:00"
+    },
+    {
+        "id": "1776229631_00463388",
+        "name": "Natus",
+        "ansprechpartner": "H. Jens Bettche",
+        "rufnummer": "016096310135",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-04-15T07:07:11+02:00"
+    },
+    {
+        "id": "1779781230_a5b7be7c",
+        "name": "Fa.Meiers",
+        "ansprechpartner": "Herr Caico",
+        "rufnummer": "0152-22555025",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-05-26T09:40:30+02:00",
+        "aktualisiertAm": "2026-08-27T07:59:56+02:00"
+    },
+    {
+        "id": "1782969886_9c1e2e53",
+        "name": "VSE",
+        "ansprechpartner": "Herr Pryzibilla",
+        "rufnummer": "0152203357189",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-07-02T07:24:46+02:00"
+    },
+    {
+        "id": "1785818562_c79bf24d",
+        "name": "Görgen",
+        "ansprechpartner": "H.Hessedenz",
+        "rufnummer": "015561266849",
+        "email": "",
+        "adresse": "",
+        "bemerkung": "",
+        "erstelltAm": "2026-08-04T06:42:42+02:00"
+    }
+]

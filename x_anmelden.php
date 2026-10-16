@@ -506,7 +506,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="arbeiten" class="required-field">Arbeiten</label>
-                                <input type="text" id="arbeiten" name="arbeiten" required placeholder="Art der Arbeiten">
+                                <input type="text" id="arbeiten" name="arbeiten" placeholder="Art der Arbeiten">
                             </div>
                             <div class="form-group full-width">
                                 <label for="arbeitsbereich" class="required-field">Arbeitsbereich</label>

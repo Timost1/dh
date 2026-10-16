@@ -512,46 +512,6 @@ try {
         exit;
     }
 
-    // NEU: Textbaustein speichern
-    if ($action === 'save_textbaustein') {
-        while (ob_get_level()) ob_end_clean();
-        
-        $id = isset($input['id']) ? $input['id'] : '';
-        $inhalt = isset($input['inhalt']) ? trim($input['inhalt']) : '';
-        
-        if (empty($inhalt)) {
-             echo json_encode(['success' => false, 'error' => 'Inhalt darf nicht leer sein']); exit;
-        }
-
-        try {
-            if ($id === 0 || $id === '0' || strpos((string)$id, 'temp_') !== false || empty($id)) {
-                $pdo->prepare("INSERT INTO textbausteine (inhalt) VALUES (?)")->execute([$inhalt]);
-            } else {
-                $pdo->prepare("UPDATE textbausteine SET inhalt = ? WHERE id = ?")->execute([$inhalt, $id]);
-            }
-            echo json_encode(['success' => true]);
-        } catch(Exception $e) {
-            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
-        }
-        exit;
-    }
-
-    // NEU: Textbaustein löschen
-    if ($action === 'delete_textbaustein') {
-        while (ob_get_level()) ob_end_clean();
-        
-        $id = isset($input['id']) ? $input['id'] : '';
-        try {
-            if (!empty($id)) {
-                $pdo->prepare("DELETE FROM textbausteine WHERE id = ?")->execute([$id]);
-            }
-            echo json_encode(['success' => true]);
-        } catch(Exception $e) {
-            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
-        }
-        exit;
-    }
-
     // ------------------------------------------------------------------
     // INITIALISIERUNG & TABELLEN
     // ------------------------------------------------------------------

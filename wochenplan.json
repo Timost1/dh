@@ -2747,15 +2747,15 @@
       "1": {
         "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Theorie\nSchicht C+F, 08:00-12:00 Uhr",
         "mittag": "Kontrolle Außenanlagen",
-        "nacht": ""
+        "nacht": "**Zentrale 1:**\nEnde Nachtschicht:\nParkplatz unter Kohleband komplett absperren. \n(zwischen Kondensatbehälter und Zugang PIH Werkstatt)"
       },
       "2": {
-        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Praxis\nSchicht C+F, 08:00-12:00 Uhr\n\n**Motorenhalle: 7:00Uhr**\nAufladen 5kV Motor Nachmühle\nTransport nach ELW.",
+        "frueh": "**Mittelwerk:** \nSchaltberechtigung in MS Anlagen Praxis\nSchicht C+F, 08:00-12:00 Uhr\n\n**Motorenhalle: 12:00Uhr**\nAufladen 5kV Motor Nachmühle\nTransport nach ELW.",
         "mittag": "",
-        "nacht": ""
+        "nacht": "**Zentrale 1:**\nEnde Nachtschicht:\nParkplatz unter Kohleband komplett absperren. \n(zwischen Kondensatbehälter und Zugang PIH Werkstatt)"
       },
       "3": {
-        "frueh": "**ZKS:**\n#Revision EM-HS\n Kühlwasserpumpe 1\n EM-HS DH Safe (133465)\n\n\n**ZKS:**\n NOT-AUS Tests NH3-Verdichter\n 1MA EM-HS vor Ort\n\n\n",
+        "frueh": "**Parkplatz Zentrale 1 Bereich Toilette**\nfür Fahrzeuge und Personen \ngesperrt bis Ende Frühschicht.\n\n**ZKS:**\n#Revision EM-HS\n Kühlwasserpumpe 1\n EM-HS DH Safe (133465)\n\n**Holzhof:**\n2 Paletten Kanthölzer abholen\nu. nach Mittelwerk 110kV Anlage bringen.\n(für Trafowechsel DH Süd)\n\n**KMA:**\n-Mühlenmotor 2 und \n Mühlenventilator 2 nach  \n Absprache Betrieb freischalten\n\n\n**ZKS:**\n NOT-AUS Tests NH3-Verdichter\n 1MA EM-HS vor Ort\n\n\n",
         "mittag": "",
         "nacht": ""
       },
@@ -2765,12 +2765,12 @@
         "nacht": ""
       },
       "5": {
-        "frueh": "Zentrale 1:\nReinigen/Kontrolle der Airstream Systeme",
+        "frueh": "**Zentrale 1:**\nReinigen/Kontrolle der Airstream Systeme",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "6": {
-        "frueh": "**Gebläsehaus / T3:**\nKontrolle Filtermatten und\nKohlen",
+        "frueh": "**Gebläsehaus / T3:**\nKontrolle Filtermatten und\nKohlen\n\n**E-Haus Ost:** 7:00Uhr-8:00Uhr\n-Halde Trafo 2 800kVA\n Freischaltung nur 400V für\n Firma WISAG\n 400V Anschlußarbeiten für\n Betonwerk\n WISAG meldet sich im MIW an!",
         "mittag": "",
         "nacht": ""
       },
@@ -2778,22 +2778,22 @@
     },
     "43": {
       "0": {
-        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**Mittelwerk:**\n#Inbetriebnahme Trafo 1 10MVA und Außerbetriebnahme Trafo 2 12,5MVA\n(Trafotausch DH Süd)\n\n**ZKS**:\nnach Anforderung:\n#SBA2 Außerbetriebnahme für PIH\n(Umbau Steuerkabine, 130135)",
+        "frueh": "**Trafo DH Süd:**\nVorarbeiten Trafotausch\nVSE / Fa. Meiers, 07:00-16:00Uhr\n(Raß/Dörr)\n\n**Mittelwerk:**\n#Inbetriebnahme Trafo 1 10MVA und Außerbetriebnahme Trafo 2 12,5MVA\n(Trafotausch DH Süd)\n\n**ZKS**:\nnach Anforderung:\n#SBA2 Außerbetriebnahme für PIH\n(Umbau Steuerkabine, 130135)\n\n**ZKS/Kohlevorbereitung:**\n#Revision EM-HS\n Trafo 7 1600kVA\n EM-HS DH Safe (133785)\n ZKS Ansprechpartner (3052/3034)\n ",
         "mittag": "",
         "nacht": ""
       },
       "1": {
-        "frueh": "**Trafo DH Süd:**\nTrafotausch 07:00Uhr bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers,\n(Raß/Dörr)\n\n\n",
+        "frueh": "**Trafo DH Süd:**\nTrafotausch 07:00Uhr bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers,\n(Raß/Dörr)\n\n**ZKS/Kohlevorbereitung:**\n#Revision EM-HS\n Trafo 8 1600kVA\n EM-HS DH Safe (133786) \n ZKS Ansprechpartner (3052/3034)\n\n",
         "mittag": "Kontrolle Außenanlagen",
         "nacht": ""
       },
       "2": {
-        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n**Tor 4 informieren:**\nAnkunft Zählerschrank \nfür Fa. Amprion\n\n**Zentrale 2/HO5:** \n#Revision EM-HS\n Pressluftverdichter 05\n EM-HS DH Safe (133526)\n\n\n\n",
+        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n**Tor 4 informieren:**\n-Ankunft Zählerschrank \n Fa. Amprion, Begleitung zur\n 220kV Anlage\n\n**Zentrale 2/HO5:** \n#Revision EM-HS\n Pressluftverdichter 05\n EM-HS DH Safe (133526)\n\n\n\n",
         "mittag": "",
         "nacht": ""
       },
       "3": {
-        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n\n",
+        "frueh": "**Trafo DH Süd:**\nTrafotausch bis \neinschließlich 23.10. ca. 14:00\nVSE / Fa. Meiers, \n(Raß/Dörr)\n\n**HO4 Stillstand:**\n Freischaltungen nach \n Anforderung Betrieb\n\n**ZKS/Kohlevorbereitung:**\n#Revision EM-HS\n Trafo 6 1600kVA\n EM-HS DH Safe (133787)\n ZKS Ansprechpartner (3052/3034)\n\n\n\n\n\n",
         "mittag": "",
         "nacht": "Zentrale 1:\nParkplatz unter Kohleband\nabsperren. "
       },

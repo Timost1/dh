@@ -383,5 +383,257 @@
     "details": "",
     "timestamp": "2025-10-14T09:51:13.769Z",
     "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Steinschlag Frontscheibe Fahrerseite.",
+    "timestamp": "2025-10-31T12:55:57.481Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Wartung seit ca.200km überfällig",
+    "timestamp": "2025-11-06T20:29:32.481Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Heckklappe defekt (lässt sich nicht mehr öffnen da der Knopf kaputt ist)",
+    "timestamp": "2025-11-10T12:56:12.231Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Motor mehrfach in Notlaufprogramm gegangen. KFZ Werkstatt hat eine Steckverbindung erneuert, jedoch soll beim nächsten aufleuchten der Motorkontrollleuchte der LKW direkt wieder in die Werkstatt gebracht werden zum auslesen.\nWoll",
+    "timestamp": "2025-11-12T12:17:22.670Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2025-11-13T08:46:28.581Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Kofferaumklappe defekt ist betstellt in Werkstatt\nTanken nur mitr seperatem Schlüssel möglich",
+    "timestamp": "2025-11-14T13:18:59.764Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "not_ok",
+    "details": "Öl-Service fällig",
+    "timestamp": "2025-11-27T13:53:42.733Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Rückfahrlicht Beifahrerseite defekt. Fahrerseite funktioniert. Auto soll am 05.01.2026 zur Werkstatt gebracht werden!",
+    "timestamp": "2025-12-19T12:43:49.022Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-01-12T10:53:19.736Z",
+    "user": "933"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "not_ok",
+    "details": "Scheinwerferlicht links defekt",
+    "timestamp": "2026-01-13T20:57:40.087Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Geräusche vom Lenkrad beim Lenken, immer am gleichen Punkt des Lenkeinschlags",
+    "timestamp": "2026-01-19T01:44:12.610Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Geräusche vom Lenkrad beim Lenken, immer am gleichen Punkt des Lenkeinschlags\nAbblendlicht vorne rechts defekt! Bitte wechseln lassen",
+    "timestamp": "2026-02-20T00:04:22.258Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Geräusche vom Lenkrad beim Lenken, immer am gleichen Punkt des Lenkeinschlags\nAbblendlicht vorne rechts defekt! Bitte wechseln lassen",
+    "timestamp": "2026-02-20T00:04:32.364Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Geräusche vom Lenkrad beim Lenken, immer am gleichen Punkt des Lenkeinschlags\nAbblendlicht vorne rechts defekt! Bitte wechseln lassen",
+    "timestamp": "2026-02-20T00:04:32.367Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Motor mehrfach in Notlaufprogramm gegangen. KFZ Werkstatt hat eine Steckverbindung erneuert, jedoch soll beim nächsten aufleuchten der Motorkontrollleuchte der LKW direkt wieder in die Werkstatt gebracht werden zum auslesen.\nWoll\nTürgriff Beifahrerseite defekt. Tür lässt sich von aussen nicht mehr öffnen. - Pistorius",
+    "timestamp": "2026-02-20T10:30:46.108Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Motor mehrfach in Notlaufprogramm gegangen. KFZ Werkstatt hat eine Steckverbindung erneuert, jedoch soll beim nächsten aufleuchten der Motorkontrollleuchte der LKW direkt wieder in die Werkstatt gebracht werden zum auslesen.\nWoll\n\nTürgriff Beifahrerseite defekt. Tür lässt sich von aussen nicht mehr öffnen. - Pistorius",
+    "timestamp": "2026-02-20T10:30:59.696Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Motor mehrfach in Notlaufprogramm gegangen. KFZ Werkstatt hat eine Steckverbindung erneuert, jedoch soll beim nächsten aufleuchten der Motorkontrollleuchte der LKW direkt wieder in die Werkstatt gebracht werden zum auslesen.\nWoll\n\nTürgriff Beifahrerseite defekt. Tür lässt sich von aussen nicht mehr öffnen. - Pistorius",
+    "timestamp": "2026-02-20T10:30:59.698Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "not_ok",
+    "details": "Geräusche vom Lenkrad beim Lenken, immer am gleichen Punkt des Lenkeinschlags",
+    "timestamp": "2026-02-26T11:16:48.323Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:14:37.526Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:14:41.810Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:14:41.816Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:15:26.014Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:15:26.016Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-06T13:15:26.019Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "VW",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:05:29.998Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:10.274Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Weisser Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:10.276Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:11.998Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:11.999Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:12.003Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:13.398Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:13.399Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:13.400Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-09T07:07:13.404Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "Schwarzer Peugeot",
+    "status": "ok",
+    "details": "",
+    "timestamp": "2026-03-12T18:10:54.438Z",
+    "user": "anonymous"
+  },
+  {
+    "vehicle": "LKW DH158",
+    "status": "not_ok",
+    "details": "Tür Beifahrerseite lässt sich von innen nicht öffnen.\nErsatzteil ist bestellt.",
+    "timestamp": "2026-03-13T12:28:17.975Z",
+    "user": "anonymous"
   }
 ]

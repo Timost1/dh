@@ -94,12 +94,12 @@
     "rfid": "8358A324",
     "permissions": {
       "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
       "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
-      "kannWochenplanBearbeiten": false,
-      "kannProjektplanerBearbeiten": false,
-      "Meister": false,
-      "Vertreter": false
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false
     },
     "schicht": "F",
     "id": 8
@@ -109,12 +109,12 @@
     "rfid": "401395FA",
     "permissions": {
       "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
       "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
-      "kannWochenplanBearbeiten": false,
-      "kannProjektplanerBearbeiten": false,
-      "Meister": false,
-      "Vertreter": false
+      "kannFahrtenBearbeiten": true,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": false
     },
     "schicht": "F",
     "id": 9
@@ -214,12 +214,12 @@
     "rfid": "83683E0E",
     "permissions": {
       "isAdmin": true,
+      "meister": true,
+      "vertreter": true,
       "kannFahrtenLoeschen": true,
       "kannFahrtenBearbeiten": true,
       "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
+      "kannProjektplanerBearbeiten": true
     },
     "schicht": "Buero",
     "id": 16
@@ -456,22 +456,6 @@
     "id": 913
   },
   {
-    "name": "Michael Schütz",
-    "rfid": "41E45216",
-    "permissions": {
-      "isAdmin": false,
-      "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
-      "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
-    },
-    "schicht": "Buero",
-    "adminUserId": 16,
-    "id": 916
-  },
-  {
     "name": "Richard Daniel",
     "rfid": "40B2BEFA",
     "permissions": {
@@ -524,12 +508,12 @@
     "rfid": "839B430E",
     "permissions": {
       "isAdmin": true,
+      "meister": false,
+      "vertreter": false,
       "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
+      "kannFahrtenBearbeiten": true,
       "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
+      "kannProjektplanerBearbeiten": true
     },
     "schicht": "Buero",
     "adminUserId": 16,
@@ -552,7 +536,7 @@
     "id": 922
   },
   {
-    "name": "Thomas Guilaume",
+    "name": "Thomas Giom",
     "rfid": "4083D5FA",
     "permissions": {
       "isAdmin": false,
@@ -684,12 +668,12 @@
     "rfid": "797CC798",
     "permissions": {
       "isAdmin": true,
+      "meister": true,
+      "vertreter": true,
       "kannFahrtenLoeschen": true,
       "kannFahrtenBearbeiten": true,
       "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
+      "kannProjektplanerBearbeiten": true
     },
     "schicht": "Buero",
     "adminUserId": 2,
@@ -728,32 +712,16 @@
     "id": 934
   },
   {
-    "name": "Michael Schütz",
-    "rfid": "408CDCFA",
-    "permissions": {
-      "isAdmin": false,
-      "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
-      "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
-    },
-    "schicht": "Buero",
-    "adminUserId": 2,
-    "id": 935
-  },
-  {
     "name": "Philipp Raß",
     "rfid": "4098D8FA",
     "permissions": {
       "isAdmin": true,
+      "meister": false,
+      "vertreter": false,
       "kannFahrtenLoeschen": false,
-      "kannFahrtenBearbeiten": false,
+      "kannFahrtenBearbeiten": true,
       "kannWochenplanBearbeiten": true,
-      "kannProjektplanerBearbeiten": true,
-      "Meister": false,
-      "Vertreter": false
+      "kannProjektplanerBearbeiten": true
     },
     "schicht": "Buero",
     "adminUserId": 2,
@@ -918,5 +886,85 @@
     "schicht": "Buero",
     "adminUserId": 2,
     "id": 946
+  },
+  {
+    "name": "Michael Schütz",
+    "rfid": "793821B4",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true
+    },
+    "schicht": "Buero",
+    "adminUserId": 932,
+    "id": 947
+  },
+  {
+    "name": "Michael Schütz",
+    "rfid": "41E45216",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": true,
+      "kannProjektplanerBearbeiten": true
+    },
+    "schicht": "Buero",
+    "adminUserId": 932,
+    "id": 948
+  },
+  {
+    "name": "Matthias Lauer",
+    "rfid": "40D2C8FA",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "B",
+    "adminUserId": 2,
+    "id": 949
+  },
+  {
+    "name": "Dietmar Winter",
+    "rfid": "40D5CFFA",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "D",
+    "adminUserId": 2,
+    "id": 950
+  },
+  {
+    "name": "Dietmar Winter",
+    "rfid": "41863216",
+    "permissions": {
+      "isAdmin": false,
+      "meister": false,
+      "vertreter": false,
+      "kannFahrtenLoeschen": false,
+      "kannFahrtenBearbeiten": false,
+      "kannWochenplanBearbeiten": false,
+      "kannProjektplanerBearbeiten": false
+    },
+    "schicht": "D",
+    "adminUserId": 2,
+    "id": 951
   }
 ]
